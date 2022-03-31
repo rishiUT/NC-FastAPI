@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block headerextras %}
+<script src="/static/audioscript.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<header>
+    <h1>Record and Play Audio in JavaScript</h1>
+</header>
+<p>
+    <!--button for 'start recording'-->
+    <button id="btnStart">START RECORDING</button>
+
+    <!--button for 'stop recording'-->
+    <button id="btnStop">STOP RECORDING</button>
+
+    <!--button for 'send message'-->
+    <button id="btnsend" title={{id}}>SEND MESSAGE</button>
+</p>
+
+<!--for recording-->
+<audio muted></audio>
+<!--'controls' use for add
+  play, pause, and volume-->
+<!--for playing the audio-->
+<audio id="audioPlay" controls></audio>
+
+<audio id="partnerAudio" controls></audio>
+
+{% endblock %}

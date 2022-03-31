@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/site.css" />
+    {% block headerextras %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/" class="navbar-brand">Negotiation Chat Website</a>
+        <a href="/home" class="navbar-item">Home</a>
+        <a href="/about" class="navbar-item">About</a>
+    </div>
+
+    <div class="body-content">
+        {% block content %}
+        {% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; 2022</p>
+        </footer>
+    </div>
+</body>
+</html>

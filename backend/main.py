@@ -1,15 +1,13 @@
 from telnetlib import NOP
-from anyio import ConditionStatistics
-from fastapi import FastAPI, Response, Request, WebSocket, Depends, HTTPException, WebSocketDisconnect
+from fastapi import FastAPI, Response, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 from jinja2 import Environment, PackageLoader, select_autoescape
 import sqlalchemy
-import asyncio
 import databases
 
-DATABASE_URL = "sqlite:///./users.db"
+DATABASE_URL = "sqlite:///./dbfolder/users.db"
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
@@ -132,6 +130,8 @@ class ConnectionManager:
     async def connect(self, websocket: WebSocket, id: int):
         await websocket.accept()
         self.active_connections[id] = websocket
+        print(self.active_connections.keys())
+
 
     def disconnect(self, id: int):
         self.active_connections.pop(id)
@@ -140,6 +140,7 @@ class ConnectionManager:
         await websocket.send_bytes(message)
 
     async def send_partner_message(self, message: bytes, pid: int):
+        print(self.active_connections.keys())
         if pid != -1:
             await self.active_connections.get(pid).send_bytes(message)
 
@@ -148,18 +149,6 @@ class ConnectionManager:
             await connection.send_bytes(message)
 
 manager = ConnectionManager()
-
-@app.websocket("/audiowspaired")
-async def chat_ws_endpoint(websocket: WebSocket):
-    await manager.connect(websocket, 0)
-    try:
-        while True:
-            data = await websocket.receive_bytes()
-            #await manager.send_personal_message(data, websocket)
-            await manager.send_partner_message(data, 0)
-    except WebSocketDisconnect:
-        manager.disconnect(0)
-
 
 @app.websocket("/audiowspaired/{uid}")
 async def chat_ws_endpoint(websocket: WebSocket, uid:int):
@@ -170,6 +159,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     try:
         while True:
             data = await websocket.receive_bytes()
+            print(pid)
             await manager.send_partner_message(data, pid)
     except WebSocketDisconnect:
         manager.disconnect(uid)

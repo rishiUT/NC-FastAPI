@@ -77,7 +77,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Chunk array to store the audio data 
         let dataArray = [];
         
-        var wsaddr = "ws://localhost:8000/audiowspaired/" + send.title
+        var wsaddr = "ws://f622-98-110-222-152.ngrok.io/audiowspaired/" + send.title
         var ws = new WebSocket(wsaddr);
         ws.onmessage = function(event) {
             incoming_vm = event.data

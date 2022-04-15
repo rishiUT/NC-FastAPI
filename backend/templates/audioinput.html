@@ -2,31 +2,56 @@
 
 {% block headerextras %}
 <script src="/static/audioscript.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 {% endblock %}
 
 {% block content %}
+  <div class="row alert alert-info">
+    <!--Depending on whether they're the buyer or seller, they need either an offer or accept bar here
+        I need to figure out how to make different elements based on an if-statement
+        Also need to figure out how to send an offer to the seller for them to accept or reject - I can use a post to get it from the buyer 
+      <form action="/action_page.php">
+        <label for="offer">Offer: </label>
+        <input type="number" id="offer" name="offer"><br><br>
+        <input type="submit" class="btn btn-success" value="Submit Button">
+      </form>
+      <a href="#" class="btn btn-success">Link Button</a>
+    -->
+    <!--Note to self, create a "Thanks for participating" page that the seller is sent to after accepting or rejecting the offer
+        And a similar page for the buyer (either the same page, or one where it tells them whether their offer was accepted/rejected)-->
 
-<header>
-    <h1>Record and Play Audio in JavaScript</h1>
-</header>
-<p>
-    <!--button for 'start recording'-->
-    <button id="btnStart">START RECORDING</button>
+    <div class="col-lg-4 p-5">
+      <h3>Chat Page</h3>
+      <p>Welcome! You are the <strong>{{role}}.</strong></p>
+      <p>{{task_description}}</p>
+      <p>{{item_description}}</p>
+      <p><img src={{item_image}} alt="item image" class="img-fluid rounded"></p>
+    </div>
 
-    <!--button for 'stop recording'-->
-    <button id="btnStop">STOP RECORDING</button>
+    <div class="col-lg-4 p-5">
+      <div class="alert alert-dark">
+        <p><strong>Send a Message:</strong></p>
+        <div class="panel panel-default d-flex align-items-center">
+          <button id="btnRecord" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" title="Hold to Record"><i class="bi-mic"></i></button>
+          <!--for recording-->
+          <audio muted></audio>
+          <audio id="audioPlay" controls></audio>
+          <button id="btnsend"  class="btn btn-primary btn-lg" data-id={{id}} data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
+        </div>
+      </div>
+      
+      <br>
+      <div class="alert alert-dark">
+        <p><strong>Received Message:</strong></p>
+        <div class="panel panel-default d-flex align-items-center">
+          <audio id="partnerAudio" controls></audio>
+        </div>
+      </div>
+    </div>
 
-    <!--button for 'send message'-->
-    <button id="btnsend" title={{id}}>SEND MESSAGE</button>
-</p>
+  </div>
 
-<!--for recording-->
-<audio muted></audio>
-<!--'controls' use for add
-  play, pause, and volume-->
-<!--for playing the audio-->
-<audio id="audioPlay" controls></audio>
-
-<audio id="partnerAudio" controls></audio>
+  <div class="col-lg-4 p-5">
+  </div>
 
 {% endblock %}

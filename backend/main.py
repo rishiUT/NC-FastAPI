@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from jinja2 import Environment, PackageLoader, select_autoescape
 import sqlalchemy
 import databases
+from connectionmanager import ConnectionManager
 
 DATABASE_URL = "sqlite:///./dbfolder/users.db"
 database = databases.Database(DATABASE_URL)
@@ -30,6 +31,9 @@ class User(BaseModel):
     role: int
     conversationid: int
     messagecount: int
+
+TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.",
+                     "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
 
 app = FastAPI(title='Test')
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -66,6 +70,15 @@ async def home(request: Request, response: Response):
     username = "User " + str(uid)
     template = env.get_template("index.html")
     return template.render(title="Home", message="Welcome, " + username + "! ", content="We're glad you could make it.")
+
+@app.get('/finish', response_class=HTMLResponse)
+async def self_reset(request: Request, response: Response):
+    uid = request.cookies.get('id')
+    if uid:    
+        response.delete_cookie('id')
+    template = env.get_template("default.html")
+    return template.render(title="Thank You!", 
+                            content="Thanks for your participation! You have been removed from your group.")
 
 @app.get('/about', response_class=HTMLResponse)
 def about():
@@ -118,40 +131,29 @@ async def reset_users():
     return template.render(title="Database Cleared", 
                             content="The database is empty now.")
 
+
 @app.get('/record', response_class=HTMLResponse)
-def record(request: Request):
+async def record(request: Request):
+    ua = users.alias("alias")
+    uid = request.cookies.get('id')
+    query = sqlalchemy.select([ua.c.role]).where(ua.c.id==uid)
+    is_buyer = await database.fetch_all(query)
+    is_buyer = is_buyer[0][0]
+
+    role_txt = "Buyer"
+    if is_buyer == 0:
+        role_txt = "Seller"
+
     template = env.get_template("audioinput.html")
-    return template.render(title="Record Audio", id=request.cookies.get('id'))
+    return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], 
+    item_description="You are negotiating over some item, which is described here.", item_image="/static/image_walrus.jpg", id=uid)
 
-class ConnectionManager:
-    def __init__(self):
-        self.active_connections: dict[WebSocket] = {}
-
-    async def connect(self, websocket: WebSocket, id: int):
-        await websocket.accept()
-        self.active_connections[id] = websocket
-        print(self.active_connections.keys())
-
-
-    def disconnect(self, id: int):
-        self.active_connections.pop(id)
-
-    async def send_personal_message(self, message: bytes, websocket: WebSocket):
-        await websocket.send_bytes(message)
-
-    async def send_partner_message(self, message: bytes, pid: int):
-        print(self.active_connections.keys())
-        if pid != -1:
-            await self.active_connections.get(pid).send_bytes(message)
-
-    async def broadcast(self, message: bytes):
-        for connection in self.active_connections:
-            await connection.send_bytes(message)
 
 manager = ConnectionManager()
 
 @app.websocket("/audiowspaired/{uid}")
 async def chat_ws_endpoint(websocket: WebSocket, uid:int):
+
     await manager.connect(websocket, uid)
     pid = -1 #partner ID
     if uid in pairings:

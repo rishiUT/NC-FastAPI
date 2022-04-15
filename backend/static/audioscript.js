@@ -1,4 +1,8 @@
-
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 let audioIN = { audio: true };
 //  audio is true, for recording
 
@@ -33,12 +37,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let recording = new Blob()
 
         // Start record
-        let start = document.getElementById('btnStart');
-
-        // Stop record
-        let stop = document.getElementById('btnStop');
-
-        // Send data
+        let record = document.getElementById('btnRecord');
         let send = document.getElementById('btnsend');
 
         // 2nd audio tag for play the audio
@@ -51,13 +50,13 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Pass the audio stream 
 
         // Start event
-        start.addEventListener('click', function (ev) {
+        record.onmousedown = function (ev) {
             mediaRecorder.start(ev);
             // console.log(mediaRecorder.state);
-        })
+        }
 
         // Stop event
-        stop.addEventListener('click', function (ev) {
+        record.addEventListener('mouseup', function (ev) {
             mediaRecorder.stop();
             // console.log(mediaRecorder.state);
         });
@@ -77,7 +76,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Chunk array to store the audio data 
         let dataArray = [];
         
-        var wsaddr = "ws://f622-98-110-222-152.ngrok.io/audiowspaired/" + send.title
+        var wsaddr = "ws://localhost:8000/audiowspaired/" + 1//send.data-id
         var ws = new WebSocket(wsaddr);
         ws.onmessage = function(event) {
             incoming_vm = event.data

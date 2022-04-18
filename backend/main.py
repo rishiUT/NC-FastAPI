@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from telnetlib import NOP
 from fastapi import FastAPI, Response, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
@@ -7,6 +8,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 import sqlalchemy
 import databases
 from connectionmanager import ConnectionManager
+import json
 
 DATABASE_URL = "sqlite:///./dbfolder/users.db"
 database = databases.Database(DATABASE_URL)
@@ -34,6 +36,9 @@ class User(BaseModel):
 
 TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.",
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
+
+with open('static/filtered_train.json') as item_file:
+    items = json.load(item_file)
 
 app = FastAPI(title='Test')
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -140,13 +145,33 @@ async def record(request: Request):
     is_buyer = await database.fetch_all(query)
     is_buyer = is_buyer[0][0]
 
+    query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
+    convid = await database.fetch_all(query)
+    convid = convid[0][0]
+    convid = convid % len(items) #Pseudo-randomization; not actually random, but rarely repeats
+
     role_txt = "Buyer"
     if is_buyer == 0:
         role_txt = "Seller"
 
+    item_data = items[convid]
+
+    price_coefficient = 1
+    if is_buyer:
+        price_coefficient = 0.8
+    item_price = item_data['Price'] * price_coefficient
+
+    item_description = item_data['Description'][0]
+
+    image = NULL 
+    if len(item_data['Images']):
+        image = "/static/images/" + item_data['Images'][0]
+    else:
+        image = NULL
+
     template = env.get_template("audioinput.html")
-    return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], 
-    item_description="You are negotiating over some item, which is described here.", item_image="/static/image_walrus.jpg", id=uid)
+    return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
+    item_description=item_description, item_image=image, id=uid)
 
 
 manager = ConnectionManager()

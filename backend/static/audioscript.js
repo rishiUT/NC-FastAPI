@@ -3,6 +3,7 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
 let audioIN = { audio: true };
 //  audio is true, for recording
 
@@ -76,7 +77,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Chunk array to store the audio data 
         let dataArray = [];
         
-        var wsaddr = "ws://localhost:8000/audiowspaired/" + 1//send.data-id
+        var wsaddr = "ws://localhost:8000/audiowspaired/" + send.dataset.id
         var ws = new WebSocket(wsaddr);
         ws.onmessage = function(event) {
             incoming_vm = event.data

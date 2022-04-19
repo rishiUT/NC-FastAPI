@@ -9,6 +9,7 @@ import sqlalchemy
 import databases
 from connectionmanager import ConnectionManager
 import json
+import datetime
 
 DATABASE_URL = "sqlite:///./dbfolder/users.db"
 database = databases.Database(DATABASE_URL)
@@ -145,14 +146,14 @@ async def record(request: Request):
     is_buyer = await database.fetch_all(query)
     is_buyer = is_buyer[0][0]
 
+    role_txt = "Buyer"
+    if is_buyer == 0:
+        role_txt = "Seller"
+
     query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
     convid = await database.fetch_all(query)
     convid = convid[0][0]
     convid = convid % len(items) #Pseudo-randomization; not actually random, but rarely repeats
-
-    role_txt = "Buyer"
-    if is_buyer == 0:
-        role_txt = "Seller"
 
     item_data = items[convid]
 
@@ -178,6 +179,18 @@ manager = ConnectionManager()
 
 @app.websocket("/audiowspaired/{uid}")
 async def chat_ws_endpoint(websocket: WebSocket, uid:int):
+    ua = users.alias("alias")
+    query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
+    convid = await database.fetch_all(query)
+    convid = convid[0][0]
+
+    query = sqlalchemy.select([ua.c.role]).where(ua.c.id==uid)
+    is_buyer = await database.fetch_all(query)
+    is_buyer = is_buyer[0][0]
+
+    role_txt = "Buyer"
+    if is_buyer == 0:
+        role_txt = "Seller"
 
     await manager.connect(websocket, uid)
     pid = -1 #partner ID
@@ -187,6 +200,22 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
         while True:
             data = await websocket.receive_bytes()
             print(pid)
+
+            timestamp = datetime.datetime.now()
+            temp = "recordings/" + role_txt + "_" + str(uid) + "_" + str(timestamp) + ".mp3"
+            file_name = ""
+            for c in temp:
+                if c == ' ':
+                    file_name += "_"
+                elif c == ':':
+                    file_name += "-"
+                else:
+                    file_name += c
+            print(file_name)
+            with open(file_name, "wb") as file1:
+                file1.write(data)
+                file1.close() 
+            
             await manager.send_partner_message(data, pid)
     except WebSocketDisconnect:
         manager.disconnect(uid)

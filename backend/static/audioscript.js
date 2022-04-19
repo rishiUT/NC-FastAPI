@@ -35,7 +35,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             // Play the audio in the 2nd audio element what is being recorded
             audio.play();
         };
-        let recording = new Blob()
+        let recording = null;
 
         // Start record
         let record = document.getElementById('btnRecord');
@@ -86,7 +86,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
         };
         function sendMessage(event) {
             ws.send(recording)
-            recording = new Blob()
         }
 
         // Convert the audio data in to blob 
@@ -95,7 +94,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
             // blob of type mp3
             let audioData = new Blob(dataArray,
-                { 'type': 'audio/mp3;' });
+                { 'type': 'audio/mpeg;' });
             // Save the latest blob to send (if requested)
             recording = audioData
 

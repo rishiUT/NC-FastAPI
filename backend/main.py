@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from telnetlib import NOP
 from fastapi import FastAPI, Response, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
@@ -164,11 +163,11 @@ async def record(request: Request):
 
     item_description = item_data['Description'][0]
 
-    image = NULL 
+    image = None 
     if len(item_data['Images']):
         image = "/static/images/" + item_data['Images'][0]
     else:
-        image = NULL
+        image = None
 
     template = env.get_template("audioinput.html")
     return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,

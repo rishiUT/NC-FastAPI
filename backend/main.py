@@ -11,6 +11,7 @@ import json
 import datetime
 
 DATABASE_URL = "sqlite:///./dbfolder/users.db"
+#DATABASE_URL = "postgresql://nc:Password1@localHost:5432/nc"
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
@@ -62,6 +63,11 @@ pairings = {}
 @app.get('/', response_class=HTMLResponse)
 @app.get('/home', response_class=HTMLResponse)
 async def home(request: Request, response: Response):
+    template = env.get_template("default.html")
+    return template.render(title="Home", content="Welcome to our study! Please click the button to join the negotiation.")
+
+@app.get('/start', response_class=HTMLResponse)
+async def home(request: Request, response: Response):
     uid = request.cookies.get('id')
     if not uid:    
         pos, conv = await new_user_info()
@@ -73,8 +79,8 @@ async def home(request: Request, response: Response):
 
     await add_pairing(uid)
     username = "User " + str(uid)
-    template = env.get_template("index.html")
-    return template.render(title="Home", message="Welcome, " + username + "! ", content="We're glad you could make it.")
+    template = env.get_template("default.html")
+    return template.render(title="Start", content="Welcome, " + username + "! We're glad you could make it.")
 
 @app.get('/finish', response_class=HTMLResponse)
 async def self_reset(request: Request, response: Response):

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block headerextras %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+{% endblock %}
+{% block content %}
+<div class="row alert alert-info">
+    <!--
+        This page should have a description of the task
+        There should also be a centered button at the top that says "Start"
+    -->
+
+    <div class="col p-5 text-center">
+      <h3>Task Description</h3>
+      <p>Welcome! We will describe the task here. Click the button below to begin the task.</strong></p>
+      <a class="btn btn-primary" href="/start" role="button">Begin</a>
+    </div>
+  </div>
+
+{% endblock %}

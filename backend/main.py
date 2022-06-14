@@ -63,8 +63,8 @@ pairings = {}
 @app.get('/', response_class=HTMLResponse)
 @app.get('/home', response_class=HTMLResponse)
 async def home(request: Request, response: Response):
-    template = env.get_template("default.html")
-    return template.render(title="Home", content="Welcome to our study! Please click the button to join the negotiation.")
+    template = env.get_template("home.html")
+    return template.render(title="Home")
 
 @app.get('/start', response_class=HTMLResponse)
 async def home(request: Request, response: Response):

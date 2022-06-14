@@ -77,7 +77,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Chunk array to store the audio data 
         let dataArray = [];
         
-        var wsaddr = "ws://localhost:8000/audiowspaired/" + send.dataset.id
+        var hostname = window.location.hostname;
+        if (window.location.port != 80 && window.location.port != 443) {
+            hostname = hostname + ":" + window.location.port;
+        }
+
+        var wsaddr = "ws://" + hostname + "/audiowspaired/" + send.dataset.id;
         var ws = new WebSocket(wsaddr);
         ws.onmessage = function(event) {
             incoming_vm = event.data

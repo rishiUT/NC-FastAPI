@@ -77,10 +77,12 @@ async def home(request: Request, response: Response):
         uid = last_record_id
         response.set_cookie('id', uid)
 
-    await add_pairing(uid)
+    paired = False
+    while not paired:
+        paired = await add_pairing(uid)
     username = "User " + str(uid)
-    template = env.get_template("default.html")
-    return template.render(title="Start", content="Welcome, " + username + "! We're glad you could make it.")
+    template = env.get_template("pairing.html")
+    return template.render(title="Start", content="Welcome, " + username + "! We're glad you could make it. Click the button below to begin.")
 
 @app.get('/finish', response_class=HTMLResponse)
 async def self_reset(request: Request, response: Response):
@@ -250,7 +252,7 @@ async def new_user_info():
     # If they all have a match, return the next conversation id (largest + 1) along with the "seller" id
     return (0, maxID + 1)
 
-async def add_pairing(uid: int):
+async def add_pairing(uid: int) -> bool:
     ua = users.alias("alias")
     query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
     convid = await database.fetch_all(query)
@@ -261,16 +263,17 @@ async def add_pairing(uid: int):
     #print(ids[1][0])
     if len(ids) < 2:
         #Pairing fails, return some error
-        NOP
+        return False
     elif ids[0][0] in pairings or ids[1][0] in pairings:
         if ids[0][0] in pairings and ids[1][0] in pairings:
             #Pairing unnecessary, it's already in there
-            NOP
+            return True
         else:
             #Something has gone wrong.
-            NOP
+            return False
     else:
         #We have two unpaired elements!
         pairings[ids[0][0]] = ids[1][0]
         pairings[ids[1][0]] = ids[0][0]
     print(pairings)
+    return True

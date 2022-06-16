@@ -10,8 +10,8 @@ from connectionmanager import ConnectionManager
 import json
 import datetime
 
-DATABASE_URL = "sqlite:///./dbfolder/users.db"
-#DATABASE_URL = "postgresql://nc:Password1@localHost:5432/nc"
+#DATABASE_URL = "sqlite:///./dbfolder/users.db"
+DATABASE_URL = "postgresql://nc:Password1@localHost:5432/gfg"
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
@@ -25,7 +25,7 @@ users = sqlalchemy.Table(
 )
 
 engine = sqlalchemy.create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
+    DATABASE_URL, connect_args={}
 )
 metadata.create_all(engine)
 
@@ -75,6 +75,7 @@ async def home(request: Request, response: Response):
         last_record_id = await database.execute(query)
         query = users.select()     
         uid = last_record_id
+        print(type(last_record_id))
         response.set_cookie('id', uid)
 
     paired = False
@@ -87,6 +88,8 @@ async def home(request: Request, response: Response):
 @app.get('/finish', response_class=HTMLResponse)
 async def self_reset(request: Request, response: Response):
     uid = request.cookies.get('id')
+    print(type(uid))
+
     if uid:    
         response.delete_cookie('id')
     template = env.get_template("default.html")
@@ -149,7 +152,9 @@ async def reset_users():
 async def record(request: Request):
     ua = users.alias("alias")
     uid = request.cookies.get('id')
-    query = sqlalchemy.select([ua.c.role]).where(ua.c.id==uid)
+    print(type(uid))
+    int_uid = int(uid)
+    query = sqlalchemy.select([ua.c.role]).where(ua.c.id==int_uid)
     is_buyer = await database.fetch_all(query)
     is_buyer = is_buyer[0][0]
 
@@ -157,7 +162,7 @@ async def record(request: Request):
     if is_buyer == 0:
         role_txt = "Seller"
 
-    query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
+    query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==int_uid)
     convid = await database.fetch_all(query)
     convid = convid[0][0]
     convid = convid % len(items) #Pseudo-randomization; not actually random, but rarely repeats
@@ -179,7 +184,7 @@ async def record(request: Request):
 
     template = env.get_template("audioinput.html")
     return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
-    item_description=item_description, item_image=image, id=uid)
+    item_description=item_description, item_image=image, id=int_uid)
 
 
 manager = ConnectionManager()

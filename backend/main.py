@@ -11,7 +11,7 @@ import json
 import datetime
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://nc:Password1@localHost:5432/gfg"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
@@ -77,6 +77,8 @@ async def home(request: Request, response: Response):
         uid = last_record_id
         print(type(last_record_id))
         response.set_cookie('id', uid)
+    else:
+        uid = int(uid)
 
     paired = False
     while not paired:

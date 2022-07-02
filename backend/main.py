@@ -75,7 +75,6 @@ async def home(request: Request, response: Response):
         last_record_id = await database.execute(query)
         query = users.select()     
         uid = last_record_id
-        print(type(last_record_id))
         response.set_cookie('id', uid)
     else:
         uid = int(uid)
@@ -90,7 +89,6 @@ async def home(request: Request, response: Response):
 @app.get('/finish', response_class=HTMLResponse)
 async def self_reset(request: Request, response: Response):
     uid = request.cookies.get('id')
-    print(type(uid))
 
     if uid:    
         response.delete_cookie('id')
@@ -154,7 +152,6 @@ async def reset_users():
 async def record(request: Request):
     ua = users.alias("alias")
     uid = request.cookies.get('id')
-    print(type(uid))
     int_uid = int(uid)
     query = sqlalchemy.select([ua.c.role]).where(ua.c.id==int_uid)
     is_buyer = await database.fetch_all(query)
@@ -213,7 +210,6 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     try:
         while True:
             data = await websocket.receive_bytes()
-            print(pid)
 
             timestamp = datetime.datetime.now()
             temp = "recordings/" + role_txt + "_" + str(uid) + "_" + str(timestamp) + ".mp3"
@@ -266,8 +262,6 @@ async def add_pairing(uid: int) -> bool:
     convid = convid[0][0]
     query = sqlalchemy.select([ua.c.id]).where(ua.c.conversationid==convid)
     ids = await database.fetch_all(query)
-    #print(ids[0][0])
-    #print(ids[1][0])
     if len(ids) < 2:
         #Pairing fails, return some error
         return False
@@ -282,5 +276,4 @@ async def add_pairing(uid: int) -> bool:
         #We have two unpaired elements!
         pairings[ids[0][0]] = ids[1][0]
         pairings[ids[1][0]] = ids[0][0]
-    print(pairings)
     return True

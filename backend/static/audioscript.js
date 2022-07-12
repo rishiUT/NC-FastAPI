@@ -82,7 +82,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             hostname = hostname + ":" + window.location.port;
         }
 
-        var wsaddr = "ws://" + hostname + "/audiowspaired/" + send.dataset.id;
+        var wsaddr = "wss://" + hostname + "/audiowspaired/" + send.dataset.id;
         var ws = new WebSocket(wsaddr);
         ws.onmessage = function(event) {
             incoming_vm = event.data

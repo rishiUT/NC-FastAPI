@@ -63,11 +63,16 @@ pairings = {}
 @app.get('/', response_class=HTMLResponse)
 @app.get('/home', response_class=HTMLResponse)
 async def home(request: Request, response: Response):
+    uid = request.cookies.get('id')
+
+    if uid:    
+        response.delete_cookie('id')
+    
     template = env.get_template("home.html")
     return template.render(title="Home")
 
 @app.get('/start', response_class=HTMLResponse)
-async def home(request: Request, response: Response):
+async def start(request: Request, response: Response):
     uid = request.cookies.get('id')
     if not uid:    
         pos, conv = await new_user_info()
@@ -96,49 +101,6 @@ async def self_reset(request: Request, response: Response):
     return template.render(title="Thank You!", 
                             content="Thanks for your participation! You have been removed from your group.")
 
-@app.get('/about', response_class=HTMLResponse)
-def about():
-    template = env.get_template("default.html")
-    return template.render(title="About the Negotiation Chat", 
-                            content="This website will be used for verbal, turn-based negotiations.")
-
-@app.get('/list', response_model=list[User])
-async def list_users():
-    query = users.select()
-    user_list = await database.fetch_all(query)
-    return user_list
-    #template = env.get_template("list.html")
-    #return template.render(title="User List", rows = rows)
-
-@app.get("/adduser", response_model=list[User])
-async def add_user():
-    query = users.insert().values(role=0, conversationid=0, messagecount=0)
-    last_record_id = await database.execute(query)
-    query = users.select()
-    user_list = await database.fetch_all(query)
-    return user_list
-
-@app.get('/addmessage', response_model=list[User])
-async def add_message():
-    #con.row_factory = sqlite3.Row
-#    uid = session['id']
-    uid = 0
-
-    ua = users.alias("alias")
-    query = sqlalchemy.select([ua.c.messagecount]).where(ua.c.id==uid)
-    num_messages = await database.fetch_all(query)
- 
-    num_messages = num_messages[0][0]
-
-    query = users.update().where(users.c.id==uid).values(messagecount = (num_messages + 1))
-    await database.execute(query)
-    query = users.select()
-    user_list = await database.fetch_all(query)
-    return user_list
-    
-    template = env.get_template("list.html")
-    return template.render(title="Add Message", rows = rows)
-
 @app.get('/resetusers', response_class=HTMLResponse)
 async def reset_users():
     query = users.delete()
@@ -146,7 +108,6 @@ async def reset_users():
     template = env.get_template("default.html")
     return template.render(title="Database Cleared", 
                             content="The database is empty now.")
-
 
 @app.get('/record', response_class=HTMLResponse)
 async def record(request: Request):
@@ -210,23 +171,42 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     try:
         while True:
             data = await websocket.receive_bytes()
+            identifier = data[-1]
+            remaining_data = data[:-1] #Strip off last byte
 
-            timestamp = datetime.datetime.now()
-            temp = "recordings/" + role_txt + "_" + str(uid) + "_" + str(timestamp) + ".mp3"
-            file_name = ""
-            for c in temp:
-                if c == ' ':
-                    file_name += "_"
-                elif c == ':':
-                    file_name += "-"
-                else:
-                    file_name += c
-            print(file_name)
-            with open(file_name, "wb") as file1:
-                file1.write(data)
-                file1.close() 
+            print(identifier)
+            print(data[-1])
+            if(identifier == 49) :
+                print(bytes([identifier]))
+
+                timestamp = datetime.datetime.now()
+                temp = "recordings/" + role_txt + "_" + str(uid) + "_" + str(timestamp) + ".mp3"
+                file_name = ""
+                for c in temp:
+                    if c == ' ':
+                        file_name += "_"
+                    elif c == ':':
+                        file_name += "-"
+                    else:
+                        file_name += c
+                print(file_name)
+                with open(file_name, "wb") as file1:
+                    file1.write(remaining_data)
+                    file1.close() 
+                
+                #from audioconverter import downgrade_audio
+                #import sys
+                #sys.path.append('/usr/bin/ffmpeg')
+
+                #downgrade_audio(file_name, file_name)
             
-            await manager.send_partner_message(data, pid)
+                await manager.send_partner_message(data, pid)
+            elif (identifier == 0):
+                print("Unexpected behavior!")
+            else :
+                print(bytes([identifier]))
+                print("This is not a audio message")
+
     except WebSocketDisconnect:
         manager.disconnect(uid)
 

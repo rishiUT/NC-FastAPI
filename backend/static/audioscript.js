@@ -40,6 +40,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Start record
         let record = document.getElementById('btnRecord');
         let send = document.getElementById('btnsend');
+        let submit = document.getElementById('btnSubmit');
 
         // 2nd audio tag for play the audio
         let playAudio = document.getElementById('audioPlay');
@@ -68,6 +69,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
             // console.log(mediaRecorder.state);
         });
 
+        // Submit event
+        submit.addEventListener('click', function (ev) {
+            console.log("Submitting offer or response!")
+            // console.log(mediaRecorder.state);
+        });
+
         // If audio data available then push 
         // it to the chunk array
         mediaRecorder.ondataavailable = function (ev) {
@@ -82,12 +89,38 @@ navigator.mediaDevices.getUserMedia(audioIN)
             hostname = hostname + ":" + window.location.port;
         }
 
-        var wsaddr = "wss://" + hostname + "/audiowspaired/" + send.dataset.id;
+        var websocketname = "ws";
+        if (window.location.protocol == "https:") {
+            websocketname = websocketname + "s";
+        }
+
+        var wsaddr = websocketname + "://" + hostname + "/audiowspaired/" + send.dataset.id;
         var ws = new WebSocket(wsaddr);
         ws.onmessage = function(event) {
-            incoming_vm = event.data
-            let audioSrc = window.URL.createObjectURL(incoming_vm);
-            partnerAudio.src = audioSrc;
+            incoming_vm = event.data;
+
+            var blob = incoming_vm;
+
+            var arrayPromise = new Promise(function(resolve) {
+                var reader = new FileReader();
+
+                reader.onloadend = function() {
+                    resolve(reader.result);
+                };
+
+                reader.readAsArrayBuffer(blob);
+            });
+
+            arrayPromise.then(function(array) {
+                const typedArray = new Uint8Array(array);
+                const finalArray = Array.from(typedArray);
+                var identifier = finalArray[finalArray.length - 1];
+                console.log(identifier);
+                if (identifier == 49) {
+                    let audioSrc = window.URL.createObjectURL(incoming_vm);
+                    partnerAudio.src = audioSrc; 
+                }
+            });           
         };
         function sendMessage(event) {
             ws.send(recording)
@@ -97,8 +130,10 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // after stopping the recording
         mediaRecorder.onstop = function (ev) {
 
+            let tosend = [1];
+            tosend = dataArray.concat(tosend);
             // blob of type mp3
-            let audioData = new Blob(dataArray,
+            let audioData = new Blob(tosend,
                 { 'type': 'audio/mpeg;' });
             // Save the latest blob to send (if requested)
             recording = audioData

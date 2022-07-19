@@ -3,8 +3,6 @@ import os
 import glob
 from pydub import AudioSegment
 
-
-
 def downgrade_audio(filename: str, output: str):
     audio = AudioSegment.from_file(filename)
     audio = audio.set_frame_rate(16000)
@@ -23,8 +21,9 @@ def downgrade_dir_mp3(directory: str):
     for filename in os.scandir(directory):
         if filename.is_file():
             if filename.path.endswith('.mp3'):
-                print(video_dir + "\\" + filename.path)
-                downgrade_audio(video_dir + "\\" + filename.path, video_dir + "\\" + "downgraded_" + filename.path)
-                print("Copied to ", video_dir + "\\" + "downgraded_" + filename.path)
+                connector = "/"
+                print(video_dir + connector + filename.path)
+                downgrade_audio(video_dir + connector + filename.path, video_dir + connector + "downgraded_" + filename.path)
+                print("Copied to ", video_dir + connector + "downgraded_" + filename.path)
 
-downgrade_dir_mp3("recordings")
+#downgrade_dir_mp3("recordings")

@@ -175,7 +175,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
             remaining_data = data[:-1] #Strip off last byte
 
             print(identifier)
-            print(data[-1])
+            print(remaining_data[-1])
             if(identifier == 49) :
                 print(bytes([identifier]))
 
@@ -200,6 +200,12 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
 
                 #downgrade_audio(file_name, file_name)
             
+                await manager.send_partner_message(data, pid)
+            elif (identifier == 50):
+                print("This is an offer")
+                bytestring = remaining_data.decode("utf-8")
+                val = int(bytestring)
+                print(val) #should probably save this somewhere
                 await manager.send_partner_message(data, pid)
             elif (identifier == 0):
                 print("Unexpected behavior!")

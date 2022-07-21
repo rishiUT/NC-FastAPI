@@ -41,6 +41,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let record = document.getElementById('btnRecord');
         let send = document.getElementById('btnsend');
         let submit = document.getElementById('btnSubmit');
+        let offer = document.getElementById('offerVal');
 
         // 2nd audio tag for play the audio
         let playAudio = document.getElementById('audioPlay');
@@ -68,13 +69,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
             sendMessage()
             // console.log(mediaRecorder.state);
         });
-
-        // Submit event
-        submit.addEventListener('click', function (ev) {
-            console.log("Submitting offer or response!")
-            // console.log(mediaRecorder.state);
-        });
-
         // If audio data available then push 
         // it to the chunk array
         mediaRecorder.ondataavailable = function (ev) {
@@ -92,6 +86,40 @@ navigator.mediaDevices.getUserMedia(audioIN)
         var websocketname = "ws";
         if (window.location.protocol == "https:") {
             websocketname = websocketname + "s";
+        }
+
+        function Utf8ArrayToStr(array) {
+            var out, i, len, c;
+            var char2, char3;
+        
+            out = "";
+            len = array.length;
+            i = 0;
+            while(i < len) {
+            c = array[i++];
+            switch(c >> 4)
+            { 
+              case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+                // 0xxxxxxx
+                out += String.fromCharCode(c);
+                break;
+              case 12: case 13:
+                // 110x xxxx   10xx xxxx
+                char2 = array[i++];
+                out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F));
+                break;
+              case 14:
+                // 1110 xxxx  10xx xxxx  10xx xxxx
+                char2 = array[i++];
+                char3 = array[i++];
+                out += String.fromCharCode(((c & 0x0F) << 12) |
+                               ((char2 & 0x3F) << 6) |
+                               ((char3 & 0x3F) << 0));
+                break;
+            }
+            }
+        
+            return out;
         }
 
         var wsaddr = websocketname + "://" + hostname + "/audiowspaired/" + send.dataset.id;
@@ -114,17 +142,38 @@ navigator.mediaDevices.getUserMedia(audioIN)
             arrayPromise.then(function(array) {
                 const typedArray = new Uint8Array(array);
                 const finalArray = Array.from(typedArray);
-                var identifier = finalArray[finalArray.length - 1];
+                var identifier = finalArray.pop();
                 console.log(identifier);
                 if (identifier == 49) {
                     let audioSrc = window.URL.createObjectURL(incoming_vm);
                     partnerAudio.src = audioSrc; 
+                } else if (identifier == 50) {
+                    console.log("Received an offer!");
+                    var resultstring = Utf8ArrayToStr(finalArray);
+                    var amount = parseInt(resultstring);
+                    //jQuery('#exampleModalLong').modal('show')
+                    document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?";
+                    console.log(finalArray);
+                    console.log(resultstring);
                 }
             });           
         };
         function sendMessage(event) {
             ws.send(recording)
         }
+
+        // Submit event
+        submit.addEventListener('click', function (ev) {
+            console.log("Submitting offer or response!")
+            let val = offer.value;
+            console.log(val);
+            val = [val, 2];
+            console.log(val);
+            let data = new Blob(val);
+            ws.send(data)
+            // console.log(mediaRecorder.state);
+        });
+
 
         // Convert the audio data in to blob 
         // after stopping the recording

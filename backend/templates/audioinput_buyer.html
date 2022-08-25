@@ -28,9 +28,31 @@
       <p>Item Description: {{item_description}}</p>
       <p><img src={{item_image}} alt="No image available" class="img-fluid rounded"></p>
     </div>
-
+      
     <div class="col-lg-4 p-5">
+
       <div class="alert alert-dark">
+        <p><strong>Received Messages:</strong></p>
+        <div id="msgs" class="panel panel-default d-flex align-items-center">
+          <table class="table" id="msgtable">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sent by:</th>
+                <th scope="col">Button</th>
+              </tr>
+            </thead>
+            <tbody id="msgbody">
+              <tr>
+                <th scope="row">1</th>
+                <td>Test</td>
+                <td><button>play</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <br>
         <p><strong>Send a Message:</strong></p>
         <div class="panel panel-default d-flex align-items-center">
           <button id="btnRecord" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" title="Hold to Record"><i class="bi-mic"></i></button>
@@ -39,16 +61,8 @@
           <audio id="audioPlay" controls></audio>
           <button id="btnsend"  class="btn btn-primary btn-lg" data-id={{id}} data-role={{role}} data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
         </div>
+        <audio id="partnerAudio"></audio>
       </div>
-      
-      <br>
-      <div class="alert alert-dark">
-        <p><strong>Received Message:</strong></p>
-        <div class="panel panel-default d-flex align-items-center">
-          <audio id="partnerAudio" controls></audio>
-        </div>
-      </div>
-
 
       <div class="alert alert-dark">
         <p><strong>Submit Offer:</strong></p>
@@ -64,10 +78,7 @@
         <button id="btnSubmit" class="button-primary align-items-center">Submit</button>
       </div>
 
-      <div class="alert alert-dark" id="offer">
-      </div>
     </div>
-
   </div>
 
   <div class="col-lg-4 p-5">
@@ -87,8 +98,8 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="accept">Accept</button>
-        <button type="button" class="btn btn-secondary" id="decline">Decline</button>
+        <button type="button" class="btn btn-primary" id="accept">Ok</button>
+        <button type="button" class="btn btn-secondary" id="decline" hidden>Hidden</button>
       </div>
     </div>
   </div>

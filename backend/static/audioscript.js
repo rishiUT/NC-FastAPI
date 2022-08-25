@@ -42,10 +42,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let send = document.getElementById('btnsend');
         let submit = document.getElementById('btnSubmit');
         let offer = document.getElementById('offerVal');
+        let accept = document.getElementById('accept');
+        let decline = document.getElementById('decline');
 
         // 2nd audio tag for play the audio
         let playAudio = document.getElementById('audioPlay');
-        let partnerAudio = document.getElementById('partnerAudio');
+        //let partnerAudio = document.getElementById('partnerAudio');
 
         // This is the main thing to record
         // the audio 'MediaRecorder' API
@@ -145,8 +147,44 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 var identifier = finalArray.pop();
                 console.log(identifier);
                 if (identifier == 49) {
+                    var row = document.createElement("tr");
+                    var numChild = document.createElement("th");
+                    numChild.className += "scope=\"row\"";
+                    numChild.innerHTML += "0";
+                    row.appendChild(numChild)
+
+                    var senderChild = document.createElement("td");
+                    senderChild.innerHTML += "TEST";
+                    row.appendChild(senderChild);
+
+                    var buttonChild = document.createElement("td");
+                    var button = document.createElement("button");
+                    button.innerHTML = "Play";
                     let audioSrc = window.URL.createObjectURL(incoming_vm);
-                    partnerAudio.src = audioSrc; 
+                    button.dataset.audioLink = audioSrc
+                    button.addEventListener('click', function(ev) {
+                        console.log("Play audio");
+                        var audioElement = document.getElementById("partnerAudio");
+                        audioElement.src = this.dataset.audioLink;
+                        audioElement.play();
+                    })
+                    buttonChild.appendChild(button);
+                    row.appendChild(buttonChild);
+
+                    document.getElementById('msgbody').appendChild(row);
+
+                    
+                    //var formGroup = document.createElement("div");
+                    //formGroup.className += "panel";
+                    //formGroup.className += "panel-default";
+                    //formGroup.className += "d-flex";
+                    //formGroup.className += "align-items-left";
+
+                    //var partnerAudio = document.createElement("audio");
+                    //partnerAudio.src = audioSrc; 
+                    //partnerAudio.controls = true;
+
+                    //document.getElementById('msgs').appendChild(formGroup);
                 } else if (identifier == 50) {
                     console.log("Received an offer!");
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -155,6 +193,24 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?";
                     console.log(finalArray);
                     console.log(resultstring);
+                    var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
+                        keyboard: false
+                    })
+                    myModal.show();
+                } else if(identifier == 51) {
+                    console.log("Received a response!")
+                    var resultstring = Utf8ArrayToStr(finalArray);
+                    var result = parseInt(resultstring);
+                    console.log(result);
+                    if (result == 0) {
+                        document.getElementById('modalText').innerHTML = "Your partner declined the offer.";
+                    } else if (result == 1) {
+                        document.getElementById('modalText').innerHTML = "Your partner accepted the offer!";
+                    }
+                    var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
+                        keyboard: false
+                    })
+                    myModal.show();
                 }
             });           
         };
@@ -171,7 +227,28 @@ navigator.mediaDevices.getUserMedia(audioIN)
             console.log(val);
             let data = new Blob(val);
             ws.send(data)
-            // console.log(mediaRecorder.state);
+        });
+
+        // Accept event
+        accept.addEventListener('click', function (ev) {
+            console.log("Offer Accepted!")
+            let val = 1;
+            val = [val, 3];
+            console.log(val);
+            let data = new Blob(val);
+            ws.send(data)
+            window.location.replace('/')
+        });
+        
+        // Decline event
+        decline.addEventListener('click', function (ev) {
+            console.log("Offer Declined.")
+            let val = 0;
+            val = [val, 3];
+            console.log(val);
+            let data = new Blob(val);
+            ws.send(data)
+            window.location.replace('/')
         });
 
 

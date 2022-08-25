@@ -141,8 +141,10 @@ async def record(request: Request):
         image = "/static/images/" + item_data['Images'][0]
     else:
         image = None
-
-    template = env.get_template("audioinput.html")
+    if (is_buyer):
+        template = env.get_template("audioinput_buyer.html")
+    else:
+        template = env.get_template("audioinput_seller.html")
     return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
     item_description=item_description, item_image=image, id=int_uid)
 
@@ -207,6 +209,13 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 val = int(bytestring)
                 print(val) #should probably save this somewhere
                 await manager.send_partner_message(data, pid)
+            elif (identifier == 51):
+                print("Response received")
+                bytestring = remaining_data.decode("utf-8")
+                val = int(bytestring)
+                response = bool(val)
+                print(response) #should probably save this somewhere too
+                await manager.send_partner_message(data, pid)
             elif (identifier == 0):
                 print("Unexpected behavior!")
             else :
@@ -263,3 +272,13 @@ async def add_pairing(uid: int) -> bool:
         pairings[ids[0][0]] = ids[1][0]
         pairings[ids[1][0]] = ids[0][0]
     return True
+
+
+# TODO:
+# Change the filenames for audio files to be more human-readable (remove timestamps)
+# Create server endpoint to accept a key to identify a specific audio file, then return a link to the audio file
+# In JS files, replace incoming audio element(s) with a table of buttons
+# Create an audio element without a control object
+# Make each button in the table replace the source of the audio element with the url returned by the server endpoint
+# Have the audio play automatically each time the source is replaced
+# Change the button image from a play button to a pause button while the audio plays, then change back when it stops

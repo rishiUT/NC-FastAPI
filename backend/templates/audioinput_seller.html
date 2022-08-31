@@ -7,19 +7,6 @@
 
 {% block content %}
   <div class="row alert alert-info">
-    <!--Depending on whether they're the buyer or seller, they need either an offer or accept bar here
-        I need to figure out how to make different elements based on an if-statement
-        Also need to figure out how to send an offer to the seller for them to accept or reject - I can use a post to get it from the buyer 
-      <form action="/action_page.php">
-        <label for="offer">Offer: </label>
-        <input type="number" id="offer" name="offer"><br><br>
-        <input type="submit" class="btn btn-success" value="Submit Button">
-      </form>
-      <a href="#" class="btn btn-success">Link Button</a>
-    -->
-    <!--Note to self, create a "Thanks for participating" page that the seller is sent to after accepting or rejecting the offer
-        And a similar page for the buyer (either the same page, or one where it tells them whether their offer was accepted/rejected)-->
-
     <div class="col-lg-4 p-5">
       <h3>Chat Page</h3>
       <p>Welcome! You are the <strong>{{role}}.</strong></p>
@@ -58,21 +45,6 @@
         </div>
         <audio id="partnerAudio"></audio>
       </div>
-
-      <div class="alert alert-dark">
-        <p><strong>Submit Offer:</strong></p>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
-          </div>
-          <input id="offerVal" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-          <div class="input-group-append">
-            <span class="input-group-text">.00</span>
-          </div>
-        </div>
-        <button id="btnSubmit" class="button-primary align-items-center">Submit</button>
-      </div>
-
     </div>
   </div>
 
@@ -84,7 +56,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Response Received</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Offer Received</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -93,8 +65,9 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="accept">Ok</button>
-        <button type="button" class="btn btn-secondary" id="decline" hidden>Hidden</button>
+        <button type="button" class="btn btn-primary" id="accept">Accept</button>
+        <button type="button" class="btn btn-secondary" id="decline">Decline</button>
+        <button id="btnSubmit" class="button-primary align-items-center" hidden>Submit</button>
       </div>
     </div>
   </div>

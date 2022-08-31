@@ -45,6 +45,9 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let accept = document.getElementById('accept');
         let decline = document.getElementById('decline');
 
+        let selfID = "Self";
+        let partnerID = "Partner";
+
         // 2nd audio tag for play the audio
         let playAudio = document.getElementById('audioPlay');
         //let partnerAudio = document.getElementById('partnerAudio');
@@ -154,7 +157,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     row.appendChild(numChild)
 
                     var senderChild = document.createElement("td");
-                    senderChild.innerHTML += "TEST";
+                    senderChild.innerHTML += partnerID;
                     row.appendChild(senderChild);
 
                     var buttonChild = document.createElement("td");
@@ -172,19 +175,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     row.appendChild(buttonChild);
 
                     document.getElementById('msgbody').appendChild(row);
-
-                    
-                    //var formGroup = document.createElement("div");
-                    //formGroup.className += "panel";
-                    //formGroup.className += "panel-default";
-                    //formGroup.className += "d-flex";
-                    //formGroup.className += "align-items-left";
-
-                    //var partnerAudio = document.createElement("audio");
-                    //partnerAudio.src = audioSrc; 
-                    //partnerAudio.controls = true;
-
-                    //document.getElementById('msgs').appendChild(formGroup);
                 } else if (identifier == 50) {
                     console.log("Received an offer!");
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -216,6 +206,32 @@ navigator.mediaDevices.getUserMedia(audioIN)
         };
         function sendMessage(event) {
             ws.send(recording)
+
+            var row = document.createElement("tr");
+            var numChild = document.createElement("th");
+            numChild.className += "scope=\"row\"";
+            numChild.innerHTML += "1";
+            row.appendChild(numChild)
+
+            var senderChild = document.createElement("td");
+            senderChild.innerHTML += selfID;
+            row.appendChild(senderChild);
+
+            var buttonChild = document.createElement("td");
+            var button = document.createElement("button");
+            button.innerHTML = "Play";
+            let audioSrc = playAudio.src;
+            button.dataset.audioLink = audioSrc
+            button.addEventListener('click', function(ev) {
+                console.log("Play audio");
+                var audioElement = document.getElementById("partnerAudio");
+                audioElement.src = this.dataset.audioLink;
+                audioElement.play();
+            })
+            buttonChild.appendChild(button);
+            row.appendChild(buttonChild);
+
+            document.getElementById('msgbody').appendChild(row);
         }
 
         // Submit event

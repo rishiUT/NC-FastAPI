@@ -9,6 +9,7 @@ import databases
 from connectionmanager import ConnectionManager
 import json
 import datetime
+from disconnect import User, DisconnectChecker, Statuses, PartnerStatuses
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
 DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
@@ -37,6 +38,8 @@ class User(BaseModel):
 
 TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.",
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
+
+checker = DisconnectChecker()
 
 with open('static/filtered_train.json') as item_file:
     items = json.load(item_file)
@@ -78,9 +81,10 @@ async def start(request: Request, response: Response):
         pos, conv = await new_user_info()
         query = users.insert().values(role=pos, conversationid=conv, messagecount=0)
         last_record_id = await database.execute(query)
-        query = users.select()     
+        # query = users.select()     
         uid = last_record_id
         response.set_cookie('id', uid)
+        checker.initialize_user(uid)
     else:
         uid = int(uid)
 
@@ -97,6 +101,7 @@ async def self_reset(request: Request, response: Response):
 
     if uid:    
         response.delete_cookie('id')
+        checker.safe_delete_user(uid)
     template = env.get_template("default.html")
     return template.render(title="Thank You!", 
                             content="Thanks for your participation! You have been removed from your group.")
@@ -114,6 +119,8 @@ async def record(request: Request):
     ua = users.alias("alias")
     uid = request.cookies.get('id')
     int_uid = int(uid)
+    checker.ping_user(uid)
+    
     query = sqlalchemy.select([ua.c.role]).where(ua.c.id==int_uid)
     is_buyer = await database.fetch_all(query)
     is_buyer = is_buyer[0][0]
@@ -173,6 +180,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     try:
         while True:
             data = await websocket.receive_bytes()
+            checker.ping_user(uid)
             identifier = data[-1]
             remaining_data = data[:-1] #Strip off last byte
 
@@ -194,13 +202,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 print(file_name)
                 with open(file_name, "wb") as file1:
                     file1.write(remaining_data)
-                    file1.close() 
-                
-                #from audioconverter import downgrade_audio
-                #import sys
-                #sys.path.append('/usr/bin/ffmpeg')
-
-                #downgrade_audio(file_name, file_name)
+                    file1.close()
             
                 await manager.send_partner_message(data, pid)
             elif (identifier == 50):
@@ -250,6 +252,10 @@ async def new_user_info():
     # If they all have a match, return the next conversation id (largest + 1) along with the "seller" id
     return (0, maxID + 1)
 
+async def remove_user(uid: int):
+    temp = 0
+    temp += 3
+
 async def add_pairing(uid: int) -> bool:
     ua = users.alias("alias")
     query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
@@ -273,12 +279,35 @@ async def add_pairing(uid: int) -> bool:
         pairings[ids[1][0]] = ids[0][0]
     return True
 
+# Add the user to the table of currently active users
+def initialize_user(uid: int):
+    print("Now initializing user with id " + str(uid))
+
+# Add a partner for this particular user. Make sure both users have the partner status "paired".
+def add_partner(uid: int, partner_id: int):
+    print("Adding partner " + str(partner_id) + " to user " + str(uid))
+
+# Remove the user from the "current users" list once they complete the task
+def safe_delete_user(uid: int):
+    print("User " + str(uid) + " has completed the task! Congratulations!")
+
+# Remove the user if they have timed out and have likely disconnected. They have not completed the task.
+def unsafe_delete_user(uid: int):
+    print("User " + str(uid) + " has timed out.")
+
+# update the current user's latest updated time, then check for timeouts.
+def ping_user(uid: int):
+    print("User " + str(uid) + " has pinged the server.")
 
 # TODO:
-# Change the filenames for audio files to be more human-readable (remove timestamps)
-# Create server endpoint to accept a key to identify a specific audio file, then return a link to the audio file
-# In JS files, replace incoming audio element(s) with a table of buttons
-# Create an audio element without a control object
-# Make each button in the table replace the source of the audio element with the url returned by the server endpoint
-# Have the audio play automatically each time the source is replaced
 # Change the button image from a play button to a pause button while the audio plays, then change back when it stops
+# Determine how to run a thread on the server to keep track of timeouts
+# Have a separate thread keep track of a data structure with a list of [user_id, active (bool), time_last_active]s
+# Every time a user takes an action, it updates time_last_active in that data structure
+# When the timeout algorithm runs, it marks every user with a time_last_ active less than current_time - 120 seconds 
+#       as inactive
+
+
+# There has to be a special case for disconnects once the entire interaction is complete
+# Once the interaction reaches a certain point, users should be able to leave without 
+# losing their payment or having their partner reassigned

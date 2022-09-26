@@ -253,7 +253,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             console.log(val);
             let data = new Blob(val);
             ws.send(data)
-            window.location.replace('/')
+            window.location.replace('/finish')
         });
         
         // Decline event
@@ -264,7 +264,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             console.log(val);
             let data = new Blob(val);
             ws.send(data)
-            window.location.replace('/')
+            window.location.replace('/finish')
         });
 
 

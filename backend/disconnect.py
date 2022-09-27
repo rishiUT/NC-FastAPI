@@ -141,7 +141,7 @@ class DisconnectChecker:
             if (user.time_since_last_ping(curr_time) > self.timeout_length):
                 # The user hasn't responded for 5 minutes or longer.
                 print("User " + str(user.id) + " timed out.")
-                self.unsafe_disconnect_user(user.id)
+                self.unsafe_delete_user(user.id)
 
     # Remove a disconnected user from the user table.
     def remove_user(self, uid: int):

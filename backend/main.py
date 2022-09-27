@@ -11,10 +11,12 @@ from connectionmanager import ConnectionManager
 import json
 import datetime
 from disconnect import User, DisconnectChecker, Statuses, PartnerStatuses
+import threading
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
 DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
 database = databases.Database(DATABASE_URL)
+database_lock = threading.Lock()
 
 metadata = sqlalchemy.MetaData()
 users = sqlalchemy.Table(
@@ -78,11 +80,16 @@ async def home(request: Request, response: Response):
 @app.get('/start', response_class=HTMLResponse)
 async def start(request: Request, response: Response):
     uid = request.cookies.get('id')
-    if not uid:    
+    if not uid:
+        print("acquiring lock")
+        database_lock.acquire()    
         pos, conv = await new_user_info()
         query = users.insert().values(role=pos, conversationid=conv, messagecount=0)
         last_record_id = await database.execute(query)
-        # query = users.select()     
+        print(database_lock.locked())
+        print("Releasing lock")
+        database_lock.release()
+
         uid = last_record_id
         response.set_cookie('id', uid)
         checker.initialize_user(uid)
@@ -221,6 +228,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 val = int(bytestring)
                 response = bool(val)
                 print(response) #should probably save this somewhere too
+                checker.safe_delete_user(int_uid)
                 await manager.send_partner_message(data, int_pid)
             elif (identifier == 0):
                 print("Unexpected behavior!")

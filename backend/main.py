@@ -1,5 +1,6 @@
+import asyncio
 from telnetlib import NOP
-from fastapi import FastAPI, Response, Request, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, Response, Request, WebSocket, WebSocketDisconnect, BackgroundTasks
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -119,7 +120,7 @@ async def record(request: Request):
     ua = users.alias("alias")
     uid = request.cookies.get('id')
     int_uid = int(uid)
-    checker.ping_user(uid)
+    checker.ping_user(int_uid)
     
     query = sqlalchemy.select([ua.c.role]).where(ua.c.id==int_uid)
     is_buyer = await database.fetch_all(query)
@@ -173,14 +174,17 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     if is_buyer == 0:
         role_txt = "Seller"
 
-    await manager.connect(websocket, uid)
+    int_uid = int(uid)
+
+    await manager.connect(websocket, int_uid)
     pid = -1 #partner ID
     if uid in pairings:
         pid = pairings[uid]
+        int_pid = int(pid)
     try:
         while True:
             data = await websocket.receive_bytes()
-            checker.ping_user(uid)
+            checker.ping_user(int_uid)
             identifier = data[-1]
             remaining_data = data[:-1] #Strip off last byte
 
@@ -190,7 +194,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 print(bytes([identifier]))
 
                 timestamp = datetime.datetime.now()
-                temp = "recordings/" + role_txt + "_" + str(uid) + "_" + str(timestamp) + ".mp3"
+                temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
                 file_name = ""
                 for c in temp:
                     if c == ' ':
@@ -204,20 +208,20 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                     file1.write(remaining_data)
                     file1.close()
             
-                await manager.send_partner_message(data, pid)
+                await manager.send_partner_message(data, int_pid)
             elif (identifier == 50):
                 print("This is an offer")
                 bytestring = remaining_data.decode("utf-8")
                 val = int(bytestring)
                 print(val) #should probably save this somewhere
-                await manager.send_partner_message(data, pid)
+                await manager.send_partner_message(data, int_pid)
             elif (identifier == 51):
                 print("Response received")
                 bytestring = remaining_data.decode("utf-8")
                 val = int(bytestring)
                 response = bool(val)
                 print(response) #should probably save this somewhere too
-                await manager.send_partner_message(data, pid)
+                await manager.send_partner_message(data, int_pid)
             elif (identifier == 0):
                 print("Unexpected behavior!")
             else :
@@ -225,7 +229,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 print("This is not a audio message")
 
     except WebSocketDisconnect:
-        manager.disconnect(uid)
+        manager.disconnect(int_uid)
 
 async def new_user_info():
     #No need to create a new id, because the db creates them automatically   
@@ -279,25 +283,12 @@ async def add_pairing(uid: int) -> bool:
         pairings[ids[1][0]] = ids[0][0]
     return True
 
-# Add the user to the table of currently active users
-def initialize_user(uid: int):
-    print("Now initializing user with id " + str(uid))
-
-# Add a partner for this particular user. Make sure both users have the partner status "paired".
-def add_partner(uid: int, partner_id: int):
-    print("Adding partner " + str(partner_id) + " to user " + str(uid))
-
-# Remove the user from the "current users" list once they complete the task
-def safe_delete_user(uid: int):
-    print("User " + str(uid) + " has completed the task! Congratulations!")
-
-# Remove the user if they have timed out and have likely disconnected. They have not completed the task.
-def unsafe_delete_user(uid: int):
-    print("User " + str(uid) + " has timed out.")
-
-# update the current user's latest updated time, then check for timeouts.
-def ping_user(uid: int):
-    print("User " + str(uid) + " has pinged the server.")
+# This is the permanently running function that checks which users have timed out.
+async def periodic_check_user_disconnects():
+    print("Starting the checking process")
+    while True:
+        await asyncio.sleep(300)
+        print("The thread is checking for disconnected users.")
 
 # TODO:
 # Change the button image from a play button to a pause button while the audio plays, then change back when it stops
@@ -307,6 +298,7 @@ def ping_user(uid: int):
 # When the timeout algorithm runs, it marks every user with a time_last_ active less than current_time - 120 seconds 
 #       as inactive
 
+# Add something when the user tries to connect, and is waiting on a partner to connect. Maybe a scrolling wheel?
 
 # There has to be a special case for disconnects once the entire interaction is complete
 # Once the interaction reaches a certain point, users should be able to leave without 

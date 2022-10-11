@@ -109,7 +109,8 @@ async def self_reset(request: Request, response: Response):
 
     if uid:    
         response.delete_cookie('id')
-        checker.safe_delete_user(uid)
+        int_uid = int(uid)
+        checker.safe_delete_user(int_uid)
     template = env.get_template("default.html")
     return template.render(title="Thank You!", 
                             content="Thanks for your participation! You have been removed from your group.")
@@ -191,7 +192,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     try:
         while True:
             data = await websocket.receive_bytes()
-            checker.ping_user(int_uid)
+            keepalive = checker.ping_user(int_uid)
             identifier = data[-1]
             remaining_data = data[:-1] #Strip off last byte
 
@@ -228,7 +229,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 val = int(bytestring)
                 response = bool(val)
                 print(response) #should probably save this somewhere too
-                checker.safe_delete_user(int_uid)
+                # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
                 await manager.send_partner_message(data, int_pid)
             elif (identifier == 0):
                 print("Unexpected behavior!")
@@ -300,11 +301,8 @@ async def periodic_check_user_disconnects():
 
 # TODO:
 # Change the button image from a play button to a pause button while the audio plays, then change back when it stops
-# Determine how to run a thread on the server to keep track of timeouts
-# Have a separate thread keep track of a data structure with a list of [user_id, active (bool), time_last_active]s
-# Every time a user takes an action, it updates time_last_active in that data structure
-# When the timeout algorithm runs, it marks every user with a time_last_ active less than current_time - 120 seconds 
-#       as inactive
+# add error handling at each user ping: handle user disconnects, partner disconnects
+# Add separate "acknowledge completed task" message handlers for buyers and sellers (don't forward messages to finished buyers)
 
 # Add something when the user tries to connect, and is waiting on a partner to connect. Maybe a scrolling wheel?
 

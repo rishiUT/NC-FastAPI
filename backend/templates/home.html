@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block headerextras %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 {% endblock %}
 {% block content %}
 <div class="row alert alert-info">
@@ -12,7 +13,22 @@
     <div class="col p-5 text-center">
       <h3>Task Description</h3>
       <p>Welcome! We will describe the task here. Click the button below to pair up with another user.</strong></p>
-      <a class="btn btn-primary" href="/start" role="button">Pair Me!</a>
+      <a class="btn btn-primary" id="pairing" role="button">Pair Me!</a>
+      <script>
+        console.log("Executing the Script")
+        let button = document.getElementById('pairing');
+        button.addEventListener('click', function (ev) {
+          console.log("Inside the button onclick");
+          let thisButton = document.getElementById('pairing');
+          // disable button
+          thisButton.classList += ' disabled'
+          // add spinner to button
+          thisButton.html = '<i class="fa fa-circle-o-notch fa-spin"></i> loading...';
+          // Redirect to pairing
+          button.href = '/start';
+        });
+      </script>
+
     </div>
   </div>
 {% endblock %}

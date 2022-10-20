@@ -10,7 +10,7 @@ import databases
 from connectionmanager import ConnectionManager
 import json
 import datetime
-from disconnect import User, DisconnectChecker, Statuses, PartnerStatuses
+from disconnect import DisconnectChecker, ConnectionErrors
 import threading
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
@@ -77,7 +77,7 @@ async def home(request: Request, response: Response):
     template = env.get_template("home.html")
     return template.render(title="Home")
 
-@app.get('/start', response_class=HTMLResponse)
+@app.get('/pair', response_class=HTMLResponse)
 async def start(request: Request, response: Response):
     uid = request.cookies.get('id')
     if not uid:
@@ -93,15 +93,26 @@ async def start(request: Request, response: Response):
         uid = last_record_id
         response.set_cookie('id', uid)
         checker.initialize_user(uid)
-    else:
-        uid = int(uid)
 
-    paired = False
-    while not paired:
-        paired = await add_pairing(uid)
+        int_uid = uid
+    else:
+        int_uid = int(uid)
+
     username = "User " + str(uid)
     template = env.get_template("pairing.html")
-    return template.render(title="Start", content="Welcome, " + username + "! We're glad you could make it. Click the button below to begin.")
+    return template.render(title="Please Wait...", content="Welcome, " + username + "! We're glad you could make it. Please wait; you will be paired with another user shortly.", id=int_uid)
+    
+@app.get('/no_partner', response_class=HTMLResponse)
+async def no_partner_found(request: Request, response: Response):
+    uid = request.cookies.get('id')
+    if uid:    
+        response.delete_cookie('id')
+        int_uid = int(uid)
+        await remove_user(int_uid)
+
+    username = "User " + str(uid)
+    template = env.get_template("unpaired.html")
+    return template.render(title="Sorry!", content="Thank you for your patience, " + username + ". Unfortunately, we couldn't find a partner for you. Please try again later.")
 
 @app.get('/finish', response_class=HTMLResponse)
 async def self_reset(request: Request, response: Response):
@@ -110,7 +121,7 @@ async def self_reset(request: Request, response: Response):
     if uid:    
         response.delete_cookie('id')
         int_uid = int(uid)
-        checker.safe_delete_user(int_uid)
+        remove_user(int_uid)
     template = env.get_template("default.html")
     return template.render(title="Thank You!", 
                             content="Thanks for your participation! You have been removed from your group.")
@@ -125,25 +136,17 @@ async def reset_users():
 
 @app.get('/record', response_class=HTMLResponse)
 async def record(request: Request):
-    ua = users.alias("alias")
     uid = request.cookies.get('id')
     int_uid = int(uid)
     checker.ping_user(int_uid)
-    
-    query = sqlalchemy.select([ua.c.role]).where(ua.c.id==int_uid)
-    is_buyer = await database.fetch_all(query)
-    is_buyer = is_buyer[0][0]
 
-    role_txt = "Buyer"
-    if is_buyer == 0:
-        role_txt = "Seller"
+    role_txt = checker.get_user_role(int_uid)
+    conv_id = checker.get_user_conv_id(int_uid)
 
-    query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==int_uid)
-    convid = await database.fetch_all(query)
-    convid = convid[0][0]
-    convid = convid % len(items) #Pseudo-randomization; not actually random, but rarely repeats
+    is_buyer = (role_txt == "Buyer")
 
-    item_data = items[convid]
+    item_id = conv_id % len(items) #Pseudo-randomization; not actually random, but rarely repeats
+    item_data = items[item_id]
 
     price_coefficient = 1
     if is_buyer:
@@ -163,7 +166,6 @@ async def record(request: Request):
         template = env.get_template("audioinput_seller.html")
     return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
     item_description=item_description, item_image=image, id=int_uid)
-
 
 manager = ConnectionManager()
 
@@ -185,10 +187,10 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     int_uid = int(uid)
 
     await manager.connect(websocket, int_uid)
-    pid = -1 #partner ID
-    if uid in pairings:
-        pid = pairings[uid]
-        int_pid = int(pid)
+    int_pid = checker.get_user_partner(int_uid)
+    if (int_pid == -1):
+        print("WARNING: No Partner Assigned.")
+
     try:
         while True:
             data = await websocket.receive_bytes()
@@ -240,6 +242,30 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     except WebSocketDisconnect:
         manager.disconnect(int_uid)
 
+@app.websocket("/pairingws/{uid}")
+async def pairing_ws(websocket: WebSocket, uid:int):
+    try:
+        await websocket.accept()
+        paired = checker.create_pairing(uid)
+        val_to_send = 2 # When we terminate, this will be a boolean; until then, send an error code
+        while paired == ConnectionErrors.NO_PARTNER_FOUND:
+            await websocket.send_bytes(val_to_send.to_bytes(1, 'big'))
+            paired = checker.create_pairing(uid)
+            await asyncio.sleep(10)
+            
+        if paired == ConnectionErrors.CONNECTION_TIMEOUT:
+            val_to_send = 0 # Essentially a value of "false"
+        else:
+            val_to_send = 1 # bool val = True
+
+        await websocket.send_bytes(val_to_send.to_bytes(1, 'big'))
+
+        
+
+    except WebSocketDisconnect:
+        # The user disconnected.
+        checker.unsafe_delete_user(uid)
+
 async def new_user_info():
     #No need to create a new id, because the db creates them automatically   
     query = users.select()
@@ -266,8 +292,16 @@ async def new_user_info():
     return (0, maxID + 1)
 
 async def remove_user(uid: int):
-    temp = 0
-    temp += 3
+    checker.safe_delete_user(uid)
+
+async def add_pairing_checker(uid: int) -> bool:
+    new_conv_id = checker.create_pairing(uid)
+    if new_conv_id == -1:
+        # No pairing could be found
+        return False
+    else:
+        # A pairing was found! We aren't doing much with the convid, though
+        return True
 
 async def add_pairing(uid: int) -> bool:
     ua = users.alias("alias")
@@ -292,12 +326,6 @@ async def add_pairing(uid: int) -> bool:
         pairings[ids[1][0]] = ids[0][0]
     return True
 
-# This is the permanently running function that checks which users have timed out.
-async def periodic_check_user_disconnects():
-    print("Starting the checking process")
-    while True:
-        await asyncio.sleep(300)
-        print("The thread is checking for disconnected users.")
 
 # TODO:
 # Change the button image from a play button to a pause button while the audio plays, then change back when it stops

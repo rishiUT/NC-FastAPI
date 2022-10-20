@@ -10,7 +10,7 @@ import databases
 from connectionmanager import ConnectionManager
 import json
 import datetime
-from disconnect import DisconnectChecker, ConnectionErrors
+from disconnect import DisconnectChecker as UserManager, ConnectionErrors, PingErrors
 import threading
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
@@ -42,7 +42,7 @@ class User(BaseModel):
 TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.",
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
 
-checker = DisconnectChecker()
+checker = UserManager()
 
 with open('static/filtered_train.json') as item_file:
     items = json.load(item_file)
@@ -86,7 +86,6 @@ async def start(request: Request, response: Response):
         pos, conv = await new_user_info()
         query = users.insert().values(role=pos, conversationid=conv, messagecount=0)
         last_record_id = await database.execute(query)
-        print(database_lock.locked())
         print("Releasing lock")
         database_lock.release()
 
@@ -138,34 +137,48 @@ async def reset_users():
 async def record(request: Request):
     uid = request.cookies.get('id')
     int_uid = int(uid)
-    checker.ping_user(int_uid)
+    keepalive = checker.ping_user(int_uid)
 
-    role_txt = checker.get_user_role(int_uid)
-    conv_id = checker.get_user_conv_id(int_uid)
+    if keepalive == PingErrors.NORMAL:
+        role_txt = checker.get_user_role(int_uid)
+        conv_id = checker.get_user_conv_id(int_uid)
 
-    is_buyer = (role_txt == "Buyer")
+        is_buyer = (role_txt == "Buyer")
 
-    item_id = conv_id % len(items) #Pseudo-randomization; not actually random, but rarely repeats
-    item_data = items[item_id]
+        item_id = conv_id % len(items) #Pseudo-randomization; not actually random, but rarely repeats
+        item_data = items[item_id]
 
-    price_coefficient = 1
-    if is_buyer:
-        price_coefficient = 0.8
-    item_price = item_data['Price'] * price_coefficient
+        price_coefficient = 1
+        if is_buyer:
+            price_coefficient = 0.8
+        item_price = item_data['Price'] * price_coefficient
 
-    item_description = item_data['Description'][0]
+        item_description = item_data['Description'][0]
 
-    image = None 
-    if len(item_data['Images']):
-        image = "/static/images/" + item_data['Images'][0]
+        image = None 
+        if len(item_data['Images']):
+            image = "/static/images/" + item_data['Images'][0]
+        else:
+            image = None
+        if (is_buyer):
+            template = env.get_template("audioinput_buyer.html")
+        else:
+            template = env.get_template("audioinput_seller.html")
+        return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
+        item_description=item_description, item_image=image, id=int_uid)
     else:
-        image = None
-    if (is_buyer):
-        template = env.get_template("audioinput_buyer.html")
+        return handle_ping_errors(keepalive)
+
+@app.get('/error/{status}', response_class=HTMLResponse)
+def handle_ping_errors(status: PingErrors):
+    template = env.get_template("default.html")
+    if (status == PingErrors.USER_DISCONNECT):
+        return template.render(title="Record Audio", content="Sorry, it seems you timed out. Please try again later.")
+    elif (status == PingErrors.PARTNER_DISCONNECT):
+        return template.render(title="Record Audio", content="Sorry, it seems your partner disconnected. Please try again later.")
     else:
-        template = env.get_template("audioinput_seller.html")
-    return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
-    item_description=item_description, item_image=image, id=int_uid)
+        print("There is an unexpected ping error")
+        return template.render(title="Record Audio", content="Sorry, it seems something unexpected happened. Please try again later.")
 
 manager = ConnectionManager()
 
@@ -195,49 +208,52 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
         while True:
             data = await websocket.receive_bytes()
             keepalive = checker.ping_user(int_uid)
-            identifier = data[-1]
-            remaining_data = data[:-1] #Strip off last byte
+            if keepalive == PingErrors.NORMAL:
+                identifier = data[-1]
+                remaining_data = data[:-1] #Strip off last byte
 
-            print(identifier)
-            print(remaining_data[-1])
-            if(identifier == 49) :
-                print(bytes([identifier]))
+                print(identifier)
+                print(remaining_data[-1])
+                if(identifier == 49) :
+                    print(bytes([identifier]))
 
-                timestamp = datetime.datetime.now()
-                temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
-                file_name = ""
-                for c in temp:
-                    if c == ' ':
-                        file_name += "_"
-                    elif c == ':':
-                        file_name += "-"
-                    else:
-                        file_name += c
-                print(file_name)
-                with open(file_name, "wb") as file1:
-                    file1.write(remaining_data)
-                    file1.close()
-            
-                await manager.send_partner_message(data, int_pid)
-            elif (identifier == 50):
-                print("This is an offer")
-                bytestring = remaining_data.decode("utf-8")
-                val = int(bytestring)
-                print(val) #should probably save this somewhere
-                await manager.send_partner_message(data, int_pid)
-            elif (identifier == 51):
-                print("Response received")
-                bytestring = remaining_data.decode("utf-8")
-                val = int(bytestring)
-                response = bool(val)
-                print(response) #should probably save this somewhere too
-                # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
-                await manager.send_partner_message(data, int_pid)
-            elif (identifier == 0):
-                print("Unexpected behavior!")
-            else :
-                print(bytes([identifier]))
-                print("This is not a audio message")
+                    timestamp = datetime.datetime.now()
+                    temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
+                    file_name = ""
+                    for c in temp:
+                        if c == ' ':
+                            file_name += "_"
+                        elif c == ':':
+                            file_name += "-"
+                        else:
+                            file_name += c
+                    print(file_name)
+                    with open(file_name, "wb") as file1:
+                        file1.write(remaining_data)
+                        file1.close()
+                
+                    await manager.send_partner_message(data, int_pid)
+                elif (identifier == 50):
+                    print("This is an offer")
+                    bytestring = remaining_data.decode("utf-8")
+                    val = int(bytestring)
+                    print(val) #should probably save this somewhere
+                    await manager.send_partner_message(data, int_pid)
+                elif (identifier == 51):
+                    print("Response received")
+                    bytestring = remaining_data.decode("utf-8")
+                    val = int(bytestring)
+                    response = bool(val)
+                    print(response) #should probably save this somewhere too
+                    # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
+                    await manager.send_partner_message(data, int_pid)
+                elif (identifier == 0):
+                    print("Unexpected behavior!")
+                else :
+                    print(bytes([identifier]))
+                    print("This is not a audio message")
+            else:
+                await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)
 
     except WebSocketDisconnect:
         manager.disconnect(int_uid)
@@ -251,7 +267,7 @@ async def pairing_ws(websocket: WebSocket, uid:int):
         while paired == ConnectionErrors.NO_PARTNER_FOUND:
             await websocket.send_bytes(val_to_send.to_bytes(1, 'big'))
             paired = checker.create_pairing(uid)
-            await asyncio.sleep(10)
+            await asyncio.sleep(2)
             
         if paired == ConnectionErrors.CONNECTION_TIMEOUT:
             val_to_send = 0 # Essentially a value of "false"

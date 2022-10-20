@@ -201,6 +201,9 @@ navigator.mediaDevices.getUserMedia(audioIN)
                         keyboard: false
                     })
                     myModal.show();
+                } else if (identifier > 0 && identifier < 5) {
+                    // This is an error code.
+                    window.location.replace('/error/' + identifier)
                 }
             });           
         };

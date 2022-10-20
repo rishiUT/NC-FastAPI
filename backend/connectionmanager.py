@@ -16,3 +16,7 @@ class ConnectionManager:
         print(self.active_connections.keys())
         if pid != -1:
             await self.active_connections.get(pid).send_bytes(message)
+
+    async def send_self_message(self, message: bytes, uid: int):
+        if uid != -1:
+            await self.active_connections.get(uid).send_bytes(message)

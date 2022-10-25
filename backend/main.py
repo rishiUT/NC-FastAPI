@@ -64,8 +64,6 @@ async def shutdown_event():
     await reset_users()
     await database.disconnect()
 
-pairings = {}
-
 @app.get('/', response_class=HTMLResponse)
 @app.get('/home', response_class=HTMLResponse)
 async def home(request: Request, response: Response):
@@ -170,12 +168,21 @@ async def record(request: Request):
         return handle_ping_errors(keepalive)
 
 @app.get('/error/{status}', response_class=HTMLResponse)
-def handle_ping_errors(status: PingErrors):
+def handle_ping_errors(status: PingErrors, request: Request, response: Response):
+    uid = request.cookies.get('id')
+
+    if uid:    
+        response.delete_cookie('id')
+        int_uid = int(uid)
+        remove_user(int_uid)
+
     template = env.get_template("default.html")
     if (status == PingErrors.USER_DISCONNECT):
-        return template.render(title="Record Audio", content="Sorry, it seems you timed out. Please try again later.")
+        return template.render(title="Timed Out", content="Sorry, it seems you timed out. Please try again later.")
     elif (status == PingErrors.PARTNER_DISCONNECT):
-        return template.render(title="Record Audio", content="Sorry, it seems your partner disconnected. Please try again later.")
+        return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. You will still be paid, but please try again later.")
+    elif (status == PingErrors.PARTNER_DISCONNECT_UNPAID):
+        return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. Please try again later.")
     else:
         print("There is an unexpected ping error")
         return template.render(title="Record Audio", content="Sorry, it seems something unexpected happened. Please try again later.")
@@ -204,59 +211,79 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     if (int_pid == -1):
         print("WARNING: No Partner Assigned.")
 
-    try:
-        while True:
-            data = await websocket.receive_bytes()
-            keepalive = checker.ping_user(int_uid)
-            if keepalive == PingErrors.NORMAL:
-                identifier = data[-1]
-                remaining_data = data[:-1] #Strip off last byte
+    # Don't start until both users have joined the conversation
+    # If the partner hasn't activated their websocket within 10 seconds, go back to the pairing
+    import time
+    start_time = int(time.time())
+    while not manager.partner_connected(int_pid) and (start_time + 20) > int(time.time()):
+        print("The partner hasn't connected yet")
+        await asyncio.sleep(2)
 
-                print(identifier)
-                print(remaining_data[-1])
-                if(identifier == 49) :
-                    print(bytes([identifier]))
+    if not manager.partner_connected(int_pid):
+        print("Partner did not connect in time.")
+        error_code = PingErrors.PARTNER_DISCONNECT_UNPAID
+        await manager.send_self_message(error_code.to_bytes(1, 'big'), int_uid)
+    else:
+        # Once users reach this point, they get paid for their effort.
+        # If we want to change where this happens, we can.
+        checker.user_start_conv(int_uid)
+        # Send a message to the user allowing them to start recording.
+        start_code = PingErrors.NORMAL
+        await manager.send_self_message(start_code.to_bytes(1, 'big'), int_uid)
 
-                    timestamp = datetime.datetime.now()
-                    temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
-                    file_name = ""
-                    for c in temp:
-                        if c == ' ':
-                            file_name += "_"
-                        elif c == ':':
-                            file_name += "-"
-                        else:
-                            file_name += c
-                    print(file_name)
-                    with open(file_name, "wb") as file1:
-                        file1.write(remaining_data)
-                        file1.close()
-                
-                    await manager.send_partner_message(data, int_pid)
-                elif (identifier == 50):
-                    print("This is an offer")
-                    bytestring = remaining_data.decode("utf-8")
-                    val = int(bytestring)
-                    print(val) #should probably save this somewhere
-                    await manager.send_partner_message(data, int_pid)
-                elif (identifier == 51):
-                    print("Response received")
-                    bytestring = remaining_data.decode("utf-8")
-                    val = int(bytestring)
-                    response = bool(val)
-                    print(response) #should probably save this somewhere too
-                    # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
-                    await manager.send_partner_message(data, int_pid)
-                elif (identifier == 0):
-                    print("Unexpected behavior!")
-                else :
-                    print(bytes([identifier]))
-                    print("This is not a audio message")
-            else:
-                await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)
+        try:
+            while True:
+                data = await websocket.receive_bytes()
+                keepalive = checker.ping_user(int_uid)
+                if keepalive == PingErrors.NORMAL:
+                    identifier = data[-1]
+                    remaining_data = data[:-1] #Strip off last byte
 
-    except WebSocketDisconnect:
-        manager.disconnect(int_uid)
+                    print(identifier)
+                    print(remaining_data[-1])
+                    if(identifier == 49) :
+                        print(bytes([identifier]))
+
+                        timestamp = datetime.datetime.now()
+                        temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
+                        file_name = ""
+                        for c in temp:
+                            if c == ' ':
+                                file_name += "_"
+                            elif c == ':':
+                                file_name += "-"
+                            else:
+                                file_name += c
+                        print(file_name)
+                        with open(file_name, "wb") as file1:
+                            file1.write(remaining_data)
+                            file1.close()
+                    
+                        await manager.send_partner_message(data, int_pid)
+                    elif (identifier == 50):
+                        print("This is an offer")
+                        bytestring = remaining_data.decode("utf-8")
+                        val = int(bytestring)
+                        print(val) #should probably save this somewhere
+                        await manager.send_partner_message(data, int_pid)
+                    elif (identifier == 51):
+                        print("Response received")
+                        bytestring = remaining_data.decode("utf-8")
+                        val = int(bytestring)
+                        response = bool(val)
+                        print(response) #should probably save this somewhere too
+                        # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
+                        await manager.send_partner_message(data, int_pid)
+                    elif (identifier == 0):
+                        print("Unexpected behavior!")
+                    else :
+                        print(bytes([identifier]))
+                        print("This is not a audio message")
+                else:
+                    await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)
+
+        except WebSocketDisconnect:
+            manager.disconnect(int_uid)
 
 @app.websocket("/pairingws/{uid}")
 async def pairing_ws(websocket: WebSocket, uid:int):
@@ -318,30 +345,6 @@ async def add_pairing_checker(uid: int) -> bool:
     else:
         # A pairing was found! We aren't doing much with the convid, though
         return True
-
-async def add_pairing(uid: int) -> bool:
-    ua = users.alias("alias")
-    query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
-    convid = await database.fetch_all(query)
-    convid = convid[0][0]
-    query = sqlalchemy.select([ua.c.id]).where(ua.c.conversationid==convid)
-    ids = await database.fetch_all(query)
-    if len(ids) < 2:
-        #Pairing fails, return some error
-        return False
-    elif ids[0][0] in pairings or ids[1][0] in pairings:
-        if ids[0][0] in pairings and ids[1][0] in pairings:
-            #Pairing unnecessary, it's already in there
-            return True
-        else:
-            #Something has gone wrong.
-            return False
-    else:
-        #We have two unpaired elements!
-        pairings[ids[0][0]] = ids[1][0]
-        pairings[ids[1][0]] = ids[0][0]
-    return True
-
 
 # TODO:
 # Change the button image from a play button to a pause button while the audio plays, then change back when it stops

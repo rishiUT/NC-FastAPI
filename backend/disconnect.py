@@ -19,6 +19,7 @@ class PingErrors(Enum):
     NORMAL = 1
     USER_DISCONNECT = 2 # This user disconnected
     PARTNER_DISCONNECT = 3 # The user's partner disconnected
+    PARTNER_DISCONNECT_UNPAID = 4 # The user's partner disconnected before any communication occurred
 
 class ConnectionErrors(Enum):
     NO_PARTNER_FOUND = -1
@@ -33,6 +34,7 @@ class User:
         self.status = Statuses.CONNECTING
         self.conv_id = -1
         self.role = "-"
+        self.started_conv = False
 
     def add_partner(self, partner_id):
         self.partner_id = partner_id
@@ -77,6 +79,12 @@ class User:
 
     def check_connection_failure(self):
         return (self.status == Statuses.CONNECTION_FAILED)
+    
+    def started_conversation(self):
+        return self.started_conv
+
+    def start_conversation(self):
+        self.started_conv = True
 
 class DisconnectChecker:
     def __init__(self):
@@ -153,6 +161,10 @@ class DisconnectChecker:
         else:
             print("WARNING: pairing a user that already had a partner")
 
+    def user_start_conv(self, uid: int):
+        curr_user = self.users[uid]
+        curr_user.start_conversation()        
+
     # Remove the user from the "current users" list once they complete the task
     def safe_delete_user(self, uid: int):
         print("User " + str(uid) + " has completed the task! Congratulations!")
@@ -193,7 +205,10 @@ class DisconnectChecker:
 
             if curr_user.check_connection_failure():
                 print("The user's partner has failed. Re-pair this user.")
-                return PingErrors.PARTNER_DISCONNECT
+                if curr_user.started_conversation():
+                    return PingErrors.PARTNER_DISCONNECT
+                else:
+                    return PingErrors.PARTNER_DISCONNECT_UNPAID # The conversation hasn't started yet, so they aren't paid for anything.
 
             return PingErrors.NORMAL
 

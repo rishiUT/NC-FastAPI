@@ -37,11 +37,11 @@
         <br>
         <p><strong>Send a Message:</strong></p>
         <div class="panel panel-default d-flex align-items-center">
-          <button id="btnRecord" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" title="Hold to Record"><i class="bi-mic"></i></button>
+          <button id="btnRecord" class="btn btn-primary btn-lg disabled" data-bs-toggle="tooltip" title="Hold to Record"><i class="bi-mic"></i></button>
           <!--for recording-->
           <audio muted></audio>
           <audio id="audioPlay" controls></audio>
-          <button id="btnsend"  class="btn btn-primary btn-lg" data-id={{id}} data-role={{role}} data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
+          <button id="btnsend"  class="btn btn-primary btn-lg disabled" data-id={{id}} data-role={{role}} data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
         </div>
         <audio id="partnerAudio"></audio>
       </div>
@@ -67,7 +67,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="accept">Accept</button>
         <button type="button" class="btn btn-secondary" id="decline">Decline</button>
-        <button id="btnSubmit" class="button-primary align-items-center" hidden>Submit</button>
+        <button id="btnSubmit" class="button-primary align-items-center disabled" hidden>Submit</button>
       </div>
     </div>
   </div>

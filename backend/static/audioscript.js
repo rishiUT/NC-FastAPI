@@ -59,12 +59,17 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
         // Start event
         record.onmousedown = function (ev) {
+            record.classList.remove('btn-primary')
+            record.classList.add('btn-success')
             mediaRecorder.start(ev);
             // console.log(mediaRecorder.state);
         }
 
         // Stop event
         record.addEventListener('mouseup', function (ev) {
+            record.classList.remove('btn-success')
+            record.classList.add('btn-primary')
+            send.classList.remove('disabled');
             mediaRecorder.stop();
             // console.log(mediaRecorder.state);
         });
@@ -72,6 +77,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Send event
         send.addEventListener('click', function (ev) {
             sendMessage()
+            send.classList.add('disabled');
+            submit.classList.remove('disabled');
             // console.log(mediaRecorder.state);
         });
         // If audio data available then push 
@@ -201,7 +208,10 @@ navigator.mediaDevices.getUserMedia(audioIN)
                         keyboard: false
                     })
                     myModal.show();
-                } else if (identifier > 0 && identifier < 5) {
+                } else if (identifier == 1) {
+                    // This tells us the situation is normal. Make sure the user can send messages.
+                    record.classList.remove('disabled');
+                }else if (identifier > 1 && identifier < 5) {
                     // This is an error code.
                     window.location.replace('/error/' + identifier)
                 }
@@ -224,6 +234,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             var button = document.createElement("button");
             button.innerHTML = "Play";
             let audioSrc = playAudio.src;
+            playAudio.src = '';
             button.dataset.audioLink = audioSrc
             button.addEventListener('click', function(ev) {
                 console.log("Play audio");

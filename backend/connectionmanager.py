@@ -12,6 +12,12 @@ class ConnectionManager:
     def disconnect(self, id: int):
         self.active_connections.pop(id)
 
+    def partner_connected(self, pid: int):
+        if pid in self.active_connections:
+            return True
+        else:
+            return False
+
     async def send_partner_message(self, message: bytes, pid: int):
         print(self.active_connections.keys())
         if pid != -1:

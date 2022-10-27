@@ -304,6 +304,14 @@ navigator.mediaDevices.getUserMedia(audioIN)
             // Pass the audio url to the 2nd video tag
             playAudio.src = audioSrc;
         }
+
+        function sendPing() {
+            let arr = new Uint8Array([1]);
+            tosend = arr.buffer;
+            ws.send(tosend);
+        }
+
+        const nIntervID = setInterval(sendPing, 10000);
     })
 
     // Print any errors 

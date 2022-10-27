@@ -25,7 +25,10 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
     sqlalchemy.Column("role", sqlalchemy.Integer),
     sqlalchemy.Column("conversationid", sqlalchemy.Integer),
-    sqlalchemy.Column("messagecount", sqlalchemy.Integer)
+    sqlalchemy.Column("messagecount", sqlalchemy.Integer) # Remove this
+    # sqlalchemy.Column("goal", sqlalchemy.Integer),
+    # sqlalchemy.Column("offer", sqlalchemy.Integer),
+    # sqlalchemy.Column("offeraccepted", sqlalchemy.Boolean)
 )
 
 engine = sqlalchemy.create_engine(
@@ -215,7 +218,9 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     # If the partner hasn't activated their websocket within 10 seconds, go back to the pairing
     import time
     start_time = int(time.time())
-    while not manager.partner_connected(int_pid) and (start_time + 20) > int(time.time()):
+    while not manager.partner_connected(int_pid) and (start_time + checker.conv_start_timeout) > int(time.time()):
+        # The other user hasn't connected yet, but they still haven't timed out
+        # Note that this timeout is usually shorter than the usual timeout
         print("The partner hasn't connected yet")
         await asyncio.sleep(2)
 
@@ -238,9 +243,8 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 if keepalive == PingErrors.NORMAL:
                     identifier = data[-1]
                     remaining_data = data[:-1] #Strip off last byte
-
                     print(identifier)
-                    print(remaining_data[-1])
+                    
                     if(identifier == 49) :
                         print(bytes([identifier]))
 
@@ -276,6 +280,8 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 0):
                         print("Unexpected behavior!")
+                    elif (identifier == 1):
+                        print("Received a ping")
                     else :
                         print(bytes([identifier]))
                         print("This is not a audio message")

@@ -90,8 +90,9 @@ class DisconnectChecker:
     def __init__(self):
         self.users = dict()
         self.last_timeout_check = int(time.time()) # Ensures we only check for timeouts periodically instead of constantly
-        self.timeout_length = 60
+        self.timeout_length = 120
         self.timeout_check_freq = 60
+        self.conv_start_timeout = 20
         self.pairing_count = 0
         self.user_table_lock = threading.Lock()
 

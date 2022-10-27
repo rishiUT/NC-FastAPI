@@ -100,7 +100,7 @@ async def start(request: Request, response: Response):
 
     username = "User " + str(uid)
     template = env.get_template("pairing.html")
-    return template.render(title="Please Wait...", content="Welcome, " + username + "! We're glad you could make it. Please wait; you will be paired with another user shortly.", id=int_uid)
+    return template.render(title="Please Wait...", username=username, id=int_uid)
     
 @app.get('/no_partner', response_class=HTMLResponse)
 async def no_partner_found(request: Request, response: Response):
@@ -295,6 +295,13 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
 async def pairing_ws(websocket: WebSocket, uid:int):
     try:
         await websocket.accept()
+
+        async def read_from_socket(websocket: WebSocket):
+            async for data in websocket.iter_bytes():
+                checker.ping_user(uid)
+
+        asyncio.create_task(read_from_socket(websocket))
+
         paired = checker.create_pairing(uid)
         val_to_send = 2 # When we terminate, this will be a boolean; until then, send an error code
         while paired == ConnectionErrors.NO_PARTNER_FOUND:
@@ -308,8 +315,6 @@ async def pairing_ws(websocket: WebSocket, uid:int):
             val_to_send = 1 # bool val = True
 
         await websocket.send_bytes(val_to_send.to_bytes(1, 'big'))
-
-        
 
     except WebSocketDisconnect:
         # The user disconnected.

@@ -9,6 +9,14 @@ window.addEventListener("load", function () {
     // do things after the DOM loads fully
     console.log("Everything is loaded");
 
+    function sendPing() {
+        let arr = new Uint8Array([1]);
+        tosend = arr.buffer;
+        ws.send(tosend);
+    }
+
+    const nIntervID = setInterval(sendPing, 10000);
+
     let button = document.getElementById('blocked');
 
     var hostname = window.location.hostname;

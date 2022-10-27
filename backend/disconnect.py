@@ -90,6 +90,7 @@ class DisconnectChecker:
     def __init__(self):
         self.users = dict()
         self.last_timeout_check = int(time.time()) # Ensures we only check for timeouts periodically instead of constantly
+        self.pairing_timeout_length = 120
         self.timeout_length = 120
         self.timeout_check_freq = 60
         self.conv_start_timeout = 20
@@ -110,7 +111,7 @@ class DisconnectChecker:
             # This user already has a partner
             print("User has a partner already, user {}".format(curr_user.get_partner()))
             return curr_user.get_conv_id()
-        elif (curr_user.time_since_last_ping(int(time.time())) > self.timeout_length):
+        elif (curr_user.time_since_last_ping(int(time.time())) > self.pairing_timeout_length):
             # This user has been waiting too long. Time to time out.
             print("User timed out.")
             return ConnectionErrors.CONNECTION_TIMEOUT

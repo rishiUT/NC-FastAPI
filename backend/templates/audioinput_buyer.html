@@ -37,7 +37,7 @@
           <table class="table" id="msgtable">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">Timestamp</th>
                 <th scope="col">Sent by:</th>
                 <th scope="col">Button</th>
               </tr>
@@ -54,7 +54,7 @@
           <!--for recording-->
           <audio muted></audio>
           <audio id="audioPlay" controls></audio>
-          <button id="btnsend"  class="btn btn-primary btn-lg disabled" data-id={{id}} data-role={{role}} data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
+          <button id="btnsend"  class="btn btn-primary btn-lg disabled" data-id={{id}} data-role={{role}} data-connected=false data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
         </div>
         <audio id="partnerAudio"></audio>
       </div>
@@ -95,6 +95,46 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="accept">Ok</button>
         <button type="button" class="btn btn-secondary" id="decline" hidden>Hidden</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Another Modal -->
+<div class="modal fade" id="OfferConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Offer this amount?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="OfferConfirmText">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="confirmYes">Yes</button>
+        <button type="button" class="btn btn-secondary" id="confirmNo">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Partner Connecting Modal -->
+<div class="modal fade" id="ConnectingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Please Wait...</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="OfferConfirmText">
+        Your partner is connecting. Please wait.
+      </div>
+      <div class="modal-footer">
       </div>
     </div>
   </div>

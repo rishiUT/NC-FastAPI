@@ -4,6 +4,8 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
+
+var connected = false;
 let audioIN = { audio: true };
 //  audio is true, for recording
 
@@ -44,6 +46,21 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let offer = document.getElementById('offerVal');
         let accept = document.getElementById('accept');
         let decline = document.getElementById('decline');
+        
+        var OfferConfirmModal = new bootstrap.Modal(document.getElementById('OfferConfirmModal'), {
+            backdrop: 'static',
+            keyboard: false
+        })
+
+        var ConnectingModal = new bootstrap.Modal(document.getElementById('ConnectingModal'), {
+            backdrop: 'static',
+            keyboard: false
+        })
+
+        if (!send.dataset.connected) {
+            console.log(send.dataset.connected == false)
+            ConnectingModal.show();
+        }
 
         let selfID = "Self";
         let partnerID = "Partner";
@@ -157,10 +174,11 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 var identifier = finalArray.pop();
                 console.log(identifier);
                 if (identifier == 49) {
+                    var currentDate = new Date();
                     var row = document.createElement("tr");
                     var numChild = document.createElement("th");
                     numChild.className += "scope=\"row\"";
-                    numChild.innerHTML += "0";
+                    numChild.innerHTML += currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
                     row.appendChild(numChild)
 
                     var senderChild = document.createElement("td");
@@ -186,7 +204,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     console.log("Received an offer!");
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
-                    //jQuery('#exampleModalLong').modal('show')
                     document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?";
                     console.log(finalArray);
                     console.log(resultstring);
@@ -195,7 +212,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     })
                     myModal.show();
                 } else if(identifier == 51) {
-                    console.log("Received a response!")
+                    console.log("Received a response!");
+                    OfferConfirmModal.hide();
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var result = parseInt(resultstring);
                     console.log(result);
@@ -205,12 +223,15 @@ navigator.mediaDevices.getUserMedia(audioIN)
                         document.getElementById('modalText').innerHTML = "Your partner accepted the offer!";
                     }
                     var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
+                        backdrop: 'static',
                         keyboard: false
                     })
                     myModal.show();
                 } else if (identifier == 1) {
                     // This tells us the situation is normal. Make sure the user can send messages.
                     record.classList.remove('disabled');
+                    send.dataset.connected = true;
+                    ConnectingModal.hide();
                 }else if (identifier > 1 && identifier < 5) {
                     // This is an error code.
                     window.location.replace('/error/' + identifier)
@@ -220,10 +241,11 @@ navigator.mediaDevices.getUserMedia(audioIN)
         function sendMessage(event) {
             ws.send(recording)
 
+            var currentDate = new Date();
             var row = document.createElement("tr");
             var numChild = document.createElement("th");
             numChild.className += "scope=\"row\"";
-            numChild.innerHTML += "1";
+            numChild.innerHTML += currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
             row.appendChild(numChild)
 
             var senderChild = document.createElement("td");
@@ -250,14 +272,35 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
         // Submit event
         submit.addEventListener('click', function (ev) {
-            console.log("Submitting offer or response!")
+            console.log("Confirming the offer.");
             let val = offer.value;
             console.log(val);
-            val = [val, 2];
-            console.log(val);
-            let data = new Blob(val);
-            ws.send(data)
+
+            var confirm = document.getElementById('confirmYes')
+            confirm.addEventListener('click', function (ev) {
+                console.log("Offer confirmed!");
+                let val = offer.value;
+                val = [val, 2];
+                let data = new Blob(val);
+                ws.send(data)
+                
+                document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...";
+                var confirm = document.getElementById('confirmYes')
+                confirm.remove();
+                var deny = document.getElementById('confirmNo')
+                deny.remove();
+            });
+
+            var deny = document.getElementById('confirmNo')
+            deny.addEventListener('click', function (ev) {
+                console.log("Nevermind.");
+                OfferConfirmModal.hide();
+            });
+
+            document.getElementById('OfferConfirmText').innerHTML = "WARNING: You can only send your partner a single offer. Are you sure you want to offer $" + val + "?";
+            OfferConfirmModal.show();
         });
+
 
         // Accept event
         accept.addEventListener('click', function (ev) {

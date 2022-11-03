@@ -168,16 +168,17 @@ async def record(request: Request):
         return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
         item_description=item_description, item_image=image, id=int_uid)
     else:
-        return handle_ping_errors(keepalive)
+        result = await handle_ping_errors(keepalive)
+        return result
 
 @app.get('/error/{status}', response_class=HTMLResponse)
-def handle_ping_errors(status: PingErrors, request: Request, response: Response):
+async def handle_ping_errors(status: PingErrors, request: Request, response: Response):
     uid = request.cookies.get('id')
 
     if uid:    
         response.delete_cookie('id')
         int_uid = int(uid)
-        remove_user(int_uid)
+        await remove_user(int_uid)
 
     template = env.get_template("default.html")
     if (status == PingErrors.USER_DISCONNECT):
@@ -298,7 +299,10 @@ async def pairing_ws(websocket: WebSocket, uid:int):
 
         async def read_from_socket(websocket: WebSocket):
             async for data in websocket.iter_bytes():
-                checker.ping_user(uid)
+                ping_result = checker.ping_user(uid)
+                if ping_result == PingErrors.USER_DISCONNECT:
+                    val_to_send = 0
+                    await websocket.send_bytes(val_to_send.to_bytes(1, 'big'))
 
         asyncio.create_task(read_from_socket(websocket))
 

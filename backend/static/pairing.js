@@ -51,6 +51,7 @@ window.addEventListener("load", function () {
 
             if (identifier == 1) {
                 var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
+                    backdrop: 'static',
                     keyboard: false
                 });
                 

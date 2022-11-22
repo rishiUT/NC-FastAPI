@@ -12,6 +12,7 @@ import json
 import datetime
 from disconnect import DisconnectChecker as UserManager, ConnectionErrors, PingErrors
 import threading
+from debughelper import DebugPrinter
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
 DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc3"
@@ -55,6 +56,10 @@ TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close 
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
 
 checker = UserManager()
+printer = DebugPrinter()
+printer.set_output_file_name("debug_output.txt")
+printer.print("Starting Server")
+checker.add_debug_printer(printer)
 
 with open('static/filtered_train.json') as item_file:
     items = json.load(item_file)
@@ -65,6 +70,7 @@ env = Environment(
     loader=PackageLoader("ncserver"),
     autoescape=select_autoescape()
 )
+
 
 @app.on_event("startup")
 async def startup():
@@ -93,12 +99,12 @@ async def home(request: Request, response: Response):
 async def start(request: Request, response: Response):
     uid = request.cookies.get('id')
     if not uid:
-        print("acquiring lock")
+        printer.print("acquiring lock")
         database_lock.acquire()    
         query = users.insert().values(role=-1, partnerid=-1, mturkid=-1, partnermturkid=-1, conversationid=-1,
                                         itemid=-1, goal=-1, offer=-1, offeraccepted=False)
         last_record_id = await database.execute(query)
-        print("Releasing lock")
+        printer.print("Releasing lock")
         database_lock.release()
 
         uid = last_record_id
@@ -148,24 +154,24 @@ async def reset_users():
 async def print_user_in_database(uid: int):
     query = users.select().where(users.c.id==uid)
     info = await database.fetch_all(query)
-    print(uid)
+    printer.print(uid)
 
     for user in info:
-        print(user)
-        print("id: " + str(user.id))
-        print("partnerid: " + str(user.partnerid))
-        print("mturkid: " + str(user.mturkid))
-        print("partnermturkid: " + str(user.partnermturkid))
-        print("conversationid: " + str(user.conversationid))
-        print("role: " + str(user.role))
-        print("itemid: " + str(user.itemid))
-        print("goal: " + str(user.goal))
-        print("offer: " + str(user.offer))
-        print("offeraccepted: " + str(user.offeraccepted))
+        printer.print(user)
+        printer.print("id: " + str(user.id))
+        printer.print("partnerid: " + str(user.partnerid))
+        printer.print("mturkid: " + str(user.mturkid))
+        printer.print("partnermturkid: " + str(user.partnermturkid))
+        printer.print("conversationid: " + str(user.conversationid))
+        printer.print("role: " + str(user.role))
+        printer.print("itemid: " + str(user.itemid))
+        printer.print("goal: " + str(user.goal))
+        printer.print("offer: " + str(user.offer))
+        printer.print("offeraccepted: " + str(user.offeraccepted))
 
 async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_id: int, item_price: int):
     # Save all this information into the database
-    print("acquiring lock")
+    printer.print("acquiring lock")
     database_lock.acquire()
     query = sqlalchemy.update(users)
     query = query.where(users.c.id == uid)
@@ -174,7 +180,7 @@ async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_i
 
     await print_user_in_database(uid)
 
-    print("Releasing lock")
+    printer.print("Releasing lock")
     database_lock.release()
 
 async def get_max_conv_id():
@@ -250,7 +256,7 @@ async def handle_ping_errors(status: PingErrors, request: Request, response: Res
     elif (status == PingErrors.PARTNER_DISCONNECT_UNPAID):
         return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. Please try again later.")
     else:
-        print("There is an unexpected ping error")
+        printer.print("There is an unexpected ping error")
         return template.render(title="Record Audio", content="Sorry, it seems something unexpected happened. Please try again later.")
 
 manager = ConnectionManager()
@@ -275,7 +281,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     await manager.connect(websocket, int_uid)
     int_pid = checker.get_user_partner(int_uid)
     if (int_pid == -1):
-        print("WARNING: No Partner Assigned.")
+        printer.print("WARNING: No Partner Assigned.")
 
     # Don't start until both users have joined the conversation
     # If the partner hasn't activated their websocket within 10 seconds, go back to the pairing
@@ -284,11 +290,11 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     while not manager.partner_connected(int_pid) and (start_time + checker.conv_start_timeout) > int(time.time()):
         # The other user hasn't connected yet, but they still haven't timed out
         # Note that this timeout is usually shorter than the usual timeout
-        print("The partner hasn't connected yet")
+        printer.print("The partner hasn't connected yet")
         await asyncio.sleep(2)
 
     if not manager.partner_connected(int_pid):
-        print("Partner did not connect in time.")
+        printer.print("Partner did not connect in time.")
         error_code = PingErrors.PARTNER_DISCONNECT_UNPAID
         await manager.send_self_message(error_code.to_bytes(1, 'big'), int_uid)
     else:
@@ -306,10 +312,10 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 if keepalive == PingErrors.NORMAL:
                     identifier = data[-1]
                     remaining_data = data[:-1] #Strip off last byte
-                    print(identifier)
+                    printer.print(identifier)
                     
                     if(identifier == 49) :
-                        print(bytes([identifier]))
+                        printer.print(bytes([identifier]))
 
                         timestamp = datetime.datetime.now()
                         temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
@@ -321,18 +327,18 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                                 file_name += "-"
                             else:
                                 file_name += c
-                        print(file_name)
+                        printer.print(file_name)
                         with open(file_name, "wb") as file1:
                             file1.write(remaining_data)
                             file1.close()
                     
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 50):
-                        print("This is an offer")
+                        printer.print("This is an offer")
                         bytestring = remaining_data.decode("utf-8")
                         val = int(bytestring)
-                        print(val) #should probably save this somewhere
-                        print("acquiring lock")
+                        printer.print(val) #should probably save this somewhere
+                        printer.print("acquiring lock")
                         database_lock.acquire()
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_uid)
@@ -347,16 +353,16 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         await print_user_in_database(int_uid)
                         await print_user_in_database(int_pid)
 
-                        print("Releasing lock")
+                        printer.print("Releasing lock")
                         database_lock.release()
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 51):
-                        print("Response received")
+                        printer.print("Response received")
                         bytestring = remaining_data.decode("utf-8")
                         val = int(bytestring)
                         response = bool(val)
-                        print(response) #should probably save this somewhere too
-                        print("acquiring lock")
+                        printer.print(response) #should probably save this somewhere too
+                        printer.print("acquiring lock")
                         database_lock.acquire()
 
                         query = sqlalchemy.update(users)
@@ -372,17 +378,17 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         await print_user_in_database(int_uid)
                         await print_user_in_database(int_pid)
 
-                        print("Releasing lock")
+                        printer.print("Releasing lock")
                         database_lock.release()
                         # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 0):
-                        print("Unexpected behavior!")
+                        printer.print("Unexpected behavior!")
                     elif (identifier == 1):
-                        print("Received a ping")
+                        printer.print("Received a ping")
                     else :
-                        print(bytes([identifier]))
-                        print("This is not a audio message")
+                        printer.print(bytes([identifier]))
+                        printer.print("This is not a audio message")
                 else:
                     await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)
 

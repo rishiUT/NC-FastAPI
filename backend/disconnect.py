@@ -1,6 +1,7 @@
 from enum import IntEnum as Enum
 import time
 import threading
+from debughelper import DebugPrinter
  
 class PartnerStatuses(Enum):
     UNPAIRED = 1
@@ -96,15 +97,19 @@ class DisconnectChecker:
         self.conv_start_timeout = 20
         self.pairing_count = 0
         self.user_table_lock = threading.Lock()
+        self.printer = None
+
+    def add_debug_printer(self, printer: DebugPrinter):
+        self.printer = printer
 
     def set_pairing_count(self, pairing_count: int):
         self.pairing_count = pairing_count
 
     # Add the user to the table of currently active users
     def initialize_user(self, uid: int):
-        print("Now initializing user with id " + str(uid))
+        self.printer.print("Now initializing user with id " + str(uid))
         self.user_table_lock.acquire()
-        print("Acquired lock in initialize_user")
+        self.printer.print("Acquired lock in initialize_user")
         self.users[uid] = User(uid, int(time.time()))
         self.user_table_lock.release()
 
@@ -112,16 +117,16 @@ class DisconnectChecker:
         curr_user = self.users[uid]
         if curr_user.get_partner() != -1:
             # This user already has a partner
-            print("User has a partner already, user {}".format(curr_user.get_partner()))
+            self.printer.print("User has a partner already, user {}".format(curr_user.get_partner()))
             return curr_user.get_conv_id()
         elif (curr_user.time_since_last_ping(int(time.time())) > self.pairing_timeout_length):
             # This user has been waiting too long. Time to time out.
-            print("User timed out.")
+            self.printer.print("User timed out.")
             return ConnectionErrors.CONNECTION_TIMEOUT
 
-        print("Acquiring lock in create_pairing")
+        self.printer.print("Acquiring lock in create_pairing")
         self.user_table_lock.acquire()
-        print("Acquired lock in create_pairing")
+        self.printer.print("Acquired lock in create_pairing")
         for user_key in self.users:
             user = self.users[user_key]
             if user is not curr_user and user.get_partner() == -1:
@@ -135,12 +140,12 @@ class DisconnectChecker:
                 user.add_role("Buyer")
 
                 self.pairing_count += 1
-                print("Users {} and {} were paired!".format(str(curr_user.get_id()), str(user.get_id())))
+                self.printer.print("Users {} and {} were paired!".format(str(curr_user.get_id()), str(user.get_id())))
                 self.user_table_lock.release()
                 return self.pairing_count - 1
 
         # No unpaired users currently exist
-        print("So far, no partners available.")
+        self.printer.print("So far, no partners available.")
         self.user_table_lock.release()
         return ConnectionErrors.NO_PARTNER_FOUND
 
@@ -156,13 +161,13 @@ class DisconnectChecker:
     # Add a partner for this particular user. Make sure both users have the partner status "paired".
     # NOTE: This function is for internal use only.
     def add_partner(self, uid: int, partner_id: int):
-        print("Adding partner " + str(partner_id) + " to user " + str(uid))
+        self.printer.print("Adding partner " + str(partner_id) + " to user " + str(uid))
         curr_user = self.users[uid]
         if curr_user.get_partner() != -1:
-            print("Adding a partner that didn't exist yet")
+            self.printer.print("Adding a partner that didn't exist yet")
             curr_user.get_add_partner(partner_id)
         else:
-            print("WARNING: pairing a user that already had a partner")
+            self.printer.print("WARNING: pairing a user that already had a partner")
 
     def user_start_conv(self, uid: int):
         curr_user = self.users[uid]
@@ -170,7 +175,7 @@ class DisconnectChecker:
 
     # Remove the user from the "current users" list once they complete the task
     def safe_delete_user(self, uid: int):
-        print("User " + str(uid) + " has completed the task! Congratulations!")
+        self.printer.print("User " + str(uid) + " has completed the task! Congratulations!")
         curr_user = self.users[uid]
         pid = curr_user.get_partner()
         if (pid != -1):
@@ -182,7 +187,7 @@ class DisconnectChecker:
 
     # Remove the user if they have timed out and have likely disconnected. They have not completed the task.
     def unsafe_delete_user(self, uid: int):
-        print("User " + str(uid) + " has timed out.")
+        self.printer.print("User " + str(uid) + " has timed out.")
         curr_user = self.users[uid]
         pid = curr_user.get_partner()
         if (pid != -1):
@@ -196,7 +201,7 @@ class DisconnectChecker:
 
     # update the current user's latest updated time.
     def ping_user(self, uid: int):
-        print("User " + str(uid) + " has pinged the server.")
+        self.printer.print("User " + str(uid) + " has pinged the server.")
 
         if uid in self.users:
             curr_user = self.users[uid]
@@ -207,7 +212,7 @@ class DisconnectChecker:
                 self.check_for_disconnects()
 
             if curr_user.check_connection_failure():
-                print("The user's partner has failed. Re-pair this user.")
+                self.printer.print("The user's partner has failed. Re-pair this user.")
                 if curr_user.started_conversation():
                     return PingErrors.PARTNER_DISCONNECT
                 else:
@@ -215,32 +220,32 @@ class DisconnectChecker:
 
             return PingErrors.NORMAL
 
-        print("The user has previously timed out.")
+        self.printer.print("The user has previously timed out.")
         return PingErrors.USER_DISCONNECT
 
     def print_users(self):
         curr_time = int(time.time())
-        print("Acquiring lock in remove_users")
+        self.printer.print("Acquiring lock in remove_users")
         self.user_table_lock.acquire()
-        print("Acquired lock in remove_users")
+        self.printer.print("Acquired lock in remove_users")
         for key in self.users:
-            print("User " + str(self.users[key].get_id()) + " last pinged " + str(self.users[key].time_since_last_ping(curr_time)) + " seconds ago.")
+            self.printer.print("User " + str(self.users[key].get_id()) + " last pinged " + str(self.users[key].time_since_last_ping(curr_time)) + " seconds ago.")
         self.user_table_lock.release()
 
     # Checks the users table for users who have timed out.
     def check_for_disconnects(self):
-        print("Checking for disconnected users")
+        self.printer.print("Checking for disconnected users")
         curr_time = int(time.time())
         to_remove = []
-        print("Acquiring lock in check_for_disconnects")
+        self.printer.print("Acquiring lock in check_for_disconnects")
         self.user_table_lock.acquire() # When looping through users, make sure nobody edits users
-        print("Acquired lock in check_for_disconnects")
+        self.printer.print("Acquired lock in check_for_disconnects")
         for key in self.users:
             user = self.users[key]
-            print("User " + str(user.get_id()) + " last pinged " + str(user.time_since_last_ping(curr_time)) + " seconds ago.")
+            self.printer.print("User " + str(user.get_id()) + " last pinged " + str(user.time_since_last_ping(curr_time)) + " seconds ago.")
             if (user.time_since_last_ping(curr_time) > self.timeout_length):
                 # The user hasn't responded for 5 minutes or longer.
-                print("User " + str(user.get_id()) + " timed out.")
+                self.printer.print("User " + str(user.get_id()) + " timed out.")
                 to_remove.append(key)
                 # We'll delete these later, when deleting elements won't mess up the dictionary we're looping through
         self.user_table_lock.release()
@@ -249,10 +254,10 @@ class DisconnectChecker:
 
     # Remove a disconnected user from the user table.
     def remove_user(self, uid: int):
-        print("Removing a user from the users table")
-        print("Acquiring lock in remove_users")
+        self.printer.print("Removing a user from the users table")
+        self.printer.print("Acquiring lock in remove_users")
         self.user_table_lock.acquire()
-        print("Acquired lock in remove_users")
+        self.printer.print("Acquired lock in remove_users")
         self.users.pop(uid)
         self.user_table_lock.release()
 

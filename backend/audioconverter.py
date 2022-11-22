@@ -26,4 +26,4 @@ def downgrade_dir_mp3(directory: str):
                 downgrade_audio(video_dir + connector + filename.path, video_dir + connector + "downgraded_" + filename.path)
                 print("Copied to ", video_dir + connector + "downgraded_" + filename.path)
 
-#downgrade_dir_mp3("recordings")
+downgrade_dir_mp3("recordings")

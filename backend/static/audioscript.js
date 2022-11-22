@@ -57,10 +57,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             keyboard: false
         })
 
-        if (!send.dataset.connected) {
-            console.log(send.dataset.connected == false)
-            ConnectingModal.show();
-        }
+        ConnectingModal.show();
 
         let selfID = "Self";
         let partnerID = "Partner";
@@ -117,6 +114,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             websocketname = websocketname + "s";
         }
 
+        //Found on StackOverflow
         function Utf8ArrayToStr(array) {
             var out, i, len, c;
             var char2, char3;
@@ -125,27 +123,27 @@ navigator.mediaDevices.getUserMedia(audioIN)
             len = array.length;
             i = 0;
             while(i < len) {
-            c = array[i++];
-            switch(c >> 4)
-            { 
-              case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
-                // 0xxxxxxx
-                out += String.fromCharCode(c);
-                break;
-              case 12: case 13:
-                // 110x xxxx   10xx xxxx
-                char2 = array[i++];
-                out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F));
-                break;
-              case 14:
-                // 1110 xxxx  10xx xxxx  10xx xxxx
-                char2 = array[i++];
-                char3 = array[i++];
-                out += String.fromCharCode(((c & 0x0F) << 12) |
-                               ((char2 & 0x3F) << 6) |
-                               ((char3 & 0x3F) << 0));
-                break;
-            }
+                c = array[i++];
+                switch(c >> 4)
+                { 
+                case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+                    // 0xxxxxxx
+                    out += String.fromCharCode(c);
+                    break;
+                case 12: case 13:
+                    // 110x xxxx   10xx xxxx
+                    char2 = array[i++];
+                    out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F));
+                    break;
+                case 14:
+                    // 1110 xxxx  10xx xxxx  10xx xxxx
+                    char2 = array[i++];
+                    char3 = array[i++];
+                    out += String.fromCharCode(((c & 0x0F) << 12) |
+                                ((char2 & 0x3F) << 6) |
+                                ((char3 & 0x3F) << 0));
+                    break;
+                }
             }
         
             return out;
@@ -153,6 +151,11 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
         var wsaddr = websocketname + "://" + hostname + "/audiowspaired/" + send.dataset.id;
         var ws = new WebSocket(wsaddr);
+
+        ws.onopen = function(event) {
+            console.log("Opening Websocket")
+        }
+
         ws.onmessage = function(event) {
             incoming_vm = event.data;
 
@@ -228,10 +231,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     })
                     myModal.show();
                 } else if (identifier == 1) {
+                    console.log("Partner connection message received")
                     // This tells us the situation is normal. Make sure the user can send messages.
                     record.classList.remove('disabled');
                     send.dataset.connected = true;
-                    ConnectingModal.hide();
+                    document.getElementById('connectingModalText').innerHTML = "Your partner has connected!";
+                    document.getElementById('connectionComplete').style.visibility = 'visible';
                 }else if (identifier > 1 && identifier < 5) {
                     // This is an error code.
                     window.location.replace('/error/' + identifier)
@@ -269,6 +274,10 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
             document.getElementById('msgbody').appendChild(row);
         }
+
+        document.getElementById('connectionComplete').addEventListener('click', function (ev) {
+            ConnectingModal.hide();
+        });
 
         // Submit event
         submit.addEventListener('click', function (ev) {
@@ -352,6 +361,9 @@ navigator.mediaDevices.getUserMedia(audioIN)
             let arr = new Uint8Array([1]);
             tosend = arr.buffer;
             ws.send(tosend);
+            if (send.dataset.connected == true) {
+                ConnectingModal.hide();
+            }
         }
 
         const nIntervID = setInterval(sendPing, 10000);

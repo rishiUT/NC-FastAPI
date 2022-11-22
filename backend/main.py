@@ -14,7 +14,7 @@ from disconnect import DisconnectChecker as UserManager, ConnectionErrors, PingE
 import threading
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc3"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -23,12 +23,15 @@ users = sqlalchemy.Table(
     "users",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
-    sqlalchemy.Column("role", sqlalchemy.Integer),
+    sqlalchemy.Column("partnerid", sqlalchemy.Integer),
+    sqlalchemy.Column("mturkid", sqlalchemy.Integer),
+    sqlalchemy.Column("partnermturkid", sqlalchemy.Integer),
     sqlalchemy.Column("conversationid", sqlalchemy.Integer),
-    sqlalchemy.Column("messagecount", sqlalchemy.Integer) # Remove this
-    # sqlalchemy.Column("goal", sqlalchemy.Integer),
-    # sqlalchemy.Column("offer", sqlalchemy.Integer),
-    # sqlalchemy.Column("offeraccepted", sqlalchemy.Boolean)
+    sqlalchemy.Column("role", sqlalchemy.Integer),
+    sqlalchemy.Column("itemid", sqlalchemy.Integer),
+    sqlalchemy.Column("goal", sqlalchemy.Integer),
+    sqlalchemy.Column("offer", sqlalchemy.Integer),
+    sqlalchemy.Column("offeraccepted", sqlalchemy.Boolean)
 )
 
 engine = sqlalchemy.create_engine(
@@ -38,9 +41,15 @@ metadata.create_all(engine)
 
 class User(BaseModel):
     id: int
-    role: int
+    partnerid: int
+    mturkid: int
+    partnermturkid: int
     conversationid: int
-    messagecount: int
+    role: int
+    itemid: int
+    goal: int
+    offer: int
+    offeraccepted: bool
 
 TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.",
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
@@ -60,11 +69,13 @@ env = Environment(
 @app.on_event("startup")
 async def startup():
     await database.connect()
+    num_prev_pairings = await get_max_conv_id()
+    num_prev_pairings += 1 # Because we use zero-based indexing
+    checker.set_pairing_count(num_prev_pairings)
     
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    await reset_users()
     await database.disconnect()
 
 @app.get('/', response_class=HTMLResponse)
@@ -84,8 +95,8 @@ async def start(request: Request, response: Response):
     if not uid:
         print("acquiring lock")
         database_lock.acquire()    
-        pos, conv = await new_user_info()
-        query = users.insert().values(role=pos, conversationid=conv, messagecount=0)
+        query = users.insert().values(role=-1, partnerid=-1, mturkid=-1, partnermturkid=-1, conversationid=-1,
+                                        itemid=-1, goal=-1, offer=-1, offeraccepted=False)
         last_record_id = await database.execute(query)
         print("Releasing lock")
         database_lock.release()
@@ -134,6 +145,54 @@ async def reset_users():
     return template.render(title="Database Cleared", 
                             content="The database is empty now.")
 
+async def print_user_in_database(uid: int):
+    query = users.select().where(users.c.id==uid)
+    info = await database.fetch_all(query)
+    print(uid)
+
+    for user in info:
+        print(user)
+        print("id: " + str(user.id))
+        print("partnerid: " + str(user.partnerid))
+        print("mturkid: " + str(user.mturkid))
+        print("partnermturkid: " + str(user.partnermturkid))
+        print("conversationid: " + str(user.conversationid))
+        print("role: " + str(user.role))
+        print("itemid: " + str(user.itemid))
+        print("goal: " + str(user.goal))
+        print("offer: " + str(user.offer))
+        print("offeraccepted: " + str(user.offeraccepted))
+
+async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_id: int, item_price: int):
+    # Save all this information into the database
+    print("acquiring lock")
+    database_lock.acquire()
+    query = sqlalchemy.update(users)
+    query = query.where(users.c.id == uid)
+    query = query.values({"role": role, "partnerid": pid, "conversationid": conv_id, "itemid": item_id, "goal": item_price})
+    await database.execute(query)
+
+    await print_user_in_database(uid)
+
+    print("Releasing lock")
+    database_lock.release()
+
+async def get_max_conv_id():
+    # Get the conversation id from the database with the highest value
+    query = users.select()
+    user_list = await database.fetch_all(query)
+    # Get all users by conversation id
+    convIDs = [user.conversationid for user in user_list]
+
+    maxID = 0
+    for convID in convIDs:
+        # For each conversation id, search users for two matching conversation ids
+        convID = int(convID)
+        if maxID < convID:
+            maxID = convID
+    
+    return maxID
+
 @app.get('/record', response_class=HTMLResponse)
 async def record(request: Request):
     uid = request.cookies.get('id')
@@ -143,6 +202,7 @@ async def record(request: Request):
     if keepalive == PingErrors.NORMAL:
         role_txt = checker.get_user_role(int_uid)
         conv_id = checker.get_user_conv_id(int_uid)
+        partner_id = checker.get_user_partner(int_uid)
 
         is_buyer = (role_txt == "Buyer")
 
@@ -153,6 +213,8 @@ async def record(request: Request):
         if is_buyer:
             price_coefficient = 0.8
         item_price = item_data['Price'] * price_coefficient
+
+        await add_user_conv_info(int_uid, partner_id, conv_id, is_buyer, item_id, item_price)
 
         item_description = item_data['Description'][0]
 
@@ -270,6 +332,23 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         bytestring = remaining_data.decode("utf-8")
                         val = int(bytestring)
                         print(val) #should probably save this somewhere
+                        print("acquiring lock")
+                        database_lock.acquire()
+                        query = sqlalchemy.update(users)
+                        query = query.where(users.c.id == int_uid)
+                        query = query.values({"offer": val})
+                        await database.execute(query)
+
+                        query = sqlalchemy.update(users)
+                        query = query.where(users.c.id == int_pid)
+                        query = query.values({"offer": val})
+                        await database.execute(query)
+
+                        await print_user_in_database(int_uid)
+                        await print_user_in_database(int_pid)
+
+                        print("Releasing lock")
+                        database_lock.release()
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 51):
                         print("Response received")
@@ -277,6 +356,24 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         val = int(bytestring)
                         response = bool(val)
                         print(response) #should probably save this somewhere too
+                        print("acquiring lock")
+                        database_lock.acquire()
+
+                        query = sqlalchemy.update(users)
+                        query = query.where(users.c.id == int_uid)
+                        query = query.values({"offeraccepted": response})
+                        await database.execute(query)
+
+                        query = sqlalchemy.update(users)
+                        query = query.where(users.c.id == int_pid)
+                        query = query.values({"offeraccepted": response})
+                        await database.execute(query)
+
+                        await print_user_in_database(int_uid)
+                        await print_user_in_database(int_pid)
+
+                        print("Releasing lock")
+                        database_lock.release()
                         # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 0):

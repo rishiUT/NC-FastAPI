@@ -97,6 +97,9 @@ class DisconnectChecker:
         self.pairing_count = 0
         self.user_table_lock = threading.Lock()
 
+    def set_pairing_count(self, pairing_count: int):
+        self.pairing_count = pairing_count
+
     # Add the user to the table of currently active users
     def initialize_user(self, uid: int):
         print("Now initializing user with id " + str(uid))
@@ -121,8 +124,6 @@ class DisconnectChecker:
         print("Acquired lock in create_pairing")
         for user_key in self.users:
             user = self.users[user_key]
-            print(user_key)
-            print(user.get_partner())
             if user is not curr_user and user.get_partner() == -1:
                 # This is another unpaired user
                 curr_user.add_partner(user.get_id())

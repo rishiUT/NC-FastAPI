@@ -62,6 +62,24 @@ window.addEventListener("load", function () {
                 cont.addEventListener('click', function (ev) {
                     window.location.replace('/record')
                 });
+
+                var timeleft = 10;
+                
+                function reduce_time() {
+                    if (timeleft > 0) {
+                        var message = "We've found you a partner! Please click the button below within " + timeleft + " seconds to begin."
+                        document.getElementById('modalText').innerHTML = message;
+                        timeleft--;
+                    } else {
+                        // The user didn't click the button fast enough.
+                        console.log("Timed Out");
+                        window.location.replace('/error/2')
+                    }
+                }
+                
+                const connTimeoutIntvl = setInterval(reduce_time, 1000);
+
+            
             } else if (identifier == 0) {
                 console.log("Timed Out");
                 window.location.replace('/no_partner')

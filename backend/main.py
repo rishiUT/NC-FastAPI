@@ -10,9 +10,13 @@ import databases
 from connectionmanager import ConnectionManager
 import json
 import datetime
-from disconnect import DisconnectChecker as UserManager, ConnectionErrors, PingErrors
+from disconnect import DisconnectChecker as UserManager, ConnectionErrors, PingErrors, Message
 import threading
 from debughelper import DebugPrinter
+from cgi import test
+import os
+import glob
+from pydub import AudioSegment
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
 DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc3"
@@ -57,9 +61,15 @@ TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close 
 
 checker = UserManager()
 printer = DebugPrinter()
-printer.set_output_file_name("debug_output.txt")
+
+debug_file = open("debug_log_3.txt", 'a')
+
+printer.set_output_file(debug_file)
 printer.print("Starting Server")
 checker.add_debug_printer(printer)
+
+import sys
+sys.stderr = debug_file
 
 with open('static/filtered_train.json') as item_file:
     items = json.load(item_file)
@@ -86,13 +96,17 @@ async def shutdown_event():
 
 @app.get('/', response_class=HTMLResponse)
 @app.get('/home', response_class=HTMLResponse)
-async def home(request: Request, response: Response):
+async def home(request: Request, response: Response, assignmentId: str="None"):
     uid = request.cookies.get('id')
 
     if uid:    
         response.delete_cookie('id')
-    
-    template = env.get_template("home.html")
+
+    if assignmentId == "ASSIGNMENT_ID_NOT_AVAILABLE":
+        template = env.get_template("home2.html")
+    else:
+        template = env.get_template("home.html")
+
     return template.render(title="Home")
 
 @app.get('/pair', response_class=HTMLResponse)
@@ -108,7 +122,7 @@ async def start(request: Request, response: Response):
         database_lock.release()
 
         uid = last_record_id
-        response.set_cookie('id', uid)
+        response.set_cookie(key='id', value=uid, secure=True, samesite='none')
         checker.initialize_user(uid)
 
         int_uid = uid
@@ -135,7 +149,9 @@ async def no_partner_found(request: Request, response: Response):
 async def self_reset(request: Request, response: Response):
     uid = request.cookies.get('id')
 
-    if uid:    
+    print("in /finish")
+    if uid:
+        print("deleting uid")
         response.delete_cookie('id')
         int_uid = int(uid)
         remove_user(int_uid)
@@ -201,11 +217,14 @@ async def get_max_conv_id():
 
 @app.get('/record', response_class=HTMLResponse)
 async def record(request: Request):
+    printer.print("Setting up chat page")
     uid = request.cookies.get('id')
     int_uid = int(uid)
+    printer.print("getting keepalive")
     keepalive = checker.ping_user(int_uid)
 
     if keepalive == PingErrors.NORMAL:
+        printer.print("keepalive = true")
         role_txt = checker.get_user_role(int_uid)
         conv_id = checker.get_user_conv_id(int_uid)
         partner_id = checker.get_user_partner(int_uid)
@@ -213,6 +232,8 @@ async def record(request: Request):
         is_buyer = (role_txt == "Buyer")
 
         item_id = conv_id % len(items) #Pseudo-randomization; not actually random, but rarely repeats
+        checker.conv_set_item(int_uid, item_id)
+
         item_data = items[item_id]
 
         price_coefficient = 1
@@ -220,11 +241,13 @@ async def record(request: Request):
             price_coefficient = 0.8
         item_price = item_data['Price'] * price_coefficient
 
+        printer.print("adding info to the database")
         await add_user_conv_info(int_uid, partner_id, conv_id, is_buyer, item_id, item_price)
 
         item_description = item_data['Description'][0]
 
         image = None 
+        printer.print("getting image")
         if len(item_data['Images']):
             image = "/static/images/" + item_data['Images'][0]
         else:
@@ -233,6 +256,7 @@ async def record(request: Request):
             template = env.get_template("audioinput_buyer.html")
         else:
             template = env.get_template("audioinput_seller.html")
+            printer.print("Connection page ready and sending")
         return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
         item_description=item_description, item_image=image, id=int_uid)
     else:
@@ -263,6 +287,7 @@ manager = ConnectionManager()
 
 @app.websocket("/audiowspaired/{uid}")
 async def chat_ws_endpoint(websocket: WebSocket, uid:int):
+    printer.print("Websocket connected for chat page")
     ua = users.alias("alias")
     query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
     convid = await database.fetch_all(query)
@@ -314,7 +339,8 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                     remaining_data = data[:-1] #Strip off last byte
                     printer.print(identifier)
                     
-                    if(identifier == 49) :
+                    if(identifier == 49):
+                        # This is a voice message.
                         printer.print(bytes([identifier]))
 
                         timestamp = datetime.datetime.now()
@@ -327,19 +353,39 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                                 file_name += "-"
                             else:
                                 file_name += c
+
+
                         printer.print(file_name)
                         with open(file_name, "wb") as file1:
                             file1.write(remaining_data)
                             file1.close()
-                    
+                        
+                        #audio = AudioSegment.from_file(file_name)
+                        #audio = audio.set_frame_rate(16000)
+                        #audio = audio.set_channels(1)
+                        #audio = audio.set_sample_width(2)
+                        ## simple export
+                        #file_handle = audio.export("downgraded_" + file_name, format="mp3")
+
+                        message = Message()
+                        message.set_timestamp(timestamp)
+                        message.set_filename(file_name)
+                        message.set_sender(int_pid)
+                        checker.conv_add_message(int_uid, message)
+
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 50):
+                        # This is an offer.
                         printer.print("This is an offer")
                         bytestring = remaining_data.decode("utf-8")
                         val = int(bytestring)
+
                         printer.print(val) #should probably save this somewhere
+                        checker.conv_set_offer(int_uid, val)
+
                         printer.print("acquiring lock")
                         database_lock.acquire()
+
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_uid)
                         query = query.values({"offer": val})
@@ -355,13 +401,18 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
 
                         printer.print("Releasing lock")
                         database_lock.release()
+
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 51):
+                        # An offer was either accepted or declined.
                         printer.print("Response received")
                         bytestring = remaining_data.decode("utf-8")
                         val = int(bytestring)
                         response = bool(val)
+
                         printer.print(response) #should probably save this somewhere too
+                        checker.conv_set_offer_accepted(int_uid, response)
+                        
                         printer.print("acquiring lock")
                         database_lock.acquire()
 
@@ -380,6 +431,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
 
                         printer.print("Releasing lock")
                         database_lock.release()
+                        checker.conv_print(int_uid)
                         # checker.safe_delete_user(int_uid) # Could remove user here, but safer to do it in finish page
                         await manager.send_partner_message(data, int_pid)
                     elif (identifier == 0):
@@ -453,6 +505,7 @@ async def new_user_info():
     return (0, maxID + 1)
 
 async def remove_user(uid: int):
+    print("in remove user")
     checker.safe_delete_user(uid)
 
 async def add_pairing_checker(uid: int) -> bool:

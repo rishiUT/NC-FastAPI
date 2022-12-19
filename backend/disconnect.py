@@ -37,7 +37,7 @@ class User:
         self.role = "-"
         self.started_conv = False
 
-    def add_partner(self, partner_id):
+    def add_partner(self, partner_id: int):
         self.partner_id = partner_id
         self.partner_status = PartnerStatuses.PAIRED
         self.status = Statuses.CONNECTED
@@ -59,6 +59,7 @@ class User:
             self.partner_status = PartnerStatuses.DISCONNECTED
             self.status = Statuses.CONNECTION_FAILED
         self.partner_id = -1
+        self.conv_id = -1 # Delete any conversation as well, as it's no longer relevant.
 
     def get_id(self):
         return self.id
@@ -80,6 +81,9 @@ class User:
 
     def check_connection_failure(self):
         return (self.status == Statuses.CONNECTION_FAILED)
+
+    def check_status(self):
+        return self.status
     
     def started_conversation(self):
         return self.started_conv
@@ -87,9 +91,100 @@ class User:
     def start_conversation(self):
         self.started_conv = True
 
+class Message:
+    def __init__(self):
+        self.sender_id = -1
+        self.timestamp = -1
+        self.filename = "unknown"
+
+    def set_timestamp(self, timestamp):
+        self.timestamp = timestamp
+
+    def set_filename(self, name):
+        self.filename = name
+
+    def set_sender(self, id):
+        self.sender_id = id
+
+class Conversation:
+    def __init__(self):
+        self.id = -1
+        self.item_id = -1
+        self.buyer_id = -1
+        self.seller_id = -1
+        self.messages = []
+        self.offer_value = -1
+        self.offer_accepted = False
+
+    def set_id(self, id):
+        self.id = id
+
+    def set_item(self, id):
+        self.item_id = id
+
+    def set_buyer(self, id):
+        self.buyer_id = id
+
+    def set_seller(self, id):
+        self.seller_id = id
+
+    def add_message(self, message):
+        self.messages.append(message)
+    
+    def set_offer(self, val):
+        self.offer_value = val
+
+    def set_accepted(self, offer_acceptance_bool):
+        self.offer_accepted = offer_acceptance_bool
+
+    def print(self):
+        # Print all data to a file. This should be a unique file.
+        print("Printing conversation to a file")
+        file_name = "conversation_"
+        file_name += str(self.id)
+        file_name += ".txt"
+        with open(file_name, "w") as file1:
+            to_print = "Conversation Data for Conversation "
+            to_print += str(self.id)
+            to_print += "\n"
+            file1.write(to_print)
+            to_print = "Negotiation over item "
+            to_print += str(self.item_id)
+            to_print += "\n"
+            file1.write(to_print)
+            to_print = "Buyer has id = "
+            to_print += str(self.buyer_id)
+            to_print += "\n"
+            file1.write(to_print)
+            to_print = "Seller has id = "
+            to_print += str(self.seller_id)
+            to_print += "\n"
+            file1.write(to_print)
+            for message in self.messages:
+                to_print = "Message sent by "
+                to_print += str(message.sender_id)
+                to_print += " at time "
+                to_print += str(message.timestamp)
+                to_print += " saved in file "
+                to_print += str(message.filename)
+                to_print += "\n"
+                file1.write(to_print)
+            to_print = "Amount offered by buyer was "
+            to_print += str(self.offer_value)
+            to_print += "\n"
+            file1.write(to_print)
+            if self.offer_accepted:
+                to_print = "The offer was accepted"
+            else:
+                to_print = "The offer was declined"
+            to_print += "\n"
+            file1.write(to_print)
+            file1.close()
+    
 class DisconnectChecker:
     def __init__(self):
         self.users = dict()
+        self.conversations = dict()
         self.last_timeout_check = int(time.time()) # Ensures we only check for timeouts periodically instead of constantly
         self.pairing_timeout_length = 120
         self.timeout_length = 120
@@ -130,6 +225,12 @@ class DisconnectChecker:
         for user_key in self.users:
             user = self.users[user_key]
             if user is not curr_user and user.get_partner() == -1:
+                new_conv = Conversation()
+                new_conv.set_id(self.pairing_count)
+                new_conv.set_seller(uid)
+                new_conv.set_buyer(user.get_id())
+                self.conversations[self.pairing_count] = new_conv
+                
                 # This is another unpaired user
                 curr_user.add_partner(user.get_id())
                 curr_user.add_conv_id(self.pairing_count)
@@ -158,29 +259,53 @@ class DisconnectChecker:
     def get_user_partner(self, uid:int):
         return self.users[uid].get_partner()
 
-    # Add a partner for this particular user. Make sure both users have the partner status "paired".
-    # NOTE: This function is for internal use only.
-    def add_partner(self, uid: int, partner_id: int):
-        self.printer.print("Adding partner " + str(partner_id) + " to user " + str(uid))
-        curr_user = self.users[uid]
-        if curr_user.get_partner() != -1:
-            self.printer.print("Adding a partner that didn't exist yet")
-            curr_user.get_add_partner(partner_id)
-        else:
-            self.printer.print("WARNING: pairing a user that already had a partner")
-
     def user_start_conv(self, uid: int):
         curr_user = self.users[uid]
-        curr_user.start_conversation()        
+        curr_user.start_conversation()
+
+    def conv_set_item(self, uid: int, item_id: int):
+        user = self.users[uid]
+        conv = self.conversations[user.get_conv_id()]
+        conv.set_item(item_id)
+
+    def conv_set_offer(self, uid: int, offer_val: int):
+        user = self.users[uid]
+        conv = self.conversations[user.get_conv_id()]
+        conv.set_offer(offer_val)
+
+    def conv_set_offer_accepted(self, uid: int, accepted: bool):
+        user = self.users[uid]
+        conv = self.conversations[user.get_conv_id()]
+        conv.set_accepted(accepted)
+
+    def conv_add_message(self, uid: int, message: Message):
+        user = self.users[uid]
+        conv = self.conversations[user.get_conv_id()]
+        conv.add_message(message)
+
+    def conv_print(self, uid: int):
+        user = self.users[uid]
+        conv = self.conversations[user.get_conv_id()]
+        conv.print()
 
     # Remove the user from the "current users" list once they complete the task
     def safe_delete_user(self, uid: int):
         self.printer.print("User " + str(uid) + " has completed the task! Congratulations!")
+        print("User " + str(uid) + " has completed the task! Congratulations!")
         curr_user = self.users[uid]
         pid = curr_user.get_partner()
         if (pid != -1):
+            print("Handling the case where a partner existed")
             partner = self.users[pid]
             partner.remove_partner(True) # The partner's partner succeeded!
+
+            # Note that, to reach this point, this user must have a complete conversation.
+            # We want to print that conversation, then remove it from the list.
+            conv_id = curr_user.get_conv_id()
+            conv = self.conversations[conv_id]
+            conv.print()
+            self.conversations.pop(conv_id)
+            
         # Since the partner's reference to this user was removed,
         # It should be safe to take them out of the users table.
         self.remove_user(uid)
@@ -193,6 +318,9 @@ class DisconnectChecker:
         if (pid != -1):
             partner = self.users[pid]
             partner.remove_partner(False) # The partner's partner failed.
+            # Note that a conversation must have been started, and is no longer relevant.
+            # Remove the conversation. 
+            self.conversations.pop(curr_user.get_conv_id())
         curr_user.disconnect()
         # Since the current user is disconnected, and the partner's reference to this user was removed,
         # It should be safe to take them out of the users table.
@@ -225,9 +353,9 @@ class DisconnectChecker:
 
     def print_users(self):
         curr_time = int(time.time())
-        self.printer.print("Acquiring lock in remove_users")
+        self.printer.print("Acquiring lock in print_users")
         self.user_table_lock.acquire()
-        self.printer.print("Acquired lock in remove_users")
+        self.printer.print("Acquired lock in print_users")
         for key in self.users:
             self.printer.print("User " + str(self.users[key].get_id()) + " last pinged " + str(self.users[key].time_since_last_ping(curr_time)) + " seconds ago.")
         self.user_table_lock.release()

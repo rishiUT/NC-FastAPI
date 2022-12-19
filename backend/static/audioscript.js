@@ -46,6 +46,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let offer = document.getElementById('offerVal');
         let accept = document.getElementById('accept');
         let decline = document.getElementById('decline');
+        console.log(send.dataset.role)
         
         var OfferConfirmModal = new bootstrap.Modal(document.getElementById('OfferConfirmModal'), {
             backdrop: 'static',
@@ -318,7 +319,9 @@ navigator.mediaDevices.getUserMedia(audioIN)
             val = [val, 3];
             console.log(val);
             let data = new Blob(val);
-            ws.send(data)
+            if (send.dataset.role == "Seller") {
+                ws.send(data)
+            }
             window.location.replace('/finish')
         });
         

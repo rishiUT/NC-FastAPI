@@ -149,15 +149,13 @@ async def no_partner_found(request: Request, response: Response):
 async def self_reset(request: Request, response: Response):
     uid = request.cookies.get('id')
 
-    print("in /finish")
     if uid:
-        print("deleting uid")
         response.delete_cookie('id')
         int_uid = int(uid)
         remove_user(int_uid)
     template = env.get_template("default.html")
     return template.render(title="Thank You!", 
-                            content="Thanks for your participation! You have been removed from your group.")
+                            content="Thanks for your participation! If you would like to participate again, please go back to the task start page.")
 
 @app.get('/resetusers', response_class=HTMLResponse)
 async def reset_users():

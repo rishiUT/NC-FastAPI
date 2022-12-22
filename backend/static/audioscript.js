@@ -208,13 +208,28 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     console.log("Received an offer!");
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
-                    document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?";
+                    document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
+                    document.getElementById('modalText').innerHTML += "Time Remaining: 60 seconds";
                     console.log(finalArray);
                     console.log(resultstring);
                     var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
                         keyboard: false
                     })
                     myModal.show();
+
+                    var timeleft = 60
+
+                    function handleTimeout() {
+                        // Get the number of seconds remaining until timeout
+                        timeleft--;
+                        if (timeleft < 0) {
+                            window.location.replace('/error/2') //2 = user disconnect error code
+                        }
+                        document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
+                        document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+                    }
+
+                    const offertimeout = setInterval(handleTimeout, 1000);
                 } else if(identifier == 51) {
                     console.log("Received a response!");
                     OfferConfirmModal.hide();

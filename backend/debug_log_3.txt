@@ -4943,3 +4943,843 @@ acquiring lock
 Releasing lock
 Now initializing user with id 143
 Acquired lock in initialize_user
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 186
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+acquiring lock
+Releasing lock
+Now initializing user with id 187
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+Users 187 and 186 were paired!
+User has a partner already, user 187
+Setting up chat page
+getting keepalive
+User 187 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+187
+<databases.backends.postgres.Record object at 0x7f36342d8220>
+id: 187
+partnerid: 186
+mturkid: -1
+partnermturkid: -1
+conversationid: 1
+role: 0
+itemid: 1
+goal: 200
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+User 186 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+186
+<databases.backends.postgres.Record object at 0x7f363433ec20>
+id: 186
+partnerid: 187
+mturkid: -1
+partnermturkid: -1
+conversationid: 1
+role: 1
+itemid: 1
+goal: 160
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The partner hasn't connected yet
+Websocket connected for chat page
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+50
+This is an offer
+413
+acquiring lock
+186
+<databases.backends.postgres.Record object at 0x7f36342e68b0>
+id: 186
+partnerid: 187
+mturkid: -1
+partnermturkid: -1
+conversationid: 1
+role: 1
+itemid: 1
+goal: 160
+offer: 413
+offeraccepted: False
+187
+<databases.backends.postgres.Record object at 0x7f36342e66d0>
+id: 187
+partnerid: 186
+mturkid: -1
+partnermturkid: -1
+conversationid: 1
+role: 0
+itemid: 1
+goal: 200
+offer: 413
+offeraccepted: False
+Releasing lock
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 186 last pinged 0 seconds ago.
+User 187 last pinged 4 seconds ago.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 186 last pinged 0 seconds ago.
+User 187 last pinged 4 seconds ago.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 186 last pinged 0 seconds ago.
+User 187 last pinged 3 seconds ago.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+1
+Received a ping
+User 186 has pinged the server.
+1
+Received a ping
+User 187 has pinged the server.
+51
+Response received
+True
+acquiring lock
+187
+<databases.backends.postgres.Record object at 0x7f36342f37c0>
+id: 187
+partnerid: 186
+mturkid: -1
+partnermturkid: -1
+conversationid: 1
+role: 0
+itemid: 1
+goal: 200
+offer: 413
+offeraccepted: True
+186
+<databases.backends.postgres.Record object at 0x7f36342f30e0>
+id: 186
+partnerid: 187
+mturkid: -1
+partnermturkid: -1
+conversationid: 1
+role: 1
+itemid: 1
+goal: 160
+offer: 413
+offeraccepted: True
+Releasing lock
+/home/rishi/NC-FastAPI/backend/./main.py:155: RuntimeWarning: coroutine 'remove_user' was never awaited
+  remove_user(int_uid)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 188
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+acquiring lock
+Releasing lock
+Now initializing user with id 189
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+Users 189 and 188 were paired!
+User has a partner already, user 189
+Setting up chat page
+getting keepalive
+User 189 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+189
+<databases.backends.postgres.Record object at 0x7f9f050e4180>
+id: 189
+partnerid: 188
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 0
+itemid: 2
+goal: 3200
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Setting up chat page
+getting keepalive
+User 188 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+188
+<databases.backends.postgres.Record object at 0x7f9f050e4040>
+id: 188
+partnerid: 189
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 1
+itemid: 2
+goal: 2560
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+Websocket connected for chat page
+User 188 has pinged the server.
+50
+This is an offer
+43142
+acquiring lock
+188
+<databases.backends.postgres.Record object at 0x7f9f050f65e0>
+id: 188
+partnerid: 189
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 1
+itemid: 2
+goal: 2560
+offer: 43142
+offeraccepted: False
+189
+<databases.backends.postgres.Record object at 0x7f9f050f64a0>
+id: 189
+partnerid: 188
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 0
+itemid: 2
+goal: 3200
+offer: 43142
+offeraccepted: False
+Releasing lock
+User 188 has pinged the server.
+1
+Received a ping
+User 189 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 189 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 189 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 189 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 188 last pinged 0 seconds ago.
+User 189 last pinged 9 seconds ago.
+1
+Received a ping
+User 189 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 189 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+/home/rishi/NC-FastAPI/backend/./main.py:155: RuntimeWarning: coroutine 'remove_user' was never awaited
+  remove_user(int_uid)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+User 188 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 188 last pinged 0 seconds ago.
+User 189 last pinged 49 seconds ago.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+User 188 has pinged the server.
+1
+Received a ping
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 190
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+acquiring lock
+Releasing lock
+Now initializing user with id 191
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+Users 191 and 190 were paired!
+User has a partner already, user 191
+Setting up chat page
+getting keepalive
+User 191 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+191
+<databases.backends.postgres.Record object at 0x7f6638e363b0>
+id: 191
+partnerid: 190
+mturkid: -1
+partnermturkid: -1
+conversationid: 3
+role: 0
+itemid: 3
+goal: 585
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Setting up chat page
+getting keepalive
+User 190 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+190
+<databases.backends.postgres.Record object at 0x7f6638e36cc0>
+id: 190
+partnerid: 191
+mturkid: -1
+partnermturkid: -1
+conversationid: 3
+role: 1
+itemid: 3
+goal: 468
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+Websocket connected for chat page
+User 190 has pinged the server.
+50
+This is an offer
+3423
+acquiring lock
+190
+<databases.backends.postgres.Record object at 0x7f6638e3eb30>
+id: 190
+partnerid: 191
+mturkid: -1
+partnermturkid: -1
+conversationid: 3
+role: 1
+itemid: 3
+goal: 468
+offer: 3423
+offeraccepted: False
+191
+<databases.backends.postgres.Record object at 0x7f6638e3e9f0>
+id: 191
+partnerid: 190
+mturkid: -1
+partnermturkid: -1
+conversationid: 3
+role: 0
+itemid: 3
+goal: 585
+offer: 3423
+offeraccepted: False
+Releasing lock
+User 190 has pinged the server.
+1
+Received a ping
+User 191 has pinged the server.
+1
+Received a ping
+User 190 has pinged the server.
+1
+Received a ping
+User 191 has pinged the server.
+1
+Received a ping
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 192
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+acquiring lock
+Releasing lock
+Now initializing user with id 193
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+Users 193 and 192 were paired!
+User has a partner already, user 193
+Setting up chat page
+getting keepalive
+User 193 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+193
+<databases.backends.postgres.Record object at 0x7f403320c360>
+id: 193
+partnerid: 192
+mturkid: -1
+partnermturkid: -1
+conversationid: 4
+role: 0
+itemid: 4
+goal: 1000
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+User 192 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+192
+<databases.backends.postgres.Record object at 0x7f403320cf40>
+id: 192
+partnerid: 193
+mturkid: -1
+partnermturkid: -1
+conversationid: 4
+role: 1
+itemid: 4
+goal: 800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The partner hasn't connected yet
+Websocket connected for chat page
+User 193 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+50
+This is an offer
+534523
+acquiring lock
+192
+<databases.backends.postgres.Record object at 0x7f403321fb80>
+id: 192
+partnerid: 193
+mturkid: -1
+partnermturkid: -1
+conversationid: 4
+role: 1
+itemid: 4
+goal: 800
+offer: 534523
+offeraccepted: False
+193
+<databases.backends.postgres.Record object at 0x7f403321fa40>
+id: 193
+partnerid: 192
+mturkid: -1
+partnermturkid: -1
+conversationid: 4
+role: 0
+itemid: 4
+goal: 1000
+offer: 534523
+offeraccepted: False
+Releasing lock
+User 193 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 193 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 193 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 192 last pinged 7 seconds ago.
+User 193 last pinged 0 seconds ago.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 193 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 193 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 193 has pinged the server.
+1
+Received a ping
+User 192 has pinged the server.
+1
+Received a ping
+User 193 has pinged the server.
+1
+Received a ping
+User 193 has completed the task! Congratulations!
+Removing a user from the users table
+Acquiring lock in remove_users
+Acquired lock in remove_users
+User 192 has pinged the server.
+1
+Received a ping
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 194
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+acquiring lock
+Releasing lock
+Now initializing user with id 195
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+Users 195 and 194 were paired!
+User has a partner already, user 195
+Setting up chat page
+getting keepalive
+User 195 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+195
+<databases.backends.postgres.Record object at 0x7f6780820310>
+id: 195
+partnerid: 194
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 0
+itemid: 5
+goal: 18
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Setting up chat page
+getting keepalive
+User 194 has pinged the server.
+keepalive = true
+adding info to the database
+acquiring lock
+194
+<databases.backends.postgres.Record object at 0x7f67808207c0>
+id: 194
+partnerid: 195
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 1
+itemid: 5
+goal: 14
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+Websocket connected for chat page
+User 194 has pinged the server.
+1
+Received a ping
+User 194 has pinged the server.
+50
+This is an offer
+542
+acquiring lock
+194
+<databases.backends.postgres.Record object at 0x7f6780833860>
+id: 194
+partnerid: 195
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 1
+itemid: 5
+goal: 14
+offer: 542
+offeraccepted: False
+195
+<databases.backends.postgres.Record object at 0x7f6780833720>
+id: 195
+partnerid: 194
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 0
+itemid: 5
+goal: 18
+offer: 542
+offeraccepted: False
+Releasing lock
+User 195 has pinged the server.
+1
+Received a ping
+User 194 has pinged the server.
+1
+Received a ping
+User 195 has pinged the server.
+1
+Received a ping
+User 194 has pinged the server.
+1
+Received a ping
+User 195 has pinged the server.
+1
+Received a ping
+User 194 has pinged the server.
+Checking for disconnected users
+Acquiring lock in check_for_disconnects
+Acquired lock in check_for_disconnects
+User 194 last pinged 0 seconds ago.
+User 195 last pinged 9 seconds ago.
+1
+Received a ping
+User 195 has pinged the server.
+1
+Received a ping
+User 195 has pinged the server.
+51
+Response received
+True
+acquiring lock
+195
+<databases.backends.postgres.Record object at 0x7f6780833e00>
+id: 195
+partnerid: 194
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 0
+itemid: 5
+goal: 18
+offer: 542
+offeraccepted: True
+194
+<databases.backends.postgres.Record object at 0x7f6780833b80>
+id: 194
+partnerid: 195
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 1
+itemid: 5
+goal: 14
+offer: 542
+offeraccepted: True
+Releasing lock
+/home/rishi/NC-FastAPI/backend/./main.py:155: RuntimeWarning: coroutine 'remove_user' was never awaited
+  remove_user(int_uid)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback

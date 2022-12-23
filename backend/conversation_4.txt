@@ -1,6 +1,0 @@
-Conversation Data for Conversation 4
-Negotiation over item 4
-Buyer has id = 192
-Seller has id = 193
-Amount offered by buyer was 534523
-The offer was declined

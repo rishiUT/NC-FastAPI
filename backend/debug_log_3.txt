@@ -5783,3 +5783,30 @@ Releasing lock
 /home/rishi/NC-FastAPI/backend/./main.py:155: RuntimeWarning: coroutine 'remove_user' was never awaited
   remove_user(int_uid)
 RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 196
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+So far, no partners available.
+acquiring lock
+Releasing lock
+Now initializing user with id 197
+Acquired lock in initialize_user
+Acquiring lock in create_pairing
+Acquired lock in create_pairing
+Users 196 and 197 were paired!
+User has a partner already, user 196
+User 197 has completed the task! Congratulations!
+Removing a user from the users table
+Acquiring lock in remove_users
+Acquired lock in remove_users
+User 196 has completed the task! Congratulations!
+Removing a user from the users table
+Acquiring lock in remove_users
+Acquired lock in remove_users

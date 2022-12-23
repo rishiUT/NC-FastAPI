@@ -57,6 +57,8 @@ window.addEventListener("load", function () {
                 
                 myModal.show();
 
+                alert("We've found you a partner!")
+
                 let cont = document.getElementById('continue');
 
                 cont.addEventListener('click', function (ev) {

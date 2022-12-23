@@ -5,21 +5,21 @@
 {% endblock %}
 {% block content %}
 <div class="row alert alert-info">
-    <!--
-        This page should have a description of the task
-        There should also be a centered button at the top that says "Start"
-    -->
+  <!--
+      This page should have a description of the task
+      There should also be a centered button at the top that says "Start"
+  -->
 
-    <div class="col p-5 text-center">
-      <h3>Task Description</h3>
-      Welcome, {{username}}! We're glad you could make it. Please wait; you will be paired with another user shortly.
-      </br>
-      <button id="blocked"  class="btn btn-primary" data-id={{id}} data-bs-toggle="tooltip" title="Please Wait...">
-        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
-        loading...
-      </button>
-    </div>
+  <div class="col p-5 text-center">
+    <h3>Task Description</h3>
+    Welcome, {{username}}! We're glad you could make it. Please wait; you will be paired with another user shortly.
+    </br>
+    <button id="blocked"  class="btn btn-primary" data-id={{id}} data-bs-toggle="tooltip" title="Please Wait...">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
+      loading...
+    </button>
   </div>
+</div>
 
   <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

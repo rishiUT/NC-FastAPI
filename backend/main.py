@@ -19,7 +19,7 @@ import glob
 from pydub import AudioSegment
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc3"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc4"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -36,7 +36,8 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("itemid", sqlalchemy.Integer),
     sqlalchemy.Column("goal", sqlalchemy.Integer),
     sqlalchemy.Column("offer", sqlalchemy.Integer),
-    sqlalchemy.Column("offeraccepted", sqlalchemy.Boolean)
+    sqlalchemy.Column("offeraccepted", sqlalchemy.Boolean),
+    sqlalchemy.Column("convdisconnected", sqlalchemy.Boolean)
 )
 
 engine = sqlalchemy.create_engine(
@@ -116,7 +117,7 @@ async def start(request: Request, response: Response):
         printer.print("acquiring lock")
         database_lock.acquire()    
         query = users.insert().values(role=-1, partnerid=-1, mturkid=-1, partnermturkid=-1, conversationid=-1,
-                                        itemid=-1, goal=-1, offer=-1, offeraccepted=False)
+                                        itemid=-1, goal=-1, offer=-1, offeraccepted=False, convdisconnected=True)
         last_record_id = await database.execute(query)
         printer.print("Releasing lock")
         database_lock.release()
@@ -358,12 +359,12 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                             file1.write(remaining_data)
                             file1.close()
                         
-                        #audio = AudioSegment.from_file(file_name)
-                        #audio = audio.set_frame_rate(16000)
-                        #audio = audio.set_channels(1)
-                        #audio = audio.set_sample_width(2)
-                        ## simple export
-                        #file_handle = audio.export("downgraded_" + file_name, format="mp3")
+                        audio = AudioSegment.from_file(file_name)
+                        audio = audio.set_frame_rate(16000)
+                        audio = audio.set_channels(1)
+                        audio = audio.set_sample_width(2)
+                        # simple export
+                        file_handle = audio.export("downgraded_" + file_name, format="mp3")
 
                         message = Message()
                         message.set_timestamp(timestamp)
@@ -416,12 +417,12 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
 
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_uid)
-                        query = query.values({"offeraccepted": response})
+                        query = query.values({"offeraccepted": response, "convdisconnected":False})
                         await database.execute(query)
 
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_pid)
-                        query = query.values({"offeraccepted": response})
+                        query = query.values({"offeraccepted": response, "convdisconnected":False})
                         await database.execute(query)
 
                         await print_user_in_database(int_uid)

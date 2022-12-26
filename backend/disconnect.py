@@ -115,6 +115,7 @@ class Conversation:
         self.messages = []
         self.offer_value = -1
         self.offer_accepted = False
+        self.disconnected = True
 
     def set_id(self, id):
         self.id = id
@@ -136,6 +137,9 @@ class Conversation:
 
     def set_accepted(self, offer_acceptance_bool):
         self.offer_accepted = offer_acceptance_bool
+
+    def set_disconnect(self, disconnect_bool):
+        self.disconnected = disconnect_bool
 
     def print(self):
         # Print all data to a file. This should be a unique file.
@@ -277,6 +281,7 @@ class DisconnectChecker:
         user = self.users[uid]
         conv = self.conversations[user.get_conv_id()]
         conv.set_accepted(accepted)
+        conv.set_disconnect(False)
 
     def conv_add_message(self, uid: int, message: Message):
         user = self.users[uid]

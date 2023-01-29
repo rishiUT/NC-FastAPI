@@ -3,6 +3,7 @@ from telnetlib import NOP
 from fastapi import FastAPI, Response, Request, WebSocket, WebSocketDisconnect, BackgroundTasks
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import RedirectResponse
 from pydantic import BaseModel
 from jinja2 import Environment, PackageLoader, select_autoescape
 import sqlalchemy
@@ -57,8 +58,8 @@ class User(BaseModel):
     offer: int
     offeraccepted: bool
 
-TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.",
-                     "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over."]
+TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.\nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the “send” button to send it. You can also click any sent or received message to listen to them again.\nHave fun, and good luck with your negotiation!",
+                     "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over. \nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again. \nHave fun, and good luck with your negotiation!"]
 
 checker = UserManager()
 printer = DebugPrinter()
@@ -153,7 +154,7 @@ async def self_reset(request: Request, response: Response):
     if uid:
         response.delete_cookie('id')
         int_uid = int(uid)
-        remove_user(int_uid)
+        await remove_user(int_uid)
     template = env.get_template("default.html")
     return template.render(title="Thank You!", 
                             content="Thanks for your participation! If you would like to participate again, please go back to the task start page.")
@@ -239,6 +240,7 @@ async def record(request: Request):
         if is_buyer:
             price_coefficient = 0.8
         item_price = item_data['Price'] * price_coefficient
+        item_price = round(item_price)
 
         printer.print("adding info to the database")
         await add_user_conv_info(int_uid, partner_id, conv_id, is_buyer, item_id, item_price)
@@ -259,8 +261,11 @@ async def record(request: Request):
         return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
         item_description=item_description, item_image=image, id=int_uid)
     else:
-        result = await handle_ping_errors(keepalive)
-        return result
+        # Redirect to handle a failed user
+        int_error = keepalive.value
+        error_url = '/error/' + str(int_error)
+        response = RedirectResponse(url=error_url)
+        return response
 
 @app.get('/error/{status}', response_class=HTMLResponse)
 async def handle_ping_errors(status: PingErrors, request: Request, response: Response):
@@ -336,11 +341,11 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                 if keepalive == PingErrors.NORMAL:
                     identifier = data[-1]
                     remaining_data = data[:-1] #Strip off last byte
+                    printer.print("The identifier is:")
                     printer.print(identifier)
                     
-                    if(identifier == 49):
+                    if(identifier == 2):
                         # This is a voice message.
-                        printer.print(bytes([identifier]))
 
                         timestamp = datetime.datetime.now()
                         temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
@@ -373,7 +378,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         checker.conv_add_message(int_uid, message)
 
                         await manager.send_partner_message(data, int_pid)
-                    elif (identifier == 50):
+                    elif (identifier == 51):
                         # This is an offer.
                         printer.print("This is an offer")
                         bytestring = remaining_data.decode("utf-8")
@@ -402,7 +407,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         database_lock.release()
 
                         await manager.send_partner_message(data, int_pid)
-                    elif (identifier == 51):
+                    elif (identifier == 52):
                         # An offer was either accepted or declined.
                         printer.print("Response received")
                         bytestring = remaining_data.decode("utf-8")
@@ -438,7 +443,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                     elif (identifier == 1):
                         printer.print("Received a ping")
                     else :
-                        printer.print(bytes([identifier]))
+                        printer.print(identifier)
                         printer.print("This is not a audio message")
                 else:
                     await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)

@@ -38,6 +38,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             audio.play();
         };
         let recording = null;
+        let prevAudioLength = 0;
 
         // Start record
         let record = document.getElementById('btnRecord');
@@ -74,16 +75,16 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
         // Start event
         record.onmousedown = function (ev) {
-            record.classList.remove('btn-primary')
-            record.classList.add('btn-success')
-            mediaRecorder.start(ev);
+            record.classList.remove('btn-primary');
+            record.classList.add('btn-success');
+            mediaRecorder.start(1000);
             // console.log(mediaRecorder.state);
         }
 
         // Stop event
         record.addEventListener('mouseup', function (ev) {
-            record.classList.remove('btn-success')
-            record.classList.add('btn-primary')
+            record.classList.remove('btn-success');
+            record.classList.add('btn-primary');
             send.classList.remove('disabled');
             mediaRecorder.stop();
             // console.log(mediaRecorder.state);
@@ -100,10 +101,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // it to the chunk array
         mediaRecorder.ondataavailable = function (ev) {
             dataArray.push(ev.data);
+            audioLength += 1;
         }
 
         // Chunk array to store the audio data 
         let dataArray = [];
+        let audioLength = 0;
         
         var hostname = window.location.hostname;
         if (window.location.port != 80 && window.location.port != 443) {
@@ -150,6 +153,13 @@ navigator.mediaDevices.getUserMedia(audioIN)
             return out;
         }
 
+        function formatTimeChunk(timeChunk) {
+            if (timeChunk >= 10) {
+                return timeChunk;
+            }
+
+            return "0" + timeChunk;
+        }
         var wsaddr = websocketname + "://" + hostname + "/audiowspaired/" + send.dataset.id;
         var ws = new WebSocket(wsaddr);
 
@@ -177,12 +187,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 const finalArray = Array.from(typedArray);
                 var identifier = finalArray.pop();
                 console.log(identifier);
-                if (identifier == 49) {
+                if (identifier == 2) {
                     var currentDate = new Date();
                     var row = document.createElement("tr");
                     var numChild = document.createElement("th");
                     numChild.className += "scope=\"row\"";
-                    numChild.innerHTML += currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+                    numChild.innerHTML += formatTimeChunk(currentDate.getHours()) + ":" + formatTimeChunk(currentDate.getMinutes()) + ":" + formatTimeChunk(currentDate.getSeconds());
                     row.appendChild(numChild)
 
                     var senderChild = document.createElement("td");
@@ -203,13 +213,22 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     buttonChild.appendChild(button);
                     row.appendChild(buttonChild);
 
+                    var lengthChild = document.createElement("td");
+                    // Calculate the length of the message in seconds
+                    length = finalArray.pop();
+                    lengthMinutes = Math.floor(length/60);
+                    lengthSeconds = length % 60;
+                    lengthChild.innerHTML += '' + formatTimeChunk(lengthMinutes) + ":" + formatTimeChunk(lengthSeconds);
+                    row.appendChild(lengthChild);
+
                     document.getElementById('msgbody').appendChild(row);
-                } else if (identifier == 50) {
+                } else if (identifier == 51) {
                     console.log("Received an offer!");
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
+                    var timeleft = 60
                     document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
-                    document.getElementById('modalText').innerHTML += "Time Remaining: 60 seconds";
+                    document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
                     console.log(finalArray);
                     console.log(resultstring);
                     var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
@@ -217,7 +236,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     })
                     myModal.show();
 
-                    var timeleft = 60
 
                     function handleTimeout() {
                         // Get the number of seconds remaining until timeout
@@ -230,7 +248,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     }
 
                     const offertimeout = setInterval(handleTimeout, 1000);
-                } else if(identifier == 51) {
+                } else if (identifier == 52) {
                     console.log("Received a response!");
                     OfferConfirmModal.hide();
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -256,6 +274,9 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 }else if (identifier > 1 && identifier < 5) {
                     // This is an error code.
                     window.location.replace('/error/' + identifier)
+                } else {
+                    console.log("Unexpected input");
+                    console.log(identifier);
                 }
             });           
         };
@@ -266,7 +287,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             var row = document.createElement("tr");
             var numChild = document.createElement("th");
             numChild.className += "scope=\"row\"";
-            numChild.innerHTML += currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+            numChild.innerHTML += formatTimeChunk(currentDate.getHours()) + ":" + formatTimeChunk(currentDate.getMinutes()) + ":" + formatTimeChunk(currentDate.getSeconds());
             row.appendChild(numChild)
 
             var senderChild = document.createElement("td");
@@ -288,6 +309,14 @@ navigator.mediaDevices.getUserMedia(audioIN)
             buttonChild.appendChild(button);
             row.appendChild(buttonChild);
 
+            var lengthChild = document.createElement("td");
+            length = prevAudioLength;
+            lengthMinutes = Math.floor(length/60);
+            lengthSeconds = length % 60;
+            lengthChild.innerHTML += '' + formatTimeChunk(lengthMinutes) + ":" + formatTimeChunk(lengthSeconds);
+            row.appendChild(lengthChild);
+
+
             document.getElementById('msgbody').appendChild(row);
         }
 
@@ -301,37 +330,90 @@ navigator.mediaDevices.getUserMedia(audioIN)
             let val = offer.value;
             console.log(val);
 
-            var confirm = document.getElementById('confirmYes')
-            confirm.addEventListener('click', function (ev) {
-                console.log("Offer confirmed!");
-                let val = offer.value;
-                val = [val, 2];
-                let data = new Blob(val);
-                ws.send(data)
-                
-                document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...";
-                var confirm = document.getElementById('confirmYes')
-                confirm.remove();
-                var deny = document.getElementById('confirmNo')
-                deny.remove();
-            });
-
-            var deny = document.getElementById('confirmNo')
-            deny.addEventListener('click', function (ev) {
-                console.log("Nevermind.");
+            var closeWindow = function(ev){
                 OfferConfirmModal.hide();
-            });
+            };
 
-            document.getElementById('OfferConfirmText').innerHTML = "WARNING: You can only send your partner a single offer. Are you sure you want to offer $" + val + "?";
-            OfferConfirmModal.show();
+            var confirm = document.getElementById("confirmYes");
+            var deny = document.getElementById("confirmNo");
+        
+            var confirmAction = closeWindow;
+            var denyAction = closeWindow;
+
+            var confirmListener = function(ev) {
+                confirmAction(); //external function call
+            };
+
+            var denyListener = function(ev) {
+                denyAction(); //external function call
+            };
+
+            confirm.addEventListener('click', confirmListener);
+            deny.addEventListener('click', denyListener);
+            
+            // Tests if a value is an integer (source: https://stackoverflow.com/a/14794066)
+            // Does so using short-circuiting, and saving a parse operation
+            function isInt(value) {
+              var x;
+              if (isNaN(value)) {
+                return false;
+              }
+              x = parseFloat(value);
+              return (x | 0) === x;
+            }
+
+            console.log(isInt(val));
+            if (isInt(val)) {
+                console.log(val);
+
+                var confirmOffer = function(ev) {
+                    console.log("Offer confirmed!");
+                    let val = offer.value;
+                    val = [val, 3];
+                    let data = new Blob(val);
+                    ws.send(data);
+
+                    var confirm = document.getElementById('confirmYes');
+                    confirm.remove();
+                    var deny = document.getElementById('confirmNo');
+                    deny.remove();
+
+                    var timeleft = 90
+                    document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...\n";
+                    document.getElementById('OfferConfirmText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+
+                    function handleTimeout() {
+                        // Get the number of seconds remaining until timeout
+                        timeleft--;
+                        if (timeleft < 0) {
+                            window.location.replace('/error/3') //3 = partner disconnect error code
+                        }
+                        document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...\n";
+                        document.getElementById('OfferConfirmText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+                    }
+
+                    const offertimeout = setInterval(handleTimeout, 1000);
+                };
+
+                confirmAction = confirmOffer;
+                denyAction = closeWindow;
+
+                document.getElementById('OfferConfirmText').innerHTML = "WARNING: You can only send your partner a single offer. Are you sure you want to offer $" + val + "?";
+                OfferConfirmModal.show();
+            } else {
+                confirmAction = closeWindow;
+                denyAction = closeWindow;
+                document.getElementById('OfferConfirmText').innerHTML = "WARNING: You can only send whole number values. Please enter a whole number.";
+                OfferConfirmModal.show();
+            }
+            
         });
-
 
         // Accept event
         accept.addEventListener('click', function (ev) {
             console.log("Offer Accepted!")
             let val = 1;
-            val = [val, 3];
+            val = [val, 4];
             console.log(val);
             let data = new Blob(val);
             if (send.dataset.role == "Seller") {
@@ -344,7 +426,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         decline.addEventListener('click', function (ev) {
             console.log("Offer Declined.")
             let val = 0;
-            val = [val, 3];
+            val = [val, 4];
             console.log(val);
             let data = new Blob(val);
             ws.send(data)
@@ -355,8 +437,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Convert the audio data in to blob 
         // after stopping the recording
         mediaRecorder.onstop = function (ev) {
-
-            let tosend = [1];
+            let tosend = new Uint8Array([audioLength, 2]);
             tosend = dataArray.concat(tosend);
             // blob of type mp3
             let audioData = new Blob(tosend,
@@ -366,6 +447,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
 
             // Refresh the data array
             dataArray = [];
+            prevAudioLength = audioLength;
+            audioLength = 0;
 
             // Creating audio url with reference of created blob named 'audioData'
             let audioSrc = window.URL

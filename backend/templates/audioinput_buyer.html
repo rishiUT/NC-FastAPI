@@ -21,12 +21,17 @@
         And a similar page for the buyer (either the same page, or one where it tells them whether their offer was accepted/rejected)-->
 
     <div class="col-lg-4 p-5">
-      <h3>Chat Page</h3>
-      <p>Welcome! You are the <strong>{{role}}.</strong></p>
-      <p>{{task_description}}</p>
-      <p>Goal Price: {{goal_price}}</p>
-      <p>Item Description: {{item_description}}</p>
-      <p><img src={{item_image}} alt="No image available" class="img-fluid rounded"></p>
+      <div class="alert alert-dark">
+        <p>Welcome! You are the <strong>{{role}}.</strong></p>
+        <p>Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over.</p>
+        <p>To record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again.</p>
+        <p>Have fun, and good luck with your negotiation!</p>
+      </div>
+      <div class="alert alert-dark">  
+        <p>Goal Price: ${{goal_price}}</p>
+        <p>Item Description: {{item_description}}</p>
+        <p><img src={{item_image}} alt="No image available" class="img-fluid rounded"></p>
+      </div>
     </div>
       
     <div class="col-lg-4 p-5">
@@ -38,8 +43,9 @@
             <thead>
               <tr>
                 <th scope="col">Timestamp</th>
-                <th scope="col">Sent by:</th>
+                <th scope="col">Sender</th>
                 <th scope="col">Button</th>
+                <th scope="col">Message Length</th>
               </tr>
             </thead>
             <tbody id="msgbody">

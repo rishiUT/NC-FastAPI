@@ -57,8 +57,6 @@ window.addEventListener("load", function () {
                 
                 myModal.show();
 
-                alert("We've found you a partner!")
-
                 let cont = document.getElementById('continue');
 
                 cont.addEventListener('click', function (ev) {
@@ -81,7 +79,8 @@ window.addEventListener("load", function () {
                 
                 const connTimeoutIntvl = setInterval(reduce_time, 1000);
 
-            
+                alert("We've found you a partner!");
+                
             } else if (identifier == 0) {
                 console.log("Timed Out");
                 window.location.replace('/no_partner')

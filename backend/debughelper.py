@@ -11,7 +11,6 @@ class DebugPrinter:
     def print(self, to_print: str):
         print(to_print)
         if self.output_file is not None:
-            print("printing to the debug file")
             print(to_print, file=self.output_file)
         elif self.output is not None:
             with open(self.output, 'a') as f:

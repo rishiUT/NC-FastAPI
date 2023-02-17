@@ -345,6 +345,21 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
         start_code = PingErrors.NORMAL
         await manager.send_self_message(start_code.to_bytes(1, 'big'), int_uid)
 
+        conv = checker.get_user_conv(int_uid)
+        for message in conv.messages:
+            print("sending a message")
+            file_name = message.filename
+            with open(file_name, "rb") as file1:
+                data = file1.read()
+                file1.close()
+            self_is_sender = 1 if message.sender_id == uid else 0
+            data_array = bytearray(data)
+            data_array.append(self_is_sender)
+            data_array.append(7)
+            data = bytes(data_array)
+            
+            await manager.send_self_message(data, int_uid)
+
         try:
             while True:
                 data = await websocket.receive_bytes()

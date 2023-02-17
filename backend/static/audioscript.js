@@ -153,13 +153,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
             return out;
         }
 
-        function formatTimeChunk(timeChunk) {
-            if (timeChunk >= 10) {
-                return timeChunk;
-            }
-
-            return "0" + timeChunk;
-        }
         var wsaddr = websocketname + "://" + hostname + "/audiowspaired/" + send.dataset.id;
         var ws = new WebSocket(wsaddr);
 
@@ -188,40 +181,15 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 var identifier = finalArray.pop();
                 console.log(identifier);
                 if (identifier == 6) {
-                    var currentDate = new Date();
-                    var row = document.createElement("tr");
-                    var numChild = document.createElement("th");
-                    numChild.className += "scope=\"row\"";
-                    numChild.innerHTML += formatTimeChunk(currentDate.getHours()) + ":" + formatTimeChunk(currentDate.getMinutes()) + ":" + formatTimeChunk(currentDate.getSeconds());
-                    row.appendChild(numChild)
-
-                    var senderChild = document.createElement("td");
-                    senderChild.innerHTML += partnerID;
-                    row.appendChild(senderChild);
-
-                    var buttonChild = document.createElement("td");
-                    var button = document.createElement("button");
-                    button.innerHTML = "Play";
-                    let audioSrc = window.URL.createObjectURL(incoming_vm);
-                    button.dataset.audioLink = audioSrc
-                    button.addEventListener('click', function(ev) {
-                        console.log("Play audio");
-                        var audioElement = document.getElementById("partnerAudio");
-                        audioElement.src = this.dataset.audioLink;
-                        audioElement.play();
-                    })
-                    buttonChild.appendChild(button);
-                    row.appendChild(buttonChild);
-
-                    var lengthChild = document.createElement("td");
-                    // Calculate the length of the message in seconds
-                    length = finalArray.pop();
-                    lengthMinutes = Math.floor(length/60);
-                    lengthSeconds = length % 60;
-                    lengthChild.innerHTML += '' + formatTimeChunk(lengthMinutes) + ":" + formatTimeChunk(lengthSeconds);
-                    row.appendChild(lengthChild);
-
-                    document.getElementById('msgbody').appendChild(row);
+                    add_message(partnerID, window.URL.createObjectURL(incoming_vm), finalArray.pop())
+                } else if (identifier == 7) {
+                    self_is_sender = finalArray.pop()
+                    if (self_is_sender) {
+                        senderID = "Self";
+                    } else {
+                        senderID = "Partner"
+                    }
+                    add_message(senderID, window.URL.createObjectURL(incoming_vm), 0)
                 } else if (identifier == 51) {
                     console.log("Received an offer!");
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -281,43 +249,12 @@ navigator.mediaDevices.getUserMedia(audioIN)
             });           
         };
         function sendMessage(event) {
-            ws.send(recording)
+            ws.send(recording);
 
-            var currentDate = new Date();
-            var row = document.createElement("tr");
-            var numChild = document.createElement("th");
-            numChild.className += "scope=\"row\"";
-            numChild.innerHTML += formatTimeChunk(currentDate.getHours()) + ":" + formatTimeChunk(currentDate.getMinutes()) + ":" + formatTimeChunk(currentDate.getSeconds());
-            row.appendChild(numChild)
-
-            var senderChild = document.createElement("td");
-            senderChild.innerHTML += selfID;
-            row.appendChild(senderChild);
-
-            var buttonChild = document.createElement("td");
-            var button = document.createElement("button");
-            button.innerHTML = "Play";
-            let audioSrc = playAudio.src;
-            playAudio.src = '';
-            button.dataset.audioLink = audioSrc
-            button.addEventListener('click', function(ev) {
-                console.log("Play audio");
-                var audioElement = document.getElementById("partnerAudio");
-                audioElement.src = this.dataset.audioLink;
-                audioElement.play();
-            })
-            buttonChild.appendChild(button);
-            row.appendChild(buttonChild);
-
-            var lengthChild = document.createElement("td");
+            senderID = selfID;
+            audioSrc = playAudio.src;
             length = prevAudioLength;
-            lengthMinutes = Math.floor(length/60);
-            lengthSeconds = length % 60;
-            lengthChild.innerHTML += '' + formatTimeChunk(lengthMinutes) + ":" + formatTimeChunk(lengthSeconds);
-            row.appendChild(lengthChild);
-
-
-            document.getElementById('msgbody').appendChild(row);
+            add_message(senderID, audioSrc, length);
         }
 
         document.getElementById('connectionComplete').addEventListener('click', function (ev) {
@@ -475,3 +412,45 @@ navigator.mediaDevices.getUserMedia(audioIN)
         console.log(err.name, err.message);
     });
 
+function add_message(senderID, audioSrc, length) {
+    var currentDate = new Date();
+    var row = document.createElement("tr");
+    var numChild = document.createElement("th");
+    numChild.className += "scope=\"row\"";
+    numChild.innerHTML += formatTimeChunk(currentDate.getHours()) + ":" + formatTimeChunk(currentDate.getMinutes()) + ":" + formatTimeChunk(currentDate.getSeconds());
+    row.appendChild(numChild)
+
+    var senderChild = document.createElement("td");
+    senderChild.innerHTML += senderID;
+    row.appendChild(senderChild);
+
+    var buttonChild = document.createElement("td");
+    var button = document.createElement("button");
+    button.innerHTML = "Play";
+    button.dataset.audioLink = audioSrc
+    button.addEventListener('click', function(ev) {
+        console.log("Play audio");
+        var audioElement = document.getElementById("partnerAudio");
+        audioElement.src = this.dataset.audioLink;
+        audioElement.play();
+    })
+    buttonChild.appendChild(button);
+    row.appendChild(buttonChild);
+
+    var lengthChild = document.createElement("td");
+    // Calculate the length of the message in seconds
+    lengthMinutes = Math.floor(length/60);
+    lengthSeconds = length % 60;
+    lengthChild.innerHTML += '' + formatTimeChunk(lengthMinutes) + ":" + formatTimeChunk(lengthSeconds);
+    row.appendChild(lengthChild);
+
+    document.getElementById('msgbody').appendChild(row);
+}
+
+function formatTimeChunk(timeChunk) {
+    if (timeChunk >= 10) {
+        return timeChunk;
+    }
+
+    return "0" + timeChunk;
+}

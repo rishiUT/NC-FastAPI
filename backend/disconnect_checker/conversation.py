@@ -36,7 +36,6 @@ class Conversation:
     def get_metadata(self, uid: int):
         md = dict()
         m_idx = 0
-
         for message in self.messages:
             message = dict()
             message["sender"] = "self" if message.sender_id == uid else "partner"

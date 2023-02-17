@@ -187,7 +187,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 const finalArray = Array.from(typedArray);
                 var identifier = finalArray.pop();
                 console.log(identifier);
-                if (identifier == 2) {
+                if (identifier == 6) {
                     var currentDate = new Date();
                     var row = document.createElement("tr");
                     var numChild = document.createElement("th");
@@ -437,7 +437,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         // Convert the audio data in to blob 
         // after stopping the recording
         mediaRecorder.onstop = function (ev) {
-            let tosend = new Uint8Array([audioLength, 2]);
+            let tosend = new Uint8Array([audioLength, 6]);
             tosend = dataArray.concat(tosend);
             // blob of type mp3
             let audioData = new Blob(tosend,

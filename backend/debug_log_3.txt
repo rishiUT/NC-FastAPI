@@ -1,0 +1,6521 @@
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 348
+acquiring lock
+Releasing lock
+Now initializing user with id 349
+Users 348 and 349 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+349
+<databases.backends.postgres.Record object at 0x7f812160ca90>
+id: 349
+partnerid: 348
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 1
+itemid: 2
+goal: 468
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+348
+<databases.backends.postgres.Record object at 0x7f812160c0e0>
+id: 348
+partnerid: 349
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 0
+itemid: 2
+goal: 585
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_348_2023-01-30_20-35-19.209702.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_349_2023-01-30_20-36-01.117434.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_348_2023-01-30_20-38-02.373629.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_349_2023-01-30_20-41-11.353550.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_348_2023-01-30_20-43-11.590264.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+51
+This is an offer
+500
+acquiring lock
+349
+<databases.backends.postgres.Record object at 0x7f8124be9680>
+id: 349
+partnerid: 348
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 1
+itemid: 2
+goal: 468
+offer: 500
+offeraccepted: False
+348
+<databases.backends.postgres.Record object at 0x7f8124be9810>
+id: 348
+partnerid: 349
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 0
+itemid: 2
+goal: 585
+offer: 500
+offeraccepted: False
+Releasing lock
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+52
+Response received
+False
+acquiring lock
+348
+<databases.backends.postgres.Record object at 0x7f8124bd4900>
+id: 348
+partnerid: 349
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 0
+itemid: 2
+goal: 585
+offer: 500
+offeraccepted: False
+349
+<databases.backends.postgres.Record object at 0x7f8124be9810>
+id: 349
+partnerid: 348
+mturkid: -1
+partnermturkid: -1
+conversationid: 2
+role: 1
+itemid: 2
+goal: 468
+offer: 500
+offeraccepted: False
+Releasing lock
+User 348 has completed the task! Congratulations!
+User 349 has completed the task! Congratulations!
+acquiring lock
+Releasing lock
+Now initializing user with id 350
+acquiring lock
+Releasing lock
+Now initializing user with id 351
+Users 351 and 350 were paired!
+acquiring lock
+Releasing lock
+Now initializing user with id 352
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+350
+<databases.backends.postgres.Record object at 0x7f8121632ae0>
+id: 350
+partnerid: 351
+mturkid: -1
+partnermturkid: -1
+conversationid: 3
+role: 1
+itemid: 3
+goal: 800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+User 351 has completed the task! Congratulations!
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+Partner did not connect in time.
+User 350 has completed the task! Congratulations!
+acquiring lock
+Releasing lock
+Now initializing user with id 353
+Users 353 and 352 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+352
+<databases.backends.postgres.Record object at 0x7f81216324a0>
+id: 352
+partnerid: 353
+mturkid: -1
+partnermturkid: -1
+conversationid: 4
+role: 1
+itemid: 4
+goal: 11600
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+353
+<databases.backends.postgres.Record object at 0x7f8120dd31d0>
+id: 353
+partnerid: 352
+mturkid: -1
+partnermturkid: -1
+conversationid: 4
+role: 0
+itemid: 4
+goal: 14500
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 354
+acquiring lock
+Releasing lock
+Now initializing user with id 355
+Users 355 and 354 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+355
+<databases.backends.postgres.Record object at 0x7f8120d56860>
+id: 355
+partnerid: 354
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 0
+itemid: 5
+goal: 1895
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+354
+<databases.backends.postgres.Record object at 0x7f8120ded4f0>
+id: 354
+partnerid: 355
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 1
+itemid: 5
+goal: 1516
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+355
+<databases.backends.postgres.Record object at 0x7f8120dd37c0>
+id: 355
+partnerid: 354
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 0
+itemid: 5
+goal: 1895
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+355
+<databases.backends.postgres.Record object at 0x7f8120d62ae0>
+id: 355
+partnerid: 354
+mturkid: -1
+partnermturkid: -1
+conversationid: 5
+role: 0
+itemid: 5
+goal: 1895
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_355_2023-01-30_20-50-08.886064.mp3
+User 353 has timed out.
+The identifier is:
+1
+Received a ping
+User 352 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_354_2023-01-30_20-50-25.275112.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 356
+acquiring lock
+Releasing lock
+Now initializing user with id 357
+Users 356 and 357 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+357
+<databases.backends.postgres.Record object at 0x7f77bc0efa90>
+id: 357
+partnerid: 356
+mturkid: -1
+partnermturkid: -1
+conversationid: 6
+role: 1
+itemid: 6
+goal: 7040
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+356
+<databases.backends.postgres.Record object at 0x7f77bc0ef220>
+id: 356
+partnerid: 357
+mturkid: -1
+partnermturkid: -1
+conversationid: 6
+role: 0
+itemid: 6
+goal: 8800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 358
+acquiring lock
+Releasing lock
+Now initializing user with id 359
+Users 359 and 358 were paired!
+acquiring lock
+Releasing lock
+Now initializing user with id 360
+acquiring lock
+Releasing lock
+Now initializing user with id 361
+Users 361 and 360 were paired!
+Setting up chat page
+getting keepalive
+User 356 has timed out.
+User 357 has timed out.
+keepalive = true
+adding info to the database
+acquiring lock
+358
+<databases.backends.postgres.Record object at 0x7f77bcecd540>
+id: 358
+partnerid: 359
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 1
+itemid: 7
+goal: 21440
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 362
+acquiring lock
+Releasing lock
+Now initializing user with id 363
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+359
+<databases.backends.postgres.Record object at 0x7f77bcec58b0>
+id: 359
+partnerid: 358
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 0
+itemid: 7
+goal: 26800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Users 363 and 362 were paired!
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+360
+<databases.backends.postgres.Record object at 0x7f77bc0be590>
+id: 360
+partnerid: 361
+mturkid: -1
+partnermturkid: -1
+conversationid: 8
+role: 1
+itemid: 8
+goal: 240
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 364
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 365
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+361
+<databases.backends.postgres.Record object at 0x7f77bce14bd0>
+id: 361
+partnerid: 360
+mturkid: -1
+partnermturkid: -1
+conversationid: 8
+role: 0
+itemid: 8
+goal: 300
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+363
+<databases.backends.postgres.Record object at 0x7f77bce596d0>
+id: 363
+partnerid: 362
+mturkid: -1
+partnermturkid: -1
+conversationid: 9
+role: 0
+itemid: 9
+goal: 125
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Users 365 and 364 were paired!
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+362
+<databases.backends.postgres.Record object at 0x7f77bce59040>
+id: 362
+partnerid: 363
+mturkid: -1
+partnermturkid: -1
+conversationid: 9
+role: 1
+itemid: 9
+goal: 100
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+365
+<databases.backends.postgres.Record object at 0x7f77bc0d2bd0>
+id: 365
+partnerid: 364
+mturkid: -1
+partnermturkid: -1
+conversationid: 10
+role: 0
+itemid: 10
+goal: 8900
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+364
+<databases.backends.postgres.Record object at 0x7f77bc0697c0>
+id: 364
+partnerid: 365
+mturkid: -1
+partnermturkid: -1
+conversationid: 10
+role: 1
+itemid: 10
+goal: 7120
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The identifier is:
+1
+Received a ping
+User 364 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 366
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 367
+Users 367 and 366 were paired!
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+367
+<databases.backends.postgres.Record object at 0x7f77bc092450>
+id: 367
+partnerid: 366
+mturkid: -1
+partnermturkid: -1
+conversationid: 11
+role: 0
+itemid: 11
+goal: 75
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+366
+<databases.backends.postgres.Record object at 0x7f77bc092a40>
+id: 366
+partnerid: 367
+mturkid: -1
+partnermturkid: -1
+conversationid: 11
+role: 1
+itemid: 11
+goal: 60
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+Partner did not connect in time.
+User 365 has completed the task! Congratulations!
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 368
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-36-11.171764.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_360_2023-01-31_12-36-19.502914.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+Setting up chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 369
+The identifier is:
+1
+Received a ping
+Users 369 and 368 were paired!
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+369
+<databases.backends.postgres.Record object at 0x7f77b4f8d270>
+id: 369
+partnerid: 368
+mturkid: -1
+partnermturkid: -1
+conversationid: 12
+role: 0
+itemid: 12
+goal: 9000
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+2
+recordings/Buyer_362_2023-01-31_12-37-11.685312.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Partner did not connect in time.
+User 369 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 370
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 371
+Users 370 and 371 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_359_2023-01-31_12-37-34.297483.mp3
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+370
+<databases.backends.postgres.Record object at 0x7f77b4f97810>
+id: 370
+partnerid: 371
+mturkid: -1
+partnermturkid: -1
+conversationid: 13
+role: 0
+itemid: 13
+goal: 2599
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 372
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+User 371 has completed the task! Congratulations!
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_366_2023-01-31_12-37-53.688401.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Partner did not connect in time.
+User 370 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-38-08.890678.mp3
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 373
+Users 372 and 373 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 374
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+372
+<databases.backends.postgres.Record object at 0x7f77b4f9ae00>
+id: 372
+partnerid: 373
+mturkid: -1
+partnermturkid: -1
+conversationid: 14
+role: 0
+itemid: 14
+goal: 600
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+acquiring lock
+Releasing lock
+Now initializing user with id 375
+The identifier is:
+1
+Received a ping
+Users 375 and 374 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+375
+<databases.backends.postgres.Record object at 0x7f77b4fb2400>
+id: 375
+partnerid: 374
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 0
+itemid: 15
+goal: 800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+374
+<databases.backends.postgres.Record object at 0x7f77b4fb2310>
+id: 374
+partnerid: 375
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 1
+itemid: 15
+goal: 640
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Partner did not connect in time.
+User 372 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_362_2023-01-31_12-38-57.725883.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 376
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 377
+Users 377 and 376 were paired!
+acquiring lock
+Releasing lock
+Now initializing user with id 378
+The identifier is:
+1
+Received a ping
+User 368 has timed out.
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+377
+<databases.backends.postgres.Record object at 0x7f77b4f40cc0>
+id: 377
+partnerid: 376
+mturkid: -1
+partnermturkid: -1
+conversationid: 16
+role: 0
+itemid: 16
+goal: 2834
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+2
+recordings/Buyer_374_2023-01-31_12-39-19.956215.mp3
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Partner did not connect in time.
+User 377 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 379
+Users 379 and 378 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 380
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+379
+<databases.backends.postgres.Record object at 0x7f77b4f8d1d0>
+id: 379
+partnerid: 378
+mturkid: -1
+partnermturkid: -1
+conversationid: 17
+role: 0
+itemid: 17
+goal: 175
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+358
+<databases.backends.postgres.Record object at 0x7f77b4f8d7c0>
+id: 358
+partnerid: 359
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 1
+itemid: 7
+goal: 21440
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+378
+<databases.backends.postgres.Record object at 0x7f77bc0924f0>
+id: 378
+partnerid: 379
+mturkid: -1
+partnermturkid: -1
+conversationid: 17
+role: 1
+itemid: 17
+goal: 140
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+User 367 has timed out.
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Partner did not connect in time.
+User 378 has completed the task! Congratulations!
+User 366 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-40-19.178754.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_359_2023-01-31_12-40-31.243081.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 381
+Users 380 and 381 were paired!
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+381
+<databases.backends.postgres.Record object at 0x7f77b4fb23b0>
+id: 381
+partnerid: 380
+mturkid: -1
+partnermturkid: -1
+conversationid: 18
+role: 1
+itemid: 18
+goal: 12
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+380
+<databases.backends.postgres.Record object at 0x7f77bc069090>
+id: 380
+partnerid: 381
+mturkid: -1
+partnermturkid: -1
+conversationid: 18
+role: 0
+itemid: 18
+goal: 15
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+Setting up chat page
+getting keepalive
+keepalive = true
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-41-03.653540.mp3
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+360
+<databases.backends.postgres.Record object at 0x7f77bc0920e0>
+id: 360
+partnerid: 361
+mturkid: -1
+partnermturkid: -1
+conversationid: 8
+role: 1
+itemid: 8
+goal: 240
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 382
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+User 361 has timed out.
+User 362 has timed out.
+User 363 has timed out.
+User 373 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 383
+Users 383 and 382 were paired!
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+383
+<databases.backends.postgres.Record object at 0x7f77bc0e5cc0>
+id: 383
+partnerid: 382
+mturkid: -1
+partnermturkid: -1
+conversationid: 19
+role: 0
+itemid: 19
+goal: 40
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Partner did not connect in time.
+User 360 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 384
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+382
+<databases.backends.postgres.Record object at 0x7f77b4f51630>
+id: 382
+partnerid: 383
+mturkid: -1
+partnermturkid: -1
+conversationid: 19
+role: 1
+itemid: 19
+goal: 32
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 385
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Users 385 and 384 were paired!
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+385
+<databases.backends.postgres.Record object at 0x7f77b4f523b0>
+id: 385
+partnerid: 384
+mturkid: -1
+partnermturkid: -1
+conversationid: 20
+role: 0
+itemid: 20
+goal: 55
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+384
+<databases.backends.postgres.Record object at 0x7f77b4f5e040>
+id: 384
+partnerid: 385
+mturkid: -1
+partnermturkid: -1
+conversationid: 20
+role: 1
+itemid: 20
+goal: 44
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The partner hasn't connected yet
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Partner did not connect in time.
+User 382 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_359_2023-01-31_12-41-59.491638.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 376 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 386
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_385_2023-01-31_12-42-40.523968.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_384_2023-01-31_12-42-57.261160.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 379 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-43-11.383633.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_380_2023-01-31_12-43-22.568191.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_374_2023-01-31_12-43-27.346718.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_384_2023-01-31_12-43-42.533035.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_375_2023-01-31_12-43-51.460370.mp3
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 387
+Users 387 and 386 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+387
+<databases.backends.postgres.Record object at 0x7f77b4f71130>
+id: 387
+partnerid: 386
+mturkid: -1
+partnermturkid: -1
+conversationid: 21
+role: 0
+itemid: 21
+goal: 155
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+386
+<databases.backends.postgres.Record object at 0x7f77b4f52220>
+id: 386
+partnerid: 387
+mturkid: -1
+partnermturkid: -1
+conversationid: 21
+role: 1
+itemid: 21
+goal: 124
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The identifier is:
+2
+recordings/Buyer_381_2023-01-31_12-43-59.383396.mp3
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_359_2023-01-31_12-44-05.801062.mp3
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+User 383 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+User 362 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+User 362 has completed the task! Congratulations!
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 388
+Partner did not connect in time.
+User 386 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_374_2023-01-31_12-44-33.638165.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 389
+Users 389 and 388 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+389
+<databases.backends.postgres.Record object at 0x7f77b4f71d60>
+id: 389
+partnerid: 388
+mturkid: -1
+partnermturkid: -1
+conversationid: 22
+role: 0
+itemid: 22
+goal: 14800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+388
+<databases.backends.postgres.Record object at 0x7f77b4f5ebd0>
+id: 388
+partnerid: 389
+mturkid: -1
+partnermturkid: -1
+conversationid: 22
+role: 1
+itemid: 22
+goal: 11840
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The identifier is:
+1
+Received a ping
+Websocket connected for chat page
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-44-57.523631.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 390
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_375_2023-01-31_12-45-30.920548.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_380_2023-01-31_12-45-32.818454.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_385_2023-01-31_12-45-42.308460.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_381_2023-01-31_12-46-04.196117.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_374_2023-01-31_12-46-06.789892.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_388_2023-01-31_12-46-07.363086.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+51
+This is an offer
+15
+acquiring lock
+381
+<databases.backends.postgres.Record object at 0x7f77b4f01a90>
+id: 381
+partnerid: 380
+mturkid: -1
+partnermturkid: -1
+conversationid: 18
+role: 1
+itemid: 18
+goal: 12
+offer: 15
+offeraccepted: False
+380
+<databases.backends.postgres.Record object at 0x7f77b4f01a90>
+id: 380
+partnerid: 381
+mturkid: -1
+partnermturkid: -1
+conversationid: 18
+role: 0
+itemid: 18
+goal: 15
+offer: 15
+offeraccepted: False
+Releasing lock
+User 387 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+52
+Response received
+True
+acquiring lock
+380
+<databases.backends.postgres.Record object at 0x7f77b4f5eb30>
+id: 380
+partnerid: 381
+mturkid: -1
+partnermturkid: -1
+conversationid: 18
+role: 0
+itemid: 18
+goal: 15
+offer: 15
+offeraccepted: True
+381
+<databases.backends.postgres.Record object at 0x7f77b4f716d0>
+id: 381
+partnerid: 380
+mturkid: -1
+partnermturkid: -1
+conversationid: 18
+role: 1
+itemid: 18
+goal: 12
+offer: 15
+offeraccepted: True
+Releasing lock
+The identifier is:
+1
+Received a ping
+User 380 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+User 381 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_359_2023-01-31_12-46-21.783963.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 391
+Users 391 and 390 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+391
+<databases.backends.postgres.Record object at 0x7f77b4f014a0>
+id: 391
+partnerid: 390
+mturkid: -1
+partnermturkid: -1
+conversationid: 23
+role: 0
+itemid: 23
+goal: 2000
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+390
+<databases.backends.postgres.Record object at 0x7f77bc092bd0>
+id: 390
+partnerid: 391
+mturkid: -1
+partnermturkid: -1
+conversationid: 23
+role: 1
+itemid: 23
+goal: 1600
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_384_2023-01-31_12-46-45.481837.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_375_2023-01-31_12-47-14.808636.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 392
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_358_2023-01-31_12-47-38.639928.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_385_2023-01-31_12-48-07.246483.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_374_2023-01-31_12-48-15.858542.mp3
+The identifier is:
+2
+recordings/Buyer_390_2023-01-31_12-48-16.407945.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_384_2023-01-31_12-48-44.524050.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_391_2023-01-31_12-48-48.808049.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 389 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 388 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_391_2023-01-31_12-49-18.630163.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 393
+Users 392 and 393 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_385_2023-01-31_12-49-25.287714.mp3
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+393
+<databases.backends.postgres.Record object at 0x7f77b4f01ea0>
+id: 393
+partnerid: 392
+mturkid: -1
+partnermturkid: -1
+conversationid: 24
+role: 1
+itemid: 24
+goal: 1120
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+392
+<databases.backends.postgres.Record object at 0x7f77b4f52310>
+id: 392
+partnerid: 393
+mturkid: -1
+partnermturkid: -1
+conversationid: 24
+role: 0
+itemid: 24
+goal: 1400
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_390_2023-01-31_12-49-53.290979.mp3
+The identifier is:
+51
+This is an offer
+31
+acquiring lock
+384
+<databases.backends.postgres.Record object at 0x7f77b4f29450>
+id: 384
+partnerid: 385
+mturkid: -1
+partnermturkid: -1
+conversationid: 20
+role: 1
+itemid: 20
+goal: 44
+offer: 31
+offeraccepted: False
+385
+<databases.backends.postgres.Record object at 0x7f77b4f29400>
+id: 385
+partnerid: 384
+mturkid: -1
+partnermturkid: -1
+conversationid: 20
+role: 0
+itemid: 20
+goal: 55
+offer: 31
+offeraccepted: False
+Releasing lock
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+52
+Response received
+False
+acquiring lock
+385
+<databases.backends.postgres.Record object at 0x7f77b4f011d0>
+id: 385
+partnerid: 384
+mturkid: -1
+partnermturkid: -1
+conversationid: 20
+role: 0
+itemid: 20
+goal: 55
+offer: 31
+offeraccepted: False
+384
+<databases.backends.postgres.Record object at 0x7f77bc069f40>
+id: 384
+partnerid: 385
+mturkid: -1
+partnermturkid: -1
+conversationid: 20
+role: 1
+itemid: 20
+goal: 44
+offer: 31
+offeraccepted: False
+Releasing lock
+User 385 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 384 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+51
+This is an offer
+700
+acquiring lock
+374
+<databases.backends.postgres.Record object at 0x7f77b4f5e4a0>
+id: 374
+partnerid: 375
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 1
+itemid: 15
+goal: 640
+offer: 700
+offeraccepted: False
+375
+<databases.backends.postgres.Record object at 0x7f77b4f5e400>
+id: 375
+partnerid: 374
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 0
+itemid: 15
+goal: 800
+offer: 700
+offeraccepted: False
+Releasing lock
+The identifier is:
+51
+This is an offer
+700
+acquiring lock
+374
+<databases.backends.postgres.Record object at 0x7f77bc069f40>
+id: 374
+partnerid: 375
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 1
+itemid: 15
+goal: 640
+offer: 700
+offeraccepted: False
+375
+<databases.backends.postgres.Record object at 0x7f77b4f5e400>
+id: 375
+partnerid: 374
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 0
+itemid: 15
+goal: 800
+offer: 700
+offeraccepted: False
+Releasing lock
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 394
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_390_2023-01-31_12-50-22.815674.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+52
+Response received
+True
+acquiring lock
+375
+<databases.backends.postgres.Record object at 0x7f77b4f29ea0>
+id: 375
+partnerid: 374
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 0
+itemid: 15
+goal: 800
+offer: 700
+offeraccepted: True
+374
+<databases.backends.postgres.Record object at 0x7f77b4f29f90>
+id: 374
+partnerid: 375
+mturkid: -1
+partnermturkid: -1
+conversationid: 15
+role: 1
+itemid: 15
+goal: 640
+offer: 700
+offeraccepted: True
+Releasing lock
+The identifier is:
+2
+recordings/Seller_359_2023-01-31_12-50-24.639322.mp3
+User 375 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 374 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_390_2023-01-31_12-51-02.090485.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_393_2023-01-31_12-51-13.888609.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+51
+This is an offer
+0
+acquiring lock
+358
+<databases.backends.postgres.Record object at 0x7f77b4fb25e0>
+id: 358
+partnerid: 359
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 1
+itemid: 7
+goal: 21440
+offer: 0
+offeraccepted: False
+359
+<databases.backends.postgres.Record object at 0x7f77b4fb20e0>
+id: 359
+partnerid: 358
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 0
+itemid: 7
+goal: 26800
+offer: 0
+offeraccepted: False
+Releasing lock
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+52
+Response received
+False
+acquiring lock
+359
+<databases.backends.postgres.Record object at 0x7f77b4f29db0>
+id: 359
+partnerid: 358
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 0
+itemid: 7
+goal: 26800
+offer: 0
+offeraccepted: False
+358
+<databases.backends.postgres.Record object at 0x7f77b4f29db0>
+id: 358
+partnerid: 359
+mturkid: -1
+partnermturkid: -1
+conversationid: 7
+role: 1
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 401
+acquiring lock
+Releasing lock
+Now initializing user with id 402
+Users 402 and 401 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+401
+<databases.backends.postgres.Record object at 0x7ffa88926720>
+id: 401
+partnerid: 402
+mturkid: -1
+partnermturkid: -1
+conversationid: 27
+role: 1
+itemid: 27
+goal: 160
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+402
+<databases.backends.postgres.Record object at 0x7ffa8893d6d0>
+id: 402
+partnerid: 401
+mturkid: -1
+partnermturkid: -1
+conversationid: 27
+role: 0
+itemid: 27
+goal: 200
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+51
+This is an offer
+322
+acquiring lock
+401
+<databases.backends.postgres.Record object at 0x7ffa888d1270>
+id: 401
+partnerid: 402
+mturkid: -1
+partnermturkid: -1
+conversationid: 27
+role: 1
+itemid: 27
+goal: 160
+offer: 322
+offeraccepted: False
+402
+<databases.backends.postgres.Record object at 0x7ffa888d14f0>
+id: 402
+partnerid: 401
+mturkid: -1
+partnermturkid: -1
+conversationid: 27
+role: 0
+itemid: 27
+goal: 200
+offer: 322
+offeraccepted: False
+Releasing lock
+The identifier is:
+52
+Response received
+True
+acquiring lock
+402
+<databases.backends.postgres.Record object at 0x7ffa888d11d0>
+id: 402
+partnerid: 401
+mturkid: -1
+partnermturkid: -1
+conversationid: 27
+role: 0
+itemid: 27
+goal: 200
+offer: 322
+offeraccepted: True
+401
+<databases.backends.postgres.Record object at 0x7ffa888d1630>
+id: 401
+partnerid: 402
+mturkid: -1
+partnermturkid: -1
+conversationid: 27
+role: 1
+itemid: 27
+goal: 160
+offer: 322
+offeraccepted: True
+Releasing lock
+User 402 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 401 has completed the task! Congratulations!
+itemid: 7
+goal: 21440
+offer: 0
+offeraccepted: False
+Releasing lock
+User 359 has completed the task! Congratulations!
+User 358 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_391_2023-01-31_12-51-36.625913.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 395
+Users 394 and 395 were paired!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 394 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 396
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 397
+Users 397 and 396 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+397
+<databases.backends.postgres.Record object at 0x7f77b4f36d60>
+id: 397
+partnerid: 396
+mturkid: -1
+partnermturkid: -1
+conversationid: 26
+role: 0
+itemid: 26
+goal: 60
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+Setting up chat page
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+The partner hasn't connected yet
+acquiring lock
+Releasing lock
+Now initializing user with id 398
+The identifier is:
+1
+Received a ping
+The partner hasn't connected yet
+Partner did not connect in time.
+The identifier is:
+1
+Received a ping
+User 397 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+User 395 has timed out.
+The identifier is:
+1
+Received a ping
+User 396 has completed the task! Congratulations!
+The identifier is:
+2
+recordings/Buyer_390_2023-01-31_12-54-13.572188.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_390_2023-01-31_12-54-48.081800.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 398 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_391_2023-01-31_12-56-57.161486.mp3
+The identifier is:
+1
+Received a ping
+acquiring lock
+Releasing lock
+Now initializing user with id 399
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+51
+This is an offer
+1600
+acquiring lock
+390
+<databases.backends.postgres.Record object at 0x7f77b4ebf450>
+id: 390
+partnerid: 391
+mturkid: -1
+partnermturkid: -1
+conversationid: 23
+role: 1
+itemid: 23
+goal: 1600
+offer: 1600
+offeraccepted: False
+391
+<databases.backends.postgres.Record object at 0x7f77b4ebf720>
+id: 391
+partnerid: 390
+mturkid: -1
+partnermturkid: -1
+conversationid: 23
+role: 0
+itemid: 23
+goal: 2000
+offer: 1600
+offeraccepted: False
+Releasing lock
+The identifier is:
+1
+Received a ping
+User 392 has timed out.
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 393 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+52
+Response received
+True
+acquiring lock
+391
+<databases.backends.postgres.Record object at 0x7f77b4fb2f90>
+id: 391
+partnerid: 390
+mturkid: -1
+partnermturkid: -1
+conversationid: 23
+role: 0
+itemid: 23
+goal: 2000
+offer: 1600
+offeraccepted: True
+390
+<databases.backends.postgres.Record object at 0x7f77b4f89450>
+id: 390
+partnerid: 391
+mturkid: -1
+partnermturkid: -1
+conversationid: 23
+role: 1
+itemid: 23
+goal: 1600
+offer: 1600
+offeraccepted: True
+Releasing lock
+User 391 has completed the task! Congratulations!
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+User 390 has completed the task! Congratulations!
+acquiring lock
+Releasing lock
+Now initializing user with id 400
+Setting up chat page
+acquiring lock
+Releasing lock
+Now initializing user with id 405
+acquiring lock
+Releasing lock
+Now initializing user with id 406
+acquiring lock
+Releasing lock
+Now initializing user with id 407
+acquiring lock
+Releasing lock
+Now initializing user with id 408
+Users 408 and 399 were paired!
+Setting up chat page
+getting keepalive
+User 399 has timed out.
+User 400 has timed out.
+User 405 has timed out.
+User 406 has timed out.
+User 407 has timed out.
+User 408 has completed the task! Congratulations!
+acquiring lock
+Releasing lock
+Now initializing user with id 409
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 410
+acquiring lock
+Releasing lock
+Now initializing user with id 411
+Users 410 and 411 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+411
+<databases.backends.postgres.Record object at 0x7f8fb87b6ea0>
+id: 411
+partnerid: 410
+mturkid: -1
+partnermturkid: -1
+conversationid: 29
+role: 1
+itemid: 29
+goal: 24
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+410
+<databases.backends.postgres.Record object at 0x7f8fb87c00e0>
+id: 410
+partnerid: 411
+mturkid: -1
+partnermturkid: -1
+conversationid: 29
+role: 0
+itemid: 29
+goal: 30
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Websocket connected for chat page
+User 410 has timed out.
+User 411 has completed the task! Congratulations!
+acquiring lock
+Releasing lock
+Now initializing user with id 412
+acquiring lock
+Releasing lock
+Now initializing user with id 413
+Users 413 and 412 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+413
+<databases.backends.postgres.Record object at 0x7f8fb951f2c0>
+id: 413
+partnerid: 412
+mturkid: -1
+partnermturkid: -1
+conversationid: 30
+role: 0
+itemid: 30
+goal: 12000
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+412
+<databases.backends.postgres.Record object at 0x7f8fb9584220>
+id: 412
+partnerid: 413
+mturkid: -1
+partnermturkid: -1
+conversationid: 30
+role: 1
+itemid: 30
+goal: 9600
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_412_2023-02-04_20-06-03.290564.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Seller_413_2023-02-04_20-06-10.468508.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+2
+recordings/Buyer_412_2023-02-04_20-06-25.087650.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a pingStarting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 418
+acquiring lock
+Releasing lock
+Now initializing user with id 419
+Users 419 and 418 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+419
+<databases.backends.postgres.Record object at 0x7f9a91a14180>
+id: 419
+partnerid: 418
+mturkid: -1
+partnermturkid: -1
+conversationid: 33
+role: 0
+itemid: 33
+goal: 49
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+418
+<databases.backends.postgres.Record object at 0x7f9a91a14ea0>
+id: 418
+partnerid: 419
+mturkid: -1
+partnermturkid: -1
+conversationid: 33
+role: 1
+itemid: 33
+goal: 39
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+The partner hasn't connected yet
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+6
+recordings/Buyer_418_2023-02-04_21-41-42.961159.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+6
+recordings/Buyer_418_2023-02-04_21-41-47.113745.mp3
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1

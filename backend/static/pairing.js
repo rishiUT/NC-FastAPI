@@ -63,7 +63,7 @@ window.addEventListener("load", function () {
                     window.location.replace('/record')
                 });
 
-                var timeleft = 10;
+                var timeleft = 30;
                 
                 function reduce_time() {
                     if (timeleft > 0) {
@@ -79,8 +79,6 @@ window.addEventListener("load", function () {
                 
                 const connTimeoutIntvl = setInterval(reduce_time, 1000);
 
-                alert("We've found you a partner!");
-                
             } else if (identifier == 0) {
                 console.log("Timed Out");
                 window.location.replace('/no_partner')

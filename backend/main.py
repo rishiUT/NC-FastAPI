@@ -215,6 +215,17 @@ async def get_max_conv_id():
     
     return maxID
 
+@app.get('/convuser/{uid}')
+async def get_conversation(uid: int):
+    conv = checker.get_user_conv(uid)
+    metadata = json.dumps(conv.get_metadata(uid))
+    return metadata
+    
+@app.get('/messagedata/{filename}')
+async def get_conversation(uid: int):
+    file = None
+    return file
+
 @app.get('/record', response_class=HTMLResponse)
 async def record(request: Request):
     printer.print("Setting up chat page")
@@ -259,7 +270,7 @@ async def record(request: Request):
             template = env.get_template("audioinput_seller.html")
             printer.print("Connection page ready and sending")
         return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
-        item_description=item_description, item_image=image, id=int_uid)
+        item_description=item_description, item_image=image, id=int_uid, conv_id=checker.get_user_conv_id(int_uid))
     else:
         # Redirect to handle a failed user
         int_error = keepalive.value
@@ -344,7 +355,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                     printer.print("The identifier is:")
                     printer.print(identifier)
                     
-                    if(identifier == 2):
+                    if(identifier == 6):
                         # This is a voice message.
 
                         timestamp = datetime.datetime.now()

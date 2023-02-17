@@ -2,6 +2,8 @@ from enum import IntEnum as Enum
 import time
 import threading
 from debughelper import DebugPrinter
+from disconnect_checker.user import User
+from disconnect_checker.conversation import Conversation
  
 class PartnerStatuses(Enum):
     UNPAIRED = 1
@@ -26,71 +28,6 @@ class ConnectionErrors(Enum):
     NO_PARTNER_FOUND = -1
     CONNECTION_TIMEOUT = -2
 
-class User:
-    def __init__(self, id, current_time):
-        self.id = id
-        self.last_ping = current_time
-        self.partner_status = PartnerStatuses.UNPAIRED
-        self.partner_id = -1
-        self.status = Statuses.CONNECTING
-        self.conv_id = -1
-        self.role = "-"
-        self.started_conv = False
-
-    def add_partner(self, partner_id: int):
-        self.partner_id = partner_id
-        self.partner_status = PartnerStatuses.PAIRED
-        self.status = Statuses.CONNECTED
-
-    def get_partner(self):
-        return self.partner_id
-
-    def add_role(self, role):
-        self.role = role
-
-    def get_role(self):
-        return self.role
-
-    def remove_partner(self, success: bool):
-        if success:
-            self.partner_status = PartnerStatuses.CONNECTION_COMPLETE
-            self.status = Statuses.CONNECTION_COMPLETE
-        else:
-            self.partner_status = PartnerStatuses.DISCONNECTED
-            self.status = Statuses.CONNECTION_FAILED
-        self.partner_id = -2
-        self.conv_id = -2 # Delete any conversation as well, as it's no longer relevant.
-
-    def get_id(self):
-        return self.id
-
-    def add_conv_id(self, conv_id: int):
-        self.conv_id = conv_id
-
-    def get_conv_id(self):
-        return self.conv_id
-
-    def ping(self, current_time):
-        self.last_ping = current_time
-
-    def time_since_last_ping(self, current_time):
-        return current_time - self.last_ping
-
-    def disconnect(self):
-        self.status = Statuses.DISCONNECTED
-
-    def check_connection_failure(self):
-        return (self.status == Statuses.CONNECTION_FAILED)
-
-    def check_status(self):
-        return self.status
-    
-    def started_conversation(self):
-        return self.started_conv
-
-    def start_conversation(self):
-        self.started_conv = True
-
 class Message:
     def __init__(self):
         self.sender_id = -1
@@ -106,85 +43,6 @@ class Message:
     def set_sender(self, id):
         self.sender_id = id
 
-class Conversation:
-    def __init__(self):
-        self.id = -1
-        self.item_id = -1
-        self.buyer_id = -1
-        self.seller_id = -1
-        self.messages = []
-        self.offer_value = -1
-        self.offer_accepted = False
-        self.disconnected = True
-
-    def set_id(self, id):
-        self.id = id
-
-    def set_item(self, id):
-        self.item_id = id
-
-    def set_buyer(self, id):
-        self.buyer_id = id
-
-    def set_seller(self, id):
-        self.seller_id = id
-
-    def add_message(self, message):
-        self.messages.append(message)
-    
-    def set_offer(self, val):
-        self.offer_value = val
-
-    def set_accepted(self, offer_acceptance_bool):
-        self.offer_accepted = offer_acceptance_bool
-
-    def set_disconnect(self, disconnect_bool):
-        self.disconnected = disconnect_bool
-
-    def print(self):
-        # Print all data to a file. This should be a unique file.
-        print("Printing conversation to a file")
-        file_name = "conversation_"
-        file_name += str(self.id)
-        file_name += ".txt"
-        with open(file_name, "w") as file1:
-            to_print = "Conversation Data for Conversation "
-            to_print += str(self.id)
-            to_print += "\n"
-            file1.write(to_print)
-            to_print = "Negotiation over item "
-            to_print += str(self.item_id)
-            to_print += "\n"
-            file1.write(to_print)
-            to_print = "Buyer has id = "
-            to_print += str(self.buyer_id)
-            to_print += "\n"
-            file1.write(to_print)
-            to_print = "Seller has id = "
-            to_print += str(self.seller_id)
-            to_print += "\n"
-            file1.write(to_print)
-            for message in self.messages:
-                to_print = "Message sent by "
-                to_print += str(message.sender_id)
-                to_print += " at time "
-                to_print += str(message.timestamp)
-                to_print += " saved in file "
-                to_print += str(message.filename)
-                to_print += "\n"
-                file1.write(to_print)
-            to_print = "Amount offered by buyer was "
-            to_print += str(self.offer_value)
-            to_print += "\n"
-            file1.write(to_print)
-            if self.offer_accepted:
-                to_print = "The offer was accepted"
-            else:
-                to_print = "The offer was declined"
-            to_print += "\n"
-            file1.write(to_print)
-            file1.close()
-    
 class DisconnectChecker:
     def __init__(self):
         self.users = dict()
@@ -287,6 +145,12 @@ class DisconnectChecker:
         user = self.users[uid]
         conv = self.conversations[user.get_conv_id()]
         conv.add_message(message)
+
+    def get_user_conv(self, uid:int):
+        user = self.users[uid]
+        conv = self.conversations[user.get_conv_id()]
+        return conv
+
 
     def conv_print(self, uid: int):
         user = self.users[uid]

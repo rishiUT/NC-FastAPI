@@ -7,21 +7,9 @@
 
 {% block content %}
   <div class="row alert alert-info">
-    <!--Depending on whether they're the buyer or seller, they need either an offer or accept bar here
-        I need to figure out how to make different elements based on an if-statement
-        Also need to figure out how to send an offer to the seller for them to accept or reject - I can use a post to get it from the buyer 
-      <form action="/action_page.php">
-        <label for="offer">Offer: </label>
-        <input type="number" id="offer" name="offer"><br><br>
-        <input type="submit" class="btn btn-success" value="Submit Button">
-      </form>
-      <a href="#" class="btn btn-success">Link Button</a>
-    -->
-    <!--Note to self, create a "Thanks for participating" page that the seller is sent to after accepting or rejecting the offer
-        And a similar page for the buyer (either the same page, or one where it tells them whether their offer was accepted/rejected)-->
-
-    <div class="col-lg-4 p-5">
-      <div class="alert alert-dark">
+    <div class="col-lg p-5">
+      <button id="tdToggle">Toggle Task Description</button>
+      <div class="alert alert-dark" id="taskDescription">
         <p>Welcome! You are the <strong>{{role}}.</strong></p>
         <p>Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over.</p>
         <p>To record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again.</p>
@@ -34,7 +22,7 @@
       </div>
     </div>
       
-    <div class="col-lg-4 p-5">
+    <div class="col-lg p-5">
 
       <div class="alert alert-dark">
         <p><strong>Received Messages:</strong></p>
@@ -44,7 +32,7 @@
               <tr>
                 <th scope="col">Timestamp</th>
                 <th scope="col">Sender</th>
-                <th scope="col">Button</th>
+                <th scope="col">Play/Pause</th>
                 <th scope="col">Message Length</th>
               </tr>
             </thead>
@@ -52,6 +40,8 @@
             </tbody>
           </table>
         </div>
+        <br>
+        <p id="partnerRecordingMsg"></p>
 
         <br>
         <p><strong>Send a Message:</strong></p>

@@ -47,6 +47,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let offer = document.getElementById('offerVal');
         let accept = document.getElementById('accept');
         let decline = document.getElementById('decline');
+        let prtnrRcdMsg = document.getElementById('partnerRecordingMsg');
+        
         console.log(send.dataset.role)
         
         var OfferConfirmModal = new bootstrap.Modal(document.getElementById('OfferConfirmModal'), {
@@ -73,12 +75,27 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         // Pass the audio stream 
 
+        let task_descript_toggle = document.getElementById("tdToggle")
+
+        task_descript_toggle.onclick = function() {
+            var div = document.getElementById('taskDescription');
+            if (div.style.display !== 'none') {
+                div.style.display = 'none';
+            }
+            else {
+                div.style.display = 'block';
+            }
+        };
+        
         // Start event
         record.onmousedown = function (ev) {
             record.classList.remove('btn-primary');
             record.classList.add('btn-success');
             mediaRecorder.start(1000);
             // console.log(mediaRecorder.state);
+            let arr = new Uint8Array([9]);
+            var tosend = arr.buffer;
+            ws.send(tosend);
         }
 
         // Stop event
@@ -88,6 +105,9 @@ navigator.mediaDevices.getUserMedia(audioIN)
             send.classList.remove('disabled');
             mediaRecorder.stop();
             // console.log(mediaRecorder.state);
+            let arr = new Uint8Array([10]);
+            var tosend = arr.buffer;
+            ws.send(tosend);
         });
 
         // Send event
@@ -181,20 +201,26 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 var identifier = finalArray.pop();
                 console.log(identifier);
                 if (identifier == 6) {
-                    add_message(partnerID, window.URL.createObjectURL(incoming_vm), finalArray.pop())
+                    add_message(partnerID, window.URL.createObjectURL(incoming_vm), finalArray.pop());
                 } else if (identifier == 7) {
                     self_is_sender = finalArray.pop()
                     if (self_is_sender) {
                         senderID = "Self";
                     } else {
-                        senderID = "Partner"
+                        senderID = "Partner";
                     }
                     add_message(senderID, window.URL.createObjectURL(incoming_vm), 0)
                 } else if (identifier == 8) {
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
-                    timeleft = 30
-                    handle_offer(amount, timeleft)
+                    timeleft = 30;
+                    handle_offer(amount, timeleft);
+                } else if (identifier == 9) {
+                    prtnrRcdMsg.innerHTML = "Your partner is recording...";
+                    console.log("The partner is recording...");
+                } else if (identifier == 10) {
+                    prtnrRcdMsg.innerHTML = "";
+                    console.log("The partner has finished recording");
                 } else if (identifier == 51) {
                     timeleft = 60
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -228,7 +254,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     window.location.replace('/error/' + identifier)
                 } else {
                     console.log("Unexpected input");
-                    console.log(identifier);
                 }
             });           
         };
@@ -412,6 +437,8 @@ function add_message(senderID, audioSrc, length) {
     var button = document.createElement('audio');
     button.src = audioSrc;
     button.controls = 'controls';
+    button.style.width = '100px';
+    button.style.display = 'block';
     buttonChild.appendChild(button);
     row.appendChild(buttonChild);
 

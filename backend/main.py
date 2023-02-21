@@ -477,7 +477,9 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                     elif (identifier == 1):
                         printer.print("Received a ping")
                     else :
-                        printer.print("Unexpected identifier ", identifier)
+                        printer.print("Unexpected identifier:")
+                        printer.print(identifier)
+                        await manager.send_partner_message(data, int_pid)
                 else:
                     await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)
 

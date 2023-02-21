@@ -7,8 +7,9 @@
 
 {% block content %}
   <div class="row alert alert-info">
-    <div class="col-lg-4 p-5">
-      <div class="alert alert-dark">
+    <div class="col-lg p-5">
+      <button id="tdToggle">Toggle Task Description</button>
+      <div class="alert alert-dark" id="taskDescription">
         <p>Welcome! You are the <strong>{{role}}.</strong></p>
         <p>Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.</p>
         <p>To record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again.</p>
@@ -21,7 +22,7 @@
       </div>
     </div>
       
-    <div class="col-lg-4 p-5">
+    <div class="col-lg p-5">
 
       <div class="alert alert-dark">
         <p><strong>Received Messages:</strong></p>
@@ -31,7 +32,7 @@
               <tr>
                 <th scope="col">Timestamp</th>
                 <th scope="col">Sender</th>
-                <th scope="col">Button</th>
+                <th scope="col">Play/Pause</th>
                 <th scope="col">Message Length</th>
               </tr>
             </thead>
@@ -39,6 +40,8 @@
             </tbody>
           </table>
         </div>
+        <br>
+        <p id="partnerRecordingMsg"></p>
 
         <br>
         <p><strong>Send a Message:</strong></p>

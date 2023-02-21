@@ -19,8 +19,9 @@ class ConnectionManager:
 
     async def send_partner_message(self, message: bytes, pid: int):
         if pid != -1:
-            await self.active_connections.get(pid).send_bytes(message)
+            connection = self.active_connections.get(pid)
+            if connection:
+                await connection.send_bytes(message)
 
     async def send_self_message(self, message: bytes, uid: int):
-        if uid != -1:
-            await self.active_connections.get(uid).send_bytes(message)
+        await self.active_connections.get(uid).send_bytes(message)

@@ -6,6 +6,7 @@ class Conversation:
         self.seller_id = -1
         self.messages = []
         self.offer_value = -1
+        self.offer_sent = False
         self.offer_accepted = False
         self.disconnected = True
 
@@ -26,6 +27,7 @@ class Conversation:
     
     def set_offer(self, val):
         self.offer_value = val
+        self.offer_sent = True
 
     def set_accepted(self, offer_acceptance_bool):
         self.offer_accepted = offer_acceptance_bool

@@ -360,6 +360,14 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
             
             await manager.send_self_message(data, int_uid)
 
+        if conv.offer_sent:
+            offer_as_utf8 = str(conv.offer_value).encode("utf-8")
+            data_array = bytearray(offer_as_utf8)
+            data_array.append(8)
+            data = bytes(data_array)
+            
+            await manager.send_self_message(data, int_uid)
+
         try:
             while True:
                 data = await websocket.receive_bytes()
@@ -469,8 +477,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                     elif (identifier == 1):
                         printer.print("Received a ping")
                     else :
-                        printer.print(identifier)
-                        printer.print("This is not a audio message")
+                        printer.print("Unexpected identifier ", identifier)
                 else:
                     await manager.send_self_message(keepalive.to_bytes(1, 'big'), int_uid)
 

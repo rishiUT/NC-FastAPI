@@ -1,5 +1,6 @@
 /.pytest_cache
 original-default
 default
+backend/conversations
 backend/__pycache__/connectionmanager.cpython-39.pyc
 *.mp3

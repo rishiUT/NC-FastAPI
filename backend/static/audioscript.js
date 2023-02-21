@@ -190,32 +190,16 @@ navigator.mediaDevices.getUserMedia(audioIN)
                         senderID = "Partner"
                     }
                     add_message(senderID, window.URL.createObjectURL(incoming_vm), 0)
-                } else if (identifier == 51) {
-                    console.log("Received an offer!");
+                } else if (identifier == 8) {
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
-                    var timeleft = 60
-                    document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
-                    document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
-                    console.log(finalArray);
-                    console.log(resultstring);
-                    var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
-                        keyboard: false
-                    })
-                    myModal.show();
-
-
-                    function handleTimeout() {
-                        // Get the number of seconds remaining until timeout
-                        timeleft--;
-                        if (timeleft < 0) {
-                            window.location.replace('/error/2') //2 = user disconnect error code
-                        }
-                        document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
-                        document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
-                    }
-
-                    const offertimeout = setInterval(handleTimeout, 1000);
+                    timeleft = 30
+                    handle_offer(amount, timeleft)
+                } else if (identifier == 51) {
+                    timeleft = 60
+                    var resultstring = Utf8ArrayToStr(finalArray);
+                    var amount = parseInt(resultstring);
+                    handle_offer(amount, timeleft)
                 } else if (identifier == 52) {
                     console.log("Received a response!");
                     OfferConfirmModal.hide();
@@ -425,15 +409,9 @@ function add_message(senderID, audioSrc, length) {
     row.appendChild(senderChild);
 
     var buttonChild = document.createElement("td");
-    var button = document.createElement("button");
-    button.innerHTML = "Play";
-    button.dataset.audioLink = audioSrc
-    button.addEventListener('click', function(ev) {
-        console.log("Play audio");
-        var audioElement = document.getElementById("partnerAudio");
-        audioElement.src = this.dataset.audioLink;
-        audioElement.play();
-    })
+    var button = document.createElement('audio');
+    button.src = audioSrc;
+    button.controls = 'controls';
     buttonChild.appendChild(button);
     row.appendChild(buttonChild);
 
@@ -453,4 +431,27 @@ function formatTimeChunk(timeChunk) {
     }
 
     return "0" + timeChunk;
+}
+
+function handle_offer(amount, timeleft) {
+    console.log("Received an offer!");
+    document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
+    document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+    
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
+        keyboard: false
+    })
+    myModal.show();
+
+    function handleTimeout() {
+        // Get the number of seconds remaining until timeout
+        timeleft--;
+        if (timeleft < 0) {
+            window.location.replace('/error/2') //2 = user disconnect error code
+        }
+        document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
+        document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+    }
+
+    const offertimeout = setInterval(handleTimeout, 1000);
 }

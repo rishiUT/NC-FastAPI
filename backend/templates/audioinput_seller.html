@@ -16,6 +16,9 @@
         <p>Have fun, and good luck with your negotiation!</p>
       </div>
       <div class="alert alert-dark">
+        <div class="alert alert-dark" style="position: fixed; top: 1%; right: 1%; z-index: 100; width: fit-content; height: fit-content;">
+          <p id="TimeRemaining">Time Remaining: 5:00</p>
+        </div>
         <p>Goal Price: ${{goal_price}}</p>
         <p>Item Description: {{item_description}}</p>
         <p><img src={{item_image}} alt="No image available" class="img-fluid rounded"></p>
@@ -53,6 +56,7 @@
           <button id="btnsend"  class="btn btn-primary btn-lg disabled" data-id={{id}} data-role={{role}} data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
         </div>
         <audio id="partnerAudio"></audio>
+        <audio id="timerAudio" src="/static/tick.mp3"></audio>
       </div>
     </div>
   </div>

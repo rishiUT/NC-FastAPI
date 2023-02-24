@@ -70,6 +70,8 @@ window.addEventListener("load", function () {
                         var message = "We've found you a partner! Please click the button below within " + timeleft + " seconds to begin."
                         document.getElementById('modalText').innerHTML = message;
                         timeleft--;
+                        timerSound = document.getElementById('timerAudio')
+                        timerSound.play()
                     } else {
                         // The user didn't click the button fast enough.
                         console.log("Timed Out");

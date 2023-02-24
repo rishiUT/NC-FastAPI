@@ -48,8 +48,21 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let accept = document.getElementById('accept');
         let decline = document.getElementById('decline');
         let prtnrRcdMsg = document.getElementById('partnerRecordingMsg');
-        
-        console.log(send.dataset.role)
+
+        let minutesLeft = 5
+        let secondsLeft = 0
+
+        let role = send.dataset.role;
+        let is_buyer = (role == "Buyer");
+        let is_your_turn = is_buyer;
+        let num_messages_sent = 0;
+                
+        function increase_message_count() {
+            num_messages_sent++;
+            if (num_messages_sent >= 4) {
+                submit.classList.remove('disabled');
+            }
+        }
         
         var OfferConfirmModal = new bootstrap.Modal(document.getElementById('OfferConfirmModal'), {
             backdrop: 'static',
@@ -89,6 +102,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
         
         // Start event
         record.onmousedown = function (ev) {
+            console.log(is_your_turn)
             record.classList.remove('btn-primary');
             record.classList.add('btn-success');
             mediaRecorder.start(1000);
@@ -114,7 +128,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
         send.addEventListener('click', function (ev) {
             sendMessage()
             send.classList.add('disabled');
-            submit.classList.remove('disabled');
             // console.log(mediaRecorder.state);
         });
         // If audio data available then push 
@@ -202,13 +215,21 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 console.log(identifier);
                 if (identifier == 6) {
                     add_message(partnerID, window.URL.createObjectURL(incoming_vm), finalArray.pop());
+                    is_your_turn = true;
+                    increase_message_count()
+                    record.classList.remove('disabled');
                 } else if (identifier == 7) {
                     self_is_sender = finalArray.pop()
                     if (self_is_sender) {
                         senderID = "Self";
+                        is_your_turn = false;
+                        record.classList.add('disabled');
                     } else {
                         senderID = "Partner";
+                        is_your_turn = true;
+                        record.classList.remove('disabled');
                     }
+                    increase_message_count()
                     add_message(senderID, window.URL.createObjectURL(incoming_vm), 0)
                 } else if (identifier == 8) {
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -245,10 +266,13 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 } else if (identifier == 1) {
                     console.log("Partner connection message received")
                     // This tells us the situation is normal. Make sure the user can send messages.
-                    record.classList.remove('disabled');
+                    if (is_your_turn) {
+                        record.classList.remove('disabled');
+                    }
                     send.dataset.connected = true;
                     document.getElementById('connectingModalText').innerHTML = "Your partner has connected!";
                     document.getElementById('connectionComplete').style.visibility = 'visible';
+                    const otherInterval = setInterval(dropCountdown, 1000);
                 }else if (identifier > 1 && identifier < 5) {
                     // This is an error code.
                     window.location.replace('/error/' + identifier)
@@ -259,7 +283,10 @@ navigator.mediaDevices.getUserMedia(audioIN)
         };
         function sendMessage(event) {
             ws.send(recording);
-
+            is_your_turn = false;
+            increase_message_count()
+            record.classList.add('disabled');
+            
             senderID = selfID;
             audioSrc = playAudio.src;
             length = prevAudioLength;
@@ -334,6 +361,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
                         if (timeleft < 0) {
                             window.location.replace('/error/3') //3 = partner disconnect error code
                         }
+                        timerSound = document.getElementById('timerAudio')
+                        timerSound.play()
                         document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...\n";
                         document.getElementById('OfferConfirmText').innerHTML += "Time Remaining: " + timeleft + " seconds";
                     }
@@ -362,7 +391,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             val = [val, 4];
             console.log(val);
             let data = new Blob(val);
-            if (send.dataset.role == "Seller") {
+            if (role == "Seller") {
                 ws.send(data)
             }
             window.location.replace('/finish')
@@ -414,6 +443,24 @@ navigator.mediaDevices.getUserMedia(audioIN)
         }
 
         const nIntervID = setInterval(sendPing, 10000);
+
+        function dropCountdown() {
+            if (secondsLeft == 0) {
+                if (minutesLeft == 0) {
+                    window.location.replace('/error/2'); //2 = user disconnect error code; not perfect but good enough
+                } else {
+                    secondsLeft = 59;
+                    minutesLeft--;
+                }
+            } else {
+                secondsLeft--;
+            }
+
+            let timeRemainingText = "Time Remaining: " + minutesLeft + ":" + formatTimeChunk(secondsLeft);
+            console.log(timeRemainingText);
+            document.getElementById("TimeRemaining").innerHTML = timeRemainingText;
+        }
+
     })
 
     // Print any errors 
@@ -460,6 +507,7 @@ function formatTimeChunk(timeChunk) {
     return "0" + timeChunk;
 }
 
+
 function handle_offer(amount, timeleft) {
     console.log("Received an offer!");
     document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
@@ -476,6 +524,8 @@ function handle_offer(amount, timeleft) {
         if (timeleft < 0) {
             window.location.replace('/error/2') //2 = user disconnect error code
         }
+        timerSound = document.getElementById('timerAudio')
+        timerSound.play()
         document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
         document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
     }

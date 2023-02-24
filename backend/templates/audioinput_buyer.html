@@ -15,7 +15,10 @@
         <p>To record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again.</p>
         <p>Have fun, and good luck with your negotiation!</p>
       </div>
-      <div class="alert alert-dark">  
+      <div class="alert alert-dark">
+        <div class="alert alert-dark" style="position: fixed; top: 1%; right: 1%; z-index: 100; width: fit-content; height: fit-content;">
+          <p id="TimeRemaining">Time Remaining: 5:00</p>
+        </div>
         <p>Goal Price: ${{goal_price}}</p>
         <p>Item Description: {{item_description}}</p>
         <p><img src={{item_image}} alt="No image available" class="img-fluid rounded"></p>
@@ -53,6 +56,7 @@
           <button id="btnsend"  class="btn btn-primary btn-lg disabled" data-id={{id}} data-role={{role}} data-connected=false data-bs-toggle="tooltip" title="Send"><i class="bi-telegram"></i></button>
         </div>
         <audio id="partnerAudio"></audio>
+        <audio id="timerAudio" src="/static/tick.mp3"></audio>
       </div>
 
       <div class="alert alert-dark">
@@ -66,7 +70,7 @@
             <span class="input-group-text">.00</span>
           </div>
         </div>
-        <button id="btnSubmit" class="button-primary align-items-center disabled">Submit</button>
+        <button id="btnSubmit" class="btn btn-primary btn-lg disabled">Submit</button>
       </div>
 
     </div>

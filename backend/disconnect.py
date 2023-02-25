@@ -123,7 +123,12 @@ class DisconnectChecker:
 
     def user_start_conv(self, uid: int):
         curr_user = self.users[uid]
-        curr_user.start_conversation()
+        if not curr_user.started_conversation():
+            curr_user.start_conversation()
+
+    def user_get_time_elapsed(self, uid: int):
+        curr_user = self.users[uid]
+        return curr_user.get_time_elapsed()
 
     def conv_set_item(self, uid: int, item_id: int):
         user = self.users[uid]

@@ -242,6 +242,29 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 } else if (identifier == 10) {
                     prtnrRcdMsg.innerHTML = "";
                     console.log("The partner has finished recording");
+                } else if (identifier == 11) {
+                    // This is the time elapsed since the conversation started
+                    var resultstring = Utf8ArrayToStr(finalArray);
+                    var time_elapsed = parseInt(resultstring);
+                    if (time_elapsed > 300) {
+                        //The conversation has run too long. Time to time out
+                        window.location.replace('/error/2'); //2 = user disconnect error code
+                    }
+                    
+                    while (time_elapsed > 60) {
+                        minutesLeft--;
+                        time_elapsed -= 60;
+                    }
+
+                    if (time_elapsed > secondsLeft) {
+                        minutesLeft--;
+                        secondsLeft += 60;
+                    }
+
+                    secondsLeft -= time_elapsed;
+
+                    let timeRemainingText = "Time Remaining: " + minutesLeft + ":" + formatTimeChunk(secondsLeft);
+                    document.getElementById("TimeRemaining").innerHTML = timeRemainingText;
                 } else if (identifier == 51) {
                     timeleft = 60
                     var resultstring = Utf8ArrayToStr(finalArray);
@@ -457,7 +480,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
             }
 
             let timeRemainingText = "Time Remaining: " + minutesLeft + ":" + formatTimeChunk(secondsLeft);
-            console.log(timeRemainingText);
             document.getElementById("TimeRemaining").innerHTML = timeRemainingText;
         }
 

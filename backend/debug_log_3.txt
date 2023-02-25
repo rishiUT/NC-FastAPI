@@ -12605,3 +12605,267 @@ Received a ping
 The identifier is:
 1
 Received a ping
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 552
+acquiring lock
+Releasing lock
+Now initializing user with id 553
+Users 552 and 553 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+553
+<databases.backends.postgres.Record object at 0x7f471b458720>
+id: 553
+partnerid: 552
+mturkid: -1
+partnermturkid: -1
+conversationid: 90
+role: 1
+itemid: 90
+goal: 2240
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+552
+<databases.backends.postgres.Record object at 0x7f471b43ce50>
+id: 552
+partnerid: 553
+mturkid: -1
+partnermturkid: -1
+conversationid: 90
+role: 0
+itemid: 90
+goal: 2800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+The partner hasn't connected yet
+Websocket connected for chat page
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+553
+<databases.backends.postgres.Record object at 0x7f471b3eaea0>
+id: 553
+partnerid: 552
+mturkid: -1
+partnermturkid: -1
+conversationid: 90
+role: 1
+itemid: 90
+goal: 2240
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+553
+<databases.backends.postgres.Record object at 0x7f47180ef770>
+id: 553
+partnerid: 552
+mturkid: -1
+partnermturkid: -1
+conversationid: 90
+role: 1
+itemid: 90
+goal: 2240
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+553
+<databases.backends.postgres.Record object at 0x7f47180ff1d0>
+id: 553
+partnerid: 552
+mturkid: -1
+partnermturkid: -1
+conversationid: 90
+role: 1
+itemid: 90
+goal: 2240
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+552
+<databases.backends.postgres.Record object at 0x7f471b458ef0>
+id: 552
+partnerid: 553
+mturkid: -1
+partnermturkid: -1
+conversationid: 90
+role: 0
+itemid: 90
+goal: 2800
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+Starting Server
+acquiring lock
+Releasing lock
+Now initializing user with id 554
+acquiring lock
+Releasing lock
+Now initializing user with id 555
+Users 555 and 554 were paired!
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+555
+<databases.backends.postgres.Record object at 0x7f774ca284a0>
+id: 555
+partnerid: 554
+mturkid: -1
+partnermturkid: -1
+conversationid: 91
+role: 0
+itemid: 91
+goal: 2695
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The partner hasn't connected yet
+The partner hasn't connected yet
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+554
+<databases.backends.postgres.Record object at 0x7f774ca1d630>
+id: 554
+partnerid: 555
+mturkid: -1
+partnermturkid: -1
+conversationid: 91
+role: 1
+itemid: 91
+goal: 2156
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+555
+<databases.backends.postgres.Record object at 0x7f774c9ad5e0>
+id: 555
+partnerid: 554
+mturkid: -1
+partnermturkid: -1
+conversationid: 91
+role: 0
+itemid: 91
+goal: 2695
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Connection page ready and sending
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+Setting up chat page
+getting keepalive
+keepalive = true
+adding info to the database
+acquiring lock
+554
+<databases.backends.postgres.Record object at 0x7f774ca1d680>
+id: 554
+partnerid: 555
+mturkid: -1
+partnermturkid: -1
+conversationid: 91
+role: 1
+itemid: 91
+goal: 2156
+offer: -1
+offeraccepted: False
+Releasing lock
+getting image
+Websocket connected for chat page
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping
+The identifier is:
+1
+Received a ping

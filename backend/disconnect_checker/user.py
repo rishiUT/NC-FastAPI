@@ -1,5 +1,6 @@
 from enum import IntEnum as Enum
 import time
+import math
 import threading
 from debughelper import DebugPrinter
 
@@ -26,6 +27,7 @@ class User:
         self.conv_id = -1
         self.role = "-"
         self.started_conv = False
+        self.start_time = -1
 
     def add_partner(self, partner_id: int):
         self.partner_id = partner_id
@@ -80,3 +82,7 @@ class User:
 
     def start_conversation(self):
         self.started_conv = True
+        self.start_time = time.time()
+
+    def get_time_elapsed(self):
+        return math.floor(time.time() - self.start_time)

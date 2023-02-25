@@ -58,7 +58,7 @@ class User(BaseModel):
     offer: int
     offeraccepted: bool
 
-TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.\nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the “send” button to send it. You can also click any sent or received message to listen to them again.\nHave fun, and good luck with your negotiation!",
+TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.\nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the “send” button to send it. You can also click any sent or received message to listen to them again.Each negotiation should be finished within 5 minutes. There is a timer at the top of the screen which tells you how much time has elapsed.\nFor more detailed instructions, click the \"Negotiation Instructions\" link at the top of the screen.\nHave fun, and good luck with your negotiation!",
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over. \nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again. \nHave fun, and good luck with your negotiation!"]
 
 checker = UserManager()
@@ -341,9 +341,20 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
         # Once users reach this point, they get paid for their effort.
         # If we want to change where this happens, we can.
         checker.user_start_conv(int_uid)
+        time_elapsed = checker.user_get_time_elapsed(int_uid)
+        if time_elapsed < 30:
+            time_elapsed = 0
         # Send a message to the user allowing them to start recording.
         start_code = PingErrors.NORMAL
         await manager.send_self_message(start_code.to_bytes(1, 'big'), int_uid)
+  
+        # Send elapsed time
+        time_elapsed_as_utf8 = str(time_elapsed).encode("utf-8")
+        data_array = bytearray(time_elapsed_as_utf8)
+        data_array.append(11)
+        data = bytes(data_array)
+        
+        await manager.send_self_message(data, int_uid)
 
         conv = checker.get_user_conv(int_uid)
         for message in conv.messages:

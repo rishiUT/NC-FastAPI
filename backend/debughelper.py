@@ -1,3 +1,5 @@
+debug = True
+
 class DebugPrinter:
     def __init__(self) -> None:
         pass
@@ -9,9 +11,10 @@ class DebugPrinter:
         self.output_file = output_file
 
     def print(self, to_print: str):
-        print(to_print)
-        if self.output_file is not None:
-            print(to_print, file=self.output_file)
-        elif self.output is not None:
-            with open(self.output, 'a') as f:
-                print(to_print, file=f)
+        if debug:
+            print(to_print)
+            if self.output_file is not None:
+                print(to_print, file=self.output_file)
+            elif self.output is not None:
+                with open(self.output, 'a') as f:
+                    print(to_print, file=f)

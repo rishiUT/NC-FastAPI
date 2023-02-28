@@ -59,9 +59,6 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 
         function increase_message_count() {
             num_messages_sent++;
-            if (num_messages_sent >= 4) {
-                submit.classList.remove('disabled');
-            }
         }
         
         var OfferConfirmModal = new bootstrap.Modal(document.getElementById('OfferConfirmModal'), {
@@ -292,6 +289,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     if (is_your_turn) {
                         record.classList.remove('disabled');
                     }
+                    submit.classList.remove('disabled');
                     send.dataset.connected = true;
                     document.getElementById('connectingModalText').innerHTML = "Your partner has connected!";
                     document.getElementById('connectionComplete').style.visibility = 'visible';
@@ -359,7 +357,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
             }
 
             console.log(isInt(val));
-            if (isInt(val)) {
+            if (num_messages_sent >= 4 && isInt(val)) {
                 console.log(val);
 
                 var confirmOffer = function(ev) {
@@ -397,6 +395,11 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 denyAction = closeWindow;
 
                 document.getElementById('OfferConfirmText').innerHTML = "WARNING: You can only send your partner a single offer. Are you sure you want to offer $" + val + "?";
+                OfferConfirmModal.show();
+            } else if (num_messages_sent < 4) {
+                confirmAction = closeWindow;
+                denyAction = closeWindow;
+                document.getElementById('OfferConfirmText').innerHTML = "WARNING: You can only send an offer once you and your partner have each sent two messages.";
                 OfferConfirmModal.show();
             } else {
                 confirmAction = closeWindow;

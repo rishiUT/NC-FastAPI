@@ -156,11 +156,15 @@ class DisconnectChecker:
         conv = self.conversations[user.get_conv_id()]
         return conv
 
-
-    def conv_print(self, uid: int):
-        user = self.users[uid]
-        conv = self.conversations[user.get_conv_id()]
-        conv.print()
+    def conv_print(self, uid: int, printer):
+        if uid in self.users:
+            user = self.users[uid]
+            conv = self.conversations[user.get_conv_id()]
+            conv.print()
+        else:
+            printer.print("User missing:")
+            printer.print(uid)
+            printer.print(self.users)
 
     # Remove the user from the "current users" list once they complete the task
     def safe_delete_user(self, uid: int):
@@ -237,6 +241,9 @@ class DisconnectChecker:
             self.printer.print("User " + str(self.users[key].get_id()) + " last pinged " + str(self.users[key].time_since_last_ping(curr_time)) + " seconds ago.")
         self.user_table_lock.release()
 
+    def user_is_active(self, uid:int):
+        return True if uid in self.users else False
+
     # Checks the users table for users who have timed out.
     def check_for_disconnects(self):
         #self.printer.print("Checking for disconnected users")
@@ -260,7 +267,9 @@ class DisconnectChecker:
     # Remove a disconnected user from the user table.
     def remove_user(self, uid: int):
         #self.printer.print("Removing a user from the users table")
-        self.user_table_lock.acquire()
-        self.users.pop(uid)
-        self.user_table_lock.release()
+        # This removes a user if they exist. If they've already been removed, do nothing.
+        if uid in self.users:
+            self.user_table_lock.acquire()
+            self.users.pop(uid)
+            self.user_table_lock.release()
 

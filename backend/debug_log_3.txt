@@ -43,3 +43,713 @@ partner was the seller
 Deleting mturk cokokies
 Creating mturk submit text
 Putting together the text
+Printing mturk data:
+33SA9F9TR1BMCYDKP303JDO5YFYWEL
+3R15W654WGATBNTW4EJZFZ0OTJ5LQ6
+https://workersandbox.mturk.com
+A2HTEV2XUQF432
+End mturk data
+[<databases.backends.postgres.Record object at 0x7f942a8d9310>]
+<databases.backends.postgres.Record object at 0x7f942a8d9310>
+66
+Now initializing user with id 67
+Printing mturk data:
+33JKGHPFYGBU1SWJE0XZ02GNE5LMN9
+3HEM8MA6ICTJ288UW6C6WG98YT6QP9
+https://workersandbox.mturk.com
+A23BREU8F6CXOR
+End mturk data
+[<databases.backends.postgres.Record object at 0x7f942a8ba3b0>]
+<databases.backends.postgres.Record object at 0x7f942a8ba3b0>
+65
+Now initializing user with id 68
+Users 68 and 67 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_67_2023-02-28_13-22-40.913290.mp3
+recordings/Seller_68_2023-02-28_13-22-43.894508.mp3
+recordings/Buyer_67_2023-02-28_13-22-47.905368.mp3
+recordings/Seller_68_2023-02-28_13-22-50.401935.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 68 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 67 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 69
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 70
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 71
+Setting up chat page
+Setting up chat page
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 72
+Users 72 and 69 were paired!
+Setting up chat page
+User 69 has timed out.
+User 70 has timed out.
+User 71 has timed out.
+User 72 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 73
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 74
+Users 74 and 73 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 75
+recordings/Buyer_73_2023-03-02_14-11-58.579531.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 76
+Users 75 and 76 were paired!
+Setting up chat page
+adding info to the database
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 77
+Setting up chat page
+adding info to the database
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 78
+Users 78 and 77 were paired!
+Setting up chat page
+adding info to the database
+recordings/Seller_74_2023-03-02_14-13-00.169622.mp3
+Setting up chat page
+adding info to the database
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 79
+recordings/Buyer_76_2023-03-02_14-13-44.250943.mp3
+recordings/Buyer_73_2023-03-02_14-13-46.443961.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 80
+Users 80 and 79 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_74_2023-03-02_14-14-33.552444.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+User 74 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+User 73 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 81
+recordings/Buyer_77_2023-03-02_14-15-11.491681.mp3
+recordings/Seller_75_2023-03-02_14-15-12.904933.mp3
+Entering the finish function
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 82
+Users 82 and 81 were paired!
+Setting up chat page
+adding info to the database
+Partner did not connect in time.
+User 82 has completed the task! Congratulations!
+recordings/Buyer_79_2023-03-02_14-15-56.513441.mp3
+recordings/Buyer_76_2023-03-02_14-15-57.581284.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 83
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 84
+Users 84 and 83 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_78_2023-03-02_14-16-19.414843.mp3
+recordings/Buyer_83_2023-03-02_14-16-48.422774.mp3
+recordings/Seller_75_2023-03-02_14-16-49.751603.mp3
+User 81 has timed out.
+recordings/Seller_80_2023-03-02_14-17-19.874185.mp3
+recordings/Buyer_77_2023-03-02_14-17-20.800817.mp3
+recordings/Seller_84_2023-03-02_14-17-23.384667.mp3
+recordings/Buyer_76_2023-03-02_14-17-30.114913.mp3
+This is an offer
+recordings/Buyer_83_2023-03-02_14-17-49.890622.mp3
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 75 has completed the task! Congratulations!
+User 76 has completed the task! Congratulations!
+User 77 has completed the task! Congratulations!
+User 78 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 85
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 86
+recordings/Buyer_79_2023-03-02_14-18-26.592244.mp3
+Users 86 and 85 were paired!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 87
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_84_2023-03-02_14-18-36.521301.mp3
+recordings/Seller_80_2023-03-02_14-18-54.537997.mp3
+recordings/Buyer_83_2023-03-02_14-19-04.195238.mp3
+This is an offer
+recordings/Buyer_85_2023-03-02_14-19-13.532966.mp3
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 80 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 79 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 88
+Users 87 and 88 were paired!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 89
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_84_2023-03-02_14-19-56.116780.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 90
+Users 90 and 89 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_86_2023-03-02_14-20-23.110637.mp3
+recordings/Buyer_83_2023-03-02_14-20-40.612054.mp3
+recordings/Buyer_89_2023-03-02_14-20-41.023210.mp3
+recordings/Buyer_85_2023-03-02_14-21-02.211605.mp3
+recordings/Buyer_88_2023-03-02_14-21-08.011881.mp3
+User 83 has completed the task! Congratulations!
+User 84 has completed the task! Congratulations!
+recordings/Seller_90_2023-03-02_14-21-38.683707.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 91
+recordings/Seller_86_2023-03-02_14-21-53.940290.mp3
+recordings/Buyer_89_2023-03-02_14-22-10.918080.mp3
+recordings/Seller_87_2023-03-02_14-22-11.508289.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 92
+Users 92 and 91 were paired!
+Setting up chat page
+adding info to the database
+recordings/Buyer_85_2023-03-02_14-22-25.983457.mp3
+Partner did not connect in time.
+User 92 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 93
+recordings/Seller_86_2023-03-02_14-22-49.705149.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 94
+Users 94 and 93 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_85_2023-03-02_14-23-04.906589.mp3
+recordings/Buyer_88_2023-03-02_14-23-10.737757.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+User 86 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+User 85 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 95
+recordings/Buyer_93_2023-03-02_14-23-32.564331.mp3
+recordings/Seller_87_2023-03-02_14-23-32.803300.mp3
+recordings/Seller_90_2023-03-02_14-23-33.457235.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 96
+Users 96 and 95 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 87 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 88 has completed the task! Congratulations!
+recordings/Seller_94_2023-03-02_14-23-57.462423.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 97
+recordings/Buyer_89_2023-03-02_14-24-02.950966.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 98
+Users 98 and 97 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+This is an offer
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 90 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 89 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 99
+User 91 has timed out.
+recordings/Buyer_97_2023-03-02_14-25-21.979299.mp3
+recordings/Buyer_93_2023-03-02_14-25-23.134087.mp3
+recordings/Buyer_95_2023-03-02_14-25-31.772588.mp3
+recordings/Seller_94_2023-03-02_14-25-46.712915.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 100
+recordings/Seller_98_2023-03-02_14-26-10.051558.mp3
+Users 100 and 99 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_96_2023-03-02_14-26-28.519552.mp3
+recordings/Buyer_93_2023-03-02_14-26-28.830906.mp3
+recordings/Buyer_99_2023-03-02_14-26-43.713272.mp3
+recordings/Buyer_97_2023-03-02_14-26-55.022787.mp3
+recordings/Seller_94_2023-03-02_14-27-08.768814.mp3
+recordings/Buyer_95_2023-03-02_14-27-19.677596.mp3
+recordings/Buyer_93_2023-03-02_14-27-43.211055.mp3
+recordings/Seller_100_2023-03-02_14-27-47.956060.mp3
+recordings/Seller_96_2023-03-02_14-27-52.550546.mp3
+recordings/Seller_94_2023-03-02_14-27-54.296172.mp3
+User 93 has completed the task! Congratulations!
+User 94 has completed the task! Congratulations!
+recordings/Seller_98_2023-03-02_14-28-14.020999.mp3
+recordings/Buyer_99_2023-03-02_14-28-24.234421.mp3
+This is an offer
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 101
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 96 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 95 has completed the task! Congratulations!
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 98 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 97 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 102
+Users 102 and 101 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 103
+recordings/Buyer_101_2023-03-02_14-29-30.415205.mp3
+recordings/Seller_100_2023-03-02_14-29-39.810669.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 104
+Users 104 and 103 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 105
+recordings/Seller_102_2023-03-02_14-30-00.792145.mp3
+recordings/Buyer_103_2023-03-02_14-30-28.097256.mp3
+recordings/Buyer_99_2023-03-02_14-30-29.206454.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 106
+Users 106 and 105 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_101_2023-03-02_14-31-00.103006.mp3
+recordings/Seller_104_2023-03-02_14-31-04.034534.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 100 has completed the task! Congratulations!
+User 99 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 107
+recordings/Seller_102_2023-03-02_14-31-33.769054.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 108
+Users 108 and 107 were paired!
+Setting up chat page
+adding info to the database
+recordings/Buyer_105_2023-03-02_14-31-52.659761.mp3
+recordings/Buyer_103_2023-03-02_14-32-06.476565.mp3
+Partner did not connect in time.
+User 108 has completed the task! Congratulations!
+recordings/Buyer_101_2023-03-02_14-32-42.043086.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 109
+recordings/Seller_104_2023-03-02_14-32-52.123167.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 110
+Users 110 and 109 were paired!
+recordings/Seller_106_2023-03-02_14-33-01.397226.mp3
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Seller_102_2023-03-02_14-33-12.055296.mp3
+Partner did not connect in time.
+Partner did not connect in time.
+recordings/Buyer_101_2023-03-02_14-33-36.885909.mp3
+recordings/Buyer_103_2023-03-02_14-33-39.760437.mp3
+recordings/Seller_102_2023-03-02_14-33-57.502543.mp3
+recordings/Seller_104_2023-03-02_14-34-10.131263.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 102 has completed the task! Congratulations!
+User 107 has timed out.
+recordings/Buyer_105_2023-03-02_14-34-17.650027.mp3
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 101 has completed the task! Congratulations!
+recordings/Buyer_103_2023-03-02_14-34-45.609198.mp3
+This is an offer
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 111
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 104 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 103 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 112
+Users 112 and 111 were paired!
+Setting up chat page
+adding info to the database
+recordings/Seller_106_2023-03-02_14-35-13.413813.mp3
+Partner did not connect in time.
+User 112 has completed the task! Congratulations!
+User 109 has timed out.
+User 110 has timed out.
+User 105 has completed the task! Congratulations!
+User 106 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 113

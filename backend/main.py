@@ -238,7 +238,7 @@ async def self_reset(request: Request, response: Response):
     bonus_percentage = await calc_bonus(int_uid)
 
     text = "Thanks for your participation! Your bonus was $" + str(bonus_percentage) + "."
-    text += " If you would like to participate again, please go back to the task start page."
+    text += " If you would like to participate again, please click the button below to return to the task start page."
 
     if assignmentId:
         printer.print("Deleting mturk cokokies")
@@ -262,7 +262,7 @@ async def self_reset(request: Request, response: Response):
         template = env.get_template("mturk_submit.html")
         return template.render(title="Thank You!", content=text, url=url)
     await remove_user(int_uid)
-    template = env.get_template("default.html")
+    template = env.get_template("restart.html")
     return template.render(title="Thank You!", 
                             content=text)
 
@@ -444,7 +444,15 @@ async def handle_ping_errors(status: PingErrors, request: Request, response: Res
         int_uid = int(uid)
         await remove_user(int_uid)
 
-    template = env.get_template("default.html")
+    
+
+    assignmentId = request.cookies.get('assignmentId')
+    if assignmentId == "None":
+        template = env.get_template("restart.html")
+    else:
+        # This is an mturk user
+        template = env.get_tempage("default.html")
+
     if (status == PingErrors.USER_DISCONNECT):
         return template.render(title="Timed Out", content="Sorry, it seems you timed out. Please try again later.")
     elif (status == PingErrors.PARTNER_DISCONNECT):

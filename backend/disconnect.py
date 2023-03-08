@@ -4,6 +4,7 @@ import threading
 from debughelper import DebugPrinter
 from disconnect_checker.user import User
 from disconnect_checker.conversation import Conversation
+import random
  
 class PartnerStatuses(Enum):
     UNPAIRED = 1
@@ -89,8 +90,16 @@ class DisconnectChecker:
             if user is not curr_user and user.get_partner() == -1:
                 new_conv = Conversation()
                 new_conv.set_id(self.pairing_count)
-                new_conv.set_seller(uid)
-                new_conv.set_buyer(user.get_id())
+
+                if random.random() > 0.5:
+                    seller = uid
+                    buyer = user.get_id()
+                else:
+                    seller = user.get_id()
+                    buyer = uid
+                
+                new_conv.set_seller(seller)
+                new_conv.set_buyer(buyer)
                 self.conversations[self.pairing_count] = new_conv
                 
                 # This is another unpaired user

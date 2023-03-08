@@ -49,8 +49,10 @@ navigator.mediaDevices.getUserMedia(audioIN)
         let decline = document.getElementById('decline');
         let prtnrRcdMsg = document.getElementById('partnerRecordingMsg');
 
-        let minutesLeft = 5
-        let secondsLeft = 0
+        let minutesLeft = 10;
+        let secondsLeft = 0;
+
+        let offerSent = false;
 
         let role = send.dataset.role;
         let is_buyer = (role == "Buyer");
@@ -107,6 +109,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
             let arr = new Uint8Array([9]);
             var tosend = arr.buffer;
             ws.send(tosend);
+            pressSound = document.getElementById('pressAudio')
+            pressSound.play()
         }
 
         // Stop event
@@ -119,6 +123,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
             let arr = new Uint8Array([10]);
             var tosend = arr.buffer;
             ws.send(tosend);
+            releaseSound = document.getElementById('releaseAudio')
+            releaseSound.play()
         });
 
         // Send event
@@ -214,6 +220,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     add_message(partnerID, window.URL.createObjectURL(incoming_vm), finalArray.pop());
                     is_your_turn = true;
                     increase_message_count()
+                    alertSound = document.getElementById('alertAudio')
+                    alertSound.play()
                     record.classList.remove('disabled');
                 } else if (identifier == 7) {
                     self_is_sender = finalArray.pop()
@@ -232,6 +240,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
                     timeleft = 30;
+                    offerSent = true;
                     handle_offer(amount, timeleft);
                 } else if (identifier == 9) {
                     prtnrRcdMsg.innerHTML = "Your partner is recording...";
@@ -283,6 +292,8 @@ navigator.mediaDevices.getUserMedia(audioIN)
                         keyboard: false
                     })
                     myModal.show();
+                    alertSound = document.getElementById('alertAudio')
+                    alertSound.play()
                 } else if (identifier == 1) {
                     console.log("Partner connection message received")
                     // This tells us the situation is normal. Make sure the user can send messages.
@@ -375,6 +386,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     var timeleft = 90
                     document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...\n";
                     document.getElementById('OfferConfirmText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+                    offerSent = true;
 
                     function handleTimeout() {
                         // Get the number of seconds remaining until timeout
@@ -471,19 +483,21 @@ navigator.mediaDevices.getUserMedia(audioIN)
         const nIntervID = setInterval(sendPing, 10000);
 
         function dropCountdown() {
-            if (secondsLeft == 0) {
-                if (minutesLeft == 0) {
-                    window.location.replace('/error/2'); //2 = user disconnect error code; not perfect but good enough
+            if (offerSent == false) {
+                if (secondsLeft == 0) {
+                    if (minutesLeft == 0) {
+                        window.location.replace('/error/2'); //2 = user disconnect error code; not perfect but good enough
+                    } else {
+                        secondsLeft = 59;
+                        minutesLeft--;
+                    }
                 } else {
-                    secondsLeft = 59;
-                    minutesLeft--;
+                    secondsLeft--;
                 }
-            } else {
-                secondsLeft--;
+    
+                let timeRemainingText = "Time Remaining: " + minutesLeft + ":" + formatTimeChunk(secondsLeft);
+                document.getElementById("TimeRemaining").innerHTML = timeRemainingText;
             }
-
-            let timeRemainingText = "Time Remaining: " + minutesLeft + ":" + formatTimeChunk(secondsLeft);
-            document.getElementById("TimeRemaining").innerHTML = timeRemainingText;
         }
 
     })
@@ -535,6 +549,7 @@ function formatTimeChunk(timeChunk) {
 
 function handle_offer(amount, timeleft) {
     console.log("Received an offer!");
+    offerSent = true;
     document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
     document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
     

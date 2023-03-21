@@ -447,17 +447,27 @@ async def handle_ping_errors(status: PingErrors, request: Request, response: Res
     
 
     assignmentId = request.cookies.get('assignmentId')
+    turkSubmitTo = request.cookies.get('turkSubmitTo')
     if assignmentId == "None":
         template = env.get_template("restart.html")
     else:
         # This is an mturk user
-        template = env.get_tempage("default.html")
+        if (status == PingErrors.PARTNER_DISCONNECT):
+            template = env.get_template("mturk_paid_disconnect.html")
+            url = turkSubmitTo
+            url += "/mturk/externalSubmit?assignmentId="
+            url += assignmentId
+            url += "&bonus=-1"
+            return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. You will still be paid, but please try again later.", url=url)
+        else:
+            template = env.get_template("default.html")
+
 
     if (status == PingErrors.USER_DISCONNECT):
         return template.render(title="Timed Out", content="Sorry, it seems you timed out. Please try again later.")
-    elif (status == PingErrors.PARTNER_DISCONNECT):
-        return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. You will still be paid, but please try again later.")
     elif (status == PingErrors.PARTNER_DISCONNECT_UNPAID):
+        return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. Please try again later.")
+    elif (status == PingErrors.PARTNER_DISCONNECT):
         return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. Please try again later.")
     else:
         printer.print("There is an unexpected ping error")

@@ -753,3 +753,219 @@ None
 None
 End mturk data
 Now initializing user with id 113
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 114
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 115
+Users 115 and 114 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_114_2023-03-03_22-29-02.219173.mp3
+recordings/Seller_115_2023-03-03_22-29-08.691065.mp3
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 116
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 117
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 118
+Printing mturk data:
+36V4Q8R5ZOHF4P9BUSPG4WBSJGWMQK
+3R868ACW5VTM3NGMGJ5WT07K28VGZM
+https://workersandbox.mturk.com
+A23BREU8F6CXOR
+End mturk data
+[]
+Now initializing user with id 119
+Users 119 and 116 were paired!
+Setting up chat page
+User 114 has timed out.
+User 115 has timed out.
+User 116 has timed out.
+User 117 has timed out.
+User 118 has timed out.
+User 119 has completed the task! Congratulations!
+Printing mturk data:
+30H4UDGLT6ZU4D8WUFAR4RLIEKAMPT
+3R868ACW5VTM3NGMGJ5WT07K28VGZM
+https://workersandbox.mturk.com
+A2HTEV2XUQF432
+End mturk data
+[]
+Now initializing user with id 120
+Printing mturk data:
+36V4Q8R5ZOHF4P9BUSPG4WBSJGWMQK
+3R868ACW5VTM3NGMGJ5WT07K28VGZM
+https://workersandbox.mturk.com
+A23BREU8F6CXOR
+End mturk data
+[]
+Now initializing user with id 121
+Users 121 and 120 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_120_2023-03-05_23-29-53.926392.mp3
+recordings/Seller_121_2023-03-05_23-29-57.352857.mp3
+recordings/Buyer_120_2023-03-05_23-30-00.423909.mp3
+recordings/Seller_121_2023-03-05_23-30-03.047447.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 121 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 120 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Printing mturk data:
+3DBQWDE4YAFWTLBDM1GDJ051SAJN58
+3VDVA3ILJGWP8RVE88W416N8PTIG1X
+https://workersandbox.mturk.com
+A2HTEV2XUQF432
+End mturk data
+[]
+Now initializing user with id 122
+Printing mturk data:
+378XPAWRUGU1LQC3KHU2M3P6YPQIAT
+3VDVA3ILJGWP8RVE88W416N8PTIG1X
+https://workersandbox.mturk.com
+A23BREU8F6CXOR
+End mturk data
+[]
+Now initializing user with id 123
+Users 123 and 122 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_122_2023-03-05_23-49-22.915638.mp3
+recordings/Seller_123_2023-03-05_23-49-26.837943.mp3
+recordings/Buyer_122_2023-03-05_23-49-29.510711.mp3
+recordings/Seller_123_2023-03-05_23-49-32.655614.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 123 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 122 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Setting up chat page
+Printing mturk data:
+3E337GFOLDPU9I0X3XZ4NXWQIK6GNU
+3SBNLSTU7XMJR36VET4ONF4NPH7ZDP
+https://workersandbox.mturk.com
+AEI2OW0KWI2B7
+End mturk data
+[]
+Now initializing user with id 124
+Printing mturk data:
+3JV9LGBJWXVCR3094CZH2MWV8UBGO9
+3SBNLSTU7XMJR36VET4ONF4NPH7ZDP
+https://workersandbox.mturk.com
+A3ASE7ZBJSEBE4
+End mturk data
+[]
+Now initializing user with id 125
+Users 125 and 124 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_124_2023-03-07_14-46-30.982682.mp3
+Printing mturk data:
+3G0WWMR1UZ1LM7UB6T4GHB0SO7FQNZ
+3SBNLSTU7XMJR36VET4ONF4NPH7ZDP
+https://workersandbox.mturk.com
+A8DYWF7X9G5CA
+End mturk data
+[]
+Now initializing user with id 126
+recordings/Seller_125_2023-03-07_14-47-10.377912.mp3
+recordings/Buyer_124_2023-03-07_14-48-33.299233.mp3
+recordings/Seller_125_2023-03-07_14-48-46.046998.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 125 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+Deleting mturk cokokies
+Creating mturk submit text
+Putting together the text
+User 124 has completed the task! Congratulations!
+Putting together the mturk task completion page
+Printing mturk data:
+3E337GFOLDPU9I0X3XZ4NXWQIK6GNU
+3SBNLSTU7XMJR36VET4ONF4NPH7ZDP
+https://workersandbox.mturk.com
+AEI2OW0KWI2B7
+End mturk data
+[]
+Now initializing user with id 127
+Users 127 and 126 were paired!
+Setting up chat page
+User 126 has timed out.
+User 127 has completed the task! Congratulations!

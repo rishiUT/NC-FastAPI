@@ -21,7 +21,7 @@ import math
 from pydub import AudioSegment
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc6"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc7"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -104,6 +104,9 @@ async def shutdown_event():
 @app.get('/home', response_class=HTMLResponse)
 async def home(request: Request, response: Response, assignmentId: str="None", hitId: str="None", turkSubmitTo: str="None", workerId: str="None"):
     uid = request.cookies.get('id')
+    checked_in = request.cookies.get('checkedin')
+    show_consent_form = False if checked_in == "True" else True
+    response.set_cookie(key='checkedin', value=True, secure=True, samesite='none')
     if assignmentId != "None":
         response.set_cookie(key='mturkId', value=workerId, secure=True, samesite='none')
         response.set_cookie(key='assignmentId', value=assignmentId, secure=True, samesite='none')
@@ -115,10 +118,15 @@ async def home(request: Request, response: Response, assignmentId: str="None", h
 
     if assignmentId == "ASSIGNMENT_ID_NOT_AVAILABLE":
         template = env.get_template("home2.html")
+        return template.render(title="Home")
+    elif assignmentId == "None":
+        template = env.get_template("home3.html")
+        print(show_consent_form)
+        return template.render(title="Home", show=show_consent_form)
     else:
         template = env.get_template("home.html")
+        return template.render(title="Home")
 
-    return template.render(title="Home")
 
 @app.get('/pair', response_class=HTMLResponse)
 async def start(request: Request, response: Response):
@@ -237,7 +245,7 @@ async def self_reset(request: Request, response: Response):
 
     bonus_percentage = await calc_bonus(int_uid)
 
-    text = "Thanks for your participation! Your bonus was $" + str(bonus_percentage) + "."
+    text = "Thanks for your participation! Your score was " + str(bonus_percentage * 100) + "."
     text += " If you would like to participate again, please click the button below to return to the task start page."
 
     if assignmentId:
@@ -254,7 +262,7 @@ async def self_reset(request: Request, response: Response):
         url += str(bonus_percentage)
 
         printer.print("Putting together the text")
-        text = "Thanks for your participation! Your bonus was " + str(bonus_percentage) + "."
+        text = "Thanks for your participation! Your bonus was $" + val_to_dollar_str(bonus_percentage) + "."
         text += " To submit your results to mechanical turk, click the button below."
         
         await remove_user(int_uid)
@@ -266,6 +274,13 @@ async def self_reset(request: Request, response: Response):
     return template.render(title="Thank You!", 
                             content=text)
 
+def val_to_dollar_str(val):
+    val *= 1.0
+    result = str(val)
+    if val % 10 == 0:
+        result += "0"
+
+    return result
 
 async def calc_bonus(int_uid: int):
     printer.print("Gathering user data")
@@ -282,17 +297,18 @@ async def calc_bonus(int_uid: int):
     offer_accepted = user.offeraccepted
     bonus_percentage = 0
     if offer_accepted:
+        bonus_percentage = 1
         goal = int(user.goal)
         partner_goal = int(partner.goal)
         offer = int(user.offer)
         if partner_goal < goal:
             printer.print("partner was the buyer")
             # The user is the seller, so they had the larger goal. get_bonus returns their bonus.
-            bonus_percentage = await get_bonus(partner_goal, offer, goal)
+            bonus_percentage += await get_bonus(partner_goal, offer, goal)
         else:
             printer.print("partner was the seller")
             # The user was the buyer, so get_bonus returns the inverse of their bonus.
-            bonus_percentage = 1 - await get_bonus(goal, offer, partner_goal)
+            bonus_percentage += 1 - await get_bonus(goal, offer, partner_goal)
 
     # Round to the nearest 100th
     bonus_percentage = math.floor(bonus_percentage * 100)

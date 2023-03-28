@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block headerextras %}
+<script src="/static/consent_form.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+{% endblock %}
+{% block content %}
+<div class="row alert alert-info">
+  <div class="col p-5 text-center">
+    <h3>Welcome!</h3>
+    <p>Welcome to the negotiation! You will be asked to negotiate over the price of a craigslist item with a randomly assigned partner. You will receive bonus points for a successful negotiation, and an additional bonus for getting close to your target price.</p>
+    <p>Before you start this task for the first time, please read the Negotiation Instructions using the link above.</p>
+    <p>Once you are ready to start the negotiation, click the button below to be paired with another user.</p>
+    <a class="btn btn-primary" role="button" href="/pair">Pair Me!</a>
+  </div>
+  </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Please Read This</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalText">
+        This negotiation is part of a scientific research project. Your decision to 
+        participate is voluntary, and your responses are anonymous. The results of the 
+        research may be presented at scientific meetings, published in scientific journals, 
+        or made publicly available to other researchers. By clicking on the 'I agree' button, 
+        you indicate that you are at least 18 years of age and that you consent to participate voluntarily.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="continue" data-show={{show}}>I agree</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <p></p>
+{% endblock %}

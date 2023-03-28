@@ -94,9 +94,13 @@ class DisconnectChecker:
                 if random.random() > 0.5:
                     seller = uid
                     buyer = user.get_id()
+                    curr_user_role = "Seller"
+                    partner_role = "Buyer"
                 else:
                     seller = user.get_id()
                     buyer = uid
+                    curr_user_role = "Buyer"
+                    partner_role = "Seller"
                 
                 new_conv.set_seller(seller)
                 new_conv.set_buyer(buyer)
@@ -105,11 +109,11 @@ class DisconnectChecker:
                 # This is another unpaired user
                 curr_user.add_partner(user.get_id())
                 curr_user.add_conv_id(self.pairing_count)
-                curr_user.add_role("Seller")
+                curr_user.add_role(curr_user_role)
 
                 user.add_partner(uid)
                 user.add_conv_id(self.pairing_count)
-                user.add_role("Buyer")
+                user.add_role(partner_role)
 
                 self.pairing_count += 1
                 self.printer.print("Users {} and {} were paired!".format(str(curr_user.get_id()), str(user.get_id())))

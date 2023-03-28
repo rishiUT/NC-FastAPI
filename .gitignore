@@ -2,6 +2,8 @@
 original-default
 default
 backend/conversations
+backend/conversations-first-negotiation
 backend/recordings
 backend/downgraded_recordings
+backend/downgraded_recordings-first-negotiation
 backend/__pycache__/connectionmanager.cpython-39.pyc

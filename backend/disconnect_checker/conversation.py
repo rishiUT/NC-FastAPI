@@ -1,3 +1,4 @@
+import time
 class Conversation:
     def __init__(self):
         self.id = -1
@@ -9,6 +10,8 @@ class Conversation:
         self.offer_sent = False
         self.offer_accepted = False
         self.disconnected = True
+        self.start_time = 0
+        self.end_time = 0
 
     def set_id(self, id):
         self.id = id
@@ -18,9 +21,11 @@ class Conversation:
 
     def set_buyer(self, id):
         self.buyer_id = id
+        self.start_time = time.time()
 
     def set_seller(self, id):
         self.seller_id = id
+        self.start_time = time.time()
 
     def add_message(self, message):
         self.messages.append(message)
@@ -31,9 +36,14 @@ class Conversation:
 
     def set_accepted(self, offer_acceptance_bool):
         self.offer_accepted = offer_acceptance_bool
+        self.end_time = time.time()
 
     def set_disconnect(self, disconnect_bool):
         self.disconnected = disconnect_bool
+        self.end_time = time.time()
+
+    def get_length(self):
+        return self.end_time - self.start_time
 
     def get_metadata(self, uid: int):
         md = dict()

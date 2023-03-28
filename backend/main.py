@@ -19,9 +19,10 @@ import os
 import glob
 import math
 from pydub import AudioSegment
+import random
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc7"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc3"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -36,9 +37,15 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("conversationid", sqlalchemy.Integer),
     sqlalchemy.Column("role", sqlalchemy.Integer),
     sqlalchemy.Column("itemid", sqlalchemy.Integer),
+    sqlalchemy.Column("listingprice", sqlalchemy.Integer),
     sqlalchemy.Column("goal", sqlalchemy.Integer),
+    sqlalchemy.Column("partnergoal", sqlalchemy.Integer),
+    sqlalchemy.Column("nummessages", sqlalchemy.Integer),
+    sqlalchemy.Column("negotiationlength", sqlalchemy.Integer),
+    sqlalchemy.Column("avgmessagelength", sqlalchemy.Float),
     sqlalchemy.Column("offer", sqlalchemy.Integer),
     sqlalchemy.Column("offeraccepted", sqlalchemy.Boolean),
+    sqlalchemy.Column("score", sqlalchemy.Float),
     sqlalchemy.Column("convactive", sqlalchemy.Boolean),
     sqlalchemy.Column("convdisconnected", sqlalchemy.Boolean) # False if the negotiation reached a conclusion, true otherwise
 )
@@ -56,9 +63,15 @@ class User(BaseModel):
     conversationid: int
     role: int
     itemid: int
+    listingprice: int
     goal: int
+    partnergoal: int
+    nummessages: int
+    negotiationlength: int
+    avgmessagelength: float
     offer: int
     offeraccepted: bool
+    score: float
     convactive: bool
     convdisconnected: bool
 
@@ -154,7 +167,8 @@ async def start(request: Request, response: Response):
             # This user does not have an active conversation. Let's give them a new user ID.
             database_lock.acquire()
             query = users.insert().values(role=-1, partnerid=-1, mturkid=mturkId, partnermturkid="Invalid", conversationid=-1,
-                                            itemid=-1, goal=-1, offer=-1, offeraccepted=False, convactive=False, 
+                                            itemid=-1, listingprice=-1, goal=-1, partnergoal=-1, nummessages=0, negotiationlength=0,
+                                            avgmessagelength=-1, offer=-1, offeraccepted=False, score=0, convactive=False, 
                                             convdisconnected=True)
             last_record_id = await database.execute(query)
             # printer.print("Releasing lock")
@@ -176,7 +190,8 @@ async def start(request: Request, response: Response):
         print("Creating database element for non mturk user")
         database_lock.acquire()
         query = users.insert().values(role=-1, partnerid=-1, mturkid="Invalid", partnermturkid="Invalid", conversationid=-1,
-                                        itemid=-1, goal=-1, offer=-1, offeraccepted=False, convactive=False, 
+                                        itemid=-1, listingprice=-1, goal=-1, partnergoal=-1, nummessages=0, negotiationlength=0,
+                                        avgmessagelength=-1, offer=-1, offeraccepted=False, score=0, convactive=False, 
                                         convdisconnected=True)
         last_record_id = await database.execute(query)
         database_lock.release()
@@ -244,8 +259,12 @@ async def self_reset(request: Request, response: Response):
     int_uid = int(uid)
 
     bonus_percentage = await calc_bonus(int_uid)
+    bonus_string = f'{bonus_percentage:.2f}'
+    partner_bonus = 3 - bonus_percentage if bonus_percentage > 0 else 0
+    partner_bonus_string = f'{partner_bonus:.2f}'
 
-    text = "Thanks for your participation! Your score was " + str(bonus_percentage * 100) + "."
+    text = "Thanks for your participation! Your score was " + str(int(bonus_percentage * 100)) + "."
+    text += " Your partner's score was " + str(int(partner_bonus * 100)) + "."
     text += " If you would like to participate again, please click the button below to return to the task start page."
 
     if assignmentId:
@@ -262,7 +281,7 @@ async def self_reset(request: Request, response: Response):
         url += str(bonus_percentage)
 
         printer.print("Putting together the text")
-        text = "Thanks for your participation! Your bonus was $" + val_to_dollar_str(bonus_percentage) + "."
+        text = "Thanks for your participation! Your bonus was $" + bonus_string + "."
         text += " To submit your results to mechanical turk, click the button below."
         
         await remove_user(int_uid)
@@ -313,6 +332,16 @@ async def calc_bonus(int_uid: int):
     # Round to the nearest 100th
     bonus_percentage = math.floor(bonus_percentage * 100)
     bonus_percentage /= 100
+
+    database_lock.acquire()
+    
+    query = sqlalchemy.update(users)
+    query = query.where(users.c.id == int_uid)
+    query = query.values({"score": bonus_percentage})
+    await database.execute(query)
+
+    database_lock.release()
+
     return bonus_percentage
     
 async def get_bonus(smaller_goal, offer, larger_goal):
@@ -357,13 +386,13 @@ async def print_user_in_database(uid: int):
         printer.print("offer: " + str(user.offer))
         printer.print("offeraccepted: " + str(user.offeraccepted))
 
-async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_id: int, item_price: int):
+async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_id: int, item_price: int, goal: int):
     # Save all this information into the database
     # printer.print("acquiring lock")
     database_lock.acquire()
     query = sqlalchemy.update(users)
     query = query.where(users.c.id == uid)
-    query = query.values({"role": role, "partnerid": pid, "conversationid": conv_id, "itemid": item_id, "goal": item_price, "convactive": True})
+    query = query.values({"role": role, "partnerid": pid, "conversationid": conv_id, "itemid": item_id, "listingprice": item_price, "goal": goal, "convactive": True})
     await database.execute(query)
 
     # await print_user_in_database(uid)
@@ -419,14 +448,18 @@ async def record(request: Request):
 
         item_data = items[item_id]
 
-        price_coefficient = 1
+        listing_price = item_data['Price'] * 2
+        buyer_coefficients = [0.6, 0.65, 0.7, 0.75]
+        seller_coefficients = [0.8, 0.85, 0.9, 0.95]
         if is_buyer:
-            price_coefficient = 0.8
-        item_price = item_data['Price'] * price_coefficient
+            price_coefficient = random.choice(buyer_coefficients)
+        else:
+            price_coefficient = random.choice(seller_coefficients)
+        item_price = listing_price * price_coefficient
         item_price = round(item_price)
 
         printer.print("adding info to the database")
-        await add_user_conv_info(int_uid, partner_id, conv_id, is_buyer, item_id, item_price)
+        await add_user_conv_info(int_uid, partner_id, conv_id, is_buyer, item_id, listing_price, item_price)
 
         item_description = item_data['Description'][0]
 
@@ -442,7 +475,7 @@ async def record(request: Request):
             template = env.get_template("audioinput_seller.html")
         
         # printer.print("Connection page ready and sending")
-        return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price,
+        return template.render(title="Record Audio", role=role_txt, task_description=TASK_DESCRIPTIONS[is_buyer], goal_price=item_price, listing_price=listing_price,
         item_description=item_description, item_image=image, id=int_uid, conv_id=checker.get_user_conv_id(int_uid))
     else:
         # Redirect to handle a failed user
@@ -494,6 +527,8 @@ manager = ConnectionManager()
 @app.websocket("/audiowspaired/{uid}")
 async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     # printer.print("Websocket connected for chat page")
+    total_audio_length = 0
+    num_messages = 0
     ua = users.alias("alias")
     query = sqlalchemy.select([ua.c.conversationid]).where(ua.c.id==uid)
     convid = await database.fetch_all(query)
@@ -558,6 +593,9 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
             data_array.append(self_is_sender)
             data_array.append(7)
             data = bytes(data_array)
+
+            if self_is_sender:
+                num_messages += 1
             
             await manager.send_self_message(data, int_uid)
 
@@ -600,6 +638,10 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                             file1.close()
                         
                         audio = AudioSegment.from_file(file_name)
+                        length_in_sec = audio.duration_seconds
+                        total_audio_length += length_in_sec
+                        num_messages += 1
+
                         audio = audio.set_frame_rate(16000)
                         audio = audio.set_channels(1)
                         audio = audio.set_sample_width(2)
@@ -621,12 +663,14 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
 
                         checker.conv_set_offer(int_uid, val)
 
+                        avg_message_length = total_audio_length / num_messages
+
                         # printer.print("acquiring lock")
                         database_lock.acquire()
 
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_uid)
-                        query = query.values({"offer": val})
+                        query = query.values({"offer": val, "nummessages": num_messages, "avgmessagelength": avg_message_length})
                         await database.execute(query)
 
                         query = sqlalchemy.update(users)
@@ -649,18 +693,20 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         response = bool(val)
 
                         checker.conv_set_offer_accepted(int_uid, response)
+
+                        avg_message_length = total_audio_length / num_messages
                         
                         # printer.print("acquiring lock")
                         database_lock.acquire()
 
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_uid)
-                        query = query.values({"offeraccepted": response, "convdisconnected":False})
+                        query = query.values({"offeraccepted": response, "convdisconnected":False, "nummessages": num_messages, "negotiationlength": conv.get_length(), "avgmessagelength": avg_message_length})
                         await database.execute(query)
 
                         query = sqlalchemy.update(users)
                         query = query.where(users.c.id == int_pid)
-                        query = query.values({"offeraccepted": response, "convdisconnected":False})
+                        query = query.values({"offeraccepted": response, "convdisconnected":False, "negotiationlength": conv.get_length()})
                         await database.execute(query)
 
                         # await print_user_in_database(int_uid)

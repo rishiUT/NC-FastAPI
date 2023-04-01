@@ -22,7 +22,7 @@ from pydub import AudioSegment
 import random
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc3"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc2"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -32,6 +32,7 @@ users = sqlalchemy.Table(
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
     sqlalchemy.Column("partnerid", sqlalchemy.Integer),
+    sqlalchemy.Column("nonmturkid", sqlalchemy.Integer),
     sqlalchemy.Column("mturkid", sqlalchemy.String),
     sqlalchemy.Column("partnermturkid", sqlalchemy.String),
     sqlalchemy.Column("conversationid", sqlalchemy.Integer),
@@ -58,6 +59,7 @@ metadata.create_all(engine)
 class User(BaseModel):
     id: int
     partnerid: int
+    nonmturkid: int
     mturkid: str
     partnermturkid: str
     conversationid: int
@@ -106,6 +108,8 @@ async def startup():
     await database.connect()
     num_prev_pairings = await get_max_conv_id()
     num_prev_pairings += 1 # Because we use zero-based indexing
+    global next_unique_id 
+    next_unique_id = await get_next_unique_id()
     checker.set_pairing_count(num_prev_pairings)
     
 
@@ -147,13 +151,6 @@ async def start(request: Request, response: Response):
     hitId = request.cookies.get('hitId')
     turkSubmitTo = request.cookies.get('turkSubmitTo')
     mturkId = request.cookies.get('mturkId')
-
-    printer.print("Printing mturk data:")
-    printer.print(assignmentId)
-    printer.print(hitId)
-    printer.print(turkSubmitTo)
-    printer.print(mturkId)
-    printer.print("End mturk data")
     
     uid = request.cookies.get('id')
     if uid:
@@ -166,7 +163,7 @@ async def start(request: Request, response: Response):
         if not uid:
             # This user does not have an active conversation. Let's give them a new user ID.
             database_lock.acquire()
-            query = users.insert().values(role=-1, partnerid=-1, mturkid=mturkId, partnermturkid="Invalid", conversationid=-1,
+            query = users.insert().values(role=-1, partnerid=-1, nonmturkid=-1, mturkid=mturkId, partnermturkid="Invalid", conversationid=-1,
                                             itemid=-1, listingprice=-1, goal=-1, partnergoal=-1, nummessages=0, negotiationlength=0,
                                             avgmessagelength=-1, offer=-1, offeraccepted=False, score=0, convactive=False, 
                                             convdisconnected=True)
@@ -187,9 +184,18 @@ async def start(request: Request, response: Response):
             return response
     else:
         # This is not an mturk user.
+        unique_id = request.cookies.get('uniqueid')
+        if not unique_id:
+            global next_unique_id
+            unique_id = next_unique_id
+            next_unique_id += 1
+            print(unique_id)
+            response.set_cookie(key='uniqueid', value=unique_id, secure=True, samesite='none')
+        else:
+            unique_id = int(unique_id)
         print("Creating database element for non mturk user")
         database_lock.acquire()
-        query = users.insert().values(role=-1, partnerid=-1, mturkid="Invalid", partnermturkid="Invalid", conversationid=-1,
+        query = users.insert().values(role=-1, partnerid=-1, nonmturkid=unique_id, mturkid="Invalid", partnermturkid="Invalid", conversationid=-1,
                                         itemid=-1, listingprice=-1, goal=-1, partnergoal=-1, nummessages=0, negotiationlength=0,
                                         avgmessagelength=-1, offer=-1, offeraccepted=False, score=0, convactive=False, 
                                         convdisconnected=True)
@@ -416,6 +422,22 @@ async def get_max_conv_id():
     
     return maxID
 
+async def get_next_unique_id():
+    # Get the conversation id from the database with the highest value
+    query = users.select()
+    user_list = await database.fetch_all(query)
+    # Get all users by conversation id
+    ids = [user.nonmturkid for user in user_list]
+
+    maxID = 0
+    for id in ids:
+        # For each conversation id, search users for two matching conversation ids
+        id = int(id)
+        if maxID < id:
+            maxID = id
+    
+    return maxID
+
 @app.get('/convuser/{uid}')
 async def get_conversation(uid: int):
     conv = checker.get_user_conv(uid)
@@ -461,7 +483,9 @@ async def record(request: Request):
         printer.print("adding info to the database")
         await add_user_conv_info(int_uid, partner_id, conv_id, is_buyer, item_id, listing_price, item_price)
 
-        item_description = item_data['Description'][0]
+        item_description = ""
+        for line in item_data['Description']:
+            item_description += line + "\n"
 
         image = None 
         # printer.print("getting image")

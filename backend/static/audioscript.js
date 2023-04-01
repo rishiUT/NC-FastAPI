@@ -505,6 +505,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
     // Print any errors 
     .catch(function (err) {
         console.log(err.name, err.message);
+        window.location.replace('/error/2'); //2 = user disconnect error code; not perfect but good enough
     });
 
 function add_message(senderID, audioSrc, length) {

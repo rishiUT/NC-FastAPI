@@ -1547,3 +1547,47 @@ Getting partner data
 Calculating bonus
 partner was the seller
 User 4 has completed the task! Congratulations!
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 1
+Printing mturk data:
+None
+None
+None
+None
+End mturk data
+Now initializing user with id 2
+Users 1 and 2 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database
+recordings/Buyer_2_2023-03-28_18-10-31.171543.mp3
+recordings/Seller_1_2023-03-28_18-10-33.871794.mp3
+recordings/Buyer_2_2023-03-28_18-10-36.550659.mp3
+recordings/Seller_1_2023-03-28_18-10-38.935212.mp3
+This is an offer
+Response received
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the buyer
+User 1 has completed the task! Congratulations!
+Entering the finish function
+Gathering user data
+Getting partner data
+Calculating bonus
+partner was the seller
+User 2 has completed the task! Congratulations!
+Now initializing user with id 3
+Now initializing user with id 4
+Users 4 and 3 were paired!
+Setting up chat page
+adding info to the database
+Setting up chat page
+adding info to the database

@@ -1,15 +1,2569 @@
-1	0	0	2	1	200	160	180	True
-3	0	0	6	5	1000	800	1000	True
-5	0	0	10	9	1895	1516	1850	True
-6	0	0	11	12	8800	7040	7300	True
-8	0	0	16	15	300	240	265	True
-9	0	0	18	17	125	100	120	True
-10	0	0	19	20	8900	7120	6000	False
-11	0	0	22	21	75	60	60	True
-12	0	0	24	23	9000	7200	8000	True
-13	0	0	26	25	2599	2079	2350	True
-14	0	0	28	27	600	480	500	False
-15	0	0	30	29	800	640	840	True
-16	0	0	32	31	2834	2267	2600	True
-17	0	0	34	33	175	140	150	True
-18	0	0	36	35	15	12	15	True
+downgraded_recordings-first-negotiation/Buyer_12_2023-03-25_17-31-36.448586.mp3
+medium
+ Hey, this car looks pretty good. I really like how it looks pretty clean. 138 km miles is kind of a lot but it looks like it's in relatively good condition. Would you take 6,000 for it?
+runtime =  87.85998916625977
+medium.en
+ Hey, this car looks pretty good. I really like how it looks pretty clean. 138 km-miles is kind of a lot, but it looks like it's in relatively good condition. Would you take 6,000 for it?
+runtime =  77.82816195487976
+large
+ Hey, this car looks pretty good. I really like how it looks pretty clean. 138 kmiles is kind of a lot, but it looks like it's in relatively good condition. Would you take 6,000 for it?
+runtime =  134.59038257598877
+downgraded_recordings-first-negotiation/Buyer_12_2023-03-25_17-34-53.003661.mp3
+medium
+ Hey yeah, I just saw that you did mention the tune-up and the transmission flush. That does make things a bit better. Since I wouldn't be able to come and check it out in person, I don't know if I want to go as high. Assuming you meant 7,500, that's a little bit high for me, but I could do 7,100 let's say.
+runtime =  73.06059217453003
+medium.en
+ Hey, yeah, I just saw that you mentioned the tune-up and the transmission flush. That does make things a bit better. Since I wouldn't be able to come and check it out in person, I don't know if I want to go, assuming you meant 7,500, that's a little bit high for me, but I could do 7,100, let's say.
+runtime =  64.58568692207336
+large
+ Hey, yeah, I just saw that you mentioned the tune-up and the transmission flush. That does make things a bit better. Since I wouldn't be able to come and check it out in person, I don't know if I'd want to go. I assume you meant 7,500. That's a little bit high for me, but I could do... 7,100, let's say.
+runtime =  118.19718956947327
+downgraded_recordings-first-negotiation/Buyer_12_2023-03-25_17-36-53.253240.mp3
+medium
+ you do make a solid point about the title. And with that in mind, yeah, 7300 does seem reasonable. So yeah, plus they're doing business with it.
+runtime =  63.476603984832764
+medium.en
+ You do make a solid point about the title. And with that in mind, yeah, 7300 does seem reasonable. So yeah, plus you're doing business with it.
+runtime =  62.028544664382935
+large
+ you do make a solid point about the title. And with that in mind, yeah, 7,300 does seem reasonable. So yeah, plus you're doing business with it.
+runtime =  110.0796172618866
+downgraded_recordings-first-negotiation/Buyer_149_2023-03-25_17-11-59.863740.mp3
+medium
+ Hey, I'd like to rent this house. How much are you going to rent it for?
+runtime =  58.64350175857544
+medium.en
+ Hey, I'd like to rent this house. How much are you willing to rent it for?
+runtime =  59.75602102279663
+large
+ Hey, I'd like to rent this house. How much are you willing to rent it for?
+runtime =  104.5760247707367
+downgraded_recordings-first-negotiation/Buyer_149_2023-03-25_17-13-16.761279.mp3
+medium
+ 2000 is a bit on the higher side. I am seeing similar houses near you selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  62.15681862831116
+medium.en
+ 2000 is a bit on the higher side, I am seeing similar houses near use selling for about 1400 could we bring it somewhat closer to that?
+runtime =  58.89479184150696
+large
+ 2000 is a bit on the higher side. I'm seeing similar houses near use selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  101.75519251823425
+downgraded_recordings-first-negotiation/Buyer_149_2023-03-25_17-16-28.397728.mp3
+medium
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to rent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  54.28280472755432
+medium.en
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to rent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  59.79295897483826
+large
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to retent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  108.21383309364319
+downgraded_recordings-first-negotiation/Buyer_151_2023-03-25_17-20-33.627581.mp3
+medium
+ Hey there, this table and chair looks really nice. I've seen a lot of them out there for about 20 bucks. This one's in really good condition, so I think I'd give 30 bucks.
+runtime =  61.5396294593811
+medium.en
+ Hey there, this table and chair looks really nice. I've seen a lot of them out there for about 20 bucks, but this one's in really good condition, so I think I'd give it a 30.
+runtime =  60.107988357543945
+large
+ Hey there, this table and chair looks really nice. I've seen a lot of them out there for about 20 bucks. This one's in really good condition, so I think I'd give it 30.
+runtime =  107.25482940673828
+downgraded_recordings-first-negotiation/Buyer_151_2023-03-25_17-21-43.251722.mp3
+medium
+ Sure, 45 sounds good.
+runtime =  57.466527700424194
+medium.en
+ Sure, 45 sounds good.
+runtime =  58.42370939254761
+large
+ Sure, 45 sounds good.
+runtime =  102.781485080719
+downgraded_recordings-first-negotiation/Buyer_15_2023-03-25_17-37-51.740981.mp3
+medium
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  58.55369448661804
+medium.en
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  55.4930362701416
+large
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  107.78532075881958
+downgraded_recordings-first-negotiation/Buyer_15_2023-03-25_17-39-35.533218.mp3
+medium
+ Would you be able to do closer to 250? I guess I could do 260 if that works for you.
+runtime =  57.08124232292175
+medium.en
+ Would you be able to do closer to 250? I could do 260 if that works for you.
+runtime =  55.892632484436035
+large
+ Would you be able to do closer to 250? I guess I could do 260 if that works for you.
+runtime =  103.24805498123169
+downgraded_recordings-first-negotiation/Buyer_15_2023-03-25_17-41-27.651135.mp3
+medium
+ I'd prefer to keep it closer to 260 but I could do 265?
+runtime =  53.384586334228516
+medium.en
+ I prefer to keep it closer to 260 but I could do 265?
+runtime =  54.42948603630066
+large
+ I'd prefer to keep it closer to 260, but I could do 265?
+runtime =  100.12422585487366
+downgraded_recordings-first-negotiation/Buyer_17_2023-03-25_17-39-50.689231.mp3
+medium
+ Hey, it's hard to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it. So just curious, if it's just gonna come with a wide slip cover and the dove gray slip, how does $60 sound for it?
+runtime =  58.26753854751587
+medium.en
+ Hey, sorry to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it. So just curious if it's just gonna come with the white slipcover and the dove gray slip How does $60 sound for it?
+runtime =  67.33946394920349
+large
+ Hey, sorry to hear that it wasn't that good of a fit with your house, but I mean it looks perfect And my kids will love it So just curious if it's just gonna come with a white slip cover and the dove gray slip How does $60 sound for it?
+runtime =  110.64301419258118
+downgraded_recordings-first-negotiation/Buyer_17_2023-03-25_17-44-09.723726.mp3
+medium
+ No, I completely understand in the sense that you wouldn't at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110.
+runtime =  59.38602590560913
+medium.en
+ Now I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110?
+runtime =  58.071844816207886
+large
+ No, I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110.
+runtime =  111.50178599357605
+downgraded_recordings-first-negotiation/Buyer_17_2023-03-25_17-45-21.581280.mp3
+medium
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  56.643465518951416
+medium.en
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  54.49506974220276
+large
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  98.18069100379944
+downgraded_recordings-first-negotiation/Buyer_1_2023-03-28_17-37-30.890294.mp3
+medium
+ I'm not going to do that.
+runtime =  51.12958526611328
+medium.en
+ Thank you. That's all the time we have.
+runtime =  58.26164960861206
+large
+
+runtime =  104.76825761795044
+downgraded_recordings-first-negotiation/Buyer_1_2023-03-28_17-37-36.864700.mp3
+medium
+ Thank you.
+runtime =  54.20814633369446
+medium.en
+ Thank you.
+runtime =  52.21403956413269
+large
+ Thank you.
+runtime =  100.14954233169556
+downgraded_recordings-first-negotiation/Buyer_20_2023-03-25_17-44-44.514241.mp3
+medium
+ Hi, I'm looking to buy a new car. I see you're selling a Toyota Prius. Sounds to be pretty good. I'm wondering if maybe you'll sell it to me for $5,000?
+runtime =  59.255730390548706
+medium.en
+ Hi, I'm looking to buy a new car. I see you're selling a Toyota Prius. Sounds to be pretty good. Wondering if maybe you'll sell it to me for $5,000?
+runtime =  57.65708637237549
+large
+ Hi, I'm looking to buy a new car. I see you're selling a Toyota Prius. Sounds to be pretty good. Um, wondering if maybe, uh, you'll sell it to me for $5,000?
+runtime =  102.31621670722961
+downgraded_recordings-first-negotiation/Buyer_20_2023-03-25_17-47-16.904791.mp3
+medium
+ I mean, it's new looking, but it is 2014. It's, you know, doesn't have all the amenities of a new new car, so... I do like that it only has 65,000 miles, but... I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  59.114129304885864
+medium.en
+ I mean, it's new looking, but it is 2014. It doesn't have all the amenities of a new new car, so... I do like that it only has 65,000 miles, but... I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  65.56354832649231
+large
+ I mean, it's new looking, but it is 2014, it's, you know, it doesn't have all the amenities of a new new car, so. I do like that it only has 65,000 miles, but I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  108.42007875442505
+downgraded_recordings-first-negotiation/Buyer_20_2023-03-25_17-49-08.497909.mp3
+medium
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that many for them, that much for them, so we are kind of looking for something lower in the price range.
+runtime =  60.32577466964722
+medium.en
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that much for them, so we are kind of looking for something lower in the price range.
+runtime =  54.57560157775879
+large
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that much for them. So we are kind of looking for something lower in the price range.
+runtime =  102.51644372940063
+downgraded_recordings-first-negotiation/Buyer_20_2023-03-25_17-52-02.897611.mp3
+medium
+ I only have the money for 6k. If that doesn't work then I guess I'll keep looking.
+runtime =  54.89807343482971
+medium.en
+ I only have the money for 6k. If that doesn't work, then I guess I'll keep looking.
+runtime =  56.21931481361389
+large
+ I only have the money for 6k. If that doesn't work, then I guess I'll keep looking.
+runtime =  97.6577537059784
+downgraded_recordings-first-negotiation/Buyer_21_2023-03-25_17-45-06.122492.mp3
+medium
+ Hello, I see you have an unopened micro SD card there. Would you be willing to part with it for 45?
+runtime =  58.510282039642334
+medium.en
+ Hello, I see you have an unopened micro SD card there. Would you be willing to part with it for $45?
+runtime =  61.081204652786255
+large
+ Hello, I see you have an unopened micro SD card there. Would you be willing to part with it for 45?
+runtime =  106.51816844940186
+downgraded_recordings-first-negotiation/Buyer_21_2023-03-25_17-48-09.674084.mp3
+medium
+ I hear that. It does look pretty nice. Would 60 work?
+runtime =  55.123239517211914
+medium.en
+ I hear that it does look pretty nice. Would 60 work?
+runtime =  52.521064043045044
+large
+ I hear that, it does look pretty nice. Uh, would 60 work?
+runtime =  110.66129755973816
+downgraded_recordings-first-negotiation/Buyer_23_2023-03-25_17-48-07.152725.mp3
+medium
+ Hey, I saw your post and your car definitely looks pretty clean and trouble-free. But I'm kind of concerned that you don't really mention all of the different specs, the mileage, and you know, the kind of traditional information that one needs in order to make a car purchase. So here, I want to take your word for it, but you have to understand why I'm a little bit hesitant. But given that I am in quite a need of a car right now, I'm willing to do $6,000 for right now. How does that sound?
+runtime =  70.16959404945374
+medium.en
+ Hey, I saw your post, and your car definitely looks pretty clean and trouble-free. But I'm kinda concerned that you don't really mention all of the different specs, the mileage, and you know, the kinda traditional information that one needs in order to make a car purchase. So here, I wanna take your word for it, but I, you have to understand why I'm a little bit hesitant, but given that I am in quite a need of a car right now, I'm willing to do 6,000 for right now. How does that sound?
+runtime =  66.2245728969574
+large
+ Hey, I saw your post and your car definitely looks pretty clean and trouble free. But I'm kinda concerned that you don't really mention all of the different specs, the mileage, and you know, the kinda traditional information that one needs in order to make a car purchase. So here, I wanna take your word for it, but you have to understand why I'm a little bit hesitant. But given that I am in quite a need of a car right now, I'm willing to do $6000 for right now. How does that sound?
+runtime =  111.48679256439209
+downgraded_recordings-first-negotiation/Buyer_23_2023-03-25_17-53-18.734140.mp3
+medium
+
+runtime =  195.00266814231873
+medium.en
+ Thank you. Thank you.
+runtime =  47.69788217544556
+large
+
+runtime =  246.3939425945282
+downgraded_recordings-first-negotiation/Buyer_23_2023-03-25_17-55-11.637660.mp3
+medium
+ Oh, so sorry about that. I quit my malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow, okay, BMW. That's a pretty pricey car. And on top of that, I understand you're trying to get rid of it, especially for an upgrade, because some of these new models, man, are pretty nice. Yeah, for it being a 2015 and 75,000 miles, I think I'm sorry, but I think 11,500 is a bit steep, both for the car and for myself personally. But yeah, no, given that it's in great condition, as you mentioned, it has the name brand recognition. I'm willing to up it to how about we say 8,500. How does that sound?
+runtime =  60.92850375175476
+medium.en
+ Oh, so sorry about that. I... equipment malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow, okay, BMW. That's a pretty pricey car, and on top of that, I understand you're trying to get rid of it. Especially for an upgrade, because some of these new models, man, are pretty nice. But yeah, for it being a 2015 and 75,000 miles, I think... I'm sorry, but I think 11,500 is a bit steep, both for the car and for myself, personally. But yeah, no, given that it's in great condition, as you mentioned, it has the name brand recognition, I'm willing to up it to, how about we say, 8,500. How does that sound?
+runtime =  72.61126470565796
+large
+ Oh, so sorry about that. I quit my malfunction, but yeah, I know that thank you again for all the details that you sent me about the car I really appreciate that but yeah, no Wow. Okay BMW. That's uh, That's a pretty pricey car and on top of that I understand you're trying to get rid of it, especially for an upgrade because some of these new models man are pretty They're pretty nice. But yeah for it being a 2015 and 75,000 miles I Think I'm sorry, but I think 11 500 is a bit steep both for the car and for myself personally But yeah, I know given that it's in great condition as you mentioned it has the name brand recognition I'm I'm willing to up it to how about we say 8500 how does that sound?
+runtime =  117.2127456665039
+downgraded_recordings-first-negotiation/Buyer_25_2023-03-25_17-52-51.515456.mp3
+medium
+ Hey I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while which tells me a lot and it must be that it's really close to the highway or there's something issue with the house. I can give you like a very upfront offer right now without even seeing it of like $1,800 let's say.
+runtime =  64.80278587341309
+medium.en
+ Hey, I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something at the house. I can give you a very upfront offer right now without even seeing it of like $1,800, let's say.
+runtime =  61.832170248031616
+large
+ Hey, I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something issue with the house. I'm looking at a very upfront offer right now without even seeing it of $1,800, let's say.
+runtime =  116.74028944969177
+downgraded_recordings-first-negotiation/Buyer_25_2023-03-25_17-56-27.303774.mp3
+medium
+ I don't think I can do 3000 and I've looked at other places in the area which have gone for around 2kish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  65.64045834541321
+medium.en
+ I don't think I can do 3,000 and I've looked at other places in the area which have gone for around 2k-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  64.61610531806946
+large
+ I don't think I can do 3000 and I've looked at other places in the area which have gone for around 2k-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  115.99876022338867
+downgraded_recordings-first-negotiation/Buyer_25_2023-03-25_17-58-14.777464.mp3
+medium
+ I mean, I could do it for sight and scene, let's say like 2250. Maybe, maybe a little above that, but just the area has around the 2k mark. Like, this is, yeah, I'm cutting it.
+runtime =  61.64414882659912
+medium.en
+ I mean, I could do it for sight unseen, let's say like 2250. Maybe a little above that, but just the area has around the 2K mark. Like, this is, yeah, I'm cutting it.
+runtime =  57.5098021030426
+large
+ I mean, I could do it for sight unseen, let's say like 2250. Maybe, maybe a little above that, but just the area has around the 2k mark. Like this is, yeah, I'm cutting it.
+runtime =  103.10210037231445
+downgraded_recordings-first-negotiation/Buyer_27_2023-03-25_17-56-20.710568.mp3
+medium
+ Hi, looking to buy a bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  65.32499098777771
+medium.en
+ Hi, looking to buy a bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  58.633054971694946
+large
+ Hi, looking to buy a bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  98.82099485397339
+downgraded_recordings-first-negotiation/Buyer_27_2023-03-25_17-59-05.170248.mp3
+medium
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  54.55207180976868
+medium.en
+ Did you really get that for $1000? Because I've been seeing bikes in the store that are like $500 for about that size.
+runtime =  56.899617433547974
+large
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  101.61365270614624
+downgraded_recordings-first-negotiation/Buyer_27_2023-03-25_18-02-23.075602.mp3
+medium
+ What about I meet you halfway, we go 500?
+runtime =  55.323803186416626
+medium.en
+ What about I meet you halfway, we go 500?
+runtime =  56.806933641433716
+large
+ What about I meet you halfway, we go 500?
+runtime =  96.74124240875244
+downgraded_recordings-first-negotiation/Buyer_27_2023-03-25_18-04-25.588592.mp3
+medium
+ Hideslee halfway is pretty fair given that it's no longer new.
+runtime =  57.06364059448242
+medium.en
+ I'd say halfway is pretty fair given that it's no longer new.
+runtime =  56.917131423950195
+large
+ I'd say Halfway is pretty fair given that it's no longer new.
+runtime =  101.27614712715149
+downgraded_recordings-first-negotiation/Buyer_29_2023-03-25_18-04-11.079827.mp3
+medium
+ Hey, that's the beauty of a bike there! I can imagine it being a wonderful experience there in Oregon, some of the force in the shoot, breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old, if anything, that's one of- obviously you know that that's one of the first things that degrade on a bike, right? So I was just curious, how's the frame itself?
+runtime =  58.30797600746155
+medium.en
+ Hey, that's the beauty of a bike there. I can imagine it being a wonderful experience there in Oregon. Some of the forest in this shoot, breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's one of the first things that degradation on a bike, right? So, I was just curious, how old's the frame itself?
+runtime =  65.00799560546875
+large
+ Hey, that's the beauty of a bike there. I can imagine it being a wonderful experience there in Oregon. Some of the forest in Deschutes? Breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's one of- obviously you know that that's one of the first things that degradate on a bike, right? So, I was just curious, how old's the frame itself?
+runtime =  111.65665531158447
+downgraded_recordings-first-negotiation/Buyer_29_2023-03-25_18-07-04.097409.mp3
+medium
+ Alright, thank you, thank you. Alright, so... So given all of that, how does... I can come up to like... 840. How does that sound for you?
+runtime =  57.37187075614929
+medium.en
+ Alright, thank you, thank you. Alright, so... Ah, so given all of that, how does... I can come up to like... 840. How does that sound for you?
+runtime =  58.708375692367554
+large
+ Alright, thank you, thank you. Alright, so... Uh, so given all of that, how does... Uh... I can come up to like... 840. How does that sound for you?
+runtime =  106.55937075614929
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-05-49.921066.mp3
+medium
+ Hey, my name is John. I saw this listing. There's not much about it. Could you tell me a little bit more about it?
+runtime =  58.573254346847534
+medium.en
+ Hey, my name is John. I saw this listing. There's not much about it. Could you tell me a little bit more about it?
+runtime =  57.82844066619873
+large
+ Hey, my name is John. I saw this listing, there's not much about it. Could you tell me a little bit more about it?
+runtime =  98.11795401573181
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-07-34.027830.mp3
+medium
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid or friend to move into. Just spitballing, what's the lowest you could offer me?
+runtime =  62.06085920333862
+medium.en
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into. Just spitballing, what's the lowest you could offer me?
+runtime =  60.09281134605408
+large
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect Place for my kid and her friend to move into Just spitballing what's what's the lowest you could offer me?
+runtime =  101.56804704666138
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-08-45.143645.mp3
+medium
+ 3500 for a place in Essex? I would expect that in San Francisco. I'm gonna have to really lower like we're gonna have to lower the expectations here. Please, please.
+runtime =  43.49195599555969
+medium.en
+ 3,500 for a place in Essex? I would expect that in San Francisco. I'm going to have to really lower the expectations here. Please, please.
+runtime =  35.35718584060669
+large
+ $3,500 for a place in Essex? I would expect that in San Francisco. I'm going to have to really low, like, we're going to have to lower the expectations here. Please, please.
+runtime =  71.89054441452026
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-11-34.191174.mp3
+medium
+ How about I meet you? I throw out my own price of in the 2000 area. Could you do me something around that area? Because I can't rent something for my kid and her friend for 3500. So something around 2k ish would be perfect.
+runtime =  37.7922637462616
+medium.en
+ How about I meet you. I throw out my own price of in the $2,000 area. Could you do me something around that area? Because I can't rent something for my kid and her friend for $3,500. So something around $2,000-ish would be perfect.
+runtime =  39.27370095252991
+large
+ How about I meet you, I throw out my own price of in the $2,000 area. Could you do me something around that area? Because I can't rent something for my kid and her friend for $3,500. So something around $2K-ish would be perfect.
+runtime =  75.38015365600586
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-13-08.246161.mp3
+medium
+ You know, I could meet you halfway. $2,500. That's around the price for the area. I've been looking around. It's a pretty good deal. $2,500.
+runtime =  51.8961284160614
+medium.en
+ You know, I could meet you halfway. $2,500. That's around the price for the area. I've been looking around. It's a pretty good deal. $2,500.
+runtime =  60.12519335746765
+large
+ You know, I could meet you halfway. $2,500. That's around the price for the area. I've been looking around. It's a pretty good deal. $2,500.
+runtime =  106.62764573097229
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-14-06.688312.mp3
+medium
+ I think that could be agreeable.
+runtime =  59.90447974205017
+medium.en
+ I think that could be agreeable.
+runtime =  57.78583574295044
+large
+ I think that could be agreeable.
+runtime =  102.56040620803833
+downgraded_recordings-first-negotiation/Buyer_33_2023-03-25_18-08-57.427944.mp3
+medium
+ Hey there, I saw you were listening for the iPad. Does it come with a charger and the box and everything? Also, is that a case in the back vent?
+runtime =  55.171661138534546
+medium.en
+ Hey there, I saw your listing for the iPad. Does it come with the charger and the box and everything? Also, is that a case in the background?
+runtime =  51.89496731758118
+large
+ Hey there, saw your listing for the iPad. Does it come with a charger and the box and everything? Also, is that a case in the back of it?
+runtime =  103.55140209197998
+downgraded_recordings-first-negotiation/Buyer_33_2023-03-25_18-10-02.313498.mp3
+medium
+ Oh, that's awesome. Okay, so it comes with everything. Let's see, the iPad 2 is a pretty old model. So I think... how does 100 sound for the whole set?
+runtime =  59.17113208770752
+medium.en
+ Oh, that's awesome. Okay, so it comes with everything. Let's see, the iPad 2 is a pretty old model. So I think... how does a hundred sound for the whole set?
+runtime =  59.45468854904175
+large
+ Oh, that's awesome. Okay, so it comes with everything. Uh, let's see, the iPad 2 is a pretty old model. Uh, so I think... How does 100 sound for the whole set?
+runtime =  98.90437054634094
+downgraded_recordings-first-negotiation/Buyer_33_2023-03-25_18-13-51.809620.mp3
+medium
+ Okay, so it sounds like it wasn't used very much at all, mainly just used at home. Does it come with any books? You said you mainly used it as a Kindle. Does it still have some PDFs or books on it?
+runtime =  56.569957971572876
+medium.en
+ Okay, so it sounds like it wasn't used very much at all, mainly just used at home. Does it come with any books? You said you mainly used it as a Kindle, does it still have some PDFs or books on it?
+runtime =  58.590171337127686
+large
+ Okay, so it sounds like it wasn't used very much at all, mainly just used at home. Does it come with any books? You said you mainly used it as a Kindle. Does it still have some PDFs or books on it?
+runtime =  100.02338075637817
+downgraded_recordings-first-negotiation/Buyer_33_2023-03-25_18-14-43.287241.mp3
+medium
+ In that case, consider me sold.
+runtime =  53.5222373008728
+medium.en
+ In that case, consider me sold.
+runtime =  55.46825885772705
+large
+ In that case, consider me sold.
+runtime =  100.08692622184753
+downgraded_recordings-first-negotiation/Buyer_35_2023-03-25_18-15-02.000301.mp3
+medium
+ Nice pack of adapters you got there. Could you do $10 for it?
+runtime =  59.72498059272766
+medium.en
+ Nice pack of adapters you got there. Could you do $10 for it?
+runtime =  55.53716564178467
+large
+ Nice pack of adapters you got there. Could you do $10 for it?
+runtime =  102.84267020225525
+downgraded_recordings-first-negotiation/Buyer_35_2023-03-25_18-15-42.842985.mp3
+medium
+ Would you be agreeable to 15?
+runtime =  50.419150829315186
+medium.en
+ Would you be agreeable to 15?
+runtime =  55.03353023529053
+large
+ Would you be agreeable to 15?
+runtime =  96.50889945030212
+downgraded_recordings-first-negotiation/Buyer_3_2023-03-28_17-40-07.594636.mp3
+medium
+ Thank you.
+runtime =  54.218236207962036
+medium.en
+ Thank you.
+runtime =  56.285508155822754
+large
+
+runtime =  109.64792537689209
+downgraded_recordings-first-negotiation/Buyer_3_2023-03-28_17-40-14.358089.mp3
+medium
+ out.
+runtime =  58.358227491378784
+medium.en
+ Bye.
+runtime =  53.23269534111023
+large
+ MBC 뉴스 김재경입니다.
+runtime =  96.00330877304077
+downgraded_recordings-first-negotiation/Buyer_5_2023-03-25_17-25-30.756863.mp3
+medium
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for $700.
+runtime =  57.71158766746521
+medium.en
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for $700.
+runtime =  56.44662857055664
+large
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for 700.
+runtime =  101.14187598228455
+downgraded_recordings-first-negotiation/Buyer_5_2023-03-25_17-27-36.217402.mp3
+medium
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could make me closer to there?
+runtime =  54.80180287361145
+medium.en
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could make me closer to there?
+runtime =  52.43241810798645
+large
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could be closer to there?
+runtime =  107.11072254180908
+downgraded_recordings-first-negotiation/Buyer_9_2023-03-25_17-30-04.770416.mp3
+medium
+ Hey nice to meet you. This studio looks good. How much are you offering?
+runtime =  57.29179358482361
+medium.en
+ Hey nice to meet you. This studio looks good. How much are you offering it?
+runtime =  55.14246606826782
+large
+ Hey, nice to meet you. This new studio looks good. How much are you offering?
+runtime =  104.95705389976501
+downgraded_recordings-first-negotiation/Buyer_9_2023-03-25_17-31-30.660896.mp3
+medium
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  59.25431156158447
+medium.en
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  55.64427876472473
+large
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  107.38931775093079
+downgraded_recordings-first-negotiation/Buyer_9_2023-03-25_17-33-59.816727.mp3
+medium
+ The apartment one street down for yours, I think it's called Westview Apartments is already offering a studio apartment at like 1800 ish. Could you come down to Westview?
+runtime =  54.462220907211304
+medium.en
+ The apartment one street down for yours, I think it's called Westview Apartments is already offering a studio apartment at like 1800 ish Could you come down to...
+runtime =  60.48916530609131
+large
+ The apartment one street down for yours, I think it's called Westview Apartments, is already offering a studio apartment at like 1800-ish. Could you come down to the...
+runtime =  96.75322723388672
+downgraded_recordings-first-negotiation/Buyer_9_2023-03-25_17-35-15.323220.mp3
+medium
+ how about 1850
+runtime =  51.01779127120972
+medium.en
+ how about 1850
+runtime =  51.365347385406494
+large
+ How about 1800 and so forth?
+runtime =  103.04183316230774
+downgraded_recordings-first-negotiation/Seller_10_2023-03-25_17-30-33.687222.mp3
+medium
+ Hello, this studio is beautifully remodeled and is in a very nice area. Our rent is at $2,000.
+runtime =  57.810619831085205
+medium.en
+ Hello, this studio is beautifully remodeled and is in a very nice area. Our rent is at $2,000.
+runtime =  55.06762075424194
+large
+ Hello, this studio is beautifully remodeled and is in a very nice area. Our rent is at $2,000.
+runtime =  97.85993933677673
+downgraded_recordings-first-negotiation/Seller_10_2023-03-25_17-32-34.067784.mp3
+medium
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2,000.
+runtime =  57.37545394897461
+medium.en
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2,000.
+runtime =  59.703933238983154
+large
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2000.
+runtime =  98.17953824996948
+downgraded_recordings-first-negotiation/Seller_10_2023-03-25_17-34-48.659528.mp3
+medium
+ I could work at 1900.
+runtime =  52.332802057266235
+medium.en
+ I could work at 1,900.
+runtime =  47.91507911682129
+large
+ I could work at 1900.
+runtime =  96.45668029785156
+downgraded_recordings-first-negotiation/Seller_10_2023-03-25_17-35-35.836686.mp3
+medium
+ Sending offer, I could agree to that.
+runtime =  53.56963753700256
+medium.en
+ Sending offer, I could agree to that.
+runtime =  53.31812858581543
+large
+ Sending offer, I could agree to that.
+runtime =  93.44853067398071
+downgraded_recordings-first-negotiation/Seller_11_2023-03-25_17-33-26.921531.mp3
+medium
+ Hey, thanks for the offer, but yeah, you know, I did go ahead and put in a little bit of tune-up work into it So I completely understand where you're coming from with the hundred and thirty eight miles, but could you potentially go up to? seven seven fifty
+runtime =  61.84847378730774
+medium.en
+ Hey, thanks for the offer, but yeah, you know, I did go ahead and put in a little bit of tuna pork into it So I completely understand where you're coming from with 138 miles, but could you potentially go up to? seven seven fifty
+runtime =  55.64492845535278
+large
+ Hey, thanks for the offer, but yeah, you know that I did go ahead and put in a little bit of tune-up work into it So I completely understand where you're coming from with 138 miles, but could you potentially go up to? 7 750
+runtime =  102.4302294254303
+downgraded_recordings-first-negotiation/Seller_11_2023-03-25_17-36-13.831907.mp3
+medium
+ Hey hey, that's fair. And yeah, I did mean 7,500, sorry about that. But yeah, you know, I mean, given the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7,300.
+runtime =  54.63910698890686
+medium.en
+ Hey hey, that's fair. And yeah, I did mean 7500, sorry about that. But yeah, you know, I mean, given the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7300?
+runtime =  63.1620135307312
+large
+ Hey, hey, that's fair. And yeah, I did mean 7,500. Sorry about that. But yeah, you know, I mean, given the fact that it's a clean title, and you know how the DMV is, and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7,300?
+runtime =  104.77108931541443
+downgraded_recordings-first-negotiation/Seller_150_2023-03-25_17-12-27.070789.mp3
+medium
+ Oh, hello? I'm willing to rent this out for $2,000.
+runtime =  54.16049027442932
+medium.en
+ Hello, I'm willing to rent this out for $2,000.
+runtime =  53.284029483795166
+large
+ Oh, hello? I'm willing to rent this out for $2,000.
+runtime =  102.83061528205872
+downgraded_recordings-first-negotiation/Seller_150_2023-03-25_17-14-23.646258.mp3
+medium
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to $1,900 if that would work better.
+runtime =  59.64951515197754
+medium.en
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to $1900 if that would work better.
+runtime =  57.599446296691895
+large
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to 1900 if that would work better.
+runtime =  97.15486025810242
+downgraded_recordings-first-negotiation/Seller_150_2023-03-25_17-18-48.392224.mp3
+medium
+ I would not be able to go below 1700, however I am willing to settle and compromise at 1700 if that is acceptable to you.
+runtime =  58.696694135665894
+medium.en
+ I would not be able to go below 1700, however I am willing to settle and compromise at 1700 if that is acceptable to you.
+runtime =  59.85140085220337
+large
+ I would not be able to go below 1700, however I am willing to settle and compromise at 1700 if that is acceptable to you.
+runtime =  98.81595802307129
+downgraded_recordings-first-negotiation/Seller_152_2023-03-25_17-21-18.275540.mp3
+medium
+ I hear you're 30, however, this is a particularly good condition for for this item. Could I raise you up to 45?
+runtime =  55.48474836349487
+medium.en
+ I hear you're 30, however this is a particularly good condition for this item. Could I raise you up to 45?
+runtime =  52.07000136375427
+large
+ I hear you're 30, however, this is a particularly good condition for this item. Could I raise you up to 45?
+runtime =  107.24262952804565
+downgraded_recordings-first-negotiation/Seller_152_2023-03-25_17-21-53.633261.mp3
+medium
+ Sounds good.
+runtime =  53.82573390007019
+medium.en
+ Sounds good.
+runtime =  54.62324571609497
+large
+ Sounds good.
+runtime =  96.07291531562805
+downgraded_recordings-first-negotiation/Seller_16_2023-03-25_17-38-49.839146.mp3
+medium
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can sell you a top quality one. It's barely been used for closer to, or add an extra hundred to your amount, so closer to 300. Please let me know if this works.
+runtime =  64.05429244041443
+medium.en
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can sell you a top quality one. It's barely been used for closer to... Or add an extra 100 to your amount, so closer to 300. Please let me know if this works.
+runtime =  57.88697171211243
+large
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can sell you a top quality one. It's barely been used for closer to... or add an extra hundred to your amount, so closer to 300. Please let me know if this works.
+runtime =  106.69714426994324
+downgraded_recordings-first-negotiation/Seller_16_2023-03-25_17-40-38.993060.mp3
+medium
+ This is a pretty new MacBook, what about $275?
+runtime =  50.760462045669556
+medium.en
+ This is a pretty new MacBook. What about $275?
+runtime =  59.61013317108154
+large
+ This is a pretty new MacBook. What about 275?
+runtime =  99.85461187362671
+downgraded_recordings-first-negotiation/Seller_16_2023-03-25_17-42-38.341609.mp3
+medium
+ Alright, I can agree to that.
+runtime =  54.53738522529602
+medium.en
+ Alright, I can agree to that.
+runtime =  52.852564573287964
+large
+ Alright, I can agree to that.
+runtime =  102.95383262634277
+downgraded_recordings-first-negotiation/Seller_18_2023-03-25_17-42-16.043349.mp3
+medium
+ Hey, I got it off the regular set 160 and I'm selling it for 140. It's only two months old and it's in really good condition. It's extremely clean. And I personally think it's really nice. So 140 would actually be a bargain for you. So now what do you say?
+runtime =  62.29759216308594
+medium.en
+ Hey, I got it off Gregor's at 160 and I'm selling it for 140. It's only 2 months old and it's in really good condition. It's extremely clean and I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  60.72830128669739
+large
+ Hey, I got it off Craiglist at 160 and I'm selling it for 140. It's only 2 months old and it's in really good condition. It's extremely clean. And I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  103.64717555046082
+downgraded_recordings-first-negotiation/Seller_18_2023-03-25_17-44-56.087630.mp3
+medium
+ Sure, I can throw in the pillars. Would you be willing to have 120?
+runtime =  56.71691942214966
+medium.en
+ Sure, I can throw in the lows. Would you be willing to have 120?
+runtime =  54.72712278366089
+large
+ Sure, I can throw in the pillows. Could you be willing to have 120?
+runtime =  93.4086000919342
+downgraded_recordings-first-negotiation/Seller_19_2023-03-25_17-45-30.771325.mp3
+medium
+ Hey, thanks for reaching out. $5,000 is pretty low, especially considering that this is a relatively new looking Prius. Almost perfect. It only has a small bumper hit and I got that fixed up pretty fast. Considering that everything is in very good shape, I think I'd say $10,000 is probably a reasonable amount for this.
+runtime =  62.500367641448975
+medium.en
+ Hey, thanks for reaching out! 5,000 is pretty low, especially considering that this is a relatively new looking Prius. Almost perfect, only has a small bumper hit, and I got that fixed up pretty fast. Considering that everything is in very good shape, I think I'd say 10k is probably a reasonable amount for this.
+runtime =  57.40772199630737
+large
+ Hey, thanks for reaching out. 5,000 is pretty low, especially considering that this is a relatively new-looking Prius. Almost perfect. Only has a small bumper hit, and I got that fixed up pretty fast. Considering that everything's in very good shape, I think I'd say 10k is probably a reasonable amount for this.
+runtime =  110.0035228729248
+downgraded_recordings-first-negotiation/Seller_19_2023-03-25_17-48-23.649534.mp3
+medium
+ Be that as it may, 5K is way underballing this. Do keep in mind that it's only 65K miles, barely driven, very good condition, and it may not have all the amenities of an newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape, that's really all you need in a car.
+runtime =  60.42010855674744
+medium.en
+ Be that as it may, 5K is way under-balling this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of a newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape. That's really all you need in a car.
+runtime =  61.67120051383972
+large
+ Be that as it may, 5K is way under balling this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of a newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape. That's really all you need in a car.
+runtime =  99.68286800384521
+downgraded_recordings-first-negotiation/Seller_19_2023-03-25_17-50-08.999456.mp3
+medium
+ I do totally get that and I'm kind of in the same boat selling this car because I need to pay for college loans and you know it's been a recession pretty hard on all of us. But with that in mind I will drop the price. I can drop it to I think $90k is reasonable.
+runtime =  65.20760703086853
+medium.en
+ I do totally get that and I'm kind of in the same boat selling this car because I need to pay for college loans and you know it's been a recession pretty hard on all of us. But with that in mind I will drop the price. I can drop it to I think $9K.
+runtime =  56.19472813606262
+large
+ I do totally get that and I'm kind of in the same boat selling this car because I need to pay for college loans and you know it's a recession pretty hard on all of us. But with that in mind I will drop the price. I can drop it to I think 9k sounds reasonable.
+runtime =  101.5398051738739
+downgraded_recordings-first-negotiation/Seller_19_2023-03-25_17-52-53.784607.mp3
+medium
+ Alright, well in that case I wish you the best of luck in your search.
+runtime =  51.383535385131836
+medium.en
+ All right, well, in that case, I wish you the best of luck in your search.
+runtime =  61.938971519470215
+large
+ Alright, well, in that case I wish you the best of luck in your search.
+runtime =  99.67620825767517
+downgraded_recordings-first-negotiation/Seller_22_2023-03-25_17-47-18.885256.mp3
+medium
+ Hey, I'm not sure I can just part with it for 45. It's kind of low. It's a micro SD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like 65.
+runtime =  56.98266315460205
+medium.en
+ Hey, I'm not sure I can just part with it for 45, it's kind of low. It's a micro SD and SD card expansion with 200 gigs, so I mean, you know, I could part with it for like 65.
+runtime =  58.38480186462402
+large
+ Hey, I'm not sure I can just part with it for $45. It's kind of low. It's a microSD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like $65.
+runtime =  106.1340560913086
+downgraded_recordings-first-negotiation/Seller_22_2023-03-25_17-48-38.678422.mp3
+medium
+ 6C sounds reasonable, we can do that.
+runtime =  56.31731033325195
+medium.en
+ 60 sounds reasonable. We can do that.
+runtime =  54.91914629936218
+large
+ 60 sounds reasonable. We can do that.
+runtime =  93.5181610584259
+downgraded_recordings-first-negotiation/Seller_24_2023-03-25_17-51-04.028117.mp3
+medium
+ Hey, I'm happy to tell you about the specs of the car although the listing doesn't contain as much information. This is a 2015 BMW and it's really nice. It's in really good shape, no accidents, no major repairs. It's really nice, I've kept it really well and I'm looking to sell it because I'm upgrading it to your car but you won't be disappointed with this car. This car is great and I'm selling it for 12,000 which is nearly double your offering but I can come down to say 11,500.
+runtime =  65.6153712272644
+medium.en
+ Hey, I am happy to tell you about the specs of the car although the string doesn't contain as much information. This is a 2015 BMW and it's really nice. You've seen about 75,000 miles and it's in really good shape. No accidents, no major repairs. It's really nice. I've kept it really well and I'm looking to sell because I'm upgrading to a new car but you won't be disappointed with this car. This car is great and I'm selling it for 12,000 which is nearly double what you're offering but I can come down to say 11,500.
+runtime =  58.940324783325195
+large
+ Hey, I'm happy to tell you about the specs of the car although the listing doesn't contain as much information. This is a 2015 BMW and it's really nice. It's seen about 75,000 miles and it's in really good shape. No accidents, no major repairs. It's really nice. The maintenance have kept it really well and I'm looking to sell because I'm upgrading to a new car. But you won't be disappointed with this car. This car is great. And I'm selling it for 12,000 which is nearly double what you're offering. I can come down to say 11,500.
+runtime =  104.44692039489746
+downgraded_recordings-first-negotiation/Seller_24_2023-03-25_17-54-00.221537.mp3
+medium
+ Hey, I'm sorry, I think you sent a blank message. Could you send that again?
+runtime =  51.48616409301758
+medium.en
+ Hey, I'm sorry, I think you sent a blank message. Could you send that again?
+runtime =  49.763219118118286
+large
+ Hey, I'm sorry, I think you sent a blank message. Could you send that again?
+runtime =  87.45010948181152
+downgraded_recordings-first-negotiation/Seller_24_2023-03-25_17-56-16.658611.mp3
+medium
+ all right it's a deal send the offer we only have about half a minute
+runtime =  47.50252437591553
+medium.en
+ alright it's a deal send the offer we only have about half
+runtime =  44.98953986167908
+large
+ All right, it's Sabeel, send the offer, we only have about half a minute.
+runtime =  90.64281463623047
+downgraded_recordings-first-negotiation/Seller_26_2023-03-25_17-54-55.269221.mp3
+medium
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this property is in a very quiet residential area and is a very high value real estate in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So, we're starting rent at 3000.
+runtime =  54.47664284706116
+medium.en
+ Hello, thank you for reaching out. I hear your concerns. However, this is set these properties in a very quiet residential area, and is a very high value real estate and it's in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at 3000.
+runtime =  52.49380397796631
+large
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this property is in a very quiet residential area and is a very high value real estate in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at $3,000.
+runtime =  94.48497176170349
+downgraded_recordings-first-negotiation/Seller_26_2023-03-25_17-57-20.370245.mp3
+medium
+ I could do 2,500. It's a very nice property, very well lit. The reasons it's been on the market is unrelated to the quality of the of the residence and its location.
+runtime =  50.20610976219177
+medium.en
+ I could do $2,500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residence and its location.
+runtime =  52.68273186683655
+large
+ I could do $2,500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residence and its location.
+runtime =  89.52507877349854
+downgraded_recordings-first-negotiation/Seller_26_2023-03-25_17-58-55.990788.mp3
+medium
+ Berkeley area is very high value because of the college students and their need for housing in that area, but I could do $2,400 or just send me an offer because we're running out of time.
+runtime =  50.01698422431946
+medium.en
+ The Berkeley area is very high value because of the college students and their need for housing in that area. But I could do $2,400 or just send me an offer because we're running out of time.
+runtime =  48.850653648376465
+large
+ Berkeley area is very high value because of the college students and their need for housing in that area, but I could do $2,400 or just send me an offer because we're running out of time.
+runtime =  89.69024562835693
+downgraded_recordings-first-negotiation/Seller_28_2023-03-25_17-57-07.094640.mp3
+medium
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says in the listing. $200 is a pretty low price considering how significantly large this is. It's really hard to find a bike this size. So I got it for $1000. I'm willing to let it go for $800.
+runtime =  54.621185302734375
+medium.en
+ Hey, yeah, it does come with a seat. The saddle is in my car, as it says in the listing. $200 is a pretty low price, considering how much of a significantly large bike this is. It's really hard to find a bike this size. So, I got it for $1,000. I'm willing to let it go for $800.
+runtime =  56.41448998451233
+large
+ Hey, yeah, it does come with a seat. The saddle is in my car, as it says in the listing. $200 is a pretty low price, considering how much of a significantly large bike this is. It's really hard to find a bike this size. So, I got it for $1000, I'm willing to let it go for $800.
+runtime =  98.55534791946411
+downgraded_recordings-first-negotiation/Seller_28_2023-03-25_18-00-20.369714.mp3
+medium
+ I'm quite sure that's not possible. This bike is a very, very large bike. I don't think you understand just how large this bike is. You cannot find this in most normal stores. This was custom ordered, custom made, and yeah, it was $1,000.
+runtime =  54.69263243675232
+medium.en
+ I'm quite sure that's not possible. This bike is a very, very large bike. I don't think you understand just how large this bike is. You cannot find this in most normal stores. This was custom ordered, custom made, and yeah, it was $1,000.
+runtime =  51.108490228652954
+large
+ I'm quite sure that's not possible. This bike is a very, very large bike. I don't think you understand just how large this bike is. You cannot find this in most stores. This was custom ordered, custom made, and yeah, it was $1000.
+runtime =  89.2783887386322
+downgraded_recordings-first-negotiation/Seller_28_2023-03-25_18-03-52.183577.mp3
+medium
+ 500 is still pretty low. How about 600?
+runtime =  47.48583459854126
+medium.en
+ 500 is still pretty low. How about 600?
+runtime =  48.07069778442383
+large
+ 500 is still pretty low. How about 600?
+runtime =  87.73733687400818
+downgraded_recordings-first-negotiation/Seller_2_2023-03-28_17-37-33.981324.mp3
+medium
+ Bye!
+runtime =  49.25845193862915
+medium.en
+ Thank you.
+runtime =  51.202763080596924
+large
+
+runtime =  89.87075209617615
+downgraded_recordings-first-negotiation/Seller_2_2023-03-28_17-37-39.594598.mp3
+medium
+ Good luck.
+runtime =  49.20181202888489
+medium.en
+ Thank you.
+runtime =  49.647876262664795
+large
+
+runtime =  96.46557807922363
+downgraded_recordings-first-negotiation/Seller_30_2023-03-25_18-05-12.891645.mp3
+medium
+ The frame is well made, starting prices at $1000 just so you know, but it's a well made bike and it's served well and it will serve you well for quite a while longer.
+runtime =  51.879947662353516
+medium.en
+ The frame is well made. Starting price is at $1,000, just so you know. But it's a well-made bike and it's served well and it'll serve you well for quite a while longer.
+runtime =  54.00773358345032
+large
+ The frame is well made, starting price is at $1000 just so you know. But it's a well made bike and it's served well and it will serve you well for quite a while longer.
+runtime =  94.5408582687378
+downgraded_recordings-first-negotiation/Seller_30_2023-03-25_18-07-28.609191.mp3
+medium
+ 840 works for me.
+runtime =  48.236748695373535
+medium.en
+ 840 works for me.
+runtime =  47.87498760223389
+large
+ 840 works for me.
+runtime =  89.01316714286804
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-06-36.476266.mp3
+medium
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 3400 square feet, two bedroom, two bath, good shape.
+runtime =  54.78151178359985
+medium.en
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 3400 square feet, two bedroom, two bath, good shape.
+runtime =  52.891480922698975
+large
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 3400 square feet, two bedroom, two bath, good shape.
+runtime =  96.37305450439453
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-08-13.238031.mp3
+medium
+ I'd say about $3,500. That's pretty standard for prices in this area.
+runtime =  53.0214409828186
+medium.en
+ I'd say about $3,500. That's pretty standard for prices in this area.
+runtime =  51.66641616821289
+large
+ I'd say about $3,500. That's pretty standard for prices in this area.
+runtime =  89.86346316337585
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-10-20.211393.mp3
+medium
+ Well, I mean, bread's a little bit more expensive than the U.S., you know, higher density and all that. But also, like, there's cheaper food and other amenities around here, so it adjusts itself accordingly.
+runtime =  54.17559003829956
+medium.en
+ Well, I mean bread is a little bit more expensive than the US, you know, higher density and all that, but also like there's cheaper food and other amenities around here, so it adjusts itself accordingly.
+runtime =  52.02354097366333
+large
+ Well, I mean, Britain's a little bit more expensive than the U.S., you know, higher density and all that. But also, like, there's cheaper food and other amenities around here. So it adjusts itself accordingly.
+runtime =  95.77323746681213
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-12-23.207315.mp3
+medium
+ How about $2,800? That's a pretty good price for this area.
+runtime =  52.04666066169739
+medium.en
+ How about $2800? That's a pretty good price for this area.
+runtime =  52.84990739822388
+large
+ How about $2,800? That's a pretty good price for this area.
+runtime =  95.33442163467407
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-13-52.464123.mp3
+medium
+ What do you say to 2,600?
+runtime =  51.19697666168213
+medium.en
+ What do you say to 2600?
+runtime =  52.93269896507263
+large
+ What do you say to 2,600?
+runtime =  97.3366310596466
+downgraded_recordings-first-negotiation/Seller_34_2023-03-25_18-09-21.277580.mp3
+medium
+ Hi, thanks for the interest! And yes, everything that you see there in the picture is included. So that includes that little pamphlet that you see on the right, the charger, the cable, and yes, you are correct, that is the case.
+runtime =  58.067952394485474
+medium.en
+ Hi, thanks for the interest! And yes, everything that you see there in the picture is included. So that includes that little pamphlet that you see on the right, the charger, the cable, and yes, you are correct, that is the case.
+runtime =  59.43506097793579
+large
+ Hi, thanks for the interest. And yes, everything that you see there in the picture is included. So that includes that little pamphlet that you see on the right, the charger, the cable, and yes, you are correct, that is the case.
+runtime =  102.75598001480103
+downgraded_recordings-first-negotiation/Seller_34_2023-03-25_18-12-45.181994.mp3
+medium
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me, in the sense that I completely understand it's one of the earliest models, but when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  64.57049012184143
+medium.en
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me, in the sense that I completely understand it's one of the earliest models, but when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  64.55497765541077
+large
+ Yeah, no, that's completely fine. Especially with the fact that it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, I'm sorry, but 100 is a little bit too low for me. In the sense that, I completely understand it's one of the earliest models, but when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle. Because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like $150?
+runtime =  113.30420470237732
+downgraded_recordings-first-negotiation/Seller_34_2023-03-25_18-14-21.180885.mp3
+medium
+ Yes, it most definitely does. I swear it has half my library on there. So expect to see some of the classics, but over a catalog of, I want to say, like 250 books. Which you're more than welcome to.
+runtime =  53.73861312866211
+medium.en
+ Yes, it most definitely does. I swear it has half my library on there. So expect to see some of the classics, but over a catalog of, I want to say like, 250 books, which you're more than welcome to.
+runtime =  53.84310555458069
+large
+ Yes, it most definitely does. I swear it has half my library on there. So expect to see some of the classics, but over a catalog of, I want to say, like 250 books, which you're more than welcome to.
+runtime =  103.9887490272522
+downgraded_recordings-first-negotiation/Seller_34_2023-03-25_18-15-16.073869.mp3
+medium
+ Sounds great, and it was a bargain for 150.
+runtime =  53.10149955749512
+medium.en
+ Sounds great, and it was a bargain for $150.
+runtime =  53.138235092163086
+large
+ Sounds great, and it was a bargain for $150.
+runtime =  92.14672493934631
+downgraded_recordings-first-negotiation/Seller_36_2023-03-25_18-15-22.750511.mp3
+medium
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places You probably do not want to go What do we say 20?
+runtime =  51.11671543121338
+medium.en
+ I mean, considering some of these adapters are pretty hard to get, like they're from out of the country and in places you probably do not want to go, uh, what do we say, 20?
+runtime =  51.06698727607727
+large
+ I mean, considering some of these adapters are pretty hard to get, like, they're from out of the country and in places you probably do not want to go, uh, what do we say, 20?
+runtime =  94.90284323692322
+downgraded_recordings-first-negotiation/Seller_36_2023-03-25_18-15-55.089530.mp3
+medium
+ Alright, 15 works.
+runtime =  51.41133379936218
+medium.en
+ Alright, 15 works.
+runtime =  49.04125761985779
+large
+ All right, 15 works.
+runtime =  87.67659020423889
+downgraded_recordings-first-negotiation/Seller_4_2023-03-28_17-40-10.949449.mp3
+medium
+ I'm ready.
+runtime =  49.79352617263794
+medium.en
+ Bye.
+runtime =  49.178380250930786
+large
+
+runtime =  92.24892020225525
+downgraded_recordings-first-negotiation/Seller_4_2023-03-28_17-40-17.200873.mp3
+medium
+
+runtime =  53.921974182128906
+medium.en
+ Thank you.
+runtime =  51.51332712173462
+large
+
+runtime =  120.15650868415833
+downgraded_recordings-first-negotiation/Seller_6_2023-03-25_17-26-23.266706.mp3
+medium
+ Hey there. Yeah, glad to hear you're interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think I could go below $1300.
+runtime =  55.80681324005127
+medium.en
+ Hey there. Uh, yeah. Glad to hear you're interested. This is a very expensive dresser, though. The marble top by itself is worth quite a bit. I really don't think I could go below $1,300.
+runtime =  55.92221474647522
+large
+ Hey there. Uh, yeah. Glad to hear you're interested. This is a very expensive dresser, though. The marble top by itself is worth quite a bit. I really don't think I could go below $1,300.
+runtime =  100.96301484107971
+downgraded_recordings-first-negotiation/Seller_6_2023-03-25_17-28-18.628227.mp3
+medium
+ How about $1,000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  54.04059147834778
+medium.en
+ How about 1000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  55.54019808769226
+large
+ How about 1000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  94.2872109413147
+ke question. Does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  8.657666206359863
+small
+ Hi, looking at my bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  24.303629398345947
+small.en
+ Hi, looking at my bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  18.344841957092285
+medium
+ Hi, looking to buy a bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  62.672611236572266
+medium.en
+ Hi, looking to buy a bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  65.6158173084259
+large
+ Hi, looking to buy a bike. Question, does it come with a seat? I'm willing maybe to offer like 200 bucks for it.
+runtime =  108.1099328994751
+downgraded_recordings-first-negotiation/Buyer_27_2023-03-25_17-59-05.170248.mp3
+tiny
+ Could you really get that for a thousand because I've been seeing bikes in the store that are like 500 for about that size?
+runtime =  6.5514092445373535
+tiny.en
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  7.2960193157196045
+base
+ Did you really get that for a thousand because I've been seeing bags in the store that are like 500 for about that size?
+runtime =  9.861372232437134
+base.en
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  8.443120956420898
+small
+ Did you really get that for $1000? Because I've been seeing bikes in the store that are like $500 for about that size.
+runtime =  23.98658776283264
+small.en
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  25.9772047996521
+medium
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  59.341472864151
+medium.en
+ Did you really get that for $1000? Because I've been seeing bikes in the store that are like $500 for about that size.
+runtime =  61.204678535461426
+large
+ Did you really get that for a thousand? Because I've been seeing bikes in the store that are like 500 for about that size.
+runtime =  107.08841896057129
+downgraded_recordings-first-negotiation/Buyer_149_2023-03-25_17-13-16.761279.mp3
+tiny
+ 2000 is a bit on the higher side. I'm seeing similar houses. There used selling for about 1400. Could we bring it somewhat close to that?
+runtime =  9.317675590515137
+tiny.en
+ 2000 is a bit on the higher side. I am seeing similar houses near use selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  7.910677194595337
+base
+ 2000 is a bit on the higher side. I am seeing similar houses near use selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  11.489909887313843
+base.en
+ 2000 is a bit on the higher side. I am seeing similar houses near used selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  9.784708499908447
+small
+ 2000 is a bit on the higher side. I am seeing similar houses near you selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  23.697829723358154
+small.en
+ 2000 is a bit on the higher side. I am seeing similar houses near you selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  25.08467435836792
+medium
+ 2000 is a bit on the higher side. I am seeing similar houses near you selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  61.148497343063354
+medium.en
+ 2000 is a bit on the higher side, I am seeing similar houses near use selling for about 1400 could we bring it somewhat closer to that?
+runtime =  52.52212882041931
+large
+ 2000 is a bit on the higher side. I'm seeing similar houses near use selling for about 1400. Could we bring it somewhat closer to that?
+runtime =  109.93872952461243
+downgraded_recordings-first-negotiation/Buyer_25_2023-03-25_17-52-51.515456.mp3
+tiny
+ Hey, I just saw your posting today about the little charming family house near the San Francisco area. It looks like a good thing for me, I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. It must be that it's really close to the highway or there's something issue with the house I can give you a very upfront offer right now without even seeing it of like 1800 let's say.
+runtime =  8.67850923538208
+tiny.en
+ Hey, I just saw your posting today about the little charming family house near the San Francisco area. It looks like a good thing for me, I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. It must be that it's really close to the highway or there's something. If you're with the house, I can give you a very upfront offer right now without even seeing it of 1800 let's say.
+runtime =  8.493607997894287
+base
+ Hey, I just saw your posting today about the little charming family house near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something issue at the house. I can give you like a very upfront offer right now without even seeing it of like 1800 let's say.
+runtime =  12.5735502243042
+base.en
+ Hey, I just saw your posting today about the little charming family house near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something issue with the house I can give you like a very upfront offer right now without even seeing it of like 1800 let's say.
+runtime =  14.907291889190674
+small
+ Hey, I just saw your posting today about the little charming family house near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something issue with the house. I can give you a very upfront offer right now without even seeing it of like 1800, let's say.
+runtime =  26.45800805091858
+small.en
+ Hey, I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway, or there's something issue with the house. I can give you a very upfront offer right now without even seeing it of, like, 1800, let's say.
+runtime =  26.588736534118652
+medium
+ Hey I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while which tells me a lot and it must be that it's really close to the highway or there's something issue with the house. I can give you like a very upfront offer right now without even seeing it of like $1,800 let's say.
+runtime =  70.00082588195801
+medium.en
+ Hey, I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something at the house. I can give you a very upfront offer right now without even seeing it of like $1,800, let's say.
+runtime =  66.47678327560425
+large
+ Hey, I just saw your posting today about the Little Charming Family House near the San Francisco area. It looks like a good thing for me. I'm just actually moving to the area with my family of four. But my concern is that it's been on the market for a while, which tells me a lot. And it must be that it's really close to the highway or there's something issue with the house. I'm looking at a very upfront offer right now without even seeing it of $1,800, let's say.
+runtime =  115.22394561767578
+downgraded_recordings-first-negotiation/Buyer_25_2023-03-25_17-56-27.303774.mp3
+tiny
+ I don't think I can do 3000 and I've looked at other places in the area which have gone for around 2K-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3K for this.
+runtime =  11.292863368988037
+tiny.en
+ I don't think I can do 3,000 and I've looked at other places in the area which have gone for around 2K-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3K for this.
+runtime =  8.4755117893219
+base
+ I don't think I can do 3,000 and I've looked at other places in the area which have gone for around 2kish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  11.14111042022705
+base.en
+ I don't think I can do 3,000 and I've looked at other places in the area which have gone for around 2kish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  10.51286268234253
+small
+ I don't think I can do 3,000 and I've looked at other places in the area which have gone for around 2k-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  23.132362842559814
+small.en
+ I don't think I can do 3000 and I've looked at other places in the area which have gone for around 2k-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  27.777082443237305
+medium
+ I don't think I can do 3000 and I've looked at other places in the area which have gone for around 2kish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  64.18019986152649
+medium.en
+ I don't think I can do 3,000 and I've looked at other places in the area which have gone for around 2k-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  56.980271100997925
+large
+ I don't think I can do 3000 and I've looked at other places in the area which have gone for around 2k-ish. So if you can do anything in that ballpark, it's just this one's been on the market for quite a while and I definitely can't go 3k for this.
+runtime =  115.35903477668762
+downgraded_recordings-first-negotiation/Buyer_3_2023-03-28_17-40-14.358089.mp3
+tiny
+ 거짓말 본인 구자 a separate타진 제술 � TIPS.
+runtime =  8.304758310317993
+tiny.en
+ Oh.
+runtime =  6.403038740158081
+base
+
+runtime =  11.529229640960693
+base.en
+ Bye!
+runtime =  13.03728985786438
+small
+ Bye.
+runtime =  20.913651943206787
+small.en
+ Bye.
+runtime =  18.946101427078247
+medium
+ out.
+runtime =  59.58549094200134
+medium.en
+ Bye.
+runtime =  52.90459847450256
+large
+ MBC 뉴스 김재경입니다.
+runtime =  104.94482111930847
+downgraded_recordings-first-negotiation/Buyer_149_2023-03-25_17-11-59.863740.mp3
+tiny
+ Hey, I'd like to rent this house, how much are you doing to rent it?
+runtime =  6.860046863555908
+tiny.en
+ Hey, I'd like to rent this house how much are you doing to rent it?
+runtime =  6.052984952926636
+base
+ Hey, I'd like to rent this house. How much are you going to rent it for?
+runtime =  9.617943286895752
+base.en
+ Hey, I like to rent this house. How much are you paying to rent it?
+runtime =  9.421284914016724
+small
+ Hey, I'd like to rent this house. How much are you going to rent it for?
+runtime =  25.760738372802734
+small.en
+ Hey, I'd like to rent this house. How much are you doing to rent it for me?
+runtime =  22.461777687072754
+medium
+ Hey, I'd like to rent this house. How much are you going to rent it for?
+runtime =  56.48072648048401
+medium.en
+ Hey, I'd like to rent this house. How much are you willing to rent it for?
+runtime =  56.328391790390015
+large
+ Hey, I'd like to rent this house. How much are you willing to rent it for?
+runtime =  100.29216766357422
+downgraded_recordings-first-negotiation/Seller_30_2023-03-25_18-05-12.891645.mp3
+tiny
+ The frame is well made, starting prices at $1,000 to say no, but it's a well made bike and it's served well and it will serve you well from quite a while longer.
+runtime =  7.228065013885498
+tiny.en
+ The frame is well made. Starting prices at $1,000 just so you know, but it's a well made bike and it served well and it will it'll serve you well from quite a while longer.
+runtime =  6.677976369857788
+base
+ The frame is well made. Starting price is at $1,000 to a casino, but it's a well made bike and it's served well and it will serve you well for quite a while longer.
+runtime =  10.044067144393921
+base.en
+ The frame is well made starting prices at $1,000 to say no, but it's a well made bike and it's served well and it will it'll serve you well for quite a while longer.
+runtime =  11.45505142211914
+small
+ The frame is well made, starting prices at $1,000 just so you know, but it's a well made bike and it's served well and it'll serve you well for quite a while longer.
+runtime =  24.435723304748535
+small.en
+ The frame is well made, starting prices at $1,000 just so you know, but it's a well made bike and it's served well and it'll serve you well for quite a while longer.
+runtime =  22.103378534317017
+medium
+ The frame is well made, starting prices at $1000 just so you know, but it's a well made bike and it's served well and it will serve you well for quite a while longer.
+runtime =  60.63511776924133
+medium.en
+ The frame is well made. Starting price is at $1,000, just so you know. But it's a well-made bike and it's served well and it'll serve you well for quite a while longer.
+runtime =  62.93783664703369
+large
+ The frame is well made, starting price is at $1000 just so you know. But it's a well made bike and it's served well and it will serve you well for quite a while longer.
+runtime =  106.06368923187256
+downgraded_recordings-first-negotiation/Seller_18_2023-03-25_17-44-56.087630.mp3
+tiny
+ Sure, I can throw in the, the laws of building to have 120.
+runtime =  9.026870727539062
+tiny.en
+ Sure, I can throw in the close of review link to have 120.
+runtime =  6.910826921463013
+base
+ Sure, I can throw in the those of pretty big, pulling to have 120.
+runtime =  9.527361869812012
+base.en
+ Sure, I can throw in the... ...the nose of Pudibimim willing to have 120.
+runtime =  9.763452053070068
+small
+ Sure, I can throw in the pillars. Could you be willing to have 120?
+runtime =  23.227689743041992
+small.en
+ Sure, I can throw in the pillows. Would you be willing to have 120?
+runtime =  22.177978992462158
+medium
+ Sure, I can throw in the pillars. Would you be willing to have 120?
+runtime =  60.410964012145996
+medium.en
+ Sure, I can throw in the lows. Would you be willing to have 120?
+runtime =  56.618977308273315
+large
+ Sure, I can throw in the pillows. Could you be willing to have 120?
+runtime =  102.81392073631287
+downgraded_recordings-first-negotiation/Buyer_23_2023-03-25_17-55-11.637660.mp3
+tiny
+ Oh, so sorry about that. I quit my malfunction, but yeah, I know that thank you again for all the details that you sent me about the car. I really appreciate that But so yeah, no, wow. Okay, BMW. That's That's a pretty pricey car and on top of that I understand you're trying to get rid of it Especially for an upgrade because some of these new models man are pretty they're pretty nice, but yeah, for a being a 2015 and 1000 miles I think I'm sorry, but I think 11 500 is a bit steep both for the car and for myself Firstly, but yeah, I know given that it's in great condition as you mentioned it has the name brand recognition I'm I'm willing to up it to how about we say 8500 have just that sound
+runtime =  10.091458082199097
+tiny.en
+ Oh, so sorry about that. I quit my malfunction. But yeah, no, thank you again for all the details that you send me about the car I really appreciate that. But yeah, no, wow, okay BMW. That's uh, that's a pretty pricey car and on top of that I understand you're trying to get rid of it, especially for an upgrade because some of these new models man are pretty they're pretty nice But yeah, for being a 2015 and 75,000 miles. I think I'm sorry, but I think 11 500 is a bit steep both for the car and for myself firstly But yeah, I know given that it's in great condition as you mentioned. It has the name brand recognition I'm I'm willing to up it to how about we say 8,500 how does that sound?
+runtime =  9.513728141784668
+base
+ Oh, so sorry about that. I'd equip my malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow. Okay, BMW. That's a pretty pricey car. And on top of that, I understand you're trying to get rid of it, especially for an upgrade, because some of these new models, man, are pretty nice. But yeah, for me being a 2015 and 75,000 miles, I think I'm sorry, but I think 11,500 is a bit steep, both for the car and for myself, firstly. But yeah, no, given that it's in great condition, as you mentioned, it has the name brand recognition. I'm willing to up it to how about we say 8,500? How does that sound?
+runtime =  20.28526258468628
+base.en
+ Oh, so sorry about that. I'd equipment malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow, okay, BMW. That's a pretty pricey car. And on top of that, I understand you're trying to get rid of it, especially for an upgrade, because some of these new models are pretty, they're pretty nice. But yeah, for it being a 2015 and 75,000 miles, I think I'm sorry, but I think 11,500 is a bit steep, both for the car and for myself, firstly. But yeah, no, given that it's in great condition, as you mentioned, it has the name brand recognition. I'm willing to up it to how about we say 8,500. How does that sound?
+runtime =  14.610625267028809
+small
+ Oh, so sorry about that. Equipment malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow, okay, BMW. That's a that's a pretty pricey car and on top of that, I understand you're trying to get rid of it, especially for an upgrade because some of these new models, man, are pretty, they're pretty nice. But yeah, for it being a 2015 and 75,000 miles, I think, I'm sorry, but I think 11500 is a bit steep, both for the car and for myself, firstly. But yeah, no, given that it's in great condition, as you've mentioned, it has the name brand recognition. I'm willing to up it to how about we say 8,500. How does that sound?
+runtime =  28.749271154403687
+small.en
+ Oh, so sorry about that. I- equipment malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But, uh, yeah, no, wow. Okay, BMW. That's, uh, that's a pretty pricey car, and on top of that, I understand you're trying to get rid of it. Especially for an upgrade, because some of these new models, man, are pretty- they're pretty nice. But yeah, for it being a 2015 and 75,000 miles, I think- I'm sorry, but I think 11,500 is a bit steep. Both for the car and for myself, personally. But yeah, no, given that it's in great condition, as you've mentioned, it has the name brand recognition, I'm willing to up it to, how about we say 8,500. How does that sound?
+runtime =  33.55099153518677
+medium
+ Oh, so sorry about that. I quit my malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow, okay, BMW. That's a pretty pricey car. And on top of that, I understand you're trying to get rid of it, especially for an upgrade, because some of these new models, man, are pretty nice. Yeah, for it being a 2015 and 75,000 miles, I think I'm sorry, but I think 11,500 is a bit steep, both for the car and for myself personally. But yeah, no, given that it's in great condition, as you mentioned, it has the name brand recognition. I'm willing to up it to how about we say 8,500. How does that sound?
+runtime =  69.77935576438904
+medium.en
+ Oh, so sorry about that. I... equipment malfunction. But yeah, no, thank you again for all the details that you sent me about the car. I really appreciate that. But yeah, no, wow, okay, BMW. That's a pretty pricey car, and on top of that, I understand you're trying to get rid of it. Especially for an upgrade, because some of these new models, man, are pretty nice. But yeah, for it being a 2015 and 75,000 miles, I think... I'm sorry, but I think 11,500 is a bit steep, both for the car and for myself, personally. But yeah, no, given that it's in great condition, as you mentioned, it has the name brand recognition, I'm willing to up it to, how about we say, 8,500. How does that sound?
+runtime =  73.33402371406555
+large
+ Oh, so sorry about that. I quit my malfunction, but yeah, I know that thank you again for all the details that you sent me about the car I really appreciate that but yeah, no Wow. Okay BMW. That's uh, That's a pretty pricey car and on top of that I understand you're trying to get rid of it, especially for an upgrade because some of these new models man are pretty They're pretty nice. But yeah for it being a 2015 and 75,000 miles I Think I'm sorry, but I think 11 500 is a bit steep both for the car and for myself personally But yeah, I know given that it's in great condition as you mentioned it has the name brand recognition I'm I'm willing to up it to how about we say 8500 how does that sound?
+runtime =  123.61668062210083
+downgraded_recordings-first-negotiation/Seller_26_2023-03-25_17-58-55.990788.mp3
+tiny
+ Berkeley area is very high value because of the college students and their needs were for housing in that area, but I could do 2,400 or just send me an offer because we're running out of time.
+runtime =  7.049171209335327
+tiny.en
+ Berkeley area is very high value because of the college students and their needs were for housing in that area, but I could do 2,400 or just send me an offer because we're running out of time.
+runtime =  7.347452402114868
+base
+ Berkeley area is very high value because of the college students and their needs were for housing in that area, but I could do 2,400 or just send me an offer because we're running out of time.
+runtime =  10.888954639434814
+base.en
+ Berkeley area is very high value because of the college students and their needs were for housing in that area, but I could do 2,400 or just send me an offer because we're running out of time.
+runtime =  10.555924892425537
+small
+ Berkeley area is very high value because of the college students and their need for housing in that area. But I could do 2,400 or just send me an offer because we're running out of time.
+runtime =  22.082419395446777
+small.en
+ Berkeley area is very high value because of the college students and their need for housing in that area, but I could do 2,400 or just send me an offer because we're running out of time.
+runtime =  26.752345085144043
+medium
+ Berkeley area is very high value because of the college students and their need for housing in that area, but I could do $2,400 or just send me an offer because we're running out of time.
+runtime =  57.41334414482117
+medium.en
+ The Berkeley area is very high value because of the college students and their need for housing in that area. But I could do $2,400 or just send me an offer because we're running out of time.
+runtime =  57.90878939628601
+large
+ Berkeley area is very high value because of the college students and their need for housing in that area, but I could do $2,400 or just send me an offer because we're running out of time.
+runtime =  108.4927625656128
+downgraded_recordings-first-negotiation/Seller_18_2023-03-25_17-42-16.043349.mp3
+tiny
+ Hey, I got it off to the regular set 160 and I'm selling it for 140. It's only two months old and it's in the really good condition. It's extremely clean and I personally think it's really nice. So 140 would actually be a bargain for you. So, now what do you say?
+runtime =  8.843413591384888
+tiny.en
+ Hey, I got it off to the regular set 160 and I'm selling it for quality. It's only two months old and it's in really good condition. It's extremely clean. It's and I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  7.2215659618377686
+base
+ Hey, I got it of the regular set 160 and I'm selling it for 140. It's only two months old and it's in really good condition. It's extremely clean. It's and I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  10.190948009490967
+base.en
+ Hey, I got it off the regular set 160 and I'm selling it for 140. It's only two months old and it's in really good condition. It's extremely clean. It's and I personally think it's really nice. So, 140 would actually be a bargain for you. So, what do you say?
+runtime =  13.424391746520996
+small
+ Hey, I got it off the regular set 160 and I'm selling it for 140. It's only two months old and it's in really good condition. It's extremely clean. And I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  25.766746044158936
+small.en
+ hey I got it off the regular Z160 and I'm selling it for 140 it's only two months old and it's in really good condition it's extremely clean it's and I personally think it's really nice so 140 would actually be a bargain for you so what do you say?
+runtime =  22.71578097343445
+medium
+ Hey, I got it off the regular set 160 and I'm selling it for 140. It's only two months old and it's in really good condition. It's extremely clean. And I personally think it's really nice. So 140 would actually be a bargain for you. So now what do you say?
+runtime =  61.804035902023315
+medium.en
+ Hey, I got it off Gregor's at 160 and I'm selling it for 140. It's only 2 months old and it's in really good condition. It's extremely clean and I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  60.545759201049805
+large
+ Hey, I got it off Craiglist at 160 and I'm selling it for 140. It's only 2 months old and it's in really good condition. It's extremely clean. And I personally think it's really nice. So 140 would actually be a bargain for you. So what do you say?
+runtime =  104.04498839378357
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-06-36.476266.mp3
+tiny
+ Yeah, this was the property I least while I was in college. It's newly refurbished year before I left. It's in great condition. I got great views outside the window too. 3400 square feet. Two better and two best. Good shape.
+runtime =  10.977261781692505
+tiny.en
+ Yeah, this was the property I leased while I was in college. It's newly refurbished before I left. It's in great condition. Got great views outside the window too. 3400 square feet. Two bedroom, two bath. Good shape.
+runtime =  7.087106943130493
+base
+ Yeah, this was the property I leased while I was in college. It's newly refurbished year before I left. It's in great condition, got great views outside the window too. 34 or 100 square feet, two bedroom, two baths. Good shape.
+runtime =  10.113796472549438
+base.en
+ Yeah, this was the property I leased while I was in college. It's newly refurbished year before I left. It's in great condition. Got great views outside the window too. 34 or 100 square feet. Two bedroom, two bath. Good shape.
+runtime =  10.117674827575684
+small
+ Yeah, this was the property I leased while I was in college. It's newly refurbished year before I left. It's in great condition, got great views outside the window too. 34, 100 square feet, two bedroom, two bath, good shape.
+runtime =  21.954307556152344
+small.en
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 34 or 100 square feet, two bedroom, two bath. Good shape.
+runtime =  23.49320340156555
+medium
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 3400 square feet, two bedroom, two bath, good shape.
+runtime =  59.12869095802307
+medium.en
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 3400 square feet, two bedroom, two bath, good shape.
+runtime =  60.01455283164978
+large
+ Yeah, this was the property I leased while I was in college. It's newly refurbished a year before I left. It's in great condition, got great views outside the window too. 3400 square feet, two bedroom, two bath, good shape.
+runtime =  97.2684416770935
+downgraded_recordings-first-negotiation/Seller_11_2023-03-25_17-36-13.831907.mp3
+tiny
+ Hey, hey, that's fair and yeah, I did mean 7,500. Sorry about that. But yeah, you know, I mean give it the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things for a workout. How about we just split the difference and say 7,300?
+runtime =  6.560069561004639
+tiny.en
+ Hey, hey, that's fair. And yeah, I did mean 7,500. Sorry about that. But yeah, you know, I mean, give it the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things worked out. How about we just split the difference and say 7,300?
+runtime =  6.996210813522339
+base
+ Hey, hey, that's fair. And yeah, I did mean 7,500. Sorry about that. But yeah, you know, I mean, give it the fact that it's a clean title, and you know how the DMV is and how annoying it's going to be in order to get things worked out. How about we just split the difference and say 7,300?
+runtime =  13.540900945663452
+base.en
+ Hey, hey, that's fair. And yeah, I did mean 7500. Sorry about that. But yeah, you know, I mean, give it the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things worked out. How about we just split the difference and say 7300?
+runtime =  14.168795347213745
+small
+ Hey, hey, that's fair. And yeah, I did mean 7,500. Sorry about that. But yeah, you know, I mean, given the fact that it's a clean title, and you know how the DMV is, and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7,300?
+runtime =  24.05349087715149
+small.en
+ Hey hey, that's fair. And yeah, I did mean 7500, sorry about that. But yeah, you know, I mean, given the fact that it's a clean title, and you know how the DMV is, and how annoying it's gonna be in order to get things worked out, how about we just split the difference and say 7300?
+runtime =  23.96658968925476
+medium
+ Hey hey, that's fair. And yeah, I did mean 7,500, sorry about that. But yeah, you know, I mean, given the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7,300.
+runtime =  60.80766534805298
+medium.en
+ Hey hey, that's fair. And yeah, I did mean 7500, sorry about that. But yeah, you know, I mean, given the fact that it's a clean title and you know how the DMV is and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7300?
+runtime =  56.42902755737305
+large
+ Hey, hey, that's fair. And yeah, I did mean 7,500. Sorry about that. But yeah, you know, I mean, given the fact that it's a clean title, and you know how the DMV is, and how annoying it's going to be in order to get things worked out, how about we just split the difference and say 7,300?
+runtime =  113.0753448009491
+downgraded_recordings-first-negotiation/Seller_6_2023-03-25_17-26-23.266706.mp3
+tiny
+ Hey there. Yeah, it's a lot to hear you're interested. This is a very expensive dresser though. The marble top by itself is quite a bit. I really don't think I could go below 1,300.
+runtime =  7.804688453674316
+tiny.en
+ Hey there. Yeah, a lot to hear you're interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think I could give a little 1,300.
+runtime =  7.403932571411133
+base
+ Hey there. Yeah, glad to hear you interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think I could go below 1,300.
+runtime =  10.5260329246521
+base.en
+ Hey there. Yeah, glad to hear you're interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think that could give a low 1,300.
+runtime =  10.295112609863281
+small
+ Hey there. Yeah, glad to hear you're interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think I could go below 1,300.
+runtime =  27.017788648605347
+small.en
+ Hey there. Yeah, glad to hear you're interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think I could go below $1,300.
+runtime =  21.141796350479126
+medium
+ Hey there. Yeah, glad to hear you're interested. This is a very expensive dresser though. The marble top by itself is worth quite a bit. I really don't think I could go below $1300.
+runtime =  58.328561305999756
+medium.en
+ Hey there. Uh, yeah. Glad to hear you're interested. This is a very expensive dresser, though. The marble top by itself is worth quite a bit. I really don't think I could go below $1,300.
+runtime =  61.561471700668335
+large
+ Hey there. Uh, yeah. Glad to hear you're interested. This is a very expensive dresser, though. The marble top by itself is worth quite a bit. I really don't think I could go below $1,300.
+runtime =  109.41520738601685
+downgraded_recordings-first-negotiation/Buyer_149_2023-03-25_17-16-28.397728.mp3
+tiny
+ There is no way I can go above 1000 700 seeing how I am finding a nearly identical house that is willing to do 10 things for that amount right now. So I'd like to go at 1700 or less.
+runtime =  7.730923414230347
+tiny.en
+ There's no way I can go above 1,700 seeing how I'm finding a nearly identical house that is willing to tent it for that amount right now. So I'd like to go at 17,100 or less.
+runtime =  6.980748653411865
+base
+ There's no way I can go above 1,700 seeing how I'm finding a nearly identical house that is willing to attempt it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  10.867461681365967
+base.en
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to tend to put that amount right now. So I'd like to go at 1700 or less.
+runtime =  10.29854941368103
+small
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to tent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  30.914388418197632
+small.en
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to tend it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  22.706538200378418
+medium
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to rent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  63.02585220336914
+medium.en
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to rent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  57.44684457778931
+large
+ There's no way I can go above 1700 seeing how I'm finding a nearly identical house that is willing to retent it for that amount right now. So I'd like to go at 1700 or less.
+runtime =  101.88758420944214
+downgraded_recordings-first-negotiation/Buyer_17_2023-03-25_17-44-09.723726.mp3
+tiny
+ Now I completely understand in the sense that you want to at least break even, right? So here I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like, one ten?
+runtime =  7.2891526222229
+tiny.en
+ Now I completely understand in the sense that you want to at least break even, right? So here I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like one dent?
+runtime =  7.179423093795776
+base
+ Now I completely understand in the sense that you want to at least break even, right? So here I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like, one ten?
+runtime =  10.488219022750854
+base.en
+ Now I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like one ten?
+runtime =  10.725977897644043
+small
+ No, I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 1-10?
+runtime =  28.567859888076782
+small.en
+ Now I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110.
+runtime =  22.679340600967407
+medium
+ No, I completely understand in the sense that you wouldn't at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110.
+runtime =  56.24362134933472
+medium.en
+ Now I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110?
+runtime =  54.635950326919556
+large
+ No, I completely understand in the sense that you want to at least break even, right? So here, I mean, if you can throw in some of those extra pillows that you have on it, I'm more than willing to go up to like, how about we say like 110.
+runtime =  98.67351388931274
+downgraded_recordings-first-negotiation/Seller_28_2023-03-25_18-00-20.369714.mp3
+tiny
+ I'm quite sure that's not possible. This bike is very large bike. I know that you understand just how large this bike is. You cannot find this in the trunk. This is a custom order custom made and yeah it wasn't possible.
+runtime =  6.645778656005859
+tiny.en
+ I'm quite sure that's not possible. This bike is very large bike. I know that you understand just how large this bike is. You cannot find this in most homes. This is just a more your custom made and yeah it was a thousand dollars.
+runtime =  6.202396869659424
+base
+ I'm quite sure that's not possible. This bike is very, very large bike. I know that you understand just how large this bike is. You cannot find this in most of the stores. This was a custom order, a custom made. And yeah, it was $1,000.
+runtime =  10.293665885925293
+base.en
+ I'm quite sure that's not possible. This bike is a very, very large bike. I know that you understand just how large this bike is. You cannot find this in most homes or this is a custom order custom made. And yeah, it was $1,000.
+runtime =  12.75718092918396
+small
+ I'm quite sure that's not possible. This bike is a very large bike. I know that you understand just how large this bike is. You cannot find this in most normal services. It's custom order, custom made, and yeah, it was $1,000.
+runtime =  22.288102626800537
+small.en
+ I'm quite sure that's not possible. This bike is a very, very large bike. I know that you understand just how large this bike is. You cannot find this in most normal stores. This was Husker Mortar, Tustam made, and yeah, it was $1,000.
+runtime =  21.657546997070312
+medium
+ I'm quite sure that's not possible. This bike is a very, very large bike. I don't think you understand just how large this bike is. You cannot find this in most normal stores. This was custom ordered, custom made, and yeah, it was $1,000.
+runtime =  54.24853706359863
+medium.en
+ I'm quite sure that's not possible. This bike is a very, very large bike. I don't think you understand just how large this bike is. You cannot find this in most normal stores. This was custom ordered, custom made, and yeah, it was $1,000.
+runtime =  53.817452907562256
+large
+ I'm quite sure that's not possible. This bike is a very, very large bike. I don't think you understand just how large this bike is. You cannot find this in most stores. This was custom ordered, custom made, and yeah, it was $1000.
+runtime =  97.50107860565186
+downgraded_recordings-first-negotiation/Seller_22_2023-03-25_17-47-18.885256.mp3
+tiny
+ Hey, I'm not sure I can just part with it for 45. This kind of low. It's a microSD and SD card expansion with 200 gates. So, I mean, you know, I could part with it for like 65.
+runtime =  6.598901987075806
+tiny.en
+ Hey, I'm not sure I can just part with it for 45 this kind of low. It's a microSD and SD card expansion with 200 gigs. So, I mean, you know, I could part with it for like 65.
+runtime =  8.74076223373413
+base
+ Hey, I'm not sure I can just part with it for 45. This kind of low. It's a microSD and SD card expansion with 200GB. So, I mean, you know, I could part with it for like 65GB.
+runtime =  14.028903722763062
+base.en
+ Hey, I'm not sure I can just part with it for 45. This is kind of low. It's a microSD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like 65.
+runtime =  10.585520267486572
+small
+ Hey, I'm not sure I can just part with it for 45. That's kind of low. It's a microSD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like 65.
+runtime =  22.670607566833496
+small.en
+ Hey, I'm not sure I can just part with it for 45. It's kind of low. It's a microSD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like 65.
+runtime =  22.33229947090149
+medium
+ Hey, I'm not sure I can just part with it for 45. It's kind of low. It's a micro SD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like 65.
+runtime =  61.89035987854004
+medium.en
+ Hey, I'm not sure I can just part with it for 45, it's kind of low. It's a micro SD and SD card expansion with 200 gigs, so I mean, you know, I could part with it for like 65.
+runtime =  52.983590602874756
+large
+ Hey, I'm not sure I can just part with it for $45. It's kind of low. It's a microSD and SD card expansion with 200 gigs. So I mean, you know, I could part with it for like $65.
+runtime =  104.48900246620178
+downgraded_recordings-first-negotiation/Seller_152_2023-03-25_17-21-53.633261.mp3
+tiny
+ sounds good
+runtime =  6.495815753936768
+tiny.en
+ sounds good
+runtime =  6.416545867919922
+base
+ Sounds good.
+runtime =  10.388148069381714
+base.en
+ Sounds good.
+runtime =  9.181603908538818
+small
+ Sounds good.
+runtime =  20.220346212387085
+small.en
+ Sounds good.
+runtime =  25.03816294670105
+medium
+ Sounds good.
+runtime =  55.89286470413208
+medium.en
+ Sounds good.
+runtime =  57.466697454452515
+large
+ Sounds good.
+runtime =  100.01459836959839
+downgraded_recordings-first-negotiation/Buyer_31_2023-03-25_18-07-34.027830.mp3
+tiny
+ Oh, that's awesome. I actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into. Just sit, Bollon, what's the most you could offer me?
+runtime =  7.329766273498535
+tiny.en
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into. Just step on, what's the lowest you could offer me?
+runtime =  7.906995058059692
+base
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into. Just sit, Bones. What's the lowest you could offer me?
+runtime =  13.181174993515015
+base.en
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into. Just spitballing. What's the lowest you could offer me?
+runtime =  15.11577582359314
+small
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into Just that bone what's what's the lowest you could offer me?
+runtime =  23.41713809967041
+small.en
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid or friend to move into. Just spitballing. What's the lowest you could offer me?
+runtime =  23.81156587600708
+medium
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid or friend to move into. Just spitballing, what's the lowest you could offer me?
+runtime =  61.48730230331421
+medium.en
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect place for my kid and her friend to move into. Just spitballing, what's the lowest you could offer me?
+runtime =  57.3555691242218
+large
+ Oh, that's awesome. I'm actually getting it for my kid. So this would be the perfect Place for my kid and her friend to move into Just spitballing what's what's the lowest you could offer me?
+runtime =  111.96194911003113
+downgraded_recordings-first-negotiation/Buyer_9_2023-03-25_17-30-04.770416.mp3
+tiny
+ Hey, nice to meet you. This true studio of Squid, how much are you offering?
+runtime =  9.0798020362854
+tiny.en
+ Hey nice to meet you this true studio was good how much are you offering it
+runtime =  8.571856260299683
+base
+ Hey, nice to meet you. This true studio looks good. How much are you offering?
+runtime =  8.640775680541992
+base.en
+ Hey nice to meet you. This truth studio looks good. How much are you offering?
+runtime =  8.941187858581543
+small
+ Hey nice to meet you this studio looks good how much are you offering it
+runtime =  21.79879927635193
+small.en
+ Hey nice to meet you. This studio looks good. How much are you offering?
+runtime =  27.717901706695557
+medium
+ Hey nice to meet you. This studio looks good. How much are you offering?
+runtime =  53.45196080207825
+medium.en
+ Hey nice to meet you. This studio looks good. How much are you offering it?
+runtime =  56.49417281150818
+large
+ Hey, nice to meet you. This new studio looks good. How much are you offering?
+runtime =  99.83625817298889
+downgraded_recordings-first-negotiation/Buyer_20_2023-03-25_17-49-08.497909.mp3
+tiny
+ Maybe, but I'm also trying to buy a car for my daughter, who she goes to college and she, her student loans, I can't really pay that many for them that much for them. So we are kind of looking for something lower on the price range.
+runtime =  6.888546705245972
+tiny.en
+ Maybe, but I'm also trying to buy a car for my daughter, where she goes to college, and she already has student loans. I can't really pay that many for them, that much for them. So we are kind of looking for something lower in the price range.
+runtime =  6.903065204620361
+base
+ Maybe, but I'm also trying to buy a car for my daughter where she goes to college and she already has student loans. I can't really pay that many for them that much for them. So we are kind of looking for something lower on the price range.
+runtime =  9.382955551147461
+base.en
+ Maybe, but I'm also trying to buy a car for my daughter, because she goes to college and she already has student loans. I can't really pay that many for them, that much for them. So we are kind of looking for something lower in the price range.
+runtime =  10.330087661743164
+small
+ Maybe, but I'm also trying to buy a car for my daughter, where she goes to college and she already has student loans. I can't really pay that many for them, that much for them. So we are kind of looking for something lower in the price range.
+runtime =  22.690646648406982
+small.en
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that many for them, that much for them. So we are kind of looking for something lower in the price range.
+runtime =  22.63783288002014
+medium
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that many for them, that much for them, so we are kind of looking for something lower in the price range.
+runtime =  60.53348422050476
+medium.en
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that much for them, so we are kind of looking for something lower in the price range.
+runtime =  62.5351939201355
+large
+ Maybe, but I'm also trying to buy a car for my daughter when she goes to college and she already has student loans. I can't really pay that much for them. So we are kind of looking for something lower in the price range.
+runtime =  107.14726400375366
+downgraded_recordings-first-negotiation/Buyer_20_2023-03-25_17-47-16.904791.mp3
+tiny
+ I mean it's new looking but it is 2014. It's, you know, it doesn't have all the amenities of a new new car so I do like that it only has 65,000 miles but I would like to take it for a test drive all that considering I'm buying this online without being able to do that I think lower price might be more on-click.
+runtime =  8.112301349639893
+tiny.en
+ I mean, it's new looking, but it is 2014. It's, you know, it doesn't have all the amenities of a new new car, so I do like that it only has 65,000 miles, but I would like to take it for a test drive all that, considering I'm buying this online without being able to do that, I think lower price might be more
+runtime =  8.431336164474487
+base
+ I mean, it's new looking, but it is 2014. It doesn't have all the amenities of a new new car, so I do like that it only has 65,000 miles, but I would like to take it for a test drive all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  11.895952939987183
+base.en
+ I mean, it's new looking, but it is 2014. It's, you know, doesn't have all the amenities of a new new car, so I do like that it only has 65,000 miles, but I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  11.287240028381348
+small
+ I mean, it's new looking but it is 2014. It doesn't have all the amenities of a new new car. I do like that it only has 65,000 miles. I would like to take it for a test drive all that. Considering I'm buying this online without being able to do that, I think lower price might be more adequate.
+runtime =  28.320033073425293
+small.en
+ I mean, it's new looking, but it is 2014. It doesn't have all the amenities of a new new car, so I do like that it only has 65,000 miles, but I would like to take it for a test drive all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  23.909267902374268
+medium
+ I mean, it's new looking, but it is 2014. It's, you know, doesn't have all the amenities of a new new car, so... I do like that it only has 65,000 miles, but... I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  66.98239922523499
+medium.en
+ I mean, it's new looking, but it is 2014. It doesn't have all the amenities of a new new car, so... I do like that it only has 65,000 miles, but... I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  64.42864799499512
+large
+ I mean, it's new looking, but it is 2014, it's, you know, it doesn't have all the amenities of a new new car, so. I do like that it only has 65,000 miles, but I would like to take it for a test drive, all that. Considering I'm buying this online without being able to do that, I think a lower price might be more adequate.
+runtime =  114.22637796401978
+downgraded_recordings-first-negotiation/Buyer_5_2023-03-25_17-27-36.217402.mp3
+tiny
+ That's quite high out of my budget there. I don't think I could go about 950. Do you think it could make me closer to there?
+runtime =  6.566110372543335
+tiny.en
+ That's quite high out of my budget there. I don't think I could go about 950. Do you think it could be closer to there?
+runtime =  6.828324556350708
+base
+ That's quite high out of my budget there. I don't think I could go about 950. Do you think it could make me closer to there?
+runtime =  10.122637271881104
+base.en
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could be closer to there?
+runtime =  10.120603799819946
+small
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could be closer to there?
+runtime =  21.558109998703003
+small.en
+ That's quite high out of my budget there. I don't think I could go above $950. Do you think it could make me closer to there?
+runtime =  23.27833890914917
+medium
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could make me closer to there?
+runtime =  61.061484813690186
+medium.en
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could make me closer to there?
+runtime =  57.50016808509827
+large
+ That's quite high out of my budget there. I don't think I could go above 950. Do you think it could be closer to there?
+runtime =  101.10027027130127
+downgraded_recordings-first-negotiation/Seller_152_2023-03-25_17-21-18.275540.mp3
+tiny
+ I hear you're 30. However, this is a particularly good condition for the site. I could I raise you up to 45.
+runtime =  9.721715688705444
+tiny.en
+ I hear you're 30, however this is a particularly good condition for this item. I could I raise you up to 45.
+runtime =  9.107312679290771
+base
+ I hear you're 30, however, this is a particularly good condition for this item. Could I raise you up to 45?
+runtime =  11.272081851959229
+base.en
+ I hear you're 30, however, this is a particularly good condition for this item. I could I raise you up to 45?
+runtime =  10.10641074180603
+small
+ I hear you're 30, however this is a particularly good condition for this item. Could I raise you up to 45?
+runtime =  22.054351091384888
+small.en
+ I hear you're 30. However, this is a particularly good condition for for this item. Could I raise you up to 45?
+runtime =  25.07214665412903
+medium
+ I hear you're 30, however, this is a particularly good condition for for this item. Could I raise you up to 45?
+runtime =  60.207159996032715
+medium.en
+ I hear you're 30, however this is a particularly good condition for this item. Could I raise you up to 45?
+runtime =  53.67972803115845
+large
+ I hear you're 30, however, this is a particularly good condition for this item. Could I raise you up to 45?
+runtime =  100.64297294616699
+downgraded_recordings-first-negotiation/Seller_150_2023-03-25_17-14-23.646258.mp3
+tiny
+ The time being looked at is very high value time. So that is why the prices high. But I can bring it down to 1,900. If that would work better.
+runtime =  8.317091464996338
+tiny.en
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to $1,900 if that would work better.
+runtime =  6.439777135848999
+base
+ The time being looked at is a very high value time. So that is why the price is high. But I can bring it down to 1,900 if that would work better.
+runtime =  10.3847017288208
+base.en
+ The time being looked at is a very high value time. So that is why the price is high, but I can bring it down to 1900. If that would work better.
+runtime =  10.147861957550049
+small
+ The time being looked at is a very high value time. So that is why the price is high. But I can bring it down to 1,900 if that would work better.
+runtime =  25.877564430236816
+small.en
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to 1900 if that would work better.
+runtime =  21.91438102722168
+medium
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to $1,900 if that would work better.
+runtime =  57.42536640167236
+medium.en
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to $1900 if that would work better.
+runtime =  56.270965576171875
+large
+ The time being looked at is a very high value time, so that is why the price is high, but I can bring it down to 1900 if that would work better.
+runtime =  75.48261404037476
+downgraded_recordings-first-negotiation/Buyer_29_2023-03-25_18-07-04.097409.mp3
+tiny
+ Alright, thank you. Alright, it's a... So, given all of that, how does... I can come up to like... 840. How does that sound for you?
+runtime =  3.166717529296875
+tiny.en
+ Alright, thank you. Thank you. Alright, so given all of that, how does, oh, I can come up to like 840, how does that sound for you?
+runtime =  3.620964527130127
+base
+ Alright, thank you, thank you. Alright, it's a... So given all of that, how does... I can come up to like... 840. How does that sound for you?
+runtime =  5.037317752838135
+base.en
+ Alright, thank you. Thank you. Alright, so given all of that, how does... I can come up to like 840. How does that sound for you?
+runtime =  4.626937389373779
+small
+ Alright, thank you. Thank you. Alright, so given all of that, how does I can come up to like 840? How does that sound for you?
+runtime =  12.840876340866089
+small.en
+ Alright, thank you. Thank you. Alright, so uh, so given all of that how does uh, I can come up to like 8 40 how does that sound for you?
+runtime =  14.295456886291504
+medium
+ Alright, thank you, thank you. Alright, so... So given all of that, how does... I can come up to like... 840. How does that sound for you?
+runtime =  38.308186054229736
+medium.en
+ Alright, thank you, thank you. Alright, so... Ah, so given all of that, how does... I can come up to like... 840. How does that sound for you?
+runtime =  38.68458652496338
+large
+ Alright, thank you, thank you. Alright, so... Uh, so given all of that, how does... Uh... I can come up to like... 840. How does that sound for you?
+runtime =  73.40593695640564
+downgraded_recordings-first-negotiation/Seller_36_2023-03-25_18-15-22.750511.mp3
+tiny
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places you probably do not want to go What do you see 20?
+runtime =  4.343515634536743
+tiny.en
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places you probably do not want to go What do you say 20?
+runtime =  3.769094467163086
+base
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places You probably do not want to go. What do we say 20?
+runtime =  5.560771465301514
+base.en
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places you probably do not want to go What do you say 20?
+runtime =  5.12541389465332
+small
+ I mean, considering some of these adapters are pretty hard to get, like, they're from out of country and in places you probably do not want to go, what do you say, 20?
+runtime =  13.54455041885376
+small.en
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places You probably do not want to go What do you say 20?
+runtime =  25.150192737579346
+medium
+ I mean considering some of these adapters are pretty hard to get like they're from out of country and in places You probably do not want to go What do we say 20?
+runtime =  64.85403609275818
+medium.en
+ I mean, considering some of these adapters are pretty hard to get, like they're from out of the country and in places you probably do not want to go, uh, what do we say, 20?
+runtime =  60.60434603691101
+large
+ I mean, considering some of these adapters are pretty hard to get, like, they're from out of the country and in places you probably do not want to go, uh, what do we say, 20?
+runtime =  112.38182139396667
+downgraded_recordings-first-negotiation/Seller_26_2023-03-25_17-54-55.269221.mp3
+tiny
+ Hello, thank you for reaching out. I hear you're concerned. However, this is said, the properties in a very quiet residential area and is a very high value real estate, in terms of its relation and distance, which we've birthed in the Berkeley campus and surrounding areas. So we're starting rent $3,000.
+runtime =  7.86040472984314
+tiny.en
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this properties in a very quiet residential area and is a very high-value real estate in terms of its relation and distance through Berkeley campus and surrounding areas. So we're starting at 3,000.
+runtime =  6.999818325042725
+base
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this properties in a very quiet residential area and is a very high-value real estate in terms of its relation and distance to Berkeley in the Berkeley campus and surrounding areas. So we're starting rent at 3,000.
+runtime =  11.018596887588501
+base.en
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this properties in a very quiet residential area and is a very high-value real estate and it's in terms of its relation and the distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at 3000.
+runtime =  13.636678218841553
+small
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this property is in a very quiet residential area and is a very high value real estate and it's in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at 3,000.
+runtime =  25.787776947021484
+small.en
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this property is in a very quiet residential area and is a very high value real estate in its in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at 3000.
+runtime =  22.31431269645691
+medium
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this property is in a very quiet residential area and is a very high value real estate in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So, we're starting rent at 3000.
+runtime =  61.71221899986267
+medium.en
+ Hello, thank you for reaching out. I hear your concerns. However, this is set these properties in a very quiet residential area, and is a very high value real estate and it's in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at 3000.
+runtime =  57.59826612472534
+large
+ Hello, thank you for reaching out. I hear your concerns. However, this is set, this property is in a very quiet residential area and is a very high value real estate in terms of its relation and distance to Berkeley and the Berkeley campus and surrounding areas. So we're starting rent at $3,000.
+runtime =  103.11302447319031
+downgraded_recordings-first-negotiation/Seller_34_2023-03-25_18-12-45.181994.mp3
+tiny
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me. In the sense that I completely understand it's one of the earliest models, but when I say gently use side-meanets, in the sense that I only use it as pretty much as a candle, because some of the book reading and PDF reading features on it were just phenomenal. Either way, so because of that, it might as well just be brand new. But yeah, that, including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  9.102723121643066
+tiny.en
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me in the sense that I completely understand it's one of the earliest models, but when I say gently use side maintenance, in the sense that I only use it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new, but yeah, that including the charger and the cable and throwing it a case, can you meet me potentially at like 150?
+runtime =  8.780364751815796
+base
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me. In the sense that I completely understand it's one of the earliest models, but when I say gently use side-means, in the sense that I only use it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. Either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  15.254931926727295
+base.en
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100 is a little bit too low for me in the sense that I completely understand it's one of the earliest models, but when I say gently use side-means, in the sense that I only use it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. Either way, so because of that, it might as well just be brand new. But yeah, that, including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  15.266310691833496
+small
+ Yeah, no, that's completely fine, especially with the fact that it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100 is a little bit too low for me in the sense that I completely understand it's one of the earliest models. But when I say gently use, I mean, it's in the sense that I only use it as pretty much as a kind of, because some of the book reading and PDF reading features on it were just phenomenal. But either way. So because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  27.446986198425293
+small.en
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me in the sense that I completely understand it's one of the earliest models. But when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  32.84276843070984
+medium
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me, in the sense that I completely understand it's one of the earliest models, but when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  73.7785713672638
+medium.en
+ Yeah, no, that's completely fine, especially with the fact that, you know, it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, no, I'm sorry, but 100's a little bit too low for me, in the sense that I completely understand it's one of the earliest models, but when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle, because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like 150?
+runtime =  63.19997572898865
+large
+ Yeah, no, that's completely fine. Especially with the fact that it's not even updating to some of the newest iOS versions, so I completely get that. But yeah, I'm sorry, but 100 is a little bit too low for me. In the sense that, I completely understand it's one of the earliest models, but when I say gently used, I mean it's in the sense that I only used it as pretty much as a Kindle. Because some of the book reading and PDF reading features on it were just phenomenal. But either way, so because of that, it might as well just be brand new. But yeah, that including the charger and the cable and throwing in a case, can you meet me potentially at like $150?
+runtime =  117.7782793045044
+downgraded_recordings-first-negotiation/Buyer_29_2023-03-25_18-04-11.079827.mp3
+tiny
+ Hey, that's a beauty of a bike there. I can imagine they're being a wonderful experience there in Oregon. Some of the first-in-the-shoot breathtaking. But yeah, no, so thanks for telling me about the wheelsup being too much old. If anything, that's what, obviously, you know that's one of the first things that decorate it on a bike, right? So, I was just curious, how old's the frame itself?
+runtime =  11.510959148406982
+tiny.en
+ Hey, that's a beauty of a bike there. I can imagine it being a wonderful experience there in Oregon. Some of the forests in the shoot, breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's what obviously you know that that's one of the first things that decorate on a bike, right? So I was just curious, how else the frame itself?
+runtime =  8.766072034835815
+base
+ Hey, that's a beautiful bike there. I can imagine it being a wonderful experience there in Oregon. Some of the force in this shoot, breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's what- obviously you know that that's one of the first things that decorate on a bike, right? So I was just curious, how old's the frame itself?
+runtime =  10.850307941436768
+base.en
+ Hey, that's a beautiful bike there. I can imagine it being a wonderful experience there in Oregon. Some of the force in this shoot? Breath taking. But yeah, no, so thanks for telling me about the wheels that have been two months old. If anything, that's one of... Obviously you know that that's one of the first things that digurate on a bike, right? So I was just curious, how old's the frame itself?
+runtime =  10.514284133911133
+small
+ Hey, that's a beautiful bike there. I can imagine it being a wonderful experience there in Oregon. Some of the force in this shoot breathtaking. But yeah, no, so thanks for telling me about the wheels that have been two months old. If anything, that's one of... Obviously, you know that that's one of the first things that digredate on a bike, right? So I was just curious. How was the frame itself?
+runtime =  24.38925337791443
+small.en
+ Hey, that's the beauty of a bike there! I can imagine it being a wonderful experience there in Oregon. Some of the force into shoot. Breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's one of- obviously you know that that's one of the first things that decorate on a bike, right? So I was just curious, how old's the frame itself?
+runtime =  24.636608600616455
+medium
+ Hey, that's the beauty of a bike there! I can imagine it being a wonderful experience there in Oregon, some of the force in the shoot, breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old, if anything, that's one of- obviously you know that that's one of the first things that degrade on a bike, right? So I was just curious, how's the frame itself?
+runtime =  63.69323778152466
+medium.en
+ Hey, that's the beauty of a bike there. I can imagine it being a wonderful experience there in Oregon. Some of the forest in this shoot, breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's one of the first things that degradation on a bike, right? So, I was just curious, how old's the frame itself?
+runtime =  61.78390860557556
+large
+ Hey, that's the beauty of a bike there. I can imagine it being a wonderful experience there in Oregon. Some of the forest in Deschutes? Breathtaking. But yeah, no, so thanks for telling me about the wheelset being two months old. If anything, that's one of- obviously you know that that's one of the first things that degradate on a bike, right? So, I was just curious, how old's the frame itself?
+runtime =  110.0529625415802
+downgraded_recordings-first-negotiation/Seller_19_2023-03-25_17-48-23.649534.mp3
+tiny
+ These are the May 5 case way underballing this. Do you even mind that it's only 65K miles, barely driven, very good condition? And you may not have all the amenities of an open, newer car, but it still has pretty much everything you should possibly need. It has a backup camera, has Bluetooth capabilities, everything's in good shape, that's really all you need in the car.
+runtime =  7.847991466522217
+tiny.en
+ Be that as it may, 5k is way undervoling this. Due to human mind that it's only 65k miles barely driven, very good condition. And you may not have all the amenities of an old, newer car, but it still has pretty much everything you could possibly need. As the back of camera has Bluetooth capabilities, everything's in good shape, that's really all you need in the car.
+runtime =  8.069153070449829
+base
+ Be that as a May 5K is way underballing this. Do you think mine that is only 65K miles, barely driven, very good condition? And it may not have all the amenities of an old, newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape. That's really all you need in the car.
+runtime =  11.294183731079102
+base.en
+ Be that as of May 5K is way underboggling this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of a newer car, but it still has pretty much everything you could possibly need. It has the backup camera, has Bluetooth capabilities, everything's in good shape. That's really all you need in the car.
+runtime =  10.553141355514526
+small
+ Be that as a May 5K is way underballing this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of an older, newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape. That's really all you need in the car.
+runtime =  30.16187047958374
+small.en
+ Be that SMA, 5K is way underballing this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of a newer car, but it still has pretty much everything you could possibly need. It has a backup camera, has Bluetooth capabilities, everything's in good shape, that's really all you need in the car.
+runtime =  24.929343223571777
+medium
+ Be that as it may, 5K is way underballing this. Do keep in mind that it's only 65K miles, barely driven, very good condition, and it may not have all the amenities of an newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape, that's really all you need in a car.
+runtime =  64.81322240829468
+medium.en
+ Be that as it may, 5K is way under-balling this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of a newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape. That's really all you need in a car.
+runtime =  65.98884701728821
+large
+ Be that as it may, 5K is way under balling this. Do keep in mind that it's only 65K miles, barely driven, very good condition. And it may not have all the amenities of a newer car, but it still has pretty much everything you could possibly need. It has a backup camera, it has Bluetooth capabilities, everything's in good shape. That's really all you need in a car.
+runtime =  109.91843438148499
+downgraded_recordings-first-negotiation/Seller_30_2023-03-25_18-07-28.609191.mp3
+tiny
+ 840 works for me.
+runtime =  6.625039577484131
+tiny.en
+ 840 works for me.
+runtime =  5.768280267715454
+base
+ 840 works for me.
+runtime =  8.366497278213501
+base.en
+ 840 works for me.
+runtime =  8.701674222946167
+small
+ 840 works for me.
+runtime =  22.232238292694092
+small.en
+ 840 works for me.
+runtime =  20.404192686080933
+medium
+ 840 works for me.
+runtime =  53.251305103302
+medium.en
+ 840 works for me.
+runtime =  58.038618326187134
+large
+ 840 works for me.
+runtime =  98.51862907409668
+downgraded_recordings-first-negotiation/Seller_28_2023-03-25_18-03-52.183577.mp3
+tiny
+ 500 mehtoama followed me Cruol I think Don't have to fix... Banja 7 Mum I also have to change any words that said in the packs consumed by 200 bean deitter complete nohi that dragon huh with that About Ok
+runtime =  12.33901047706604
+tiny.en
+ 500 still pretty loud. How about 600?
+runtime =  7.891357421875
+base
+ 500 stops live with, how about 600?
+runtime =  11.553844213485718
+base.en
+ 500 is still pretty low. How about 600?
+runtime =  9.0873384475708
+small
+ 500 still pretty low. How about 600?
+runtime =  21.679422616958618
+small.en
+ 500 is still pretty low. How about 600?
+runtime =  25.111783742904663
+medium
+ 500 is still pretty low. How about 600?
+runtime =  54.48518228530884
+medium.en
+ 500 is still pretty low. How about 600?
+runtime =  51.19984269142151
+large
+ 500 is still pretty low. How about 600?
+runtime =  102.41357493400574
+downgraded_recordings-first-negotiation/Seller_24_2023-03-25_17-56-16.658611.mp3
+tiny
+ It's a deal, Shindy offer we only have to go to have a, you know,
+runtime =  6.526994705200195
+tiny.en
+ Alright, it's silly, send the offer, we only have to go to half a minute.
+runtime =  6.179426431655884
+base
+ Alright, it's the deal, send the offer, we only have about half a minute.
+runtime =  9.134559392929077
+base.en
+ All right, it's Snedi offer. We only have about half a million dollars.
+runtime =  9.14583945274353
+small
+ All right, it's to be the send the offer we only have about half a minute
+runtime =  24.782795429229736
+small.en
+ Alright, it's the deal, send the offer. We only have about half a million dollars.
+runtime =  21.521530628204346
+medium
+ all right it's a deal send the offer we only have about half a minute
+runtime =  50.0403950214386
+medium.en
+ alright it's a deal send the offer we only have about half
+runtime =  55.880778074264526
+large
+ All right, it's Sabeel, send the offer, we only have about half a minute.
+runtime =  99.56073570251465
+downgraded_recordings-first-negotiation/Buyer_5_2023-03-25_17-25-30.756863.mp3
+tiny
+ Hello, I'm looking at your professor here and it looks in decent condition. I'd be interested in buying it for 700.
+runtime =  6.308370113372803
+tiny.en
+ Hello, I'm looking at your dresser here. It looks decent to condition. I'd be interested in buying it for 700.
+runtime =  5.866601943969727
+base
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for 700.
+runtime =  9.176471948623657
+base.en
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for 700.
+runtime =  10.261523008346558
+small
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for 700.
+runtime =  19.791961431503296
+small.en
+ Hello, I'm looking at your trussor here. It looks in decent condition. I'd be interested in buying it for $700.
+runtime =  26.42597246170044
+medium
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for $700.
+runtime =  55.09046936035156
+medium.en
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for $700.
+runtime =  55.41920614242554
+large
+ Hello, I'm looking at your dresser here. It looks in decent condition. I'd be interested in buying it for 700.
+runtime =  103.41520404815674
+downgraded_recordings-first-negotiation/Seller_6_2023-03-25_17-28-18.628227.mp3
+tiny
+ How about 1000? We can make a nice round number, kind of go between our company prices. What do you think of that?
+runtime =  8.511776447296143
+tiny.en
+ How about 1000? We can make a nice round number kind of go between our compromised prices. What do you think of that?
+runtime =  8.16100263595581
+base
+ How about 1000? We can make a nice round number, kind of go between our compromise prices. What do you think of that?
+runtime =  10.998356342315674
+base.en
+ How about 1000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  11.085278034210205
+small
+ How about 1,000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  26.420436143875122
+small.en
+ How about 1000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  23.695805549621582
+medium
+ How about $1,000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  63.14863610267639
+medium.en
+ How about 1000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  55.157886266708374
+large
+ How about 1000? We can make it a nice round number, kind of go between our compromised prices. What do you think of that?
+runtime =  106.80971240997314
+downgraded_recordings-first-negotiation/Seller_11_2023-03-25_17-33-26.921531.mp3
+tiny
+ Hey, thanks for the offer, but yeah, you know, but I did go ahead and put in a little bit of tune-up work into it So I completely understand where you're coming from with the 138 miles, but could you potentially go up to 7 7 50
+runtime =  6.991070032119751
+tiny.en
+ Hey, thanks for the offer, but yeah, you know, I didn't go ahead and put in a little bit of tuna pork into it So I completely understand where you're coming from with 138 miles, but could you potentially go up to? 750
+runtime =  6.622356653213501
+base
+ Hey, thanks for the opera, but yeah, you know, but I did go ahead and put in a little bit of two no work into it So I completely understand where you're coming from with the 138 miles, but could you potentially go up to 7 750?
+runtime =  14.76473093032837
+base.en
+ Hey, thanks for the offer, but yeah, you know, but I did go ahead and put in a little bit of to no work into it So I completely understand where you're coming from with the hundred and thirty eight miles, but could you potentially go up to? seven seven fifty
+runtime =  11.550880432128906
+small
+ Hey, thanks for the offer, but yeah, you know, but I did go ahead and put in a little bit of to note work into it So I completely understand where you're coming from with the hundred and thirty eight miles, but could you potentially go up to? seven seven fifty
+runtime =  21.964182138442993
+small.en
+ Hey, thanks for the offer, but yeah, you know that I did go ahead and put in a little bit of to no pork into it So I completely understand where you're coming from with the hundred and thirty eight miles, but could you potentially go up to? seven seven fifty
+runtime =  21.036056756973267
+medium
+ Hey, thanks for the offer, but yeah, you know, I did go ahead and put in a little bit of tune-up work into it So I completely understand where you're coming from with the hundred and thirty eight miles, but could you potentially go up to? seven seven fifty
+runtime =  60.20317077636719
+medium.en
+ Hey, thanks for the offer, but yeah, you know, I did go ahead and put in a little bit of tuna pork into it So I completely understand where you're coming from with 138 miles, but could you potentially go up to? seven seven fifty
+runtime =  56.78677225112915
+large
+ Hey, thanks for the offer, but yeah, you know that I did go ahead and put in a little bit of tune-up work into it So I completely understand where you're coming from with 138 miles, but could you potentially go up to? 7 750
+runtime =  104.69082260131836
+downgraded_recordings-first-negotiation/Buyer_33_2023-03-25_18-10-02.313498.mp3
+tiny
+ Oh, that's awesome. Okay, so tons of everything. Let's see, the iPad 2 is a pretty old model. So I think how do the 100 sound for the whole set?
+runtime =  7.008977890014648
+tiny.en
+ Oh, that's awesome. Okay, so it comes with everything. Let's see. The iPad 2 is a pretty old model. So I think how does 100 sound for the whole set?
+runtime =  9.554943323135376
+base
+ Oh, that's awesome. Okay, so tons of everything. Let's see, the iPad 2 is a pretty old model. So I think how does 100 sound for the whole set?
+runtime =  13.71661376953125
+base.en
+ Oh, that's awesome. Okay, so it comes with everything. Let's see, the iPad 2 is a pretty old model. So I think, how does 100 sound for the whole set?
+runtime =  10.047141313552856
+small
+ Oh, that's awesome. Okay, so it comes with everything. Let's see, the iPad 2 is a pretty old model. So I think... How does 100 sound for the whole set?
+runtime =  22.69521141052246
+small.en
+ Oh, that's awesome. Okay, so it comes with everything. Uh, let's see, the iPad 2 is a pretty old model. Uh, so I think... how does 100 sound for the whole set?
+runtime =  26.579949855804443
+medium
+ Oh, that's awesome. Okay, so it comes with everything. Let's see, the iPad 2 is a pretty old model. So I think... how does 100 sound for the whole set?
+runtime =  57.831581354141235
+medium.en
+ Oh, that's awesome. Okay, so it comes with everything. Let's see, the iPad 2 is a pretty old model. So I think... how does a hundred sound for the whole set?
+runtime =  57.07768893241882
+large
+ Oh, that's awesome. Okay, so it comes with everything. Uh, let's see, the iPad 2 is a pretty old model. Uh, so I think... How does 100 sound for the whole set?
+runtime =  103.8689455986023
+downgraded_recordings-first-negotiation/Seller_22_2023-03-25_17-48-38.678422.mp3
+tiny
+ 60 sounds visible, we can do that.
+runtime =  5.772900581359863
+tiny.en
+ 60 sounds reasonable, we can do that.
+runtime =  6.9375669956207275
+base
+ 6C sounds reasonable, we can do that.
+runtime =  8.856799364089966
+base.en
+ 60 sounds reasonable, we can do that.
+runtime =  9.292287826538086
+small
+ 6C sounds reasonable. We can do that.
+runtime =  25.807156801223755
+small.en
+ 60 sounds reasonable. We can do that.
+runtime =  21.20335078239441
+medium
+ 6C sounds reasonable, we can do that.
+runtime =  51.684863805770874
+medium.en
+ 60 sounds reasonable. We can do that.
+runtime =  54.52467131614685
+large
+ 60 sounds reasonable. We can do that.
+runtime =  100.10192942619324
+downgraded_recordings-first-negotiation/Seller_32_2023-03-25_18-12-23.207315.mp3
+tiny
+ How about 2800? That's a pretty good price for the Zeria.
+runtime =  6.234957218170166
+tiny.en
+ How about 2800? That's a pretty good price for the Zuria.
+runtime =  7.107362508773804
+base
+ How about $2,800? That's a pretty good price for the Zaria.
+runtime =  9.103258609771729
+base.en
+ How about 2,800? That's a pretty good price for this area.
+runtime =  9.074612379074097
+small
+ How about $2,800? That's a pretty good price for this area.
+runtime =  22.715420246124268
+small.en
+ How about $2,800? That's a pretty good price for this area.
+runtime =  21.567503690719604
+medium
+ How about $2,800? That's a pretty good price for this area.
+runtime =  56.02044939994812
+medium.en
+ How about $2800? That's a pretty good price for this area.
+runtime =  55.41133522987366
+large
+ How about $2,800? That's a pretty good price for this area.
+runtime =  96.63134670257568
+downgraded_recordings-first-negotiation/Seller_34_2023-03-25_18-14-21.180885.mp3
+tiny
+ Yes, it most definitely does. I swear it has half my library on there. So the expect to see some of the classics, but over catalog, if I want to say like 250 books, which you're more than welcome to.
+runtime =  7.1066203117370605
+tiny.en
+ Yes, it most definitely does. I swear it has half my library on there. So, the expect to see some of the classics, but over catalog of I want to say like 250 books. Which you're more than welcome to.
+runtime =  6.621770858764648
+base
+ Yes, it most definitely does. I swear it has half my library on there. So, they expect to see some of the classics, but over a catalog of, I want to say, like, 250 books, which you're more than welcome to.
+runtime =  12.552071809768677
+base.en
+ Yes, it most definitely does. I swear it has half my library on there. So, expect to see some of the classics, but over a catalog of, I want to say, like, 250 books, which you're more than welcome to.
+runtime =  11.864682912826538
+small
+ Yes, it most definitely does. I swear it has half my library on there. So they expect to see some of the classics, but over a catalog of, I want to say, like, 250 books, which you're more than welcome to.
+runtime =  21.189523696899414
+small.en
+ Yes, it most definitely does. I swear it has half my library on there. So, expect to see some of the classics, but over a catalog of, I want to say like 250 books, which you're more than welcome to.
+runtime =  22.13034200668335
+medium
+ Yes, it most definitely does. I swear it has half my library on there. So expect to see some of the classics, but over a catalog of, I want to say, like 250 books. Which you're more than welcome to.
+runtime =  58.630155086517334
+medium.en
+ Yes, it most definitely does. I swear it has half my library on there. So expect to see some of the classics, but over a catalog of, I want to say like, 250 books, which you're more than welcome to.
+runtime =  62.05064940452576
+large
+ Yes, it most definitely does. I swear it has half my library on there. So expect to see some of the classics, but over a catalog of, I want to say, like 250 books, which you're more than welcome to.
+runtime =  105.65713429450989
+downgraded_recordings-first-negotiation/Buyer_33_2023-03-25_18-08-57.427944.mp3
+tiny
+ Hey there, Saw your listing for the iPad. Does it come with a charger and the box and everything? Also, is that a case in the background?
+runtime =  8.134971857070923
+tiny.en
+ Hey there, so you're listening for the iPad. Does it come with a charger and the box and everything? Also, is that a case in the back front?
+runtime =  7.226917743682861
+base
+ Hey there, it's all your listing for the iPad. Does it come with the charger and the box and everything? Also, is that a case in the back then?
+runtime =  10.228720664978027
+base.en
+ Hey there, it's all you're listening for the iPad. Does it come with the charger and the box and everything? Also is that a case in the backpad?
+runtime =  9.526841878890991
+small
+ Hey there, it's all you're listening for the iPad. Does it come with the charger and the box and everything? Also, is that a case in the back front?
+runtime =  21.221519470214844
+small.en
+ Hey there, it's all you're listing for the iPad. Does it come with the charger and the box and everything? Also, is that a case in the background?
+runtime =  21.730955600738525
+medium
+ Hey there, I saw you were listening for the iPad. Does it come with a charger and the box and everything? Also, is that a case in the back vent?
+runtime =  58.607805490493774
+medium.en
+ Hey there, I saw your listing for the iPad. Does it come with the charger and the box and everything? Also, is that a case in the background?
+runtime =  56.963974475860596
+large
+ Hey there, saw your listing for the iPad. Does it come with a charger and the box and everything? Also, is that a case in the back of it?
+runtime =  99.05567812919617
+downgraded_recordings-first-negotiation/Seller_16_2023-03-25_17-38-49.839146.mp3
+tiny
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can tell you a top quality one. It's barely been used for closer to add an extra 100 to your amounts of closer to 300. Please let me know what this works.
+runtime =  8.769259691238403
+tiny.en
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can tell you a top quality one. It's barely been used for closer to, you'll add an extra 100 to your amounts, closer to 200. Please let me know what this works.
+runtime =  10.298035621643066
+base
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can show you a top quality one. It's barely been used for at an extra 100 to your amounts, a closer to 200. Please let me know if this works.
+runtime =  12.035975694656372
+base.en
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can show you a top quality one. It's barely been used for closer to... or add an extra hundred to your amounts, closer to 300. Please let me know if this works.
+runtime =  10.33122181892395
+small
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can show you a top quality one. It's nearly been used for closer to an extra, or add an extra hundred to your amount, so closer to 300. Please let me know if this works.
+runtime =  21.889482021331787
+small.en
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can show you a top quality one. It's barely been used for closer to, or add an extra hundred to your amount, so closer to 300. Please let me know if this works.
+runtime =  27.3266179561615
+medium
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can sell you a top quality one. It's barely been used for closer to, or add an extra hundred to your amount, so closer to 300. Please let me know if this works.
+runtime =  60.04768085479736
+medium.en
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can sell you a top quality one. It's barely been used for closer to... Or add an extra 100 to your amount, so closer to 300. Please let me know if this works.
+runtime =  54.650370836257935
+large
+ Hi, I'm glad you're interested in my MacBook Air. If you want, I can sell you a top quality one. It's barely been used for closer to... or add an extra hundred to your amount, so closer to 300. Please let me know if this works.
+runtime =  108.79905295372009
+downgraded_recordings-first-negotiation/Buyer_35_2023-03-25_18-15-42.842985.mp3
+tiny
+ Would you be agree with the system?
+runtime =  6.03981876373291
+tiny.en
+ Would you be agreeable to this time?
+runtime =  6.526566505432129
+base
+ Would you be agreeable to 15?
+runtime =  9.308403491973877
+base.en
+ Would you be agreeable to this team?
+runtime =  9.029671907424927
+small
+ Would you agree to 15?
+runtime =  25.700299501419067
+small.en
+ Would you be agreeable to 15?
+runtime =  19.534125566482544
+medium
+ Would you be agreeable to 15?
+runtime =  52.8279492855072
+medium.en
+ Would you be agreeable to 15?
+runtime =  54.04745554924011
+large
+ Would you be agreeable to 15?
+runtime =  99.3031165599823
+downgraded_recordings-first-negotiation/Buyer_9_2023-03-25_17-31-30.660896.mp3
+tiny
+ does that 2000 include utilities like electricity water stuff like
+runtime =  6.280343294143677
+tiny.en
+ It does the 2000 include utilities like electricity, water stuff like that.
+runtime =  5.848337650299072
+base
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  9.965202569961548
+base.en
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  8.885167360305786
+small
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  21.653165102005005
+small.en
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  26.072169303894043
+medium
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  57.99610877037048
+medium.en
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  55.514416456222534
+large
+ Does the 2000 include utilities like electricity, water, stuff like that?
+runtime =  99.39110946655273
+downgraded_recordings-first-negotiation/Seller_10_2023-03-25_17-32-34.067784.mp3
+tiny
+ Yes, the department offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at 2000.
+runtime =  7.618147373199463
+tiny.en
+ Yes, the department offers everything pictured in the photo and did the rest of the rooms. I'm keeping the present 2000.
+runtime =  6.387357711791992
+base
+ Yes, the department offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at 2000.
+runtime =  10.150684595108032
+base.en
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at 2000.
+runtime =  9.16343903541565
+small
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2,000.
+runtime =  28.044371366500854
+small.en
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2000.
+runtime =  21.63732123374939
+medium
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2,000.
+runtime =  58.787681102752686
+medium.en
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2,000.
+runtime =  52.300657510757446
+large
+ Yes, the apartment offers everything pictured in the photo and the rest of the rooms. I'm keeping the price at $2000.
+runtime =  106.06046938896179
+downgraded_recordings-first-negotiation/Buyer_15_2023-03-25_17-37-51.740981.mp3
+tiny
+ Hello, I see you with quite a number of MacBook Pro and MacBook Airs. There, they looked to be used. I think they just didn't purchasing one for 200.
+runtime =  7.2042460441589355
+tiny.en
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There they look to be used. They're interested in purchasing one for 200.
+runtime =  6.901020288467407
+base
+ Hello, I see you with quite a number of MacBook Pro and MacBook Airs. They're they look to be used. I'd be interested in purchasing one for 200.
+runtime =  13.816775798797607
+base.en
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for 200.
+runtime =  10.770729303359985
+small
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  22.30245065689087
+small.en
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  21.983102321624756
+medium
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  60.60219883918762
+medium.en
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  58.53557896614075
+large
+ Hello, I see you have quite a number of MacBook Pro and MacBook Airs. There, they look to be used. I'd be interested in purchasing one for $200.
+runtime =  100.82545137405396
+downgraded_recordings-first-negotiation/Seller_26_2023-03-25_17-57-20.370245.mp3
+tiny
+ I could do 2,500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residents and its locations.
+runtime =  7.211317777633667
+tiny.en
+ I could do 2,500. It's a very nice property, very well lit. The reason the normal market is unrelated to the quality of the residents and its location.
+runtime =  6.958957672119141
+base
+ I could do 2500. It's a very nice property, very well lit. The reason spin on the market is unrelated to the quality of the of the residents and its location.
+runtime =  14.93040156364441
+base.en
+ I could do 2500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residence and its location.
+runtime =  12.070418357849121
+small
+ I could do 2,500. It's a very nice property, very well lit. The reasons been on the market is unrelated to the quality of the residence and its location.
+runtime =  22.138137102127075
+small.en
+ I could do 2500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residence and its location.
+runtime =  23.945816040039062
+medium
+ I could do 2,500. It's a very nice property, very well lit. The reasons it's been on the market is unrelated to the quality of the of the residence and its location.
+runtime =  60.18453764915466
+medium.en
+ I could do $2,500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residence and its location.
+runtime =  57.6838493347168
+large
+ I could do $2,500. It's a very nice property, very well lit. The reason it's been on the market is unrelated to the quality of the residence and its location.
+runtime =  99.40448951721191
+downgraded_recordings-first-negotiation/Buyer_23_2023-03-25_17-48-07.152725.mp3
+tiny
+ Hey, I saw your post and your card definitely looks pretty clean and trouble free. But I'm kind of concerned that you don't really mention all of the different specs of the mileage and you know, I'm kind of traditional information that one needs in order to make it car purchase. So here, I want to take your word for it, but you have to understand why I'm a little bit hesitant. But given that I'm, I am in quite a need of a car right now, I'm willing to do six hundred, six thousand for right now. How does that sound?
+runtime =  10.900319814682007
+tiny.en
+ Hey, I saw your post and your car definitely looks pretty clean and trouble free, but I'm kind of concerned that you don't really mention all of the different specs, the mileage and you know, the kind of traditional information that one needs in order to make a car purchase. So here, I want to take your word for it, but you have to understand why I'm a little happy hesitance, but given that I am in quite a need of a car right now, I'm willing to do 6,000 for right now. That sounds.
+runtime =  10.218281507492065
+base
+ Hey, I saw your post and your card definitely looks pretty clean and trouble free. But I'm kind of concerned that you don't really mention all of the different specs, the mileage, and you know, the kind of traditional information that one needs in order to make a car purchase. So here, I want to take your word for it, but you have to understand why I'm a little bit hesitant, but given that I am in quite a need of a car right now, I'm willing to do 6000 for right now. How does that sound?
+runtime =  11.89526081085205
+base.en
+ Hey, I saw your post and your card definitely looks pretty clean and trouble free, but I'm kind of concerned that you don't really mention all of the different specs, the mileage, and you know, the kind of traditional information that one needs in order to make a car purchase. So here, I want to take your word for it, but you have to understand why I'm a little happy hesitance, but given that I am in quite a need of a car right now, I'm willing to do 600, 6,000 for right now. How does that sound?
+runtime =  11.290053844451904
+small
+ Hey, I saw your post and your card definitely looks pretty clean and trouble-free. But I'm kind of concerned that you don't really mention all of the different specs, the mileage, and you know, the kind of traditional information that one needs in order to make a card purchase. So here, I want to take your word for it, but you have to understand why I'm a little hesitant. But given that I am in quite a need of a car right now, I'm willing to do $6,000 for right now. How does that sound?
+runtime =  30.270110607147217
+small.en
+ Hey, I saw your post and your car definitely looks pretty clean and trouble-free. But I'm kinda concerned that you don't really mention all of the different specs, the mileage, and you know, the kinda traditional information that one needs in order to make a car purchase. So here, I want to take your word for it, but you have to understand why I'm a little hesitant, but given that I am in quite a need of a car right now, I'm willing to do $600,000 for right now. How does that sound?
+runtime =  24.686185598373413
+medium
+ Hey, I saw your post and your car definitely looks pretty clean and trouble-free. But I'm kind of concerned that you don't really mention all of the different specs, the mileage, and you know, the kind of traditional information that one needs in order to make a car purchase. So here, I want to take your word for it, but you have to understand why I'm a little bit hesitant. But given that I am in quite a need of a car right now, I'm willing to do $6,000 for right now. How does that sound?
+runtime =  65.14983630180359
+medium.en
+ Hey, I saw your post, and your car definitely looks pretty clean and trouble-free. But I'm kinda concerned that you don't really mention all of the different specs, the mileage, and you know, the kinda traditional information that one needs in order to make a car purchase. So here, I wanna take your word for it, but I, you have to understand why I'm a little bit hesitant, but given that I am in quite a need of a car right now, I'm willing to do 6,000 for right now. How does that sound?
+runtime =  68.2692346572876
+large
+ Hey, I saw your post and your car definitely looks pretty clean and trouble free. But I'm kinda concerned that you don't really mention all of the different specs, the mileage, and you know, the kinda traditional information that one needs in order to make a car purchase. So here, I wanna take your word for it, but you have to understand why I'm a little bit hesitant. But given that I am in quite a need of a car right now, I'm willing to do $6000 for right now. How does that sound?
+runtime =  111.62040042877197
+downgraded_recordings-first-negotiation/Buyer_17_2023-03-25_17-39-50.689231.mp3
+tiny
+ Hey, is her in a here that it wasn't that good of a food with her house, but I mean it looks perfect and my kids will love it So just curious if it's just gonna come with a white slip cover in the dove craze slip How does 60 dollars on for it?
+runtime =  7.3443121910095215
+tiny.en
+ Hey, it's hard to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it So just curious if it's just gonna come with a white slip cover in the Dove Gray slip How does $60 sound for it
+runtime =  7.030231237411499
+base
+ Hey, is her in a hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it So just curious if it's just gonna come with a white slip cover in the dove graze flip How does $60 sound for it?
+runtime =  12.97511339187622
+base.en
+ Hey, it's hard to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it So just curious if it's just gonna come with a white slip cover and the dove gray slip How does $60 sound for it?
+runtime =  14.587741136550903
+small
+ Hey, it's hard to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it So just curious if it's just gonna come with the white slip cover in the dove gray slip How does $60 sound for it?
+runtime =  22.93691921234131
+small.en
+ Hey, sorry to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it So just curious if it's just gonna come with the white slipcover and the dove gray slip How does $60 sound for it?
+runtime =  22.254047870635986
+medium
+ Hey, it's hard to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it. So just curious, if it's just gonna come with a wide slip cover and the dove gray slip, how does $60 sound for it?
+runtime =  61.260534048080444
+medium.en
+ Hey, sorry to hear that it wasn't that good of a fit with your house, but I mean it looks perfect and my kids will love it. So just curious if it's just gonna come with the white slipcover and the dove gray slip How does $60 sound for it?
+runtime =  58.143649101257324
+large
+ Hey, sorry to hear that it wasn't that good of a fit with your house, but I mean it looks perfect And my kids will love it So just curious if it's just gonna come with a white slip cover and the dove gray slip How does $60 sound for it?
+runtime =  101.58269262313843
+downgraded_recordings-first-negotiation/Buyer_21_2023-03-25_17-48-09.674084.mp3
+tiny
+ I hear that, it does look pretty nice. Wood 60 work.
+runtime =  6.572626113891602
+tiny.en
+ I hear that, it does look pretty nice. Would 60 work?
+runtime =  8.696946144104004
+base
+ I hear that. It does look pretty nice. Would 60 work?
+runtime =  11.296418190002441
+base.en
+ I hear that. It does look pretty nice. Would 60 work?
+runtime =  9.124254941940308
+small
+ I hear that. It does look pretty nice. Would 60 work?
+runtime =  20.38747501373291
+small.en
+ I hear that. It does look pretty nice. Would 60 work?
+runtime =  24.251871824264526
+medium
+ I hear that. It does look pretty nice. Would 60 work?
+runtime =  52.291422605514526
+medium.en
+ I hear that it does look pretty nice. Would 60 work?
+runtime =  56.721797704696655
+large
+ I hear that, it does look pretty nice. Uh, would 60 work?
+runtime =  98.44712233543396
+downgraded_recordings-first-negotiation/Buyer_17_2023-03-25_17-45-21.581280.mp3
+tiny
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  9.209192991256714
+tiny.en
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  8.030153512954712
+base
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  9.897141695022583
+base.en
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  9.02318525314331
+small
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  21.309504747390747
+small.en
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  21.445205688476562
+medium
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  58.93034076690674
+medium.en
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  55.263859272003174
+large
+ Yeah, I can do 120. Sounds great. Pleasure doing business.
+runtime =  94.81962060928345
+downgraded_recordings-first-negotiation/Seller_28_2023-03-25_17-57-07.094640.mp3
+tiny
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says in the USA. $200 is a pretty low price considering how much the significant load large businesses is, it's really hard to find the bike this size. So, I got it for a thousand, I'm willing to let it go for 800.
+runtime =  7.435607671737671
+tiny.en
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says in the list. $200 is a pretty low price considering how it does significantly large bike this is. It's truly hard to find the bike this size. So I got it for a thousand and we'll need to go for 800.
+runtime =  7.315258741378784
+base
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says in the lowest rate. $200 is a pretty low price considering how much a significant large bike this is. It's really hard to find the bike this size. So I got it for a thousand, I'm willing to let it go for 800.
+runtime =  15.063250541687012
+base.en
+ Hey, yeah, it does come with a seat. The saddle was in my car as it says in the list. $200 is a pretty low price considering how much a significantly large bike this is. It's purely hard to find the bike this size. So I got it for $1000, I'm willing to let it go for $800.
+runtime =  13.670101404190063
+small
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says on the list. $200 is a pretty low price considering how much a significantly large bike this is. It's really hard to find a bike this size. So I got it for $1,000. I'm willing to let it go for $800.
+runtime =  23.961359977722168
+small.en
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says in the list. $200 is a pretty low price concerning how significantly large this is. It's really hard to find a bike this size. So I got it for $1,000 and I'm willing to let it go for $800.
+runtime =  25.295163869857788
+medium
+ Hey, yeah, it does come with a seat. The saddle is in my car as it says in the listing. $200 is a pretty low price considering how significantly large this is. It's really hard to find a bike this size. So I got it for $1000. I'm willing to let it go for $800.
+runtime =  67.13626980781555
+medium.en
+ Hey, yeah, it does come with a seat. The saddle is in my car, as it says in the listing. $200 is a pretty low price, considering how much of a significantly large bike this is. It's really hard to find a bike this size. So, I got it for $1,000. I'm willing to let it go for $800.
+runtime =  57.973246812820435
+large
+ Hey, yeah, it does come with a seat. The saddle is in my car, as it says in the listing. $200 is a pretty low price, considering how much of a significantly large bike this is. It's really hard to find a bike this size. So, I got it for $1000, I'm willing to let it go for $800.
+runtime =  108.69270420074463

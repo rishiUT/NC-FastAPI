@@ -1591,3 +1591,6 @@ Setting up chat page
 adding info to the database
 Setting up chat page
 adding info to the database
+Now initializing user with id 8
+Now initializing user with id 9
+Now initializing user with id 10

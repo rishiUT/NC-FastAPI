@@ -22,7 +22,7 @@ from pydub import AudioSegment
 import random
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc2"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -645,7 +645,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         # This is a voice message.
 
                         timestamp = datetime.datetime.now()
-                        temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
+                        temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".ogg"
                         file_name = ""
                         for c in temp:
                             if c == ' ':
@@ -669,6 +669,17 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
                         audio = audio.set_frame_rate(16000)
                         audio = audio.set_channels(1)
                         audio = audio.set_sample_width(2)
+
+                        
+                        temp = "recordings/" + role_txt + "_" + str(int_uid) + "_" + str(timestamp) + ".mp3"
+                        file_name = ""
+                        for c in temp:
+                            if c == ' ':
+                                file_name += "_"
+                            elif c == ':':
+                                file_name += "-"
+                            else:
+                                file_name += c
                         # simple export
                         file_handle = audio.export("downgraded_" + file_name, format="mp3")
 

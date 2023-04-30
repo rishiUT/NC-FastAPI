@@ -4,7 +4,9 @@ class Conversation:
         self.id = -1
         self.item_id = -1
         self.buyer_id = -1
+        self.buyer_coefficient = -1
         self.seller_id = -1
+        self.seller_coefficient = -1
         self.messages = []
         self.offer_value = -1
         self.offer_sent = False
@@ -23,9 +25,15 @@ class Conversation:
         self.buyer_id = id
         self.start_time = time.time()
 
+    def set_buyer_coefficient(self, coef):
+        self.buyer_coefficient = coef
+
     def set_seller(self, id):
         self.seller_id = id
         self.start_time = time.time()
+
+    def set_seller_coefficient(self, coef):
+        self.seller_coefficient = coef
 
     def add_message(self, message):
         self.messages.append(message)

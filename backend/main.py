@@ -22,7 +22,7 @@ from pydub import AudioSegment
 import random
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc2"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -124,11 +124,11 @@ async def home(request: Request, response: Response, assignmentId: str="None", h
     checked_in = request.cookies.get('checkedin')
     show_consent_form = False if checked_in == "True" else True
     response.set_cookie(key='checkedin', value=True, secure=True, samesite='none')
-    if assignmentId != "None":
-        response.set_cookie(key='mturkId', value=workerId, secure=True, samesite='none')
-        response.set_cookie(key='assignmentId', value=assignmentId, secure=True, samesite='none')
-        response.set_cookie(key='hitId', value=hitId, secure=True, samesite='none')
-        response.set_cookie(key='turkSubmitTo', value=turkSubmitTo, secure=True, samesite='none')
+    
+    response.set_cookie(key='mturkId', value=workerId, secure=True, samesite='none')
+    response.set_cookie(key='assignmentId', value=assignmentId, secure=True, samesite='none')
+    response.set_cookie(key='hitId', value=hitId, secure=True, samesite='none')
+    response.set_cookie(key='turkSubmitTo', value=turkSubmitTo, secure=True, samesite='none')
         
     if uid:    
         response.delete_cookie('id')
@@ -396,9 +396,16 @@ async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_i
     # Save all this information into the database
     # printer.print("acquiring lock")
     database_lock.acquire()
+
+    
+    ua = users.alias("alias")
+    query = sqlalchemy.select([ua.c.mturkid]).where(ua.c.id==pid)
+    partner_mturk_id = await database.fetch_all(query)
+    partner_mturk_id = partner_mturk_id[0][0]
+
     query = sqlalchemy.update(users)
     query = query.where(users.c.id == uid)
-    query = query.values({"role": role, "partnerid": pid, "conversationid": conv_id, "itemid": item_id, "listingprice": item_price, "goal": goal, "convactive": True})
+    query = query.values({"role": role, "partnerid": pid, "partnermturkid": partner_mturk_id, "conversationid": conv_id, "itemid": item_id, "listingprice": item_price, "goal": goal, "convactive": True})
     await database.execute(query)
 
     # await print_user_in_database(uid)
@@ -465,18 +472,19 @@ async def record(request: Request):
 
         is_buyer = (role_txt == "Buyer")
 
-        item_id = conv_id % len(items) #Pseudo-randomization; not actually random, but rarely repeats
-        checker.conv_set_item(int_uid, item_id)
+        # Get item
+        item_id, buyer_coef, seller_coef = checker.get_item_info(int_uid)
 
         item_data = items[item_id]
 
         listing_price = item_data['Price'] * 2
-        buyer_coefficients = [0.6, 0.65, 0.7, 0.75]
-        seller_coefficients = [0.8, 0.85, 0.9, 0.95]
+
+        # Get price coefficient
         if is_buyer:
-            price_coefficient = random.choice(buyer_coefficients)
+            price_coefficient = buyer_coef
         else:
-            price_coefficient = random.choice(seller_coefficients)
+            price_coefficient = seller_coef
+
         item_price = listing_price * price_coefficient
         item_price = round(item_price)
 
@@ -533,7 +541,7 @@ async def handle_ping_errors(status: PingErrors, request: Request, response: Res
             url += "&bonus=-1"
             return template.render(title="Partner Disconnected", content="Sorry, it seems your partner disconnected. You will still be paid, but please try again later.", url=url)
         else:
-            template = env.get_template("default.html")
+            template = env.get_template("disconnect.html")
 
 
     if (status == PingErrors.USER_DISCONNECT):

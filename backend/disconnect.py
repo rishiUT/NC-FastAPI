@@ -5,7 +5,8 @@ from debughelper import DebugPrinter
 from disconnect_checker.user import User
 from disconnect_checker.conversation import Conversation
 import random
- 
+import json
+
 class PartnerStatuses(Enum):
     UNPAIRED = 1
     PAIRED = 2
@@ -56,6 +57,9 @@ class DisconnectChecker:
         self.pairing_count = 0
         self.user_table_lock = threading.Lock()
         self.printer = None
+                
+        with open('static/filtered_train.json') as item_file:
+            self.items = json.load(item_file)
 
     def add_debug_printer(self, printer: DebugPrinter):
         self.printer = printer
@@ -89,13 +93,23 @@ class DisconnectChecker:
             user = self.users[user_key]
             if user is not curr_user and user.get_partner() == -1:
                 new_conv = Conversation()
-                new_conv.set_id(self.pairing_count)
+                conv_id = self.pairing_count
+                new_conv.set_id(conv_id)
+        
+                item_id = conv_id % len(self.items) #Pseudo-randomization; not actually random, but rarely repeats
+                new_conv.set_item(item_id)
+                        
+                buyer_coefficients = [0.6, 0.65, 0.7, 0.75]
+                seller_coefficients = [0.8, 0.85, 0.9, 0.95]
+                seller_coefficient = random.choice(seller_coefficients)
+                buyer_coefficient = random.choice(buyer_coefficients)
 
                 if random.random() > 0.5:
                     seller = uid
                     buyer = user.get_id()
                     curr_user_role = "Seller"
                     partner_role = "Buyer"
+                    
                 else:
                     seller = user.get_id()
                     buyer = uid
@@ -103,7 +117,9 @@ class DisconnectChecker:
                     partner_role = "Seller"
                 
                 new_conv.set_seller(seller)
+                new_conv.set_seller_coefficient(seller_coefficient)
                 new_conv.set_buyer(buyer)
+                new_conv.set_buyer_coefficient(buyer_coefficient)
                 self.conversations[self.pairing_count] = new_conv
                 
                 # This is another unpaired user
@@ -124,6 +140,11 @@ class DisconnectChecker:
         #self.printer.print("So far, no partners available.")
         self.user_table_lock.release()
         return ConnectionErrors.NO_PARTNER_FOUND
+
+    def get_item_info(self, uid: int):
+        curr_user = self.users[uid]
+        conv = self.conversations[curr_user.get_conv_id()]
+        return conv.item_id, conv.buyer_coefficient, conv.seller_coefficient
 
     def get_user_conv_id(self, uid: int):
         return self.users[uid].get_conv_id()

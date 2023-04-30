@@ -65,6 +65,7 @@ async def create_list():
         id = conversation
         num_messages = 0
         message_length = 0
+        item_id = 0
         seller_id = 0
         buyer_id = 0
         seller_goal = 0
@@ -74,24 +75,25 @@ async def create_list():
 
         for user in finished_users:
             if user.conversationid == conversation:
+                offer = user.offer
+                negotiation_success = user.offeraccepted
+                item_id = user.itemid
+
                 if user.role == 0:
                     # This is a seller
                     seller_id = user.id
                     seller_goal = user.goal
-                    offer = user.offer
-                    negotiation_success = user.offeraccepted
                 
                 if user.role == 1:
                     # This is a seller
                     buyer_id = user.id
                     buyer_goal = user.goal
-                    offer = user.offer
-                    negotiation_success = user.offeraccepted
         
         to_print = ""
         to_print += str(id) + "\t"
         to_print += str(num_messages) + "\t"
         to_print += str(message_length) + "\t"
+        to_print += str(item_id) + "\t"
         to_print += str(seller_id) + "\t"
         to_print += str(buyer_id) + "\t"
         to_print += str(seller_goal) + "\t"

@@ -22,7 +22,7 @@ from pydub import AudioSegment
 import random
 
 #DATABASE_URL = "sqlite:///./dbfolder/users.db"
-DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc2"
+DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
 
@@ -147,6 +147,7 @@ async def home(request: Request, response: Response, assignmentId: str="None", h
 
 @app.get('/pair', response_class=HTMLResponse)
 async def start(request: Request, response: Response):
+    print("In the pairing page")
     assignmentId = request.cookies.get('assignmentId')
     hitId = request.cookies.get('hitId')
     turkSubmitTo = request.cookies.get('turkSubmitTo')
@@ -473,7 +474,15 @@ async def record(request: Request):
         is_buyer = (role_txt == "Buyer")
 
         # Get item
-        item_id, buyer_coef, seller_coef = checker.get_item_info(int_uid)
+        # item_id, buyer_coef, seller_coef = checker.get_item_info(int_uid)
+
+        item_id = conv_id % len(items) #Pseudo-randomization; not actually random, but rarely repeats
+        checker.conv_set_item(int_uid, item_id)
+                
+        buyer_coefficients = [0.6, 0.65, 0.7, 0.75]
+        seller_coefficients = [0.8, 0.85, 0.9, 0.95]
+        seller_coef = random.choice(seller_coefficients)
+        buyer_coef = random.choice(buyer_coefficients)
 
         item_data = items[item_id]
 

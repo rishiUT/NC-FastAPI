@@ -77,11 +77,12 @@ class DisconnectChecker:
 
     def create_pairing(self, uid: int):
         curr_user = self.users[uid]
+        curr_user.start_partner_search()
         if curr_user.get_partner() != -1:
             # This user already has a partner/has had a partner in the past
             #self.printer.print("User has a partner already, user {}".format(curr_user.get_partner()))
             return curr_user.get_conv_id()
-        elif (curr_user.time_since_last_ping(int(time.time())) > self.pairing_timeout_length):
+        elif (curr_user.time_since_partner_search() > self.pairing_timeout_length):
             # This user has been waiting too long. Time to time out.
             self.printer.print("User timed out.")
             return ConnectionErrors.CONNECTION_TIMEOUT

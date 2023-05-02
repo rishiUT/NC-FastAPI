@@ -26,7 +26,7 @@ from xml.dom.minidom import parseString
 # Sign up for a Sandbox account at https://requestersandbox.mturk.com/ with the same credentials as your main MTurk account.
 
 # By default, HITs are created in the free-to-use Sandbox
-create_hits_in_live = False
+create_hits_in_live = True
 file_to_save_hit_ids = "active_hits_live.txt" if create_hits_in_live else "active_hits_sandbox.txt"
 hit_ids = []
 file1 = open(file_to_save_hit_ids, 'r')
@@ -65,8 +65,12 @@ for hit_id in hit_ids:
     print('Hit {} status: {}'.format(hit_id, hit['HIT']['HITStatus']))
     response = client.list_assignments_for_hit(
         HITId=hit_id,
-        AssignmentStatuses=['Submitted', 'Approved'],
         MaxResults=10,
+    )
+
+    response2 = client.update_expiration_for_hit(
+        HITId=hit_id,
+        ExpireAt=0,
     )
 
     assignments = response['Assignments']

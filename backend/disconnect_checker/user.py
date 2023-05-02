@@ -27,6 +27,7 @@ class User:
         self.conv_id = -1
         self.role = "-"
         self.started_conv = False
+        self.partner_search_start_time = -1
         self.start_time = -1
 
     def add_partner(self, partner_id: int):
@@ -86,3 +87,10 @@ class User:
 
     def get_time_elapsed(self):
         return math.floor(time.time() - self.start_time)
+    
+    def start_partner_search(self):
+        if self.partner_search_start_time == -1:
+            self.partner_search_start_time = time.time()
+    
+    def time_since_partner_search(self):
+        return time.time() - self.partner_search_start_time

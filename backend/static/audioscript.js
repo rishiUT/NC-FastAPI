@@ -239,7 +239,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                 } else if (identifier == 8) {
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
-                    timeleft = 30;
+                    timeleft = 3000;
                     offerSent = true;
                     handle_offer(amount, timeleft);
                 } else if (identifier == 9) {
@@ -252,7 +252,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     // This is the time elapsed since the conversation started
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var time_elapsed = parseInt(resultstring);
-                    if (time_elapsed > 300) {
+                    if (time_elapsed > 60 * minutesLeft + secondsLeft) {
                         //The conversation has run too long. Time to time out
                         window.location.replace('/error/2'); //2 = user disconnect error code
                     }
@@ -272,7 +272,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     let timeRemainingText = "Time Remaining: " + minutesLeft + ":" + formatTimeChunk(secondsLeft);
                     document.getElementById("TimeRemaining").innerHTML = timeRemainingText;
                 } else if (identifier == 51) {
-                    timeleft = 60
+                    timeleft = 6000
                     var resultstring = Utf8ArrayToStr(finalArray);
                     var amount = parseInt(resultstring);
                     handle_offer(amount, timeleft)
@@ -383,7 +383,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
                     var deny = document.getElementById('confirmNo');
                     deny.remove();
 
-                    var timeleft = 90
+                    var timeleft = 9000
                     document.getElementById('OfferConfirmText').innerHTML = "Offer sent! Waiting for a response...\n";
                     document.getElementById('OfferConfirmText').innerHTML += "Time Remaining: " + timeleft + " seconds";
                     offerSent = true;
@@ -505,7 +505,7 @@ navigator.mediaDevices.getUserMedia(audioIN)
     // Print any errors 
     .catch(function (err) {
         console.log(err.name, err.message);
-        window.location.replace('/error/2'); //2 = user disconnect error code; not perfect but good enough
+        window.location.replace('/error/5'); //5 = miscellaneous error code; not perfect but good enough
     });
 
 function add_message(senderID, audioSrc, length) {
@@ -552,7 +552,7 @@ function handle_offer(amount, timeleft) {
     console.log("Received an offer!");
     offerSent = true;
     document.getElementById('modalText').innerHTML = "Your partner offered $" + amount + "! Will you accept the offer?\n";
-    document.getElementById('modalText').innerHTML += "Time Remaining: " + timeleft + " seconds";
+    document.getElementById('modalText').innerHTML += "Time Remaining: " + formatTimeChunk(timeleft);
     
     var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'), {
         keyboard: false

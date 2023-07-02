@@ -42,7 +42,7 @@ environments = {
             "endpoint": "https://mturk-requester-sandbox.us-east-1.amazonaws.com",
             "preview": "https://workersandbox.mturk.com/mturk/preview",
             "manage": "https://requestersandbox.mturk.com/mturk/manageHITs",
-            "reward": "2.00"
+            "reward": "0.00"
         },
 }
 mturk_environment = environments["live"] if create_hits_in_live else environments["sandbox"]
@@ -77,7 +77,8 @@ worker_requirements = [{
 }]
 
 # Since each hit can only be completed once, we will make as many hits as we want respondents
-max_respondents = 20
+max_respondents = 50
+max_per_task = 1 # This is the number of people that can do each task. This should be 1, since we want people to be able to do the task multiple times.
 with open(file_to_save_hit_ids, "a") as myfile:
     for i in range(max_respondents):
 
@@ -90,7 +91,7 @@ with open(file_to_save_hit_ids, "a") as myfile:
             AssignmentDurationInSeconds=900,
             LifetimeInSeconds=1209600, # Time until expiration, currently two weeks
             Keywords='negotiation, research, bargain, discussion, interaction, recording, audio',
-            MaxAssignments=1,
+            MaxAssignments=max_per_task,
             AutoApprovalDelayInSeconds=6000,
             QualificationRequirements=worker_requirements
         )

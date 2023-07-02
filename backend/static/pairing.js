@@ -63,7 +63,7 @@ window.addEventListener("load", function () {
                     window.location.replace('/record')
                 });
 
-                var timeleft = 30;
+                var timeleft = 6000;
                 
                 function reduce_time() {
                     if (timeleft > 0) {

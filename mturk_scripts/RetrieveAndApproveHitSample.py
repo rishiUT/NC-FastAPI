@@ -67,11 +67,12 @@ for hit_id in hit_ids:
         HITId=hit_id,
         MaxResults=10,
     )
-
-    response2 = client.update_expiration_for_hit(
-        HITId=hit_id,
-        ExpireAt=0,
-    )
+    
+    # Uncomment to expire all active HITs immediately
+    #response2 = client.update_expiration_for_hit(
+    #    HITId=hit_id,
+    #    ExpireAt=0,
+    #)
 
     assignments = response['Assignments']
     print('The number of submitted assignments is {}'.format(len(assignments)))
@@ -88,11 +89,12 @@ for hit_id in hit_ids:
 
         print('The Worker with ID {} submitted assignment {} and gave the answer "{}"'.format(worker_id, assignment_id, only_answer))
 
-        # Approve the Assignment (if it hasn't already been approved)
-        if assignment['AssignmentStatus'] == 'Submitted':
-            print('Approving Assignment {}'.format(assignment_id))
-            client.approve_assignment(
-                AssignmentId=assignment_id,
-                RequesterFeedback='good',
-                OverrideRejection=False,
-            )
+
+        # Uncomment to Approve the Assignment (if it hasn't already been approved)
+        # if assignment['AssignmentStatus'] == 'Submitted':
+        #    print('Approving Assignment {}'.format(assignment_id))
+        #    client.approve_assignment(
+        #        AssignmentId=assignment_id,
+        #        RequesterFeedback='good',
+        #        OverrideRejection=False,
+        #    )

@@ -9,6 +9,8 @@ backend/downgraded_recordings-first-negotiation
 backend/__pycache__/connectionmanager.cpython-39.pyc
 backend/conv_transcripts_fn
 backend/first_negotiation_recordings
+backend/logs
+backend/timelines
 backend/__pycache__
 mturk_scripts/active_hits_live.txt
 mturk_scripts/active_hits_sandbox.txt

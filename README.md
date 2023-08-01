@@ -46,21 +46,23 @@ Installing FFMpeg is very straightforward on Ubuntu; you can simply run `sudo ap
 
 This repository contains several code files and subfolders. Some of the most commonly used files and folders include:
 
-### Conversations folder
+### "Conversations" folder
 
-Each time two users connect to the server and participate in a dialogue, a brief record of their conversation will be stored in a file in this folder. The file will contain their IDs, the save locations of the messages they sent, and whether it resulted in a successful offer.
+Each time two users connect to the server and participate in a dialogue, a brief record of their conversation will be stored in a file in this folder. The file will contain their IDs, the save locations of the messages they sent, and whether it resulted in a successful offer. The code that creates the records can be found in the print function in conversation.py. This code can be edited to print additional information to the record, or to change the structure.
 
-### Recordings and Downgraded Recordings
+### "Recordings" and "Downgraded Recordings"
 
 When users send messages, the raw audio of each message is saved in the recordings folder. The audio is then converted into the .mp3 format and saved in the Downgraded Recordings folder.
 
-### Logs and Timelines
+### "Logs" and "Timelines"
 
-As long as the server is active, it will log status and error messages to a log file, which is stored in the Logs folder. It will also store a more human-readable timeline of events in the Timelines folder; this is useful for checking if users have been connecting with each other and completing dialogues, and for identifying when errors have occurred.
+As long as the server is active, it will log status and error messages to a log file, which is stored in the Logs folder. This file will contain any print statement encountered during the runtime of the code, in addition to any error message that would ordinarily be printed to console; you can add more print statements using the print and print_error functions in debughelper.py (if printing in main.py, use the printer object, which is imported from debughelper.py). Note that these functions also require the name of the function the print function was called from, and the user ID of the user the server is serving. As a result, each line in the log file will contain the caller function and the user ID, which can be used to debug specific issues.
+
+The server will also store a more human-readable timeline of events in the Timelines folder; this is useful for checking if users have been connecting with each other and completing dialogues, and for identifying when errors have occurred. To add more prints to the timeline, use the print_user_friendly function in debughelper.py and the printer object.
 
 ### Mturk Scripts
 
-This folder contains scripts and files necessary for Amazon Mechanical Turk integration. There are more details below.
+This folder contains scripts and files necessary for Amazon Mechanical Turk integration. (See [Amazon Mechanical Turk Integration](#amazon-mechanical-turk-integration))
 
 ### Templates and Static
 
@@ -100,4 +102,35 @@ To check the status of HITs in the active_hits files, you can run RetrieveAndApp
 
 When debugging the server, it's better to run FastAPI test servers using uvicorn than to constantly reload the hosted server on nginx. To run a test server from the command line, navigate to the "backend" folder, then run the command `uvicorn main:app --port <port number>`. This creates a server you can access locally through the browser of your linux machine.
 
-If you would like to run a test negotiation on the test server and are having difficulty partnering with yourself, you can either open a different browser or open a new inprivate tab in the same browser. This allows you to run multiple instances of the site with separate cookie caches, which allows you to emulate multiple users.
+If you would like to run a test negotiation on the test server and are having difficulty partnering with yourself, you can either open a different browser or open a new inprivate tab in the same browser. This allows you to run multiple instances of the site with separate cookie caches, which allows you to emulate multiple users. 
+
+I typically emulate a full negotiation with up to four users whenever I make changes, to ensure there are no connection issues or issues with the pairing system. This includes having all four users pair up, sending four messages per negotiation, sending an offer with each negotiation, and accepting one offer while declining the other. Once each user has made it to the "Negotiation completed" page, I consider the test a success.
+
+Once you've tested the server locally, you can test it on the nginx server by refreshing the server. You can use the command `sudo systemctl restart nginx.service` to do so.
+
+Note that, if you've changed the types of data stored in the database, or have added new variables for the database, you will need to create a new database using postgresql. You may also want to create a new database if you are collecting user data through crowdsourcing, to make it easier to avoid mixing data from different data collection events. 
+
+## Next Steps
+
+User testing has shown some issues with the negotiation task. These issues, and potential solutions to them, are as follows:
+
+### Preliminary Task
+
+Mechanical Turk users do not appear to know how to use the negotiation interface, possibly because they have not read the instructions. A solution to that could be to create a preliminary task to test them on the interface before they are allowed to take the task that pairs them with another user.
+
+This preliminary task can be made by making a new page for the website that is almost the same as the negotiation page. However, it would be built as a tutorial; the description would tell the user how to send an audio message, and when a message is sent, it will send a recording to the user for them to practice listening to. Other tutorial tasks can be added to ensure the user knows how to follow instructions; for example, at some point the user could be required to send an offer for a certain amount, or told to accept or decline an incoming offer, etc.
+
+The code that would need to be copied to make the negotiation interface (and edited, to work as a tutorial) would be audioscript.js and the chat_ws_endpoint function in main.py.
+
+### Tutorial
+
+Since users don't appear to know how to use the interface, it may be helpful to add pop-up messages to work as a tutorial. These can highlight a button while informing the user how to use them (for example, telling the user to click and hold the record button to record messages).
+
+### Bugs
+
+When users send audio, the recording element still contains the last audio sent. Users will need to re-record to send another audio clip, but it breaks immersion to have the audio clip in the recording element. This can be removed programmatically in the audioscript.js file, in the part of the file dedicated to sending messages.
+
+Users are currently able to send offers with negative values, as long as those offers are whole numbers. The value-checking function in audioscript.js should be edited to prevent that from occurring. 
+
+When a user records and sends a message that is a fraction of a second long, this can occasionally fail to register as an actual message on the receiver's end, but prevent the sender from sending another message. This is currently solvable by having the sender refresh their page. It's unclear how to fix this, but since it only occurs when a user is attempting to game the system, it may be worth leaving as-is to discourage such behavior.
+

@@ -21,13 +21,18 @@ import math
 from pydub import AudioSegment
 import random
 import time
+import sys
 
+
+# Global Debugging Variables
 checker = UserManager()
 printer = DebugPrinter()
 
 checker.add_debug_printer(printer)
 
-#DATABASE_URL = "sqlite:///./dbfolder/users.db"
+sys.stderr = printer.output_file
+
+# Database Variables
 DATABASE_URL = "postgresql://rishi:Password1@localHost:5432/nc"
 database = databases.Database(DATABASE_URL)
 database_lock = threading.Lock()
@@ -83,23 +88,23 @@ class User(BaseModel):
     convactive: bool
     convdisconnected: bool
 
+
+# Task Descriptions to use when creating task page (possibly deprecated? Check in the webpage)
 TASK_DESCRIPTIONS = ["Your goal for this task is to sell this item for as close to the listing price as possible. You will negotiate with your assigned buyer using recorded messages. Once the buyer chooses to make an offer, you may either accept or reject the offer.\nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the “send” button to send it. You can also click any sent or received message to listen to them again.Each negotiation should be finished within 5 minutes. There is a timer at the top of the screen which tells you how much time has elapsed.\nFor more detailed instructions, click the \"Negotiation Instructions\" link at the top of the screen.\nHave fun, and good luck with your negotiation!",
                      "Your goal for this task is to convince the seller to sell you the item for as close to your goal price as possible. You will negotiate with the seller using recorded messages. At any point, you may make an offer of any price; however, once the seller accepts or rejects your offer, the negotiation is over. \nTo record a message, press and hold the button with the microphone symbol. You can listen to the message to make sure it sounds right, then click the 'send' button to send it. You can also click any sent or received message to listen to them again. \nHave fun, and good luck with your negotiation!"]
 
-
-import sys
-sys.stderr = printer.output_file
-
+# Items for use in craigslist negotiations
 with open('static/filtered_train.json') as item_file:
     items = json.load(item_file)
 
+
+# Getting the server started
 app = FastAPI(title='Test')
 app.mount("/static", StaticFiles(directory="static"), name="static")
 env = Environment(
     loader=PackageLoader("ncserver"),
     autoescape=select_autoescape()
 )
-
 
 @app.on_event("startup")
 async def startup():
@@ -110,11 +115,13 @@ async def startup():
     next_unique_id = await get_next_unique_id()
     checker.set_pairing_count(num_prev_pairings)
     
-
+# Closing the server when it needs to shut down
 @app.on_event("shutdown")
 async def shutdown_event():
     await database.disconnect()
 
+# If there's an error, call this function 
+# to print to the error logging file and redirect the user accordingly
 async def error_handling(function_name: str, error, uid, assignmentId):
     if assignmentId:
         if uid:
@@ -131,6 +138,7 @@ async def error_handling(function_name: str, error, uid, assignmentId):
     response = RedirectResponse(url=record_url)
     return response
 
+# Show the homepage (with the task description) to the user
 @app.get('/', response_class=HTMLResponse)
 @app.get('/home', response_class=HTMLResponse)
 async def home(request: Request, response: Response, assignmentId: str="None", hitId: str="None", turkSubmitTo: str="None", workerId: str="None"):
@@ -148,21 +156,26 @@ async def home(request: Request, response: Response, assignmentId: str="None", h
         response.set_cookie(key='turkSubmitTo', value=turkSubmitTo, secure=True, samesite='none')
             
         if uid:
+            # They should not have a uid when accessing the homepage
             response.delete_cookie('id')
 
         if assignmentId == "ASSIGNMENT_ID_NOT_AVAILABLE":
+            # This is a mechanical turk user, but they are viewing a preview and haven't accepted the task.
             template = env.get_template("home2.html")
             return template.render(title="Home")
         elif assignmentId == "None":
+            # This is not an mturk user
             template = env.get_template("home3.html")
             return template.render(title="Home", show=show_consent_form)
         else:
+            # This is an mturk user
             template = env.get_template("home.html")
             return template.render(title="Home")
     except Exception as error: 
         return await error_handling(function_name, error, uid, assignmentId)
 
-
+# Send the user a page with a button to put them in the pairing system, when they're ready
+# If they are currently paired with another user, skip this page and send them to the negotiation instead
 @app.get('/pair', response_class=HTMLResponse)
 async def pair(request: Request, response: Response):
     function_name = "pair"
@@ -268,6 +281,7 @@ async def check_if_mturk_active(mturkid: str):
         printer.print_error( "check_if_mturk_active", repr(error), mturk_id=mturkid)
         raise
     
+# If no partner is found within a certain amount of time, users are redirected to this page
 @app.get('/no_partner', response_class=HTMLResponse)
 async def no_partner_found(request: Request, response: Response):
     try:
@@ -287,6 +301,7 @@ async def no_partner_found(request: Request, response: Response):
     except Exception as error:
         return await error_handling(function_name, error, uid, assignmentId)
     
+# Users are sent here if they successfully complete the task.
 @app.get('/finish', response_class=HTMLResponse)
 async def self_reset(request: Request, response: Response):
     function_name = "Finish"
@@ -307,6 +322,7 @@ async def self_reset(request: Request, response: Response):
             return response
         int_uid = int(uid)
 
+        # Initialize all variables to show the bonus for a non-mturk user
         bonus_percentage = await calc_bonus(int_uid)
         printer.print(function_name, "Bonus = " + str(bonus_percentage), uid=uid, mturk_id=assignmentId)
         bonus_string = f'{bonus_percentage:.2f}'
@@ -320,6 +336,7 @@ async def self_reset(request: Request, response: Response):
         printer.print_user_friendly("User " + str(uid) + " completed the assignment! They earned a bonus of $" + str(bonus_percentage) + ".")
 
         if assignmentId != "None":
+            # This is an mturk user, so adjust the variables to account for the fact that they're getting money.
             printer.print(function_name, "Creating page for mturk user", uid=int(uid), mturk_id=assignmentId)  
             response.delete_cookie('assignmentId')
             response.delete_cookie('hitId')
@@ -346,6 +363,8 @@ async def self_reset(request: Request, response: Response):
     except Exception as error: 
         return await error_handling(function_name, error, uid, assignmentId)    
     
+# Helper function to convert a non-monetary value to a dollar value
+# Decimal value, make it two digits after the decimal point
 def val_to_dollar_str(val):
     try:
         val *= 1.0
@@ -358,6 +377,8 @@ def val_to_dollar_str(val):
         printer.print_error( "val_to_dollar_str", repr(error))
         raise
     
+# Calculate the bonus based on the goal price for both users, and the actual value agreed upon
+# This function rounds to the nearest hundredth, saves the value to the database, etc.
 async def calc_bonus(int_uid: int):
     try:
         query = users.select().where(users.c.id==int_uid)
@@ -400,6 +421,7 @@ async def calc_bonus(int_uid: int):
         printer.print_error( "calc_bonus", repr(error), uid=str(int_uid))
         raise
     
+# Helper function to actually calculate the bonus
 async def get_bonus(smaller_goal, offer, larger_goal):
     try:
         # Returns the percentage of the bonus that should be given to the seller (who has the larger goal)
@@ -432,7 +454,7 @@ async def get_bonus(smaller_goal, offer, larger_goal):
 #     except Exception as error: 
 #         return await error_handling(function_name, error, uid, assignmentId)
     
-
+# Once a user is in a conversation, this function stores all that information to the database
 async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_id: int, item_price: int, goal: int):
     # Save all this information into the database
     try:
@@ -453,10 +475,9 @@ async def add_user_conv_info(uid: int, pid: int, conv_id: int, role: int, item_i
         printer.print_error( "add_user_conv_info", repr(error))
         raise
 
-
+# Get the largest conversation ID currently in the database, to determine what IDs to give new conversations
 async def get_max_conv_id():
     try:
-        # Get the conversation id from the database with the highest value
         query = users.select()
         user_list = await database.fetch_all(query)
         # Get all users by conversation id
@@ -464,7 +485,6 @@ async def get_max_conv_id():
 
         maxID = 0
         for convID in convIDs:
-            # For each conversation id, search users for two matching conversation ids
             convID = int(convID)
             if maxID < convID:
                 maxID = convID
@@ -474,6 +494,7 @@ async def get_max_conv_id():
         printer.print_error( "get_max_conv_id", repr(error))
         raise
 
+# Get the largest ID to determine what the next ID to assign to a user should be
 async def get_next_unique_id():
     try:
         # Get the conversation id from the database with the highest value
@@ -484,7 +505,6 @@ async def get_next_unique_id():
 
         maxID = 0
         for id in ids:
-            # For each conversation id, search users for two matching conversation ids
             id = int(id)
             if maxID < id:
                 maxID = id
@@ -494,6 +514,7 @@ async def get_next_unique_id():
         printer.print_error( "get_next_unique_id", repr(error))
         raise
 
+# Creates a webpage where users can record and send messages to a partner (the negotiation page)
 @app.get('/record', response_class=HTMLResponse)
 async def record(request: Request):
     try:
@@ -560,7 +581,7 @@ async def record(request: Request):
     except Exception as error: 
          return await error_handling(function_name, error, uid, assignmentId)
 
-    
+# Create an error page to handle server errors and disconnects
 @app.get('/error/{status}', response_class=HTMLResponse)
 async def handle_ping_errors(status: PingErrors, request: Request, response: Response):
     uid = request.cookies.get('id')
@@ -627,6 +648,7 @@ async def handle_ping_errors(status: PingErrors, request: Request, response: Res
 
 manager = ConnectionManager()
 
+# Create a websocket connection to handle messages sent between users
 @app.websocket("/audiowspaired/{uid}")
 async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     try:
@@ -842,6 +864,7 @@ async def chat_ws_endpoint(websocket: WebSocket, uid:int):
     except Exception as error:
         printer.print_error( "audiowspaired", repr(error))
         
+# Create a websocket connection to keep users updated on the search for a conversation partner
 @app.websocket("/pairingws/{uid}")
 async def pairing_ws(websocket: WebSocket, uid:int):
     function_name = "Pairing Websocket"
@@ -883,6 +906,7 @@ async def pairing_ws(websocket: WebSocket, uid:int):
     except Exception as error:
         printer.print_error( function_name, repr(error), uid)
 
+# Create a new user object for someone freshly connecting to the site
 async def new_user_info():
     try:
         #No need to create a new id, because the db creates them automatically   
@@ -912,6 +936,8 @@ async def new_user_info():
         printer.print_error( "new_user_info", repr(error))
         raise
 
+# Remove a user who has completed a conversation or disconnected
+# This ensures they won't get paired with anyone else once they leave
 async def remove_user(uid: int, success=False):
     try:
         printer.print("Remove User", "Removing user, success = " + str(success), uid=uid)
@@ -930,6 +956,7 @@ async def remove_user(uid: int, success=False):
         printer.print_error( "remove_user", repr(error))
         raise
 
+# Pair users, and return whether the pairing process was successful
 async def add_pairing_checker(uid: int) -> bool:
     new_conv_id = checker.create_pairing(uid)
     if new_conv_id == -1:
@@ -943,7 +970,3 @@ async def add_pairing_checker(uid: int) -> bool:
 # Change the button image from a play button to a pause button while the audio plays, then change back when it stops
 
 # Add something when the user tries to connect, and is waiting on a partner to connect. Maybe a scrolling wheel?
-
-# There has to be a special case for disconnects once the entire interaction is complete
-# Once the interaction reaches a certain point, users should be able to leave without 
-# losing their payment or having their partner reassigned
